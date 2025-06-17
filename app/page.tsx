@@ -364,13 +364,13 @@ export default function DataOpsHomepage() {
             <p className="subheadline text-sm text-gray-600">How We Work</p>
             <h2 className="headline text-3xl text-gray-900">Our Process</h2>
             <p className="body-copy text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A systematic process that delivers results quickly. Learn about our comprehensive{" "}
+              A systematic process that delivers reliable results. Learn more about our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                methodology
+                comprehensive methodology
               </Link>{" "}
-              and how we approach{" "}
+              and see how we've helped other{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                complex business problems
+                portfolio companies achieve success
               </Link>
               .
             </p>
@@ -385,8 +385,8 @@ export default function DataOpsHomepage() {
               <div className="space-y-4">
                 <h3 className="headline text-xl text-gray-900">Step 1: PE-Standard Assessment</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
-                  We analyze your current operations, identify inefficiencies, and close gaps to achieve the level of
-                  visibility investors demand.
+                  We audit operations against PE growth expectations and identify gaps that slow portfolio value
+                  creation.
                 </p>
               </div>
             </div>
@@ -398,7 +398,8 @@ export default function DataOpsHomepage() {
               <div className="space-y-4">
                 <h3 className="headline text-xl text-gray-900">Step 2: Rapid Implementation</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
-                  We deploy proven playbooks and custom solutions for PE portfolio analytics and investor reporting.
+                  We deploy proven HubSpot systems designed for PE portfolio scalability and investor reporting
+                  requirements.
                 </p>
               </div>
             </div>
@@ -410,7 +411,8 @@ export default function DataOpsHomepage() {
               <div className="space-y-4">
                 <h3 className="headline text-xl text-gray-900">Step 3: Portfolio Optimization</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
-                  We ensure long-term success with ongoing support and strategic guidance to drive portfolio value.
+                  We optimize for the metrics PE firms track and ensure systems can scale across other portfolio
+                  companies.
                 </p>
               </div>
             </div>
@@ -430,15 +432,12 @@ export default function DataOpsHomepage() {
               Join 50+ companies that have already transformed their business operations with DataOps Group. Our proven
               methodology helps PE portfolio companies increase valuation and drive growth through data.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
-              <Button className="body-copy bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-base rounded-none w-full sm:w-auto">
-                Get Your Free Assessment
-              </Button>
+            <div className="flex justify-center">
               <Button
-                variant="outline"
-                className="body-copy border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-base rounded-none w-full sm:w-auto transition-colors duration-200"
+                className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
+                style={{ backgroundColor: "#FBB03B" }}
               >
-                Explore our services
+                Get Your Free Assessment
               </Button>
             </div>
           </div>
@@ -448,7 +447,7 @@ export default function DataOpsHomepage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-8">
             <div className="space-y-4">
               <div className="mb-6">
                 <img
@@ -463,7 +462,8 @@ export default function DataOpsHomepage() {
                 <div className="text-xl font-bold text-white headline hidden">DataOps Group</div>
               </div>
               <p className="body-copy text-sm text-gray-400 leading-relaxed">
-                We help PE-backed companies transform their operations and accelerate growth through data.
+                Transforming portfolio operations into profit drivers through expert HubSpot implementation and data
+                operations consulting.
               </p>
             </div>
 
@@ -559,12 +559,38 @@ export default function DataOpsHomepage() {
                 </li>
               </ul>
             </div>
+
+            <div>
+              <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 1
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 2
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 3
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 4
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="border-t border-gray-700 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
               <div className="body-copy text-sm text-gray-400">
-                <p>© 2023 DataOps Group. All rights reserved.</p>
+                <p>© 2025 DataOps Group. All rights reserved.</p>
               </div>
               <div className="flex space-x-4 mt-4 md:mt-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
