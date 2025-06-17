@@ -24,7 +24,7 @@ export default function DataOpsHomepage() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
               <div className="flex items-center">
-                <div className="text-xl font-bold text-gray-900 headline">DataOps Group</div>
+                <img src="/images/dataops-logo.svg" alt="DataOps Group" className="h-12 w-auto" />
               </div>
               <nav className="hidden md:flex space-x-6">
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
