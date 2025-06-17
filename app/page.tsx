@@ -99,7 +99,7 @@ export default function DataOpsHomepage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-base rounded-none">
-                  Get In Touch
+                  Get Your Free Assessment
                 </Button>
                 <Button
                   variant="outline"
