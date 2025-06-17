@@ -599,7 +599,7 @@ export default function DataOpsHomepage() {
                 <Link href="/privacy" className="body-copy text-sm text-gray-400 hover:text-white">
                   Privacy
                 </Link>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                <Link href="/terms" className="body-copy text-sm text-gray-400 hover:text-white">
                   Terms
                 </Link>
               </div>
