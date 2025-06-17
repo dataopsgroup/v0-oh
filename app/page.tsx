@@ -171,18 +171,18 @@ export default function DataOpsHomepage() {
               <div className="grid grid-cols-3 gap-px bg-gray-200">
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">47%</div>
-                  <div className="body-copy text-sm text-gray-600">Increased qualified leads</div>
-                  <div className="body-copy text-xs text-gray-400">Portfolio company average</div>
+                  <div className="body-copy text-sm text-gray-600">in 90 days</div>
+                  <div className="body-copy text-xs text-gray-400">Audio Visual Equipment Wholesaler</div>
                 </div>
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">28%</div>
                   <div className="body-copy text-sm text-gray-600">Reduced sales cycle</div>
-                  <div className="body-copy text-xs text-gray-400">Portfolio company average</div>
+                  <div className="body-copy text-xs text-gray-400">Multi-National Insurance Provider</div>
                 </div>
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">35%</div>
                   <div className="body-copy text-sm text-gray-600">Improvement in close rates</div>
-                  <div className="body-copy text-xs text-gray-400">Portfolio company average</div>
+                  <div className="body-copy text-xs text-gray-400">SaaS Healthcare Tech</div>
                 </div>
               </div>
               <div className="body-copy text-sm text-gray-600">
