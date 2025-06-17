@@ -25,8 +25,12 @@ export default function DataOpsHomepage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <Link href="/" className="flex items-center">
-                <img src="/images/dataops-logo-main.jpg" alt="DataOps Group - Home" className="w-[100px] h-auto" />
+              <Link href="/" className="flex items-center py-2">
+                <img
+                  src="/images/dataops-logo-horizontal.jpg"
+                  alt="DataOps Group - Home"
+                  className="w-[100px] h-auto"
+                />
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
@@ -574,7 +578,7 @@ export default function DataOpsHomepage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                  <Link href="#" className="body-copy text-gray-400 hover:text-white">
                     Contact Us
                   </Link>
                 </li>
