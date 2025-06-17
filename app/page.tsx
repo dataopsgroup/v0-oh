@@ -450,16 +450,19 @@ export default function DataOpsHomepage() {
           <div className="grid md:grid-cols-5 gap-8">
             <div className="space-y-4">
               <div className="mb-6">
+                {/* 
+                  Footer Logo - Optimized for SEO and Performance
+                  - Uses descriptive alt text for accessibility
+                  - Sized appropriately for footer context
+                  - White version for dark background
+                  - Maintains aspect ratio with object-contain
+                */}
                 <img
-                  src="/images/dataops-logo-white.png"
-                  alt="DataOps Group"
-                  className="h-16 w-auto"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none"
-                    e.currentTarget.nextElementSibling.style.display = "block"
-                  }}
+                  src="/images/dataops-logo-white-footer.png"
+                  alt="DataOps Group - Expert HubSpot Implementation and Data Operations Consulting"
+                  className="w-[160px] h-[54px] object-contain"
+                  loading="lazy"
                 />
-                <div className="text-xl font-bold text-white headline hidden">DataOps Group</div>
               </div>
               <p className="body-copy text-sm text-gray-400 leading-relaxed">
                 Transforming portfolio operations into profit drivers through expert HubSpot implementation and data
