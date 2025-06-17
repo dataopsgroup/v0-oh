@@ -25,15 +25,14 @@ export default function DataOpsHomepage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <div className="flex items-center">
-                {/* Bulletproof text-based logo */}
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">D</span>
-                  </div>
-                  <span className="text-xl font-bold text-gray-900 headline">DataOps Group</span>
-                </div>
-              </div>
+              <Link href="/" className="flex items-center">
+                <img
+                  src="/images/dataops-logo-main.jpg"
+                  alt="DataOps Group - Home"
+                  className="h-10 w-auto"
+                  style={{ maxWidth: "180px" }}
+                />
+              </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
@@ -102,6 +101,7 @@ export default function DataOpsHomepage() {
                 </Button>
               </div>
             </div>
+            {/* Removed the placeholder image div completely */}
           </div>
         </div>
       </section>
@@ -153,6 +153,7 @@ export default function DataOpsHomepage() {
                   Trusted by 50+ Companies to Rescue Their HubSpot Investments
                 </h3>
               </div>
+              {/* Updated stats boxes to match IBM style */}
               <div className="grid grid-cols-3 gap-px bg-gray-200">
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">47%</div>
@@ -193,6 +194,7 @@ export default function DataOpsHomepage() {
             <p className="subheadline text-sm text-gray-600 mb-4">Recommended for you</p>
           </div>
 
+          {/* Updated to match IBM grid style */}
           <div className="grid md:grid-cols-4 gap-px bg-gray-200">
             <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
               <div className="w-12 h-12 bg-blue-100 mb-4 flex items-center justify-center">
@@ -270,6 +272,7 @@ export default function DataOpsHomepage() {
             </p>
           </div>
 
+          {/* Updated to match IBM grid style */}
           <div className="grid md:grid-cols-2 gap-px bg-gray-200">
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
               <h3 className="headline text-xl text-gray-900 mb-4">Operations Assessment</h3>
@@ -409,6 +412,7 @@ export default function DataOpsHomepage() {
             </p>
           </div>
 
+          {/* Updated to match IBM grid style */}
           <div className="grid md:grid-cols-3 gap-px bg-gray-200">
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors relative">
               <div className="absolute -top-4 -left-4 w-10 h-10 bg-blue-600 flex items-center justify-center text-white font-bold">
@@ -483,13 +487,16 @@ export default function DataOpsHomepage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="mb-6">
-                {/* Bulletproof text-based logo for footer */}
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                    <span className="text-gray-900 font-bold text-sm">D</span>
-                  </div>
-                  <span className="text-xl font-bold text-white headline">DataOps Group</span>
-                </div>
+                <img
+                  src="/images/dataops-logo-white.png"
+                  alt="DataOps Group"
+                  className="h-16 w-auto"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none"
+                    e.currentTarget.nextElementSibling.style.display = "block"
+                  }}
+                />
+                <div className="text-xl font-bold text-white headline hidden">DataOps Group</div>
               </div>
               <p className="body-copy text-sm text-gray-400 leading-relaxed">
                 We help PE-backed companies transform their operations and accelerate growth through data.
