@@ -59,8 +59,8 @@ export default function DataOpsHomepage() {
             </div>
             <div className="flex items-center space-x-4">
               <Button
-                variant="outline"
-                className="body-copy text-blue-600 border-blue-600 hover:bg-blue-50 rounded-none"
+                className="body-copy text-white hover:bg-blue-400 rounded-none"
+                style={{ backgroundColor: "#8CC7E3" }}
               >
                 <Link href="/contact">Get Started</Link>
               </Button>
@@ -68,7 +68,7 @@ export default function DataOpsHomepage() {
                 className="body-copy text-gray-900 hover:bg-yellow-500 rounded-none"
                 style={{ backgroundColor: "#FBB03B" }}
               >
-                <Link href="/book">Copy Our Playbook</Link>
+                <Link href="/book">📖 Copy Our Playbook</Link>
               </Button>
             </div>
           </div>
