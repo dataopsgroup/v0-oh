@@ -253,19 +253,16 @@ export default function DataOpsHomepage() {
           <div className="mb-12">
             <h2 className="headline text-3xl text-gray-900 mb-4">Our Transformation Services</h2>
             <p className="body-copy text-gray-700 max-w-3xl leading-relaxed">
-              From{" "}
+              Comprehensive HubSpot implementation and data operations solutions designed to transform your business.
+              Learn more about our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                next-generation AI
+                proven methodology
               </Link>{" "}
-              to cutting edge{" "}
+              and view our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                hybrid cloud solutions
-              </Link>{" "}
-              to the deep expertise of{" "}
-              <Link href="#" className="text-blue-600 hover:underline">
-                DataOps Consulting
+                success stories
               </Link>
-              , DataOps has what it takes to help you reinvent how your business works in the age of AI.
+              .
             </p>
           </div>
 
