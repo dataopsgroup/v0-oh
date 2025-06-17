@@ -1,10 +1,37 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-export default function AboutPage() {
+const services = [
+  {
+    title: "Analytics & BI",
+    description: "Transform raw data into actionable insights with custom dashboards and reporting systems.",
+    href: "/services/analytics-bi",
+    features: ["Custom Dashboards", "Performance Tracking", "ROI Analysis"],
+  },
+  {
+    title: "DataOps Implementation",
+    description: "End-to-end implementation of data operations processes and systems.",
+    href: "/services/dataops-implementation",
+    features: ["System Integration", "Process Automation", "Quality Assurance"],
+  },
+  {
+    title: "Team Training",
+    description: "Comprehensive training programs to ensure your team maximizes system adoption.",
+    href: "/services/team-training",
+    features: ["HubSpot Training", "Best Practices", "Ongoing Support"],
+  },
+  {
+    title: "Marketing Operations & RevOps",
+    description: "Align your marketing, sales, and operations teams for maximum revenue growth.",
+    href: "/services/marketing-operations-revops",
+    features: ["Lead Management", "Pipeline Optimization", "Revenue Attribution"],
+  },
+]
+
+export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -30,13 +57,10 @@ export default function AboutPage() {
                 />
               </Link>
               <nav className="hidden md:flex space-x-6">
-                <Link
-                  href="/services"
-                  className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center"
-                >
+                <Link href="/services" className="text-sm body-copy text-blue-600 font-medium flex items-center">
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                 </Link>
-                <Link href="/about" className="text-sm body-copy text-blue-600 font-medium">
+                <Link href="/about" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>
                 <Link href="/approach" className="text-sm body-copy text-gray-700 hover:text-blue-600">
@@ -69,106 +93,154 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="pt-20 pb-16 px-4 bg-gradient-to-br from-white to-gray-50">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-4xl">
+            <div className="max-w-3xl">
               <div className="space-y-6">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-900 text-yellow-500 text-sm font-medium mb-2">
-                  About DataOps Group
+                  What We Offer
                 </div>
                 <h1 className="headline text-4xl md:text-5xl text-gray-900 leading-tight">
-                  Meet the Team Behind Your Data Success
+                  HubSpot & DataOps Services
                 </h1>
-                <p className="body-copy text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed">
-                  We're specialized HubSpot implementation experts who rescue failed projects and transform chaotic
-                  systems into profit-driving platforms that meet private equity standards.
+                <p className="body-copy text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed">
+                  Expert HubSpot implementation, marketing operations, and data services that drive measurable portfolio
+                  growth. Specialized for PE firms and growing companies.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Geoff Tucker Bio */}
+        {/* Content Section */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-16">
-              <div className="lg:col-span-2 space-y-8">
-                <div>
-                  <h2 className="headline text-3xl text-gray-900 mb-6">Geoff Tucker</h2>
-                  <h3 className="subheadline text-xl text-blue-600 font-semibold mb-6">
-                    Founder & Lead HubSpot Implementation Specialist
-                  </h3>
-
-                  <div className="space-y-6 body-copy text-gray-700 leading-relaxed">
-                    <p>
-                      With over 15 years of experience in HubSpot implementations and revenue operations, Geoff has
-                      rescued hundreds of failed projects and transformed them into competitive advantages. His
-                      expertise spans across multiple industries, with particular specialization in private equity
-                      portfolio company optimizations.
+              <div className="lg:col-span-2 space-y-12">
+                {/* Services Overview */}
+                <section className="space-y-8">
+                  <div className="text-center mb-12">
+                    <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">Our Services</h2>
+                    <p className="body-copy text-lg text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
+                      We offer comprehensive data operations solutions designed to transform your business processes and
+                      drive measurable results.
                     </p>
 
-                    <p>
-                      Geoff's approach combines deep technical knowledge with strategic business insight. He understands
-                      that successful implementations aren't just about technology—they're about creating systems that
-                      people actually want to use and that drive measurable business outcomes.
-                    </p>
-
-                    <p>
-                      As a certified HubSpot Solutions Partner, Geoff has led implementations that have delivered
-                      measurable business value for clients. His systematic methodology ensures that every system he
-                      designs directly contributes to bottom-line results while meeting the operational standards that
-                      private equity firms expect.
-                    </p>
-
-                    <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 my-8">
-                      <h4 className="headline text-lg text-blue-800 mb-3">
-                        Curious About Your Implementation's Health?
-                      </h4>
-                      <p className="body-copy text-gray-700 mb-4">
-                        Before working together, Geoff recommends taking our assessment to identify your biggest
-                        operational gaps and growth opportunities.
+                    {/* Assessment CTA - unique to services overview */}
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-12 max-w-2xl mx-auto">
+                      <h3 className="headline text-lg text-blue-900 mb-2">
+                        Which Service Will Drive the Biggest Impact?
+                      </h3>
+                      <p className="body-copy text-blue-800 mb-4">
+                        Take our free operations assessment to get personalized service recommendations based on your
+                        current gaps and business goals.
                       </p>
                       <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-none">
-                        <Link href="#operations-assessment">Take the Operations Assessment</Link>
+                        <Link href="/#operations-assessment">Get Personalized Recommendations</Link>
                       </Button>
                     </div>
+                  </div>
 
-                    <h4 className="headline text-xl text-gray-900 mt-8 mb-4">Core Specializations:</h4>
-                    <ul className="list-disc pl-6 space-y-2 body-copy text-gray-700">
-                      <li>HubSpot Implementation Rescue & Optimization</li>
-                      <li>Private Equity Portfolio Operations</li>
-                      <li>Revenue Operations (RevOps) Strategy</li>
-                      <li>Marketing Automation & Process Design</li>
-                      <li>Data Quality Management & Governance</li>
-                      <li>Sales Process Optimization</li>
-                      <li>Business Intelligence & Analytics</li>
-                    </ul>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {services.map((service, index) => (
+                      <div
+                        key={index}
+                        className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+                      >
+                        <div className="flex items-start space-x-4">
+                          <div className="flex-1">
+                            <h3 className="headline text-xl text-gray-900 mb-2">{service.title}</h3>
+                            <p className="body-copy text-gray-700 mb-4 leading-relaxed">{service.description}</p>
+                            <ul className="space-y-1 mb-4">
+                              {service.features.map((feature, featureIndex) => (
+                                <li key={featureIndex} className="body-copy text-sm text-gray-600 flex items-center">
+                                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                            <Link
+                              href={service.href}
+                              className="body-copy text-blue-600 hover:text-blue-700 font-medium flex items-center"
+                            >
+                              Learn More
+                              <ArrowRight className="ml-1 h-4 w-4" strokeWidth={1.5} />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* Internal links to key resources */}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <h3 className="headline text-xl text-blue-900 mb-4">Ready to Get Started?</h3>
+                  <p className="body-copy text-blue-800 mb-4">
+                    Explore our resources to understand how we can help transform your operations:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <Link
+                      href="/#operations-assessment"
+                      className="body-copy text-blue-600 hover:text-blue-800 font-medium text-sm"
+                    >
+                      → Take our free Data Operations Assessment
+                    </Link>
+                    <Link href="#" className="body-copy text-blue-600 hover:text-blue-800 font-medium text-sm">
+                      → Read our HubSpot Expert Hiring Guide
+                    </Link>
+                    <Link href="#" className="body-copy text-blue-600 hover:text-blue-800 font-medium text-sm">
+                      → View client success stories
+                    </Link>
+                    <Link href="#" className="body-copy text-blue-600 hover:text-blue-800 font-medium text-sm">
+                      → Calculate your potential ROI
+                    </Link>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-8">
-                <div className="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 className="headline text-lg text-gray-900 mb-4">Track Record</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <div className="headline text-2xl text-blue-600">15+</div>
-                      <div className="body-copy text-sm text-gray-600">Years of Experience</div>
-                    </div>
-                    <div>
-                      <div className="headline text-2xl text-blue-600">30+</div>
-                      <div className="body-copy text-sm text-gray-600">Successful Implementations</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 className="headline text-lg text-gray-900 mb-4">Certifications</h3>
-                  <ul className="space-y-2 body-copy text-sm text-gray-700">
-                    <li>• HubSpot Solutions Partner</li>
-                    <li>• HubSpot Marketing Software Certified</li>
-                    <li>• HubSpot Sales Software Certified</li>
-                    <li>• HubSpot Service Hub Certified</li>
-                    <li>• HubSpot CMS Hub Certified</li>
+              {/* Sidebar */}
+              <div>
+                <div className="bg-white border border-gray-100 rounded-lg shadow-sm p-8 sticky top-8">
+                  <h3 className="headline text-xl text-gray-900 mb-6">Why Choose Us</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-0.5">•</span>
+                      <span className="body-copy text-gray-700">
+                        Expertise in HubSpot implementation and optimization
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-0.5">•</span>
+                      <span className="body-copy text-gray-700">Proven track record across diverse industries</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-0.5">•</span>
+                      <span className="body-copy text-gray-700">
+                        Customized solutions for your specific business needs
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-0.5">•</span>
+                      <span className="body-copy text-gray-700">Data-driven approach with measurable results</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-0.5">•</span>
+                      <span className="body-copy text-gray-700">Ongoing support and continuous optimization</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-0.5">•</span>
+                      <span className="body-copy text-gray-700">Seamless integration with existing systems</span>
+                    </li>
                   </ul>
+
+                  <div className="mt-8 pt-8 border-t border-gray-100">
+                    <h3 className="headline text-xl text-gray-900 mb-4">Ready to transform your data operations?</h3>
+                    <p className="body-copy text-gray-700 mb-6 leading-relaxed">
+                      Contact us today to schedule a consultation and learn how our services can help your organization.
+                    </p>
+                    <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white w-full py-2 px-4 rounded-none">
+                      <Link href="/contact">Contact Us</Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -230,22 +302,28 @@ export default function AboutPage() {
               <h4 className="subheadline text-xs text-gray-300 mb-4">Services</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                  <Link href="/services/analytics-bi" className="body-copy text-sm text-gray-400 hover:text-white">
                     Analytics & BI
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                  <Link
+                    href="/services/dataops-implementation"
+                    className="body-copy text-sm text-gray-400 hover:text-white"
+                  >
                     DataOps Implementation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                  <Link href="/services/team-training" className="body-copy text-sm text-gray-400 hover:text-white">
                     HubSpot Training
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                  <Link
+                    href="/services/marketing-operations-revops"
+                    className="body-copy text-sm text-gray-400 hover:text-white"
+                  >
                     Marketing Operations
                   </Link>
                 </li>

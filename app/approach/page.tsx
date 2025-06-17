@@ -62,7 +62,10 @@ export default function ApproachPage() {
                 />
               </Link>
               <nav className="hidden md:flex space-x-6">
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
+                <Link
+                  href="/services"
+                  className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center"
+                >
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                 </Link>
                 <Link href="/about" className="text-sm body-copy text-gray-700 hover:text-blue-600">
