@@ -21,18 +21,18 @@ export default function DataOpsHomepage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-8">
-              <Link href="/" className="flex items-center py-2">
+      <header className="border-b border-gray-200 border-4 border-red-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-2 border-green-500">
+          <div className="flex items-center justify-between h-20 border-2 border-blue-500">
+            <div className="flex items-center space-x-8 border-2 border-purple-500">
+              <Link href="/" className="flex items-center py-2 border-2 border-yellow-500">
                 <img
                   src="/images/dataops-logo-horizontal.jpg"
                   alt="DataOps Group - Home"
-                  className="w-[100px] h-[34px] object-contain"
+                  className="w-[200px] h-[68px] object-contain border-2 border-orange-500"
                 />
               </Link>
-              <nav className="hidden md:flex space-x-6">
+              <nav className="hidden md:flex space-x-6 border-2 border-pink-500">
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                 </Link>
@@ -47,7 +47,7 @@ export default function DataOpsHomepage() {
                 </Link>
               </nav>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 border-2 border-teal-500">
               <Button
                 variant="outline"
                 className="body-copy text-blue-600 border-blue-600 hover:bg-blue-50 rounded-none"
