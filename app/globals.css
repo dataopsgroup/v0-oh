@@ -108,4 +108,16 @@
   .btn-squared {
     @apply rounded-none;
   }
+
+  /* 
+   * !IMPORTANT: DATAOPS LOGO SIZING - DO NOT CHANGE WITHOUT EXPLICIT REQUEST
+   * The DataOps Group logo in the main navigation MUST always be:
+   * - Width: 200px (w-[200px])
+   * - Height: 68px (h-[68px])
+   * - Object-fit: contain (object-contain)
+   * - Navigation bar height: 80px (h-20)
+   * 
+   * This sizing has been specifically tested and approved.
+   * DO NOT modify these dimensions unless explicitly requested by the client.
+   */
 }
