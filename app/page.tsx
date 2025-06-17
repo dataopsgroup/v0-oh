@@ -23,13 +23,13 @@ export default function DataOpsHomepage() {
       {/* Header */}
       <header className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-8">
               <Link href="/" className="flex items-center py-2">
                 <img
                   src="/images/dataops-logo-horizontal.jpg"
                   alt="DataOps Group - Home"
-                  className="w-[100px] h-auto"
+                  className="w-[100px] h-[34px] object-contain"
                 />
               </Link>
               <nav className="hidden md:flex space-x-6">
