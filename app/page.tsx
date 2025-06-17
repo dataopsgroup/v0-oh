@@ -137,15 +137,15 @@ export default function DataOpsHomepage() {
               <ul className="space-y-3 mt-6">
                 <li className="flex items-center body-copy text-gray-700">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                  <span>Trusted by 50+ companies</span>
+                  <span>19% higher valuation multiples</span>
                 </li>
                 <li className="flex items-center body-copy text-gray-700">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                  <span>77% faster EBITDA growth</span>
+                  <span>73% faster EBITDA growth</span>
                 </li>
                 <li className="flex items-center body-copy text-gray-700">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                  <span>3:1 to 5:1 ROI on investment</span>
+                  <span>$18-22 ROI per $1 invested in HubSpot</span>
                 </li>
               </ul>
               <div className="space-y-3 mt-6">
