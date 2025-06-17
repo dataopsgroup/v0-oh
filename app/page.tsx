@@ -33,7 +33,7 @@ export default function DataOpsHomepage() {
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                 </Link>
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
+                <Link href="/about" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
@@ -178,7 +178,7 @@ export default function DataOpsHomepage() {
                   service offerings
                 </Link>{" "}
                 or learn more about{" "}
-                <Link href="#" className="text-blue-600 hover:underline">
+                <Link href="/about" className="text-blue-600 hover:underline">
                   our team
                 </Link>
                 .
@@ -189,7 +189,7 @@ export default function DataOpsHomepage() {
       </section>
 
       {/* Assessment Tools */}
-      <section className="py-20">
+      <section className="py-20" id="operations-assessment">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-6">
             <p className="subheadline text-sm text-gray-600">Assessment Tools</p>
