@@ -10,9 +10,7 @@ import {
   BookOpen,
   Megaphone,
   Settings,
-  BarChart3,
   Users,
-  Cog,
   Target,
 } from "lucide-react"
 import Link from "next/link"
@@ -185,7 +183,7 @@ export default function DataOpsHomepage() {
                   <div className="body-copy text-xs text-gray-400">SaaS Healthcare Tech</div>
                 </div>
               </div>
-              <div className="body-copy text-sm text-gray-600">
+              <div className="body-copy text-base text-gray-600">
                 Ready to transform your operations? Explore our comprehensive{" "}
                 <Link href="#" className="text-blue-600 hover:underline">
                   service offerings
@@ -202,74 +200,6 @@ export default function DataOpsHomepage() {
       </section>
 
       {/* Recommended for you - IBM Style */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <p className="subheadline text-sm text-gray-600 mb-4">Recommended for you</p>
-          </div>
-
-          {/* Updated to match IBM grid style */}
-          <div className="grid md:grid-cols-4 gap-px bg-gray-200">
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-blue-100 mb-4 flex items-center justify-center">
-                <BarChart3 className="h-6 w-6 text-blue-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">Analytics Assessment</h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                5-minute assessment to identify operational gaps and prioritize improvements for maximum impact.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-blue-100 mb-4 flex items-center justify-center">
-                <Users className="h-6 w-6 text-blue-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">Supporting business processes in HR</h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                Streamline HR operations with data-driven insights and automated workflows.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-purple-100 mb-4 flex items-center justify-center">
-                <Target className="h-6 w-6 text-purple-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">Smart Data And Solutions reduces errors by 65%</h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                Proven methodology that delivers measurable results for PE portfolio companies.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-teal-100 mb-4 flex items-center justify-center">
-                <Cog className="h-6 w-6 text-teal-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">
-                Explore the capabilities of our product-fit agents at the edge
-              </h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                Advanced analytics and automation capabilities for modern data operations.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Assessment Tools */}
       <section className="py-20">
@@ -310,7 +240,7 @@ export default function DataOpsHomepage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="body-copy text-gray-700">
+            <p className="body-copy text-lg text-gray-700">
               Join 50+ portfolio companies that have already strengthened their operational foundation.
             </p>
           </div>
@@ -321,7 +251,7 @@ export default function DataOpsHomepage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="headline text-3xl text-gray-900 mb-4">Technology and consulting</h2>
+            <h2 className="headline text-3xl text-gray-900 mb-4">Our Transformation Services</h2>
             <p className="body-copy text-gray-700 max-w-3xl leading-relaxed">
               From{" "}
               <Link href="#" className="text-blue-600 hover:underline">
