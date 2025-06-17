@@ -596,7 +596,7 @@ export default function DataOpsHomepage() {
                 <p>© 2025 DataOps Group. All rights reserved.</p>
               </div>
               <div className="flex space-x-4 mt-4 md:mt-0">
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                <Link href="/privacy" className="body-copy text-sm text-gray-400 hover:text-white">
                   Privacy
                 </Link>
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
