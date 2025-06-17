@@ -14,12 +14,8 @@ import {
   Target,
 } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function DataOpsHomepage() {
-  // Generate a cache-busting timestamp
-  const cacheBuster = new Date().getTime()
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -28,18 +24,16 @@ export default function DataOpsHomepage() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
               <div className="flex items-center">
-                {/* Use Next.js Image component with unoptimized for SVG */}
-                <Image
-                  src={`/images/dataops-logo.svg?v=${cacheBuster}`}
+                <img
+                  src="/images/dataops-logo.svg"
                   alt="DataOps Group"
-                  width={120}
-                  height={48}
-                  priority
-                  unoptimized
                   className="h-12 w-auto"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none"
+                    e.currentTarget.nextElementSibling.style.display = "block"
+                  }}
                 />
-                {/* Fallback text in case image fails */}
-                <span className="sr-only">DataOps Group</span>
+                <div className="text-xl font-bold text-gray-900 headline hidden">DataOps Group</div>
               </div>
               <nav className="hidden md:flex space-x-6">
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
@@ -73,7 +67,7 @@ export default function DataOpsHomepage() {
       <section
         className="bg-gray-50 relative overflow-hidden"
         style={{
-          backgroundImage: `url(/images/hero-wireframe-bg.jpg?v=${cacheBuster})`,
+          backgroundImage: "url(/images/hero-wireframe-bg.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -495,15 +489,16 @@ export default function DataOpsHomepage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="mb-6">
-                {/* Use Next.js Image component with unoptimized for PNG */}
-                <Image
-                  src={`/images/dataops-logo-white.png?v=${cacheBuster}`}
+                <img
+                  src="/images/dataops-logo-white.png"
                   alt="DataOps Group"
-                  width={160}
-                  height={64}
-                  unoptimized
                   className="h-16 w-auto"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none"
+                    e.currentTarget.nextElementSibling.style.display = "block"
+                  }}
                 />
+                <div className="text-xl font-bold text-white headline hidden">DataOps Group</div>
               </div>
               <p className="body-copy text-sm text-gray-400 leading-relaxed">
                 We help PE-backed companies transform their operations and accelerate growth through data.
