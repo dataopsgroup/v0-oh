@@ -36,7 +36,7 @@ export default function TermsOfService() {
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
+                <Link href="/approach" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   Approach
                 </Link>
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
