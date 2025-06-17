@@ -62,9 +62,14 @@ export default function DataOpsHomepage() {
                 variant="outline"
                 className="body-copy text-blue-600 border-blue-600 hover:bg-blue-50 rounded-none"
               >
-                Schedule a Demo
+                <Link href="/contact">Get Started</Link>
               </Button>
-              <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white rounded-none">Contact</Button>
+              <Button
+                className="body-copy text-gray-900 hover:bg-yellow-500 rounded-none"
+                style={{ backgroundColor: "#FBB03B" }}
+              >
+                <Link href="/book">Copy Our Playbook</Link>
+              </Button>
             </div>
           </div>
         </div>
