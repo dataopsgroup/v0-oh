@@ -133,7 +133,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Content Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-16">
               <div className="lg:col-span-2 space-y-12">
