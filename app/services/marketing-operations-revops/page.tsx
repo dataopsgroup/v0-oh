@@ -133,75 +133,97 @@ export default function MarketingOperationsRevOps() {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="headline text-3xl text-gray-900">RevOps Benefits for Portfolio Companies</h2>
-            <p className="body-copy text-lg text-gray-600 max-w-3xl mx-auto">
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">
+              RevOps Benefits for Portfolio Companies
+            </h2>
+            <p className="body-copy text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Systematic revenue operations that align teams, optimize processes, and drive predictable growth
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <TrendingUp className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Revenue Growth Acceleration</h3>
-              <p className="body-copy text-gray-600">
+
+          {/* 9-card grid in 3 columns */}
+          <div className="grid md:grid-cols-3 gap-px bg-gray-200">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <TrendingUp className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Revenue Growth Acceleration</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Optimize revenue operations to drive consistent, predictable growth across all portfolio companies.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <Target className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Marketing Attribution</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <Target className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Marketing Attribution</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Track and measure marketing impact across all touchpoints to optimize campaign performance and ROI.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <BarChart3 className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Advanced Analytics</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <BarChart3 className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Advanced Analytics</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Implement sophisticated analytics frameworks to gain deep insights into revenue performance.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <Users className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Team Alignment</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <Users className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Team Alignment</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Align marketing, sales, and customer success teams around shared revenue goals and metrics.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <Workflow className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Process Automation</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <Workflow className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Process Automation</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Automate repetitive tasks and workflows to improve efficiency and reduce manual errors.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <PieChart className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Performance Optimization</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <PieChart className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Performance Optimization</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Continuously optimize marketing and sales performance through data-driven insights and testing.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <LineChart className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Predictable Forecasting</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <LineChart className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Predictable Forecasting</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Implement accurate forecasting models to predict revenue and plan strategic initiatives.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <Database className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Data Integration</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <Database className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Data Integration</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Integrate disparate data sources to create a single source of truth for revenue operations.
               </p>
             </div>
-            <div className="bg-white p-6 border border-gray-200 space-y-4">
-              <Shield className="h-8 w-8 text-blue-600" />
-              <h3 className="headline text-lg text-gray-900">Scalable Operations</h3>
-              <p className="body-copy text-gray-600">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <Shield className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Scalable Operations</h3>
+              <p className="body-copy text-sm text-gray-600 leading-relaxed">
                 Build scalable revenue operations that grow with your portfolio companies and market expansion.
               </p>
             </div>
