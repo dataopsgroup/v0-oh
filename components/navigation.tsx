@@ -144,7 +144,17 @@ export default function Navigation() {
             </div>
           </nav>
           <div className="flex items-center space-x-4">
-            <Button className="body-copy text-white rounded-none !bg-green-500 hover:!bg-green-600">
+            <Button
+              variant="secondary"
+              className="body-copy text-white rounded-none"
+              style={{
+                backgroundColor: "#22c55e",
+                color: "white",
+                transition: "background-color 0.2s ease",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#16a34a")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#22c55e")}
+            >
               <Link href="/contact">Get Started</Link>
             </Button>
             <Button
