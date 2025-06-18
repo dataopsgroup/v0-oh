@@ -357,7 +357,7 @@ export default function DataOpsHomepage() {
           </div>
 
           <div className="text-center">
-            <h3 className="headline text-base text-gray-700">
+            <h2 className="headline text-base text-gray-700">
               Want to see all our services? Visit our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
                 complete services page
@@ -367,7 +367,7 @@ export default function DataOpsHomepage() {
                 contact us for a custom consultation
               </Link>
               .
-            </h3>
+            </h2>
           </div>
         </div>
       </section>
