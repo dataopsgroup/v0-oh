@@ -32,25 +32,25 @@ export default function DataOpsHomepage() {
               <nav className="hidden md:flex space-x-6">
                 <Link
                   href="/services"
-                  className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center"
+                  className="text-base body-copy text-gray-700 hover:text-blue-600 flex items-center"
                 >
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                 </Link>
-                <Link href="/about" className="text-sm body-copy text-gray-700 hover:text-blue-600">
+                <Link href="/about" className="text-base body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>
-                <Link href="/approach" className="text-sm body-copy text-gray-700 hover:text-blue-600">
+                <Link href="/approach" className="text-base body-copy text-gray-700 hover:text-blue-600">
                   Approach
                 </Link>
                 <div className="relative group">
-                  <button className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
+                  <button className="text-base body-copy text-gray-700 hover:text-blue-600 flex items-center">
                     Insights <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                   </button>
                   <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <div className="py-2">
                       <Link
                         href="/insights/hubspot-for-private-equity"
-                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                        className="block px-4 py-2 text-base body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
                       >
                         HubSpot for Private Equity
                       </Link>
