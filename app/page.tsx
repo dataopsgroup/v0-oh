@@ -83,6 +83,12 @@ export default function DataOpsHomepage() {
                     >
                       HubSpot for Private Equity
                     </Link>
+                    <Link
+                      href="/guides/hubspot-expert"
+                      className="block px-4 py-2 text-base body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                    >
+                      How to Hire a HubSpot Expert
+                    </Link>
                   </div>
                 </div>
               </div>
