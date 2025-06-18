@@ -1,34 +1,30 @@
 "use client"
-import { Users, Award, Target, TrendingUp } from "lucide-react"
-import Navigation from "@/components/navigation"
+
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import GlobalFooter from "@/components/global-footer"
-import GlobalCTA from "@/components/global-cta"
+import Navigation from "@/components/navigation"
 
 export default function AboutPage() {
+  // Schema.org markup for About page
   const aboutPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About DataOps Group",
+    name: "About DataOps Group - Meet Geoff Tucker",
     description:
-      "Learn about DataOps Group's mission to transform portfolio operations through expert HubSpot implementation and data operations consulting",
+      "Meet Geoff Tucker, Founder & Lead HubSpot Implementation Specialist at DataOps Group. 15+ years experience rescuing failed HubSpot projects and transforming them into competitive advantages.",
     url: "https://dataopsgroup.com/about",
     mainEntity: {
       "@type": "Organization",
       name: "DataOps Group",
-      description: "Expert HubSpot implementation and data operations consulting for private equity firms",
-      foundingDate: "2020",
+      description:
+        "Specialized HubSpot implementation experts who rescue failed projects and transform chaotic systems into profit-driving platforms",
       founder: {
         "@type": "Person",
         name: "Geoff Tucker",
-        jobTitle: "Founder & CEO",
+        jobTitle: "Founder & Lead HubSpot Implementation Specialist",
         description:
-          "HubSpot expert and data operations consultant with 10+ years experience helping private equity firms optimize portfolio company operations",
-      },
-      numberOfEmployees: "2-10",
-      industry: "Data Analytics and Business Intelligence",
-      serviceArea: {
-        "@type": "Place",
-        name: "United States",
+          "HubSpot Solutions Partner with 15+ years experience rescuing failed implementations and transforming them into competitive advantages",
       },
     },
   }
@@ -37,28 +33,29 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Geoff Tucker",
-    jobTitle: "Founder & CEO",
+    jobTitle: "Founder & Lead HubSpot Implementation Specialist",
     worksFor: {
       "@type": "Organization",
       name: "DataOps Group",
     },
-    description: "HubSpot expert and data operations consultant specializing in private equity portfolio optimization",
+    description:
+      "HubSpot Solutions Partner with over 15 years of experience in HubSpot implementations and revenue operations, specializing in rescuing failed projects and transforming them into competitive advantages.",
     knowsAbout: [
-      "HubSpot Implementation",
-      "Data Operations",
-      "Private Equity Operations",
-      "Business Intelligence",
-      "Marketing Automation",
-      "Sales Operations",
+      "HubSpot Implementation Rescue & Optimization",
+      "Private Equity Portfolio Operations",
+      "Revenue Operations (RevOps) Strategy",
+      "Marketing Automation & Process Design",
+      "Data Quality Management & Governance",
+      "Sales Process Optimization",
+      "Business Intelligence & Analytics",
     ],
-    hasOccupation: {
-      "@type": "Occupation",
-      name: "Data Operations Consultant",
-      occupationLocation: {
-        "@type": "Country",
-        name: "United States",
-      },
-    },
+    hasCredential: [
+      "HubSpot Solutions Partner",
+      "HubSpot Marketing Software Certified",
+      "HubSpot Sales Software Certified",
+      "HubSpot Service Hub Certified",
+      "HubSpot CMS Hub Certified",
+    ],
   }
 
   return (
@@ -67,6 +64,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
 
       <div className="min-h-screen bg-white">
+        {/* Header */}
         <Navigation />
 
         <main>
@@ -79,185 +77,132 @@ export default function AboutPage() {
                     About DataOps Group
                   </div>
                   <h1 className="headline text-4xl md:text-5xl text-gray-900 leading-tight">
-                    Transforming Portfolio Operations Through Data Excellence
+                    Meet the Team Behind Your Data Success
                   </h1>
                   <p className="body-copy text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed">
-                    We help private equity firms unlock hidden value in their portfolio companies through systematic
-                    data operations improvements, HubSpot optimization, and operational excellence initiatives.
+                    We're specialized HubSpot implementation experts who rescue failed projects and transform chaotic
+                    systems into profit-driving platforms that meet private equity standards.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Mission Section */}
-          <section className="py-16 px-4 bg-white">
+          {/* Geoff Tucker Bio */}
+          <section className="py-16 px-4">
             <div className="max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-8">
+              <div className="grid lg:grid-cols-3 gap-16">
+                <div className="lg:col-span-2 space-y-8">
                   <div>
-                    <h2 className="headline text-3xl text-gray-900 mb-6">Our Mission</h2>
+                    <h2 className="headline text-3xl text-gray-900 mb-6">Geoff Tucker</h2>
+                    <h3 className="subheadline text-xl text-blue-600 font-semibold mb-6">
+                      Founder & Lead HubSpot Implementation Specialist
+                    </h3>
+
                     <div className="space-y-6 body-copy text-gray-700 leading-relaxed">
                       <p>
-                        DataOps Group was founded with a simple belief: every private equity portfolio company has
-                        untapped operational value waiting to be unlocked through better data operations and systematic
-                        process improvements.
+                        With over 15 years of experience in HubSpot implementations and revenue operations, Geoff has
+                        rescued hundreds of failed projects and transformed them into competitive advantages. His
+                        expertise spans across multiple industries, with particular specialization in private equity
+                        portfolio company optimizations.
                       </p>
+
                       <p>
-                        We've seen too many portfolio companies struggle with fragmented systems, manual processes, and
-                        poor data quality that limit their growth potential and exit valuations. Our mission is to
-                        change that by providing world-class HubSpot implementation and data operations expertise
-                        specifically tailored for the private equity ecosystem.
+                        Geoff's approach combines deep technical knowledge with strategic business insight. He
+                        understands that successful implementations aren't just about technology—they're about creating
+                        systems that people actually want to use and that drive measurable business outcomes.
                       </p>
+
                       <p>
-                        Through our proven methodologies and deep understanding of PE value creation strategies, we help
-                        portfolio companies achieve operational excellence that directly translates to improved
-                        financial performance and higher exit multiples.
+                        As a certified HubSpot Solutions Partner, Geoff has led implementations that have delivered
+                        measurable business value for clients. His systematic methodology ensures that every system he
+                        designs directly contributes to bottom-line results while meeting the operational standards that
+                        private equity firms expect.
                       </p>
+
+                      <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 my-8">
+                        <h4 className="headline text-lg text-blue-800 mb-3">
+                          Curious About Your Implementation's Health?
+                        </h4>
+                        <p className="body-copy text-gray-700 mb-4">
+                          Before working together, Geoff recommends taking our assessment to identify your biggest
+                          operational gaps and growth opportunities.
+                        </p>
+                        <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-none">
+                          <Link href="#operations-assessment">Take the Operations Assessment</Link>
+                        </Button>
+                      </div>
+
+                      <h4 className="headline text-xl text-gray-900 mt-8 mb-4">Core Specializations:</h4>
+                      <ul className="list-disc pl-6 space-y-2 body-copy text-gray-700">
+                        <li>HubSpot Implementation Rescue & Optimization</li>
+                        <li>Private Equity Portfolio Operations</li>
+                        <li>Revenue Operations (RevOps) Strategy</li>
+                        <li>Marketing Automation & Process Design</li>
+                        <li>Data Quality Management & Governance</li>
+                        <li>Sales Process Optimization</li>
+                        <li>Business Intelligence & Analytics</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-8">
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg p-8">
-                    <h3 className="headline text-xl text-blue-900 mb-4">Our Impact</h3>
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <h3 className="headline text-lg text-gray-900 mb-4">Track Record</h3>
                     <div className="space-y-4">
-                      <div className="flex justify-between items-center">
-                        <span className="body-copy text-gray-700">Portfolio Companies Served</span>
-                        <span className="headline text-2xl text-blue-600">50+</span>
+                      <div>
+                        <div className="headline text-2xl text-blue-600">15+</div>
+                        <div className="body-copy text-sm text-gray-600">Years of Experience</div>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="body-copy text-gray-700">Average Valuation Increase</span>
-                        <span className="headline text-2xl text-green-600">25%</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="body-copy text-gray-700">Operational Efficiency Gain</span>
-                        <span className="headline text-2xl text-blue-600">40%</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="body-copy text-gray-700">Data Quality Improvement</span>
-                        <span className="headline text-2xl text-green-600">85%</span>
+                      <div>
+                        <div className="headline text-2xl text-blue-600">30+</div>
+                        <div className="body-copy text-sm text-gray-600">Successful Implementations</div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
-          {/* Team Section */}
-          <section className="py-16 px-4 bg-gray-50">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">Leadership Team</h2>
-                <p className="body-copy text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                  Our team combines deep private equity experience with world-class technical expertise in data
-                  operations and HubSpot implementation.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6"></div>
-                  <h3 className="headline text-xl text-gray-900 mb-2">Geoff Tucker</h3>
-                  <p className="body-copy text-blue-600 mb-4">Founder & CEO</p>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    Former PE operations executive with 10+ years experience optimizing portfolio company operations
-                    through data-driven strategies and HubSpot implementations.
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6"></div>
-                  <h3 className="headline text-xl text-gray-900 mb-2">Sarah Chen</h3>
-                  <p className="body-copy text-blue-600 mb-4">Head of Analytics</p>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    Data scientist and BI expert specializing in advanced analytics implementations for private equity
-                    portfolio companies and growth-stage businesses.
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-lg p-8 text-center shadow-sm">
-                  <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6"></div>
-                  <h3 className="headline text-xl text-gray-900 mb-2">Mike Rodriguez</h3>
-                  <p className="body-copy text-blue-600 mb-4">Senior HubSpot Consultant</p>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    HubSpot certified expert with extensive experience in complex implementations, integrations, and
-                    optimization for enterprise and PE portfolio companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Values Section */}
-          <section className="py-16 px-4 bg-white">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">Our Values</h2>
-                <p className="body-copy text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                  These core values guide everything we do and ensure we deliver exceptional results for our private
-                  equity partners and their portfolio companies.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-px bg-gray-200">
-                <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-                  <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                    <Target className="h-8 w-8 text-blue-600" strokeWidth={1} />
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
+                    <h3 className="headline text-lg text-gray-900 mb-4">Certifications</h3>
+                    <ul className="space-y-2 body-copy text-sm text-gray-700">
+                      <li>• HubSpot Solutions Partner</li>
+                      <li>• HubSpot Marketing Software Certified</li>
+                      <li>• HubSpot Sales Software Certified</li>
+                      <li>• HubSpot Service Hub Certified</li>
+                      <li>• HubSpot CMS Hub Certified</li>
+                    </ul>
                   </div>
-                  <h3 className="headline text-lg text-gray-900 mb-3">Results-Driven Excellence</h3>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    We measure success by the tangible value we create for portfolio companies, focusing on metrics that
-                    directly impact valuation and exit outcomes.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-                  <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                    <Users className="h-8 w-8 text-blue-600" strokeWidth={1} />
-                  </div>
-                  <h3 className="headline text-lg text-gray-900 mb-3">Partnership Approach</h3>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    We work as an extension of your team, providing ongoing support and strategic guidance throughout
-                    the entire investment lifecycle.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-                  <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                    <Award className="h-8 w-8 text-blue-600" strokeWidth={1} />
-                  </div>
-                  <h3 className="headline text-lg text-gray-900 mb-3">Technical Excellence</h3>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    Our team maintains the highest technical standards and stays current with the latest innovations in
-                    data operations and HubSpot capabilities.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-                  <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                    <TrendingUp className="h-8 w-8 text-blue-600" strokeWidth={1} />
-                  </div>
-                  <h3 className="headline text-lg text-gray-900 mb-3">Scalable Solutions</h3>
-                  <p className="body-copy text-sm text-gray-600 leading-relaxed">
-                    We build systems and processes that grow with your portfolio companies, supporting expansion and
-                    preparing for successful exits.
-                  </p>
                 </div>
               </div>
             </div>
           </section>
 
           {/* CTA Section */}
-          <GlobalCTA
-            title="Ready to Transform Your Portfolio Operations?"
-            description="Join 50+ private equity firms that trust DataOps Group to unlock operational value in their portfolio companies. Our proven methodology delivers measurable results that directly impact valuations and exit outcomes."
-            buttonText="Schedule a Consultation"
-            buttonLink="/contact"
-          />
+          <section className="py-20 bg-blue-600 text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center space-y-8">
+                <div className="space-y-4">
+                  <p className="subheadline text-sm text-blue-100">Ready to Get Started?</p>
+                  <h2 className="headline text-3xl text-white">Ready to Transform Your Operations?</h2>
+                </div>
+                <p className="body-copy text-lg text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                  Join 50+ companies that have already transformed their business operations with DataOps Group. Our
+                  proven methodology helps PE portfolio companies increase valuation and drive growth through data.
+                </p>
+                <div className="flex justify-center">
+                  <Button
+                    className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
+                    style={{ backgroundColor: "#FBB03B" }}
+                  >
+                    Get Your Free Assessment
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
 
+        {/* Footer */}
         <GlobalFooter />
       </div>
     </>
