@@ -12,7 +12,6 @@ import {
   Database,
   CheckCircle,
   AlertTriangle,
-  ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -375,31 +374,6 @@ export default function MarketingOperationsRevOps() {
                     <p className="body-copy text-gray-600">
                       Deploy machine learning models for accurate revenue forecasting and predictive insights.
                     </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="headline text-lg text-gray-900 mb-4">RevOps Services</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="body-copy text-gray-700">Marketing Attribution Setup</span>
-                    <ArrowRight className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="body-copy text-gray-700">Sales Process Optimization</span>
-                    <ArrowRight className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="body-copy text-gray-700">Revenue Forecasting Models</span>
-                    <ArrowRight className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="body-copy text-gray-700">Performance Dashboards</span>
-                    <ArrowRight className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="body-copy text-gray-700">Team Alignment Workshops</span>
-                    <ArrowRight className="h-4 w-4 text-blue-600" />
                   </div>
                 </div>
               </div>
