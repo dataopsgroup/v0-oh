@@ -243,9 +243,7 @@ export default function DataOpsHomepage() {
 
           <div className="text-center mt-12">
             <p className="body-copy text-lg text-gray-700">
-              Join 50+ portfolio companies that have already strengthened their operational foundation.
-            </p>
-          </div>
+              Join 50+ companies that have already strengthened their operational foundation.div>
         </div>
       </section>
 
