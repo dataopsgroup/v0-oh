@@ -106,32 +106,6 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="subheadline text-xs text-gray-300 mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  Client Support Portal
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="body-copy text-gray-400 hover:text-white">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  Schedule a Call
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
             <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
             <ul className="space-y-2">
               <li>
