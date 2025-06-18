@@ -80,6 +80,19 @@
   label {
     font-family: "Lato", sans-serif;
   }
+
+  /* Navigation should always use Lato */
+  nav,
+  nav a,
+  nav button {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Footer should always use Lato */
+  footer,
+  footer * {
+    font-family: "Lato", sans-serif !important;
+  }
 }
 
 /* Custom Typography Classes */
@@ -120,6 +133,16 @@
 
   /* Button text should always be Lato */
   button .body-copy {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Navigation items should always be Lato */
+  nav .body-copy {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Footer items should always be Lato */
+  footer .body-copy {
     font-family: "Lato", sans-serif !important;
   }
 
