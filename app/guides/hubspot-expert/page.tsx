@@ -326,7 +326,7 @@ const HubSpotExpertGuide = () => {
         </section>
 
         {/* Quick Navigation */}
-        <section className="py-12 bg-gray-50 border-b">
+        <section className="py-12 bg-gray-50 border-b sticky top-0 z-10 shadow-sm">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-semibold mb-8 text-center">Quick Navigation</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -335,31 +335,31 @@ const HubSpotExpertGuide = () => {
                   href="#introduction"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Introduction
+                  1. Introduction
                 </a>
                 <a
                   href="#experts-vs-agencies"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Experts vs. Agencies
+                  2. Experts vs. Agencies
                 </a>
                 <a
                   href="#types-of-expertise"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Types of Expertise
+                  3. Types of Expertise
                 </a>
                 <a
                   href="#beyond-agency-safety"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Beyond Agency Safety
+                  4. Beyond Agency Safety
                 </a>
                 <a
                   href="#when-you-need-expert"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  When You Need an Expert
+                  5. When You Need an Expert
                 </a>
               </div>
               <div className="space-y-2">
@@ -367,31 +367,31 @@ const HubSpotExpertGuide = () => {
                   href="#evaluating-qualifications"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Evaluating Qualifications
+                  6. Evaluating Qualifications
                 </a>
                 <a
                   href="#pricing-guide"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Pricing Guide
+                  7. Pricing Guide
                 </a>
                 <a
                   href="#hiring-process"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Hiring Process
+                  8. Hiring Process
                 </a>
                 <a
                   href="#essential-questions"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Essential Questions
+                  9. Essential Questions
                 </a>
                 <a
                   href="#maximizing-partnership"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Maximizing Partnership
+                  10. Maximizing Partnership
                 </a>
               </div>
               <div className="space-y-2">
@@ -399,19 +399,19 @@ const HubSpotExpertGuide = () => {
                   href="#success-stories"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Success Stories
+                  11. Success Stories
                 </a>
                 <a
                   href="#common-pitfalls"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Common Pitfalls
+                  12. Common Pitfalls
                 </a>
                 <a
                   href="#final-decision"
                   className="block text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                 >
-                  Making Your Final Decision
+                  13. Making Your Final Decision
                 </a>
               </div>
             </div>
@@ -2075,7 +2075,7 @@ const HubSpotExpertGuide = () => {
                         <TrendingUp className="w-8 h-8 text-blue-600" />
                       </div>
                       <h4 className="font-semibold text-blue-800 mb-2">Track Record</h4>
-                      <p classNameclassName="text-blue-700 text-sm">25% weight</p>
+                      <p className="text-blue-700 text-sm">25% weight</p>
                       <p className="text-blue-600 text-xs mt-2">Proven results in similar projects</p>
                     </div>
                     <div className="text-center">
