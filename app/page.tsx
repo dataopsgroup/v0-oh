@@ -1,18 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import {
-  ChevronDown,
-  ArrowRight,
-  Database,
-  TrendingUp,
-  LineChart,
-  BookOpen,
-  Megaphone,
-  Settings,
-  BarChart3,
-  Users,
-  Cog,
-  Target,
-} from "lucide-react"
+import { ChevronDown, ArrowRight, Database, BookOpen, Megaphone, Users, Target, BarChart3 } from "lucide-react"
 import Link from "next/link"
 
 export default function DataOpsHomepage() {
@@ -21,34 +10,68 @@ export default function DataOpsHomepage() {
       {/* Header */}
       <header className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-8">
-              <div className="flex items-center">
-                <img src="/images/dataops-logo.svg" alt="DataOps Group" className="h-12 w-auto" />
-              </div>
+              <Link href="/" className="flex items-center py-2">
+                {/* 
+                  !IMPORTANT: DATAOPS LOGO SIZING - DO NOT CHANGE WITHOUT EXPLICIT REQUEST
+                  This logo MUST always be rendered as:
+                  - w-[200px] h-[68px] object-contain
+                  - Navigation bar height: h-20 (80px)
+                  - Image source: /images/dataops-logo-horizontal.jpg
+                  
+                  These dimensions have been specifically tested and approved.
+                  DO NOT modify these classes unless explicitly requested by the client.
+                */}
+                <img
+                  src="/images/dataops-logo-horizontal.jpg"
+                  alt="DataOps Group - Home"
+                  className="w-[200px] h-[68px] object-contain"
+                />
+              </Link>
               <nav className="hidden md:flex space-x-6">
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
+                <Link
+                  href="/services"
+                  className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center"
+                >
                   Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
                 </Link>
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
+                <Link href="/about" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
+                <Link href="/approach" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   Approach
                 </Link>
-                <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
-                  Insights <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
-                </Link>
+                <div className="relative group">
+                  <button className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
+                    Insights <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
+                  </button>
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="py-2">
+                      <Link
+                        href="/insights/hubspot-for-private-equity"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        HubSpot for Private Equity
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </nav>
             </div>
             <div className="flex items-center space-x-4">
               <Button
-                variant="outline"
-                className="body-copy text-blue-600 border-blue-600 hover:bg-blue-50 rounded-none"
+                className="body-copy text-white hover:bg-blue-400 rounded-none"
+                style={{ backgroundColor: "#8CC7E3" }}
               >
-                Schedule a Demo
+                <Link href="/contact">Get Started</Link>
               </Button>
-              <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white rounded-none">Contact</Button>
+              <Button
+                className="body-copy text-gray-900 hover:bg-yellow-500 rounded-none"
+                style={{ backgroundColor: "#FBB03B" }}
+              >
+                <Link href="/book">📖 Copy Our Playbook</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -83,7 +106,7 @@ export default function DataOpsHomepage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-base rounded-none">
-                  Get In Touch
+                  Get Your Free Assessment
                 </Button>
                 <Button
                   variant="outline"
@@ -116,15 +139,15 @@ export default function DataOpsHomepage() {
               <ul className="space-y-3 mt-6">
                 <li className="flex items-center body-copy text-gray-700">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                  <span>Trusted by 50+ companies</span>
+                  <span>19% higher valuation multiples</span>
                 </li>
                 <li className="flex items-center body-copy text-gray-700">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                  <span>77% faster EBITDA growth</span>
+                  <span>73% faster EBITDA growth</span>
                 </li>
                 <li className="flex items-center body-copy text-gray-700">
                   <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></div>
-                  <span>3:1 to 5:1 ROI on investment</span>
+                  <span>$18-22 ROI per $1 invested in HubSpot</span>
                 </li>
               </ul>
               <div className="space-y-3 mt-6">
@@ -150,27 +173,27 @@ export default function DataOpsHomepage() {
               <div className="grid grid-cols-3 gap-px bg-gray-200">
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">47%</div>
-                  <div className="body-copy text-sm text-gray-600">Increased qualified leads</div>
-                  <div className="body-copy text-xs text-gray-400">Portfolio company average</div>
+                  <div className="body-copy text-sm text-gray-600">in 90 days</div>
+                  <div className="body-copy text-xs text-gray-400">Audio Visual Equipment Wholesaler</div>
                 </div>
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">28%</div>
                   <div className="body-copy text-sm text-gray-600">Reduced sales cycle</div>
-                  <div className="body-copy text-xs text-gray-400">Portfolio company average</div>
+                  <div className="body-copy text-xs text-gray-400">Multi-National Insurance Provider</div>
                 </div>
                 <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center space-y-2">
                   <div className="headline text-3xl text-blue-600">35%</div>
                   <div className="body-copy text-sm text-gray-600">Improvement in close rates</div>
-                  <div className="body-copy text-xs text-gray-400">Portfolio company average</div>
+                  <div className="body-copy text-xs text-gray-400">SaaS Healthcare Tech</div>
                 </div>
               </div>
-              <div className="body-copy text-sm text-gray-600">
+              <div className="body-copy text-base text-gray-600">
                 Ready to transform your operations? Explore our comprehensive{" "}
                 <Link href="#" className="text-blue-600 hover:underline">
                   service offerings
                 </Link>{" "}
                 or learn more about{" "}
-                <Link href="#" className="text-blue-600 hover:underline">
+                <Link href="/about" className="text-blue-600 hover:underline">
                   our team
                 </Link>
                 .
@@ -180,78 +203,8 @@ export default function DataOpsHomepage() {
         </div>
       </section>
 
-      {/* Recommended for you - IBM Style */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <p className="subheadline text-sm text-gray-600 mb-4">Recommended for you</p>
-          </div>
-
-          {/* Updated to match IBM grid style */}
-          <div className="grid md:grid-cols-4 gap-px bg-gray-200">
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-blue-100 mb-4 flex items-center justify-center">
-                <BarChart3 className="h-6 w-6 text-blue-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">Analytics Assessment</h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                5-minute assessment to identify operational gaps and prioritize improvements for maximum impact.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-blue-100 mb-4 flex items-center justify-center">
-                <Users className="h-6 w-6 text-blue-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">Supporting business processes in HR</h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                Streamline HR operations with data-driven insights and automated workflows.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-purple-100 mb-4 flex items-center justify-center">
-                <Target className="h-6 w-6 text-purple-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">Smart Data And Solutions reduces errors by 65%</h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                Proven methodology that delivers measurable results for PE portfolio companies.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-
-            <div className="bg-white p-6 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 bg-teal-100 mb-4 flex items-center justify-center">
-                <Cog className="h-6 w-6 text-teal-600" strokeWidth={1.5} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-3">
-                Explore the capabilities of our product-fit agents at the edge
-              </h3>
-              <p className="body-copy text-sm text-gray-600 leading-relaxed mb-4">
-                Advanced analytics and automation capabilities for modern data operations.
-              </p>
-              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Assessment Tools */}
-      <section className="py-20">
+      <section className="py-20" id="operations-assessment">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-6">
             <p className="subheadline text-sm text-gray-600">Assessment Tools</p>
@@ -289,99 +242,132 @@ export default function DataOpsHomepage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="body-copy text-gray-700">
+            <p className="body-copy text-lg text-gray-700">
               Join 50+ portfolio companies that have already strengthened their operational foundation.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Technology and consulting - IBM Style Grid */}
+      {/* Our Transformation Services - IBM Style Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="headline text-3xl text-gray-900 mb-4">Technology and consulting</h2>
+            <h2 className="headline text-3xl text-gray-900 mb-4">Our Transformation Services</h2>
             <p className="body-copy text-gray-700 max-w-3xl leading-relaxed">
-              From{" "}
+              Comprehensive HubSpot implementation and data operations solutions designed to transform your business.
+              Learn more about our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                next-generation AI
+                proven methodology
               </Link>{" "}
-              to cutting edge{" "}
+              and view our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                hybrid cloud solutions
-              </Link>{" "}
-              to the deep expertise of{" "}
-              <Link href="#" className="text-blue-600 hover:underline">
-                DataOps Consulting
+                success stories
               </Link>
-              , DataOps has what it takes to help you reinvent how your business works in the age of AI.
+              .
             </p>
           </div>
 
-          <div className="grid grid-cols-4 gap-px bg-gray-200">
+          <div className="grid grid-cols-3 gap-px bg-gray-200 mb-8">
+            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
+              <div className="w-12 h-12 mb-6 flex items-center justify-center">
+                <BarChart3 className="h-8 w-8 text-blue-600" strokeWidth={1} />
+              </div>
+              <h3 className="headline text-lg text-gray-900 mb-3">Analytics & BI</h3>
+              <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">
+                Transform data into actionable insights with comprehensive analytics and business intelligence
+                solutions.
+              </p>
+              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
+              </Link>
+            </div>
+
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
               <div className="w-12 h-12 mb-6 flex items-center justify-center">
                 <Database className="h-8 w-8 text-blue-600" strokeWidth={1} />
               </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">AI solutions</h3>
-              <p className="body-copy text-sm text-gray-600">IT automation</p>
-            </div>
-
-            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                <LineChart className="h-8 w-8 text-blue-600" strokeWidth={1} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">AI models</h3>
-              <p className="body-copy text-sm text-gray-600">Compute and servers</p>
-            </div>
-
-            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                <Settings className="h-8 w-8 text-blue-600" strokeWidth={1} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">Consulting</h3>
-              <p className="body-copy text-sm text-gray-600">Databases</p>
-            </div>
-
-            <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 mb-6 flex items-center justify-center">
-                <TrendingUp className="h-8 w-8 text-blue-600" strokeWidth={1} />
-              </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">Analytics</h3>
-              <p className="body-copy text-sm text-gray-600">Security and Identity</p>
+              <h3 className="headline text-lg text-gray-900 mb-3">DataOps Implementation</h3>
+              <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">
+                Streamline your data operations with automated processes and improved data quality.
+              </p>
+              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
 
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
               <div className="w-12 h-12 mb-6 flex items-center justify-center">
                 <BookOpen className="h-8 w-8 text-blue-600" strokeWidth={1} />
               </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">Training</h3>
-              <p className="body-copy text-sm text-gray-600">HubSpot Implementation</p>
+              <h3 className="headline text-lg text-gray-900 mb-3">HubSpot Training and Implementation</h3>
+              <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">
+                Comprehensive HubSpot setup and team training to maximize your investment.
+              </p>
+              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
 
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
               <div className="w-12 h-12 mb-6 flex items-center justify-center">
                 <Megaphone className="h-8 w-8 text-blue-600" strokeWidth={1} />
               </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">Marketing Operations</h3>
-              <p className="body-copy text-sm text-gray-600">RevOps Solutions</p>
+              <h3 className="headline text-lg text-gray-900 mb-3">Marketing Operations & RevOps</h3>
+              <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">
+                Optimize your revenue operations with strategic marketing automation and process improvement. Calculate
+                your potential ROI with our RevOps calculator.
+              </p>
+              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
 
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
               <div className="w-12 h-12 mb-6 flex items-center justify-center">
                 <Users className="h-8 w-8 text-blue-600" strokeWidth={1} />
               </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">PE Value Creation</h3>
-              <p className="body-copy text-sm text-gray-600">Portfolio Optimization</p>
+              <h3 className="headline text-lg text-gray-900 mb-3">PE Value Creation Program</h3>
+              <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">
+                Specialized program for private equity firms to optimize portfolio company operations.
+              </p>
+              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
 
             <div className="bg-white p-8 hover:bg-gray-50 transition-colors">
               <div className="w-12 h-12 mb-6 flex items-center justify-center">
                 <Target className="h-8 w-8 text-blue-600" strokeWidth={1} />
               </div>
-              <h3 className="headline text-lg text-gray-900 mb-2">Custom Solutions</h3>
-              <p className="body-copy text-sm text-gray-600">Tailored Implementations</p>
+              <h3 className="headline text-lg text-gray-900 mb-3">Custom Solutions</h3>
+              <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">
+                Tailored data operations solutions designed specifically for your unique business needs.
+              </p>
+              <Link href="#" className="body-copy text-blue-600 hover:underline flex items-center text-sm">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
+              </Link>
             </div>
+          </div>
+
+          <div className="text-center">
+            <p className="body-copy text-base text-gray-700">
+              Want to see all our services? Visit our{" "}
+              <Link href="#" className="text-blue-600 hover:underline">
+                complete services page
+              </Link>{" "}
+              or{" "}
+              <Link href="#" className="text-blue-600 hover:underline">
+                contact us for a custom consultation
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>
@@ -393,13 +379,13 @@ export default function DataOpsHomepage() {
             <p className="subheadline text-sm text-gray-600">How We Work</p>
             <h2 className="headline text-3xl text-gray-900">Our Process</h2>
             <p className="body-copy text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A systematic process that delivers results quickly. Learn about our comprehensive{" "}
+              A systematic process that delivers reliable results. Learn more about our{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                methodology
+                comprehensive methodology
               </Link>{" "}
-              and how we approach{" "}
+              and see how we've helped other{" "}
               <Link href="#" className="text-blue-600 hover:underline">
-                complex business problems
+                portfolio companies achieve success
               </Link>
               .
             </p>
@@ -414,8 +400,8 @@ export default function DataOpsHomepage() {
               <div className="space-y-4">
                 <h3 className="headline text-xl text-gray-900">Step 1: PE-Standard Assessment</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
-                  We analyze your current operations, identify inefficiencies, and close gaps to achieve the level of
-                  visibility investors demand.
+                  We audit operations against PE growth expectations and identify gaps that slow portfolio value
+                  creation.
                 </p>
               </div>
             </div>
@@ -427,7 +413,8 @@ export default function DataOpsHomepage() {
               <div className="space-y-4">
                 <h3 className="headline text-xl text-gray-900">Step 2: Rapid Implementation</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
-                  We deploy proven playbooks and custom solutions for PE portfolio analytics and investor reporting.
+                  We deploy proven HubSpot systems designed for PE portfolio scalability and investor reporting
+                  requirements.
                 </p>
               </div>
             </div>
@@ -439,7 +426,8 @@ export default function DataOpsHomepage() {
               <div className="space-y-4">
                 <h3 className="headline text-xl text-gray-900">Step 3: Portfolio Optimization</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
-                  We ensure long-term success with ongoing support and strategic guidance to drive portfolio value.
+                  We optimize for the metrics PE firms track and ensure systems can scale across other portfolio
+                  companies.
                 </p>
               </div>
             </div>
@@ -459,15 +447,12 @@ export default function DataOpsHomepage() {
               Join 50+ companies that have already transformed their business operations with DataOps Group. Our proven
               methodology helps PE portfolio companies increase valuation and drive growth through data.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
-              <Button className="body-copy bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-base rounded-none w-full sm:w-auto">
-                Get Your Free Assessment
-              </Button>
+            <div className="flex justify-center">
               <Button
-                variant="outline"
-                className="body-copy border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-base rounded-none w-full sm:w-auto transition-colors duration-200"
+                className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
+                style={{ backgroundColor: "#FBB03B" }}
               >
-                Explore our services
+                Get Your Free Assessment
               </Button>
             </div>
           </div>
@@ -477,13 +462,26 @@ export default function DataOpsHomepage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-8">
             <div className="space-y-4">
               <div className="mb-6">
-                <img src="/images/dataops-logo-white.png" alt="DataOps Group" className="h-16 w-auto" />
+                {/* 
+                  Footer Logo - Optimized for SEO and Performance
+                  - Uses descriptive alt text for accessibility
+                  - Sized appropriately for footer context
+                  - White version for dark background
+                  - Maintains aspect ratio with object-contain
+                */}
+                <img
+                  src="/images/dataops-logo-white-footer.png"
+                  alt="DataOps Group - Expert HubSpot Implementation and Data Operations Consulting"
+                  className="w-[160px] h-[54px] object-contain"
+                  loading="lazy"
+                />
               </div>
               <p className="body-copy text-sm text-gray-400 leading-relaxed">
-                We help PE-backed companies transform their operations and accelerate growth through data.
+                Transforming portfolio operations into profit drivers through expert HubSpot implementation and data
+                operations consulting.
               </p>
             </div>
 
@@ -563,7 +561,7 @@ export default function DataOpsHomepage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                  <Link href="#" className="body-copy text-gray-400 hover:text-white">
                     Contact Us
                   </Link>
                 </li>
@@ -579,18 +577,44 @@ export default function DataOpsHomepage() {
                 </li>
               </ul>
             </div>
+
+            <div>
+              <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 1
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 2
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 3
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                    Placeholder FAQ 4
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="border-t border-gray-700 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
               <div className="body-copy text-sm text-gray-400">
-                <p>© 2023 DataOps Group. All rights reserved.</p>
+                <p>© 2025 DataOps Group. All rights reserved.</p>
               </div>
               <div className="flex space-x-4 mt-4 md:mt-0">
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                <Link href="/privacy" className="body-copy text-sm text-gray-400 hover:text-white">
                   Privacy
                 </Link>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                <Link href="/terms" className="body-copy text-sm text-gray-400 hover:text-white">
                   Terms
                 </Link>
               </div>

@@ -65,26 +65,62 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Lato", sans-serif;
+  }
+
+  /* Buttons should always use Lato */
+  button {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Form elements should use Lato */
+  input,
+  select,
+  textarea,
+  label {
+    font-family: "Lato", sans-serif;
   }
 }
 
 /* Custom Typography Classes */
 @layer components {
   .headline {
-    font-family: "Rubik", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 500;
   }
 
+  /* Specific override for h1 elements with headline class */
+  h1.headline {
+    font-family: "Lato", sans-serif;
+    font-weight: 900 !important;
+  }
+
   .subheadline {
-    font-family: "Roboto", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 
+  /* Default body-copy uses Merriweather for paragraph content */
   .body-copy {
-    font-family: "Roboto", sans-serif;
+    font-family: "Merriweather", serif;
     font-weight: 400;
+  }
+
+  /* Override body-copy to use Lato for short descriptive text (text-sm class indicates short labels/descriptions) */
+  .body-copy.text-sm {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Override body-copy to use Lato for any text that's clearly a label or short descriptor */
+  .body-copy.text-xs {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Button text should always be Lato */
+  button .body-copy {
+    font-family: "Lato", sans-serif !important;
   }
 
   /* IBM-Style Box Components */
@@ -108,4 +144,16 @@
   .btn-squared {
     @apply rounded-none;
   }
+
+  /* 
+   * !IMPORTANT: DATAOPS LOGO SIZING - DO NOT CHANGE WITHOUT EXPLICIT REQUEST
+   * The DataOps Group logo in the main navigation MUST always be:
+   * - Width: 200px (w-[200px])
+   * - Height: 68px (h-[68px])
+   * - Object-fit: contain (object-contain)
+   * - Navigation bar height: 80px (h-20)
+   * 
+   * This sizing has been specifically tested and approved.
+   * DO NOT modify these dimensions unless explicitly requested by the client.
+   */
 }
