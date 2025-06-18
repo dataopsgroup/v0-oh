@@ -1,3 +1,22 @@
+/*
+ * ⚠️  CRITICAL: DO NOT MODIFY THIS HOMEPAGE WITHOUT EXPLICIT PERMISSION ⚠️
+ *
+ * This homepage has been carefully crafted and tested. It includes:
+ * - Proper DataOps branding and navigation
+ * - Hero section with wireframe background at 60% transparency
+ * - Complete PE portfolio transformation content
+ * - IBM-style grid layouts for all services
+ * - Schema.org markup for SEO optimization
+ * - All original sections and functionality
+ *
+ * ❌ DO NOT ALTER THIS FILE unless specifically instructed by the client
+ * ❌ DO NOT change styling, content, or structure
+ * ❌ DO NOT remove or modify the schema markup
+ * ❌ DO NOT change the hero background or transparency settings
+ *
+ * This page is LOCKED for editing until further notice.
+ * Last verified working: [Current Date]
+ */
 "use client"
 
 import { Button } from "@/components/ui/button"
