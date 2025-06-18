@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Navigation from "@/components/navigation"
 import GlobalFooter from "@/components/global-footer"
-import { Mail, Phone, CheckCircle, AlertCircle } from "lucide-react"
+import { Phone, CheckCircle, AlertCircle } from "lucide-react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -253,15 +253,6 @@ export default function ContactPage() {
                         <p className="body-copy text-sm text-gray-500">
                           Available Monday - Thursday, 9 AM - 5 PM Central Time
                         </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <Mail className="h-6 w-6 text-blue-600 mt-1" />
-                      <div>
-                        <h3 className="headline text-lg text-gray-900 mb-1">Email</h3>
-                        <p className="body-copy text-gray-700">admin@dataopsgroup.com</p>
-                        <p className="body-copy text-sm text-gray-500">We typically respond within 24 hours</p>
                       </div>
                     </div>
                   </div>
