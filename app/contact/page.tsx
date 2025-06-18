@@ -237,20 +237,31 @@ export default function ContactPage() {
                   {/* Contact Details */}
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
+                      <Phone className="h-6 w-6 text-blue-600 mt-1" />
+                      <div>
+                        <h3 className="headline text-lg text-gray-900 mb-1">Schedule a Call</h3>
+                        <p className="body-copy text-gray-700">
+                          <a
+                            href="https://meetings.hubspot.com/dataopsgroup/gtclient"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 underline"
+                          >
+                            Click to Schedule a Call
+                          </a>
+                        </p>
+                        <p className="body-copy text-sm text-gray-500">
+                          Available Monday - Thursday, 9 AM - 5 PM Central Time
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-4">
                       <Mail className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
                         <h3 className="headline text-lg text-gray-900 mb-1">Email</h3>
                         <p className="body-copy text-gray-700">admin@dataopsgroup.com</p>
                         <p className="body-copy text-sm text-gray-500">We typically respond within 24 hours</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <Phone className="h-6 w-6 text-blue-600 mt-1" />
-                      <div>
-                        <h3 className="headline text-lg text-gray-900 mb-1">Schedule a Call</h3>
-                        <p className="body-copy text-gray-700">Book a free 30-minute consultation</p>
-                        <p className="body-copy text-sm text-gray-500">Available Monday - Friday, 9 AM - 6 PM EST</p>
                       </div>
                     </div>
 
