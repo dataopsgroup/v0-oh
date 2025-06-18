@@ -133,7 +133,7 @@ export default function MarketingOperationsRevOps() {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="headline text-3xl text-gray-900">RevOps Benefits for Portfolio Companies</h2>
@@ -142,7 +142,7 @@ export default function MarketingOperationsRevOps() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <TrendingUp className="h-6 w-6 text-blue-600" />
               </div>
@@ -151,7 +151,7 @@ export default function MarketingOperationsRevOps() {
                 Optimize revenue operations to drive consistent, predictable growth across all portfolio companies.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Target className="h-6 w-6 text-blue-600" />
               </div>
@@ -160,7 +160,7 @@ export default function MarketingOperationsRevOps() {
                 Track and measure marketing impact across all touchpoints to optimize campaign performance and ROI.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <BarChart3 className="h-6 w-6 text-blue-600" />
               </div>
@@ -169,7 +169,7 @@ export default function MarketingOperationsRevOps() {
                 Implement sophisticated analytics frameworks to gain deep insights into revenue performance.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Users className="h-6 w-6 text-blue-600" />
               </div>
@@ -178,7 +178,7 @@ export default function MarketingOperationsRevOps() {
                 Align marketing, sales, and customer success teams around shared revenue goals and metrics.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Workflow className="h-6 w-6 text-blue-600" />
               </div>
@@ -187,7 +187,7 @@ export default function MarketingOperationsRevOps() {
                 Automate repetitive tasks and workflows to improve efficiency and reduce manual errors.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <PieChart className="h-6 w-6 text-blue-600" />
               </div>
@@ -196,7 +196,7 @@ export default function MarketingOperationsRevOps() {
                 Continuously optimize marketing and sales performance through data-driven insights and testing.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <LineChart className="h-6 w-6 text-blue-600" />
               </div>
@@ -205,7 +205,7 @@ export default function MarketingOperationsRevOps() {
                 Implement accurate forecasting models to predict revenue and plan strategic initiatives.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Database className="h-6 w-6 text-blue-600" />
               </div>
@@ -214,7 +214,7 @@ export default function MarketingOperationsRevOps() {
                 Integrate disparate data sources to create a single source of truth for revenue operations.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
               <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Shield className="h-6 w-6 text-blue-600" />
               </div>
