@@ -12,6 +12,7 @@
 
 import { Button } from "@/components/ui/button"
 import Navigation from "@/components/navigation"
+import GlobalCTA from "@/components/global-cta"
 import { ArrowRight, BarChart3, TrendingUp, PieChart, Activity, Target, Zap, Users, Database, Eye } from "lucide-react"
 import Link from "next/link"
 
@@ -341,35 +342,13 @@ export default function AnalyticsBIPage() {
           </div>
         </section>
 
-        {/* CTA Section - AnalyticsBICTA */}
-        <section className="py-20 bg-blue-600 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center space-y-8">
-              <div className="space-y-4">
-                <p className="subheadline text-sm text-blue-100">Ready to Transform Your Data?</p>
-                <h2 className="headline text-3xl text-white">Turn Your Data Into Your Competitive Advantage</h2>
-              </div>
-              <p className="body-copy text-lg text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                Stop making decisions based on gut feelings. Our analytics and business intelligence solutions provide
-                the insights you need to drive growth, optimize performance, and stay ahead of the competition.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
-                  style={{ backgroundColor: "#FBB03B" }}
-                >
-                  <Link href="/#operations-assessment">Get Your Analytics Assessment</Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="body-copy border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-base rounded-none"
-                >
-                  <Link href="/contact">Schedule Consultation</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* CTA Section - Using the new GlobalCTA component */}
+        <GlobalCTA
+          title="Turn Your Data Into Your Competitive Advantage"
+          description="Stop making decisions based on gut feelings. Our analytics and business intelligence solutions provide the insights you need to drive growth, optimize performance, and stay ahead of the competition."
+          buttonText="Get Your Analytics Assessment"
+          buttonLink="/#operations-assessment"
+        />
       </main>
 
       {/* Footer */}

@@ -12,6 +12,7 @@
 
 import { Button } from "@/components/ui/button"
 import Navigation from "@/components/navigation"
+import GlobalCTA from "@/components/global-cta"
 import {
   ArrowRight,
   Database,
@@ -358,36 +359,13 @@ export default function DataOpsImplementationPage() {
           </div>
         </section>
 
-        {/* CTA Section - DataOpsImplementationCTA */}
-        <section className="py-20 bg-blue-600 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center space-y-8">
-              <div className="space-y-4">
-                <p className="subheadline text-sm text-blue-100">Ready to Transform Your Operations?</p>
-                <h2 className="headline text-3xl text-white">Implement DataOps That Drives Results</h2>
-              </div>
-              <p className="body-copy text-lg text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                Stop struggling with fragmented systems and manual processes. Our DataOps implementation services
-                provide the foundation for efficient, scalable operations that grow with your business and deliver
-                measurable results.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
-                  style={{ backgroundColor: "#FBB03B" }}
-                >
-                  <Link href="/#operations-assessment">Get Your Implementation Assessment</Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="body-copy border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-base rounded-none"
-                >
-                  <Link href="/contact">Schedule Consultation</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* CTA Section - Using the new GlobalCTA component */}
+        <GlobalCTA
+          title="Implement DataOps That Drives Results"
+          description="Stop struggling with fragmented systems and manual processes. Our DataOps implementation services provide the foundation for efficient, scalable operations that grow with your business and deliver measurable results."
+          buttonText="Get Your Implementation Assessment"
+          buttonLink="/#operations-assessment"
+        />
       </main>
 
       {/* Footer */}
