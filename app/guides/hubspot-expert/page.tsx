@@ -131,8 +131,8 @@ export default function HubSpotExpertGuide() {
           help you identify the right person or team for your specific needs.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <div className="bg-white border border-[#e6e6e6] rounded-lg p-6">
+            <h3 className="text-xl font-semibold text-[#14213D] mb-4 flex items-center gap-2">
               <TrendingUp className="w-5 h-5" />
               HubSpot Marketing Hub
             </h3>
@@ -140,8 +140,8 @@ export default function HubSpotExpertGuide() {
               Experts in marketing automation, email marketing, SEO, content marketing, and social media management.
             </p>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <div className="bg-white border border-[#e6e6e6] rounded-lg p-6">
+            <h3 className="text-xl font-semibold text-[#14213D] mb-4 flex items-center gap-2">
               <DollarSign className="w-5 h-5" />
               HubSpot Sales Hub
             </h3>
@@ -149,8 +149,8 @@ export default function HubSpotExpertGuide() {
               Specialists in sales automation, CRM implementation, lead management, and sales process optimization.
             </p>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <div className="bg-white border border-[#e6e6e6] rounded-lg p-6">
+            <h3 className="text-xl font-semibold text-[#14213D] mb-4 flex items-center gap-2">
               <Clock className="w-5 h-5" />
               HubSpot Service Hub
             </h3>
@@ -159,8 +159,8 @@ export default function HubSpotExpertGuide() {
               feedback management.
             </p>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <div className="bg-white border border-[#e6e6e6] rounded-lg p-6">
+            <h3 className="text-xl font-semibold text-[#14213D] mb-4 flex items-center gap-2">
               <Users className="w-5 h-5" />
               HubSpot CMS Hub
             </h3>
