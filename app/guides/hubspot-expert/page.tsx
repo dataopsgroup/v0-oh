@@ -119,83 +119,57 @@ export default function HubSpotExpertGuidePage() {
             <p className="text-sm text-gray-600 mb-4">
               Click any section above to jump directly to that content. Your progress is automatically saved.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+            <div className="grid md:grid-cols-1 gap-3 text-sm">
               <a href="#introduction" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  1
-                </span>
+                <span className="text-lg font-bold mr-3">1</span>
                 Introduction: The HubSpot Expert Decision
               </a>
               <a href="#experts-vs-agencies" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  2
-                </span>
+                <span className="text-lg font-bold mr-3">2</span>
                 Understanding HubSpot Experts vs. Agencies: What You Really Need
               </a>
               <a href="#types-of-expertise" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  3
-                </span>
+                <span className="text-lg font-bold mr-3">3</span>
                 Types of HubSpot Expertise You Need
               </a>
               <a href="#beyond-agency-safety" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  4
-                </span>
+                <span className="text-lg font-bold mr-3">4</span>
                 Beyond the Agency Safety Net: Choosing Results Over Size
               </a>
               <a href="#when-you-need-expert" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  5
-                </span>
+                <span className="text-lg font-bold mr-3">5</span>
                 When Your Business Actually Needs a HubSpot Expert
               </a>
               <a href="#evaluating-qualifications" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  6
-                </span>
+                <span className="text-lg font-bold mr-3">6</span>
                 Evaluating HubSpot Expert Qualifications and Integration Experience
               </a>
               <a href="#pricing-guide" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  7
-                </span>
+                <span className="text-lg font-bold mr-3">7</span>
                 Complete Pricing Guide for HubSpot Experts and Implementation
               </a>
               <a href="#hiring-process" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  8
-                </span>
+                <span className="text-lg font-bold mr-3">8</span>
                 Step-by-Step Process to Find and Hire the Perfect HubSpot Expert
               </a>
               <a href="#essential-questions" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  9
-                </span>
+                <span className="text-lg font-bold mr-3">9</span>
                 Essential Questions for Evaluating HubSpot Experts
               </a>
               <a href="#maximizing-partnership" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  10
-                </span>
+                <span className="text-lg font-bold mr-3">10</span>
                 Maximizing Your HubSpot Expert Partnership
               </a>
               <a href="#success-stories" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  11
-                </span>
+                <span className="text-lg font-bold mr-3">11</span>
                 Real-World Success Stories: Integration-Focused Implementations
               </a>
               <a href="#common-pitfalls" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  12
-                </span>
+                <span className="text-lg font-bold mr-3">12</span>
                 Common Pitfalls When Hiring HubSpot Experts
               </a>
               <a href="#final-decision" className="flex items-center text-blue-600 hover:text-blue-800 py-1">
-                <span className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-medium mr-2">
-                  13
-                </span>
+                <span className="text-lg font-bold mr-3">13</span>
                 Conclusion: Making Your Final Decision
               </a>
             </div>
@@ -1387,6 +1361,114 @@ export default function HubSpotExpertGuidePage() {
                 expertise.
               </p>
             </div>
+          </section>
+
+          {/* Evaluating Qualifications Section */}
+          <section id="evaluating-qualifications" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Evaluating HubSpot Expert Qualifications and Integration Experience
+            </h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Not all HubSpot professionals offer the same level of expertise, and distinguishing between genuine
+                specialists and generalists can make the difference between a successful implementation and a
+                frustrating experience.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Pricing Guide Section */}
+          <section id="pricing-guide" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Complete Pricing Guide for HubSpot Experts and Implementation
+            </h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Understanding the full cost structure helps you budget appropriately and compare options effectively.
+                HubSpot expert pricing varies significantly based on experience level, project complexity, and the
+                specific services you need.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Hiring Process Section */}
+          <section id="hiring-process" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Step-by-Step Process to Find and Hire the Perfect HubSpot Expert
+            </h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Following a systematic approach to find, evaluate, and select your HubSpot expert will save you time and
+                increase your likelihood of a successful outcome.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Essential Questions Section */}
+          <section id="essential-questions" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Essential Questions for Evaluating HubSpot Experts
+            </h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                The right questions during your evaluation process will reveal whether a candidate truly understands
+                both the technical and business aspects of HubSpot implementation.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Maximizing Partnership Section */}
+          <section id="maximizing-partnership" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">Maximizing Your HubSpot Expert Partnership</h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Once you've selected your HubSpot expert, the success of your project depends largely on how well you
+                manage the partnership.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Success Stories Section */}
+          <section id="success-stories" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Real-World Success Stories: Integration-Focused Implementations
+            </h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Understanding how other businesses have successfully worked with HubSpot experts can help you set
+                realistic expectations and identify opportunities for your own implementation.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Common Pitfalls Section */}
+          <section id="common-pitfalls" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">Common Pitfalls When Hiring HubSpot Experts</h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Learning from common mistakes can save you significant time, money, and frustration. These pitfalls
+                represent the most frequent issues businesses encounter when selecting and working with HubSpot experts.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
+          </section>
+
+          {/* Final Decision Section */}
+          <section id="final-decision" className="mb-20">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">Conclusion: Making Your Final Decision</h2>
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+              <p className="text-lg text-blue-800">
+                Hiring the right HubSpot expert is one of the most important technology decisions you'll make for your
+                business.
+              </p>
+            </div>
+            {/* Content will be added in next update */}
           </section>
 
           {/* CTA Section */}
