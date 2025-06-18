@@ -1,5 +1,15 @@
 "use client"
 
+/*
+ * STYLING OVERRIDE NOTICE:
+ * For any TSX files provided from external sites, the box/grid styling should be
+ * overridden to match this site's IBM-inspired design system:
+ * - Container: grid gap-px bg-gray-200
+ * - Individual boxes: bg-white p-8 hover:bg-gray-50 transition-colors
+ * - Consistent typography using headline/body-copy classes
+ * - Icons sized at h-8 w-8 with text-blue-600 color
+ */
+
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ArrowRight } from "lucide-react"
 import Link from "next/link"
@@ -151,33 +161,26 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid md:grid-cols-2 gap-px bg-gray-200">
                     {services.map((service, index) => (
-                      <div
-                        key={index}
-                        className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
-                      >
-                        <div className="flex items-start space-x-4">
-                          <div className="flex-1">
-                            <h3 className="headline text-xl text-gray-900 mb-2">{service.title}</h3>
-                            <p className="body-copy text-gray-700 mb-4 leading-relaxed">{service.description}</p>
-                            <ul className="space-y-1 mb-4">
-                              {service.features.map((feature, featureIndex) => (
-                                <li key={featureIndex} className="body-copy text-sm text-gray-600 flex items-center">
-                                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
-                                  {feature}
-                                </li>
-                              ))}
-                            </ul>
-                            <Link
-                              href={service.href}
-                              className="body-copy text-blue-600 hover:text-blue-700 font-medium flex items-center"
-                            >
-                              Learn More
-                              <ArrowRight className="ml-1 h-4 w-4" strokeWidth={1.5} />
-                            </Link>
-                          </div>
-                        </div>
+                      <div key={index} className="bg-white p-8 hover:bg-gray-50 transition-colors">
+                        <h3 className="headline text-xl text-gray-900 mb-3">{service.title}</h3>
+                        <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                        <ul className="space-y-1 mb-4">
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="body-copy text-sm text-gray-600 flex items-center">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                        <Link
+                          href={service.href}
+                          className="body-copy text-blue-600 hover:text-blue-700 font-medium flex items-center text-sm"
+                        >
+                          Learn More
+                          <ArrowRight className="ml-1 h-4 w-4" strokeWidth={1.5} />
+                        </Link>
                       </div>
                     ))}
                   </div>
