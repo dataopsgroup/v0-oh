@@ -1,8 +1,8 @@
 "use client"
 
 import { CheckCircle, Users, Target, TrendingUp, Clock, DollarSign, AlertTriangle } from "lucide-react"
-import Navigation from "@/components/Navigation"
-import GlobalFooter from "@/components/GlobalFooter"
+import Navigation from "@/components/navigation"
+import GlobalFooter from "@/components/global-footer"
 
 export default function HubSpotExpertGuide() {
   return (
