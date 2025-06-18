@@ -16,6 +16,284 @@ import {
 const HubSpotExpertGuide = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "https://yourdomain.com/guides/hubspot-expert#article",
+                headline: "The Ultimate Guide to Hiring a HubSpot Expert",
+                description:
+                  "Everything you need to know to find, evaluate, and hire the perfect HubSpot expert for your business growth and success.",
+                image: "https://yourdomain.com/images/hubspot-expert-guide.jpg",
+                author: {
+                  "@type": "Organization",
+                  name: "Your Company Name",
+                  url: "https://yourdomain.com",
+                },
+                publisher: {
+                  "@type": "Organization",
+                  name: "Your Company Name",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://yourdomain.com/images/logo.png",
+                  },
+                },
+                datePublished: "2024-01-15",
+                dateModified: "2024-01-15",
+                articleSection: "Business Guides",
+                wordCount: 8500,
+                timeRequired: "PT15M",
+                audience: {
+                  "@type": "Audience",
+                  audienceType: "Business Leaders",
+                },
+                about: [
+                  {
+                    "@type": "Thing",
+                    name: "HubSpot",
+                  },
+                  {
+                    "@type": "Thing",
+                    name: "Marketing Automation",
+                  },
+                  {
+                    "@type": "Thing",
+                    name: "CRM Implementation",
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://yourdomain.com/guides/hubspot-expert#howto",
+                name: "How to Hire a HubSpot Expert",
+                description:
+                  "A step-by-step process for finding and hiring the right HubSpot expert for your business needs.",
+                image: "https://yourdomain.com/images/hiring-process.jpg",
+                totalTime: "PT2W",
+                estimatedCost: {
+                  "@type": "MonetaryAmount",
+                  currency: "USD",
+                  value: "15000",
+                },
+                supply: [
+                  {
+                    "@type": "HowToSupply",
+                    name: "Project Requirements Document",
+                  },
+                  {
+                    "@type": "HowToSupply",
+                    name: "Budget Range",
+                  },
+                  {
+                    "@type": "HowToSupply",
+                    name: "Timeline Expectations",
+                  },
+                ],
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    position: 1,
+                    name: "Define Your Requirements",
+                    text: "Clearly outline your HubSpot challenges, timeline, budget, and success criteria.",
+                    url: "https://yourdomain.com/guides/hubspot-expert#hiring-process",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 2,
+                    name: "Source Candidates",
+                    text: "Find potential experts through HubSpot Solutions Directory, LinkedIn, referrals, and freelance platforms.",
+                    url: "https://yourdomain.com/guides/hubspot-expert#hiring-process",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 3,
+                    name: "Conduct Interviews",
+                    text: "Assess technical skills, project approach, and cultural fit through structured interviews.",
+                    url: "https://yourdomain.com/guides/hubspot-expert#hiring-process",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 4,
+                    name: "Request Proposals",
+                    text: "Get detailed proposals with scope, timeline, pricing, and success metrics.",
+                    url: "https://yourdomain.com/guides/hubspot-expert#hiring-process",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 5,
+                    name: "Make Your Decision",
+                    text: "Evaluate candidates based on technical expertise, communication, track record, and value.",
+                    url: "https://yourdomain.com/guides/hubspot-expert#hiring-process",
+                  },
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://yourdomain.com/guides/hubspot-expert#faq",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Can you walk me through your approach to my specific HubSpot challenge?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Look for structured thinking, understanding of HubSpot capabilities, consideration of your business context, and realistic timeline expectations.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What's the most complex HubSpot project you've worked on?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Listen for problem-solving skills, technical depth, ability to handle complexity, and lessons learned from difficult situations.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How do you stay current with HubSpot's updates and new features?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Look for commitment to continuous learning, awareness of recent changes, participation in HubSpot community, and proactive approach to platform evolution.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How do you handle scope changes during a project?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Look for flexibility, clear change management process, transparent communication about impacts, and collaborative problem-solving approach.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How do you measure the success of your HubSpot implementations?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Look for focus on business outcomes, understanding of key metrics, ability to tie technical work to business results, and data-driven approach.",
+                    },
+                  },
+                ],
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://yourdomain.com/guides/hubspot-expert",
+                url: "https://yourdomain.com/guides/hubspot-expert",
+                name: "The Ultimate Guide to Hiring a HubSpot Expert",
+                description:
+                  "Everything you need to know to find, evaluate, and hire the perfect HubSpot expert for your business growth and success.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@type": "WebSite",
+                  "@id": "https://yourdomain.com",
+                  name: "Your Company Name",
+                  url: "https://yourdomain.com",
+                },
+                breadcrumb: {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: "https://yourdomain.com",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Guides",
+                      item: "https://yourdomain.com/guides",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: "How to Hire a HubSpot Expert",
+                      item: "https://yourdomain.com/guides/hubspot-expert",
+                    },
+                  ],
+                },
+                mainEntity: {
+                  "@id": "https://yourdomain.com/guides/hubspot-expert#article",
+                },
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://yourdomain.com/guides/hubspot-expert#case-study-1",
+                name: "SaaS Startup Success Story",
+                description:
+                  "B2B Software Company achieved 300% lead generation increase through HubSpot expert implementation.",
+                foundingDate: "2020",
+                numberOfEmployees: "50",
+                industry: "Software",
+                review: {
+                  "@type": "Review",
+                  reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                  },
+                  author: {
+                    "@type": "Organization",
+                    name: "SaaS Startup",
+                  },
+                  reviewBody:
+                    "HubSpot expert implementation resulted in 300% increase in qualified leads, 45% reduction in sales cycle, and $2.1M additional revenue in 12 months.",
+                },
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://yourdomain.com/guides/hubspot-expert#case-study-2",
+                name: "Manufacturing Company Digital Transformation",
+                description:
+                  "Industrial Equipment Manufacturer completed full digital transformation with HubSpot expert guidance.",
+                foundingDate: "1985",
+                numberOfEmployees: "200",
+                industry: "Manufacturing",
+                review: {
+                  "@type": "Review",
+                  reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                  },
+                  author: {
+                    "@type": "Organization",
+                    name: "Manufacturing Company",
+                  },
+                  reviewBody:
+                    "Complete digital transformation resulted in 85% increase in online leads, 60% improvement in sales efficiency, and $5.8M new revenue from digital channels.",
+                },
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://yourdomain.com/guides/hubspot-expert#case-study-3",
+                name: "E-commerce Brand Customer Retention",
+                description:
+                  "Direct-to-Consumer Brand revolutionized customer retention with HubSpot expert optimization.",
+                foundingDate: "2018",
+                numberOfEmployees: "75",
+                industry: "E-commerce",
+                review: {
+                  "@type": "Review",
+                  reviewRating: {
+                    "@type": "Rating",
+                    ratingValue: "5",
+                    bestRating: "5",
+                  },
+                  author: {
+                    "@type": "Organization",
+                    name: "E-commerce Brand",
+                  },
+                  reviewBody:
+                    "Customer retention optimization resulted in 40% increase in customer LTV, 25% reduction in churn rate, and $3.2M additional retention revenue.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Navigation />
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
@@ -464,6 +742,7 @@ const HubSpotExpertGuide = () => {
                         <li>• Efficient processes</li>
                       </ul>
                     </div>
+
                     <div className="bg-white border border-gray-200 rounded-lg p-4">
                       <h4 className="font-semibold text-purple-900 mb-2">Typical Savings:</h4>
                       <ul className="text-purple-700 text-sm space-y-1">
@@ -1796,7 +2075,7 @@ const HubSpotExpertGuide = () => {
                         <TrendingUp className="w-8 h-8 text-blue-600" />
                       </div>
                       <h4 className="font-semibold text-blue-800 mb-2">Track Record</h4>
-                      <p className="text-blue-700 text-sm">25% weight</p>
+                      <p classNameclassName="text-blue-700 text-sm">25% weight</p>
                       <p className="text-blue-600 text-xs mt-2">Proven results in similar projects</p>
                     </div>
                     <div className="text-center">
