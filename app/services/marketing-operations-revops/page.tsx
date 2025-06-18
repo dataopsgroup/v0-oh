@@ -14,6 +14,7 @@ import {
   AlertTriangle,
 } from "lucide-react"
 import Link from "next/link"
+import GlobalFooter from "@/components/global-footer"
 
 export default function MarketingOperationsRevOps() {
   return (
@@ -396,73 +397,7 @@ export default function MarketingOperationsRevOps() {
       />
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <img src="/images/dataops-logo-white.png" alt="DataOps Group" className="h-8" />
-              <p className="body-copy text-gray-300">
-                Transforming private equity portfolio operations through data-driven solutions and strategic
-                implementation.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="headline text-lg text-white">Services</h3>
-              <div className="space-y-2">
-                <Link href="/services/analytics-bi" className="body-copy text-gray-300 hover:text-white block">
-                  Analytics & BI
-                </Link>
-                <Link
-                  href="/services/dataops-implementation"
-                  className="body-copy text-gray-300 hover:text-white block"
-                >
-                  DataOps Implementation
-                </Link>
-                <Link href="/services/team-training" className="body-copy text-gray-300 hover:text-white block">
-                  Team Training
-                </Link>
-                <Link
-                  href="/services/marketing-operations-revops"
-                  className="body-copy text-gray-300 hover:text-white block"
-                >
-                  Marketing Ops & RevOps
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="headline text-lg text-white">Company</h3>
-              <div className="space-y-2">
-                <Link href="/about" className="body-copy text-gray-300 hover:text-white block">
-                  About
-                </Link>
-                <Link href="/approach" className="body-copy text-gray-300 hover:text-white block">
-                  Approach
-                </Link>
-                <Link
-                  href="/insights/hubspot-for-private-equity"
-                  className="body-copy text-gray-300 hover:text-white block"
-                >
-                  Insights
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h3 className="headline text-lg text-white">Legal</h3>
-              <div className="space-y-2">
-                <Link href="/privacy" className="body-copy text-gray-300 hover:text-white block">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="body-copy text-gray-300 hover:text-white block">
-                  Terms of Service
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-12 pt-8">
-            <p className="body-copy text-gray-400 text-center">© 2024 DataOps Group. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <GlobalFooter />
     </div>
   )
 }
