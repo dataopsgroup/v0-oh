@@ -144,7 +144,7 @@ export default function Navigation() {
             </div>
           </nav>
           <div className="flex items-center space-x-4">
-            <Button className="body-copy text-white hover:bg-green-600 rounded-none bg-green-500">
+            <Button className="body-copy text-white rounded-none !bg-green-500 hover:!bg-green-600">
               <Link href="/contact">Get Started</Link>
             </Button>
             <Button
