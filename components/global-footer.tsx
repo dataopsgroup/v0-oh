@@ -78,6 +78,11 @@ export default function GlobalFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/guides/hubspot-expert" className="body-copy text-sm text-gray-400 hover:text-white">
+                  How to Hire a HubSpot Expert
+                </Link>
+              </li>
+              <li>
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Case Studies
                 </Link>

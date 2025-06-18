@@ -131,6 +131,14 @@ export default function Navigation() {
                   >
                     HubSpot for Private Equity
                   </Link>
+                  <Link
+                    href="/guides/hubspot-expert"
+                    className={`block px-4 py-2 text-base body-copy hover:bg-gray-50 hover:text-blue-600 ${
+                      pathname === "/guides/hubspot-expert" ? "text-blue-600 bg-blue-50 font-medium" : "text-gray-700"
+                    }`}
+                  >
+                    How to Hire a HubSpot Expert
+                  </Link>
                 </div>
               </div>
             </div>
