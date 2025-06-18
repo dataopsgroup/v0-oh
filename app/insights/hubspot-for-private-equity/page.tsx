@@ -483,7 +483,7 @@ export default function HubSpotForPrivateEquityPage() {
         </section>
 
         {/* Why HubSpot Features - Updated to match home page style */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">
@@ -498,10 +498,12 @@ export default function HubSpotForPrivateEquityPage() {
             {/* Updated to match home page grid style */}
             <div className="grid md:grid-cols-3 gap-px bg-gray-200 mb-8">
               {features.map((feature, index) => (
-                <div key={index} className="bg-white p-8 hover:bg-gray-50 transition-colors">
+                <div key={index} className="bg-white p-8 hover:bg-gray-50 transition-colors flex flex-col h-full">
                   <h3 className="headline text-lg text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500 text-white text-xs font-medium">
+                  <p className="body-copy text-sm text-gray-600 mb-4 leading-relaxed flex-grow">
+                    {feature.description}
+                  </p>
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500 text-white text-xs font-medium self-start">
                     {feature.benefit}
                   </div>
                 </div>
