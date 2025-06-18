@@ -145,15 +145,15 @@ export default function Navigation() {
           </nav>
           <div className="flex items-center space-x-4">
             <Button
-              variant="secondary"
+              variant="ghost" // Use ghost variant to remove default background
               className="body-copy text-white rounded-none"
               style={{
-                backgroundColor: "#22c55e",
+                backgroundColor: "#22c55e", // Bright green
                 color: "white",
                 transition: "background-color 0.2s ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#16a34a")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#22c55e")}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#16a34a")} // Darker green on hover
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#22c55e")} // Back to bright green
             >
               <Link href="/contact">Get Started</Link>
             </Button>
