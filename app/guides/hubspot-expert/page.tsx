@@ -1,55 +1,75 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo, useCallback } from "react"
 import { CheckCircle, Users, Target, TrendingUp, Clock, User, Building, AlertTriangle, Menu, X } from "lucide-react"
 import Navigation from "@/components/navigation"
 import GlobalFooter from "@/components/global-footer"
 import GlobalCTA from "@/components/global-cta"
 
+interface Section {
+  id: string
+  title: string
+}
+
 export default function HubSpotExpertGuide() {
   const [activeSection, setActiveSection] = useState("")
   const [tocOpen, setTocOpen] = useState(false)
 
-  const sections = [
-    { id: "introduction", title: "Introduction: The HubSpot Expert Decision" },
-    { id: "experts-vs-agencies", title: "Understanding HubSpot Experts vs. Agencies" },
-    { id: "types-of-expertise", title: "Types of HubSpot Expertise You Need" },
-    { id: "beyond-agency-safety", title: "Beyond the Agency Safety Net" },
-    { id: "when-you-need-expert", title: "When Your Business Needs a HubSpot Expert" },
-    { id: "evaluating-qualifications", title: "Evaluating HubSpot Expert Qualifications" },
-    { id: "pricing-guide", title: "Complete Pricing Guide" },
-    { id: "hiring-process", title: "Step-by-Step Hiring Process" },
-    { id: "essential-questions", title: "Essential Questions for Evaluation" },
-    { id: "maximizing-partnership", title: "Maximizing Your Partnership" },
-    { id: "success-stories", title: "Real-World Success Stories" },
-    { id: "common-pitfalls", title: "Common Pitfalls to Avoid" },
-    { id: "final-decision", title: "Making Your Final Decision" },
-  ]
+  const sections = useMemo(
+    () => [
+      { id: "introduction", title: "Introduction: The HubSpot Expert Decision" },
+      { id: "experts-vs-agencies", title: "Understanding HubSpot Experts vs. Agencies" },
+      { id: "types-of-expertise", title: "Types of HubSpot Expertise You Need" },
+      { id: "beyond-agency-safety", title: "Beyond the Agency Safety Net" },
+      { id: "when-you-need-expert", title: "When Your Business Needs a HubSpot Expert" },
+      { id: "evaluating-qualifications", title: "Evaluating HubSpot Expert Qualifications" },
+      { id: "pricing-guide", title: "Complete Pricing Guide" },
+      { id: "hiring-process", title: "Step-by-Step Hiring Process" },
+      { id: "essential-questions", title: "Essential Questions for Evaluation" },
+      { id: "maximizing-partnership", title: "Maximizing Your Partnership" },
+      { id: "success-stories", title: "Real-World Success Stories" },
+      { id: "common-pitfalls", title: "Common Pitfalls to Avoid" },
+      { id: "final-decision", title: "Making Your Final Decision" },
+    ],
+    [],
+  )
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100
+    let timeoutId: NodeJS.Timeout | null = null
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i].id)
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i].id)
-          break
+    const handleScroll = () => {
+      if (timeoutId) return
+
+      timeoutId = setTimeout(() => {
+        const scrollPosition = window.scrollY + 100
+
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const element = document.getElementById(sections[i].id)
+          if (element && element.offsetTop <= scrollPosition) {
+            setActiveSection(sections[i].id)
+            break
+          }
         }
-      }
+        timeoutId = null
+      }, 16) // ~60fps
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
+  }, [sections])
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const yOffset = -100 // Account for fixed header
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: "smooth" })
       setTocOpen(false)
     }
-  }
+  }, [])
 
   return (
     <>
@@ -80,12 +100,12 @@ export default function HubSpotExpertGuide() {
       <div className="min-h-screen bg-white relative">
         {/* Table of Contents - Desktop Sidebar */}
         <div className="hidden xl:block fixed left-8 top-1/2 transform -translate-y-1/2 z-20 w-64">
-          <div className="bg-white border-2 rounded-lg p-4 shadow-lg" style={{ borderColor: "#14213D" }}>
-            <h3 className="headline text-base font-semibold mb-4" style={{ color: "#14213D" }}>
+          <div className="bg-white border-2 rounded-lg p-4 shadow-lg" style={{ borderColor: "var(--primary-navy)" }}>
+            <h3 className="headline text-base font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
               Table of Contents
             </h3>
             <p className="body-copy text-sm text-gray-600 mb-4">Click to jump sections</p>
-            <nav className="space-y-2">
+            <nav className="space-y-2" aria-label="Table of contents navigation">
               {sections.map((section, index) => (
                 <button
                   key={section.id}
@@ -94,7 +114,7 @@ export default function HubSpotExpertGuide() {
                     activeSection === section.id ? "font-semibold" : ""
                   }`}
                   style={{
-                    color: activeSection === section.id ? "#14213D" : "#6B7280",
+                    color: activeSection === section.id ? "var(--primary-navy)" : "#6B7280",
                   }}
                 >
                   {index + 1}. {section.title}
@@ -109,7 +129,7 @@ export default function HubSpotExpertGuide() {
           <button
             onClick={() => setTocOpen(!tocOpen)}
             className="bg-white border-2 rounded-lg p-3 shadow-lg"
-            style={{ borderColor: "#14213D" }}
+            style={{ borderColor: "var(--primary-navy)" }}
           >
             {tocOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -120,9 +140,9 @@ export default function HubSpotExpertGuide() {
           <div className="xl:hidden fixed inset-0 bg-black bg-opacity-50 z-20" onClick={() => setTocOpen(false)}>
             <div
               className="absolute top-24 right-4 bg-white border-2 rounded-lg p-4 shadow-lg max-w-xs w-full"
-              style={{ borderColor: "#14213D" }}
+              style={{ borderColor: "var(--primary-navy)" }}
             >
-              <h3 className="headline text-base font-semibold mb-4" style={{ color: "#14213D" }}>
+              <h3 className="headline text-base font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                 Table of Contents
               </h3>
               <p className="body-copy text-sm text-gray-600 mb-4">Click to jump sections</p>
@@ -146,11 +166,11 @@ export default function HubSpotExpertGuide() {
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
-              <span className="subheadline text-base" style={{ color: "#8CC7E3" }}>
+              <span className="subheadline text-base" style={{ color: "var(--primary-blue)" }}>
                 EXPERT GUIDE
               </span>
             </div>
-            <h1 className="headline text-4xl md:text-5xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h1 className="headline text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               How to Hire a HubSpot Expert: Complete Guide for 2025
             </h1>
             <p className="body-copy text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -178,7 +198,7 @@ export default function HubSpotExpertGuide() {
         <div className="max-w-4xl mx-auto px-4 pb-12 xl:ml-80">
           {/* Introduction */}
           <section id="introduction" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Introduction: The HubSpot Expert Decision That Will Make or Break Your Growth
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-6 leading-relaxed">
@@ -191,11 +211,11 @@ export default function HubSpotExpertGuide() {
               the platform—it's the expertise behind the strategy.
             </p>
 
-            <div className="bg-white border-2 rounded-lg p-8 mb-8" style={{ borderColor: "#14213D" }}>
+            <div className="bg-white border-2 rounded-lg p-8 mb-8" style={{ borderColor: "var(--primary-navy)" }}>
               <div className="flex items-start gap-4">
-                <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "#FBB03B" }} />
+                <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "var(--primary-orange)" }} />
                 <div>
-                  <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                  <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                     The Hidden Cost of Wrong Decisions
                   </h3>
                   <p className="body-copy text-gray-700">
@@ -209,7 +229,7 @@ export default function HubSpotExpertGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   What Makes This Guide Different
                 </h3>
                 <p className="body-copy text-gray-700 mb-4">
@@ -235,7 +255,7 @@ export default function HubSpotExpertGuide() {
                 </ul>
               </div>
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   The Stakes: Why This Decision Matters
                 </h3>
                 <p className="body-copy text-gray-700 mb-4">
@@ -266,7 +286,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Understanding HubSpot Experts vs. Agencies */}
           <section id="experts-vs-agencies" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Understanding HubSpot Experts vs. Agencies: What You Really Need
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -278,12 +298,12 @@ export default function HubSpotExpertGuide() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <Building className="h-8 w-8" style={{ color: "#14213D" }} />
+                  <Building className="h-8 w-8" style={{ color: "var(--primary-navy)" }} />
                   <h3 className="headline text-xl font-semibold">Large Agency</h3>
                 </div>
                 <div className="flex-grow">
                   <div>
-                    <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Choose when:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4 mb-6">
@@ -307,11 +327,11 @@ export default function HubSpotExpertGuide() {
                   </div>
                 </div>
                 <div className="mt-auto">
-                  <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: "#FBB03B" }}>
-                    <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: "var(--primary-orange)" }}>
+                    <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Investment:
                     </h4>
-                    <p className="body-copy text-base font-semibold" style={{ color: "#FBB03B" }}>
+                    <p className="body-copy text-base font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $15,000-$50,000+
                     </p>
                   </div>
@@ -320,12 +340,12 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <User className="h-8 w-8" style={{ color: "#14213D" }} />
+                  <User className="h-8 w-8" style={{ color: "var(--primary-navy)" }} />
                   <h3 className="headline text-xl font-semibold">Independent Expert</h3>
                 </div>
                 <div className="flex-grow">
                   <div>
-                    <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Choose when:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4 mb-6">
@@ -349,11 +369,11 @@ export default function HubSpotExpertGuide() {
                   </div>
                 </div>
                 <div className="mt-auto">
-                  <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: "#FBB03B" }}>
-                    <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: "var(--primary-orange)" }}>
+                    <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Investment:
                     </h4>
-                    <p className="body-copy text-base font-semibold" style={{ color: "#FBB03B" }}>
+                    <p className="body-copy text-base font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $5,000-$20,000
                     </p>
                   </div>
@@ -362,12 +382,12 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <Users className="h-8 w-8" style={{ color: "#14213D" }} />
+                  <Users className="h-8 w-8" style={{ color: "var(--primary-navy)" }} />
                   <h3 className="headline text-xl font-semibold">Boutique Team</h3>
                 </div>
                 <div className="flex-grow">
                   <div>
-                    <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Choose when:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4 mb-6">
@@ -391,11 +411,11 @@ export default function HubSpotExpertGuide() {
                   </div>
                 </div>
                 <div className="mt-auto">
-                  <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: "#FBB03B" }}>
-                    <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: "var(--primary-orange)" }}>
+                    <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Investment:
                     </h4>
-                    <p className="body-copy text-base font-semibold" style={{ color: "#FBB03B" }}>
+                    <p className="body-copy text-base font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $8,000-$30,000
                     </p>
                   </div>
@@ -406,7 +426,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Types of HubSpot Expertise */}
           <section id="types-of-expertise" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Types of HubSpot Expertise You Need
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -417,18 +437,18 @@ export default function HubSpotExpertGuide() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <TrendingUp className="h-8 w-8" style={{ color: "#14213D" }} />
+                  <TrendingUp className="h-8 w-8" style={{ color: "var(--primary-navy)" }} />
                   <h3 className="headline text-lg font-semibold">Marketing Hub Specialists</h3>
                 </div>
                 <p className="body-copy text-gray-600 text-base mb-4 flex-grow">
                   Demand generation masters who excel at lead generation, conversion optimization, email marketing
                   campaigns, and marketing automation workflows.
                 </p>
-                <div className="p-4 rounded mt-auto" style={{ backgroundColor: "#8CC7E3" }}>
-                  <h4 className="headline font-semibold text-base mb-2" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded mt-auto" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <h4 className="headline font-semibold text-base mb-2" style={{ color: "var(--primary-navy)" }}>
                     ROI Indicators:
                   </h4>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Lead scoring models improving qualified lead rates by 40%+, email campaigns achieving 25%+ open
                     rates, clear attribution tracking.
                   </p>
@@ -437,7 +457,7 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <Target className="h-8 w-8" style={{ color: "#14213D" }} />
+                  <Target className="h-8 w-8" style={{ color: "var(--primary-navy)" }} />
                   <h3 className="headline text-lg font-semibold">
                     Sales Hub <br />
                     Experts
@@ -447,11 +467,11 @@ export default function HubSpotExpertGuide() {
                   Revenue acceleration specialists who focus on sales pipeline configuration, deal management, and sales
                   automation to improve closure rates.
                 </p>
-                <div className="p-4 rounded mt-auto" style={{ backgroundColor: "#8CC7E3" }}>
-                  <h4 className="headline font-semibold text-base mb-2" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded mt-auto" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <h4 className="headline font-semibold text-base mb-2" style={{ color: "var(--primary-navy)" }}>
                     Expert Tip:
                   </h4>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     The best Sales Hub experts have actually carried a quota themselves and understand the daily reality
                     of sales reps.
                   </p>
@@ -460,18 +480,18 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <Users className="h-8 w-8" style={{ color: "#14213D" }} />
+                  <Users className="h-8 w-8" style={{ color: "var(--primary-navy)" }} />
                   <h3 className="headline text-lg font-semibold">Service Hub Architects</h3>
                 </div>
                 <p className="body-copy text-gray-600 text-base mb-4 flex-grow">
                   Customer success optimization specialists who design ticket management workflows, knowledge bases, and
                   feedback systems for retention.
                 </p>
-                <div className="p-4 rounded mt-auto" style={{ backgroundColor: "#8CC7E3" }}>
-                  <h4 className="headline font-semibold text-base mb-2" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded mt-auto" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <h4 className="headline font-semibold text-base mb-2" style={{ color: "var(--primary-navy)" }}>
                     Value Creation:
                   </h4>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Typically reduce support costs by 30-40% while improving satisfaction scores. ROI payback in 6-9
                     months.
                   </p>
@@ -482,7 +502,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Beyond Agency Safety */}
           <section id="beyond-agency-safety" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Beyond the Agency Safety Net
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -492,7 +512,7 @@ export default function HubSpotExpertGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   With Agencies:
                 </h3>
                 <ul className="body-copy text-gray-700 space-y-2 pl-4">
@@ -515,7 +535,7 @@ export default function HubSpotExpertGuide() {
                 </ul>
               </div>
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   With Independent Experts:
                 </h3>
                 <ul className="body-copy text-gray-700 space-y-2 pl-4">
@@ -539,8 +559,8 @@ export default function HubSpotExpertGuide() {
               </div>
             </div>
 
-            <div className="bg-white border-2 rounded-lg p-8" style={{ borderColor: "#14213D" }}>
-              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+            <div className="bg-white border-2 rounded-lg p-8" style={{ borderColor: "var(--primary-navy)" }}>
+              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                 Cost-Effectiveness and Value
               </h3>
               <p className="body-copy text-gray-700">
@@ -552,7 +572,7 @@ export default function HubSpotExpertGuide() {
 
           {/* When You Need an Expert */}
           <section id="when-you-need-expert" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               When Your Business Needs a HubSpot Expert
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -560,8 +580,8 @@ export default function HubSpotExpertGuide() {
               time and money while ensuring better outcomes.
             </p>
 
-            <div className="bg-white border-2 rounded-lg p-8 mb-8" style={{ borderColor: "#14213D" }}>
-              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+            <div className="bg-white border-2 rounded-lg p-8 mb-8" style={{ borderColor: "var(--primary-navy)" }}>
+              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                 The Opportunity Cost of DIY
               </h3>
               <p className="body-copy text-gray-700 mb-4">
@@ -570,7 +590,7 @@ export default function HubSpotExpertGuide() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     Consider:
                   </h4>
                   <ul className="body-copy text-gray-700 space-y-1 pl-4">
@@ -593,7 +613,7 @@ export default function HubSpotExpertGuide() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     Expert Value:
                   </h4>
                   <ul className="body-copy text-gray-700 space-y-1 pl-4">
@@ -621,7 +641,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Pricing Guide */}
           <section id="pricing-guide" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Complete Pricing Guide for HubSpot Experts and Implementation
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -632,31 +652,31 @@ export default function HubSpotExpertGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Hourly Rate Breakdown
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="body-copy text-gray-700">Entry-Level Specialists:</span>
-                    <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                    <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $75-125/hour
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="body-copy text-gray-700">Mid-Level Experts:</span>
-                    <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                    <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $125-200/hour
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="body-copy text-gray-700">Senior Specialists:</span>
-                    <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                    <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $200-300/hour
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="body-copy text-gray-700">Enterprise Experts:</span>
-                    <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                    <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                       $300-400/hour
                     </span>
                   </div>
@@ -664,14 +684,14 @@ export default function HubSpotExpertGuide() {
               </div>
 
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Implementation Pricing Tiers
                 </h3>
                 <div className="space-y-3">
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className="body-copy text-gray-700">Basic Setup:</span>
-                      <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                      <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                         $3,500-12,000
                       </span>
                     </div>
@@ -680,7 +700,7 @@ export default function HubSpotExpertGuide() {
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className="body-copy text-gray-700">Comprehensive Multi-Hub:</span>
-                      <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                      <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                         $12,000-35,000
                       </span>
                     </div>
@@ -689,7 +709,7 @@ export default function HubSpotExpertGuide() {
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className="body-copy text-gray-700">Enterprise Integration:</span>
-                      <span className="body-copy font-semibold" style={{ color: "#FBB03B" }}>
+                      <span className="body-copy font-semibold" style={{ color: "var(--primary-orange)" }}>
                         $25,000-75,000+
                       </span>
                     </div>
@@ -699,8 +719,8 @@ export default function HubSpotExpertGuide() {
               </div>
             </div>
 
-            <div className="bg-white border-2 rounded-lg p-8" style={{ borderColor: "#14213D" }}>
-              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+            <div className="bg-white border-2 rounded-lg p-8" style={{ borderColor: "var(--primary-navy)" }}>
+              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                 Integration-Specific Pricing
               </h3>
               <p className="body-copy text-gray-700 mb-4">
@@ -708,19 +728,19 @@ export default function HubSpotExpertGuide() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     Zapier Workflows:
                   </h4>
                   <p className="body-copy text-base text-gray-700">$500-2,500 per workflow</p>
                 </div>
                 <div>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     API Integration:
                   </h4>
                   <p className="body-copy text-base text-gray-700">$2,500-15,000+ per integration</p>
                 </div>
                 <div>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     Data Sync:
                   </h4>
                   <p className="body-copy text-base text-gray-700">$2,500-10,000 depending on complexity</p>
@@ -731,7 +751,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Essential Questions */}
           <section id="essential-questions" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Essential Questions for Evaluation
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -741,61 +761,61 @@ export default function HubSpotExpertGuide() {
 
             <div className="grid grid-cols-1 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Business Strategy Questions
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       How do you align HubSpot implementation with broader business objectives?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       What questions do you ask to understand a client's business before recommending technical
                       approaches?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       How do you measure the success of your implementations?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">What results have your clients typically seen?</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Process Management Questions
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       What's your typical implementation process from start to finish?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       How do you handle scope changes and unexpected challenges?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       What's your approach to knowledge transfer and training?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       How do you ensure our team can maintain the system after implementation?
                     </span>
@@ -804,30 +824,30 @@ export default function HubSpotExpertGuide() {
               </div>
 
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Team Structure Questions
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       Who specifically will be doing the hands-on integration work?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       Will any work be performed offshore or by third parties?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       Can I meet all team members involved in our project?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#14213D" }} />
+                    <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
                       What's the experience level of each person who will touch our project?
                     </span>
@@ -839,7 +859,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Success Stories */}
           <section id="success-stories" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Real-World Success Stories: Integration-Focused Implementations
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -850,9 +870,9 @@ export default function HubSpotExpertGuide() {
             <div className="grid grid-cols-1 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <TrendingUp className="h-8 w-8 flex-shrink-0" style={{ color: "#14213D" }} />
+                  <TrendingUp className="h-8 w-8 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                   <div>
-                    <h3 className="headline text-xl font-semibold mb-2" style={{ color: "#14213D" }}>
+                    <h3 className="headline text-xl font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       SaaS Company Integration Transformation
                     </h3>
                     <p className="body-copy text-gray-600">
@@ -863,7 +883,7 @@ export default function HubSpotExpertGuide() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="headline font-semibold mb-3" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-3" style={{ color: "var(--primary-navy)" }}>
                       The Challenge:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4">
@@ -886,7 +906,7 @@ export default function HubSpotExpertGuide() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="headline font-semibold mb-3" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-3" style={{ color: "var(--primary-navy)" }}>
                       The Results:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4">
@@ -910,11 +930,11 @@ export default function HubSpotExpertGuide() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded" style={{ backgroundColor: "#8CC7E3" }}>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     ROI Analysis:
                   </h4>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Total investment of $28,000 for implementation plus $2,500 monthly for ongoing optimization
                     delivered a 650% ROI in the first year.
                   </p>
@@ -923,9 +943,9 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8">
                 <div className="flex items-start gap-4 mb-6">
-                  <Building className="h-8 w-8 flex-shrink-0" style={{ color: "#14213D" }} />
+                  <Building className="h-8 w-8 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                   <div>
-                    <h3 className="headline text-xl font-semibold mb-2" style={{ color: "#14213D" }}>
+                    <h3 className="headline text-xl font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                       Manufacturing Company Digital Transformation
                     </h3>
                     <p className="body-copy text-gray-600">
@@ -936,7 +956,7 @@ export default function HubSpotExpertGuide() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="headline font-semibold mb-3" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-3" style={{ color: "var(--primary-navy)" }}>
                       Before:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4">
@@ -959,7 +979,7 @@ export default function HubSpotExpertGuide() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="headline font-semibold mb-3" style={{ color: "#14213D" }}>
+                    <h4 className="headline font-semibold mb-3" style={{ color: "var(--primary-navy)" }}>
                       After:
                     </h4>
                     <ul className="body-copy text-gray-700 space-y-1 pl-4">
@@ -983,11 +1003,11 @@ export default function HubSpotExpertGuide() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded" style={{ backgroundColor: "#8CC7E3" }}>
-                  <h4 className="headline font-semibold mb-2" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <h4 className="headline font-semibold mb-2" style={{ color: "var(--primary-navy)" }}>
                     Investment Return:
                   </h4>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Investment of $45,000 for implementation plus $4,000 monthly for ongoing management delivered a 420%
                     ROI over 18 months.
                   </p>
@@ -998,7 +1018,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Common Pitfalls */}
           <section id="common-pitfalls" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Common Pitfalls When Hiring HubSpot Experts
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -1009,9 +1029,9 @@ export default function HubSpotExpertGuide() {
             <div className="grid grid-cols-1 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
                 <div className="flex items-start gap-4">
-                  <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "#FBB03B" }} />
+                  <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "var(--primary-orange)" }} />
                   <div>
-                    <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                    <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                       The Safety Illusion
                     </h3>
                     <p className="body-copy text-gray-700 mb-4">
@@ -1019,7 +1039,7 @@ export default function HubSpotExpertGuide() {
                       perceived safety rather than demonstrated expertise.
                     </p>
                     <div className="p-4 rounded" style={{ backgroundColor: "#E6E6E6" }}>
-                      <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                      <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                         <strong>Reality Check:</strong> Ask specifically whether the people you're meeting with during
                         the sales process will be directly involved in your implementation.
                       </p>
@@ -1030,9 +1050,9 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8">
                 <div className="flex items-start gap-4">
-                  <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "#FBB03B" }} />
+                  <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "var(--primary-orange)" }} />
                   <div>
-                    <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                    <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                       Hidden Delivery Models
                     </h3>
                     <p className="body-copy text-gray-700 mb-4">
@@ -1040,7 +1060,7 @@ export default function HubSpotExpertGuide() {
                       outsourcing HubSpot work to subcontractors or offshore teams.
                     </p>
                     <div className="p-4 rounded" style={{ backgroundColor: "#E6E6E6" }}>
-                      <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                      <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                         <strong>Due Diligence:</strong> Ask whether all work will be performed by direct employees and
                         request to meet all team members involved in your implementation.
                       </p>
@@ -1051,9 +1071,9 @@ export default function HubSpotExpertGuide() {
 
               <div className="bg-white p-8">
                 <div className="flex items-start gap-4">
-                  <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "#FBB03B" }} />
+                  <AlertTriangle className="h-8 w-8 flex-shrink-0" style={{ color: "var(--primary-orange)" }} />
                   <div>
-                    <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                    <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                       Choosing Based on Price Alone
                     </h3>
                     <p className="body-copy text-gray-700 mb-4">
@@ -1061,7 +1081,7 @@ export default function HubSpotExpertGuide() {
                       timelines, and missed opportunities.
                     </p>
                     <div className="p-4 rounded" style={{ backgroundColor: "#E6E6E6" }}>
-                      <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                      <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                         <strong>Remember:</strong> The true cost includes not just immediate financial impact, but also
                         opportunity cost of delayed results and potential damage to team morale.
                       </p>
@@ -1074,7 +1094,7 @@ export default function HubSpotExpertGuide() {
 
           {/* Final Decision */}
           <section id="final-decision" className="mb-16">
-            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "#14213D" }}>
+            <h2 className="headline text-3xl font-bold mb-6" style={{ color: "var(--primary-navy)" }}>
               Making Your Final Decision
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
@@ -1085,7 +1105,7 @@ export default function HubSpotExpertGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 mb-8">
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Focus on the Actual Implementers
                 </h3>
                 <p className="body-copy text-gray-700 mb-4">
@@ -1093,8 +1113,8 @@ export default function HubSpotExpertGuide() {
                   size. The person who will configure your workflows, build your integrations, and solve your technical
                   challenges is the one who determines your success.
                 </p>
-                <div className="p-4 rounded" style={{ backgroundColor: "#8CC7E3" }}>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Make sure you're evaluating the right people and that they'll be directly involved throughout your
                     project.
                   </p>
@@ -1102,15 +1122,15 @@ export default function HubSpotExpertGuide() {
               </div>
 
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Value Hands-On Expertise
                 </h3>
                 <p className="body-copy text-gray-700 mb-4">
                   Value hands-on expertise over organizational credentials. In the HubSpot ecosystem, deep platform
                   experience and integration knowledge often matter more than company size or marketing polish.
                 </p>
-                <div className="p-4 rounded" style={{ backgroundColor: "#8CC7E3" }}>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Look for experts who have consistently worked with HubSpot and can demonstrate genuine expertise
                     through specific examples.
                   </p>
@@ -1118,15 +1138,15 @@ export default function HubSpotExpertGuide() {
               </div>
 
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Consider Business Acumen
                 </h3>
                 <p className="body-copy text-gray-700 mb-4">
                   The best HubSpot experts understand that technology serves business objectives, not the other way
                   around. They should ask probing questions about your business model, processes, and goals.
                 </p>
-                <div className="p-4 rounded" style={{ backgroundColor: "#8CC7E3" }}>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Technical competence without business understanding often leads to elegant solutions that don't
                     solve real problems.
                   </p>
@@ -1134,15 +1154,15 @@ export default function HubSpotExpertGuide() {
               </div>
 
               <div className="bg-white p-8">
-                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+                <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                   Trust Your Evaluation Process
                 </h3>
                 <p className="body-copy text-gray-700 mb-4">
                   Trust your evaluation process rather than rushing to a decision based on pressure or convenience. The
                   systematic approach outlined in this guide might seem thorough, but the time invested pays dividends.
                 </p>
-                <div className="p-4 rounded" style={{ backgroundColor: "#8CC7E3" }}>
-                  <p className="body-copy text-base" style={{ color: "#14213D" }}>
+                <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
+                  <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
                     Your goal isn't just implementing HubSpot—it's transforming your business processes to drive growth
                     and improve efficiency.
                   </p>
@@ -1150,8 +1170,8 @@ export default function HubSpotExpertGuide() {
               </div>
             </div>
 
-            <div className="bg-white border-2 rounded-lg p-8" style={{ borderColor: "#14213D" }}>
-              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "#14213D" }}>
+            <div className="bg-white border-2 rounded-lg p-8" style={{ borderColor: "var(--primary-navy)" }}>
+              <h3 className="headline text-xl font-semibold mb-4" style={{ color: "var(--primary-navy)" }}>
                 Final Thought
               </h3>
               <p className="body-copy text-gray-700">
