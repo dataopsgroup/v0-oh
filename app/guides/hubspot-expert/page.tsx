@@ -1912,28 +1912,64 @@ const HubSpotExpertGuide = () => {
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Contract and Onboarding</h4>
                       <ul className="text-gray-700 text-sm space-y-2">
-                        <li>• Finalize contract terms and deliverables</li>
-                        <li>• Set up project communication channels</li>
-                        <li>• Provide necessary access and documentation</li>
-                        <li>• Schedule kickoff meeting with key stakeholders</li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Finalize contract terms and deliverables</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Set up project communication channels</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Provide necessary access and documentation</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Schedule kickoff meeting with key stakeholders</span>
+                        </li>
                       </ul>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Project Launch</h4>
                       <ul className="text-gray-700 text-sm space-y-2">
-                        <li>• Confirm project timeline and milestones</li>
-                        <li>• Establish regular check-in schedules</li>
-                        <li>• Set up project tracking and reporting</li>
-                        <li>• Begin discovery and planning phase</li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Confirm project timeline and milestones</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Establish regular check-in schedules</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Set up project tracking and reporting</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Begin discovery and planning phase</span>
+                        </li>
                       </ul>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Success Monitoring</h4>
                       <ul className="text-gray-700 text-sm space-y-2">
-                        <li>• Track progress against defined KPIs</li>
-                        <li>• Maintain open communication channels</li>
-                        <li>• Address issues promptly as they arise</li>
-                        <li>• Plan for post-project optimization</li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Track progress against defined KPIs</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Maintain open communication channels</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Address issues promptly as they arise</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-gray-500 mt-0.5">•</span>
+                          <span>Plan for post-project optimization</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
