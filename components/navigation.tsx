@@ -144,10 +144,7 @@ export default function Navigation() {
             </div>
           </nav>
           <div className="flex items-center space-x-4">
-            <Button
-              className="body-copy text-white hover:bg-blue-400 rounded-none"
-              style={{ backgroundColor: "#22C55E" }}
-            >
+            <Button className="body-copy text-white hover:bg-green-600 rounded-none bg-green-500">
               <Link href="/contact">Get Started</Link>
             </Button>
             <Button
