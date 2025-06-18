@@ -56,16 +56,6 @@ export default function GlobalFooter() {
                   Marketing Operations
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  PE Value Creation
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  Custom Solutions
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -74,7 +64,7 @@ export default function GlobalFooter() {
             <ul className="space-y-2">
               <li>
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  Blog & Insights
+                  Insights
                 </Link>
               </li>
               <li>
@@ -89,7 +79,7 @@ export default function GlobalFooter() {
               </li>
               <li>
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  PE Resources
+                  PE Value Creation
                 </Link>
               </li>
               <li>
