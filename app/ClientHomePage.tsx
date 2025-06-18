@@ -227,8 +227,8 @@ export default function ClientHomePage() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Overlay to control opacity - Changed from 75% to 40% for 60% transparency */}
-          <div className="absolute inset-0 bg-gray-50 opacity-40"></div>
+          {/* Overlay to control opacity - Changed to 75% opacity for 75% transparency (paler background) */}
+          <div className="absolute inset-0 bg-gray-50 opacity-75"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
