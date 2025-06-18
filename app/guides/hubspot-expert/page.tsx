@@ -19,7 +19,7 @@ const HubSpotExpertGuide = () => {
       <Navigation />
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <section className="bg-white py-20 border-b border-gray-200">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -159,7 +159,7 @@ const HubSpotExpertGuide = () => {
                   success and frustration. This comprehensive guide will walk you through everything you need to know to
                   make an informed decision.
                 </p>
-                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                   <h3 className="text-lg font-semibold text-blue-900 mb-2">What You'll Learn</h3>
                   <ul className="text-blue-800 space-y-2">
                     <li className="flex items-start gap-2">
@@ -193,7 +193,7 @@ const HubSpotExpertGuide = () => {
                 HubSpot Experts vs. Agencies: Making the Right Choice
               </h2>
               <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-green-900 mb-4 flex items-center gap-2">
                     <Users className="w-6 h-6" />
                     Independent HubSpot Experts
@@ -221,7 +221,7 @@ const HubSpotExpertGuide = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center gap-2">
                     <Shield className="w-6 h-6" />
                     HubSpot Partner Agencies
@@ -386,7 +386,7 @@ const HubSpotExpertGuide = () => {
                 experts often provide unique advantages that can be more valuable for your specific situation.
               </p>
               <div className="space-y-8">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-blue-900 mb-4">Direct Access to Expertise</h3>
                   <p className="text-blue-800 mb-4">
                     When you hire an independent expert, you're getting direct access to the person who will actually be
@@ -415,14 +415,14 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-green-900 mb-4">Specialized Deep Expertise</h3>
                   <p className="text-green-800 mb-4">
                     Independent experts often specialize in specific areas of HubSpot, developing deep expertise that
                     surpasses what generalist agency teams can offer. This specialization can be crucial for complex or
                     unique implementations.
                   </p>
-                  <div className="bg-white border border-green-200 rounded-lg p-4">
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <h4 className="font-semibold text-green-900 mb-2">
                       Example Scenarios Where Specialization Matters:
                     </h4>
@@ -436,7 +436,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-purple-900 mb-4">Cost-Effectiveness and Value</h3>
                   <p className="text-purple-800 mb-4">
                     Independent experts typically offer better value for money, especially for well-defined projects.
@@ -444,7 +444,7 @@ const HubSpotExpertGuide = () => {
                     office space, and profit margins.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-white border border-purple-200 rounded-lg p-4">
+                    <div className="bg-white border border-gray-200 rounded-lg p-4">
                       <h4 className="font-semibold text-purple-900 mb-2">Agency Costs Include:</h4>
                       <ul className="text-purple-700 text-sm space-y-1">
                         <li>• Office overhead</li>
@@ -454,7 +454,7 @@ const HubSpotExpertGuide = () => {
                         <li>• Account management</li>
                       </ul>
                     </div>
-                    <div className="bg-white border border-purple-200 rounded-lg p-4">
+                    <div className="bg-white border border-gray-200 rounded-lg p-4">
                       <h4 className="font-semibold text-purple-900 mb-2">Expert Costs Focus On:</h4>
                       <ul className="text-purple-700 text-sm space-y-1">
                         <li>• Direct expertise</li>
@@ -464,7 +464,7 @@ const HubSpotExpertGuide = () => {
                         <li>• Efficient processes</li>
                       </ul>
                     </div>
-                    <div className="bg-white border border-purple-200 rounded-lg p-4">
+                    <div className="bg-white border border-gray-200 rounded-lg p-4">
                       <h4 className="font-semibold text-purple-900 mb-2">Typical Savings:</h4>
                       <ul className="text-purple-700 text-sm space-y-1">
                         <li>• 20-40% cost reduction</li>
@@ -516,7 +516,7 @@ const HubSpotExpertGuide = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <h3 className="text-xl font-semibold text-blue-900 mb-4">Growth-Driven Scenarios</h3>
                     <ul className="text-blue-800 space-y-3">
                       <li className="flex items-start gap-2">
@@ -550,7 +550,7 @@ const HubSpotExpertGuide = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <h3 className="text-xl font-semibold text-green-900 mb-4">Optimization Opportunities</h3>
                     <ul className="text-green-800 space-y-3">
                       <li className="flex items-start gap-2">
@@ -585,7 +585,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-yellow-900 mb-4">Strategic Initiatives</h3>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div>
@@ -622,7 +622,7 @@ const HubSpotExpertGuide = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-blue-900 mb-6">HubSpot Certifications and Credentials</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -684,7 +684,7 @@ const HubSpotExpertGuide = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="mt-6 p-4 bg-white border border-blue-200 rounded-lg">
+                  <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
                     <p className="text-blue-800 text-sm">
                       <strong>Pro Tip:</strong> While certifications are important, they should be current (renewed
                       within the last year) and relevant to your specific needs. A specialist with deep expertise in one
@@ -693,7 +693,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-green-900 mb-6">Experience and Track Record</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
@@ -731,7 +731,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-purple-900 mb-6">Portfolio and Case Studies</h3>
                   <p className="text-purple-800 mb-4">
                     A strong portfolio should demonstrate not just technical skills, but business impact and
@@ -803,7 +803,7 @@ const HubSpotExpertGuide = () => {
 
               <div className="space-y-8">
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                       <Clock className="w-6 h-6 text-blue-600" />
                     </div>
@@ -828,7 +828,7 @@ const HubSpotExpertGuide = () => {
                     </div>
                   </div>
 
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                       <Target className="w-6 h-6 text-green-600" />
                     </div>
@@ -853,7 +853,7 @@ const HubSpotExpertGuide = () => {
                     </div>
                   </div>
 
-                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                  <div className="bg-white border border-gray-200 rounded-lg p-6">
                     <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                       <DollarSign className="w-6 h-6 text-purple-600" />
                     </div>
@@ -879,7 +879,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-yellow-900 mb-4">Factors Affecting Pricing</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -949,7 +949,7 @@ const HubSpotExpertGuide = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Define Your Requirements</h3>
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                         <h4 className="font-semibold text-blue-900 mb-2">Key Questions to Answer:</h4>
                         <ul className="text-blue-800 text-sm space-y-1">
                           <li>• What specific HubSpot challenges are you facing?</li>
@@ -1100,7 +1100,7 @@ const HubSpotExpertGuide = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center gap-2">
                     <Target className="w-6 h-6" />
                     Technical Expertise Questions
@@ -1136,7 +1136,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-green-900 mb-4 flex items-center gap-2">
                     <Users className="w-6 h-6" />
                     Project Management Questions
@@ -1173,7 +1173,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-purple-900 mb-4 flex items-center gap-2">
                     <MessageSquare className="w-6 h-6" />
                     Communication & Working Style Questions
@@ -1209,7 +1209,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-orange-900 mb-4 flex items-center gap-2">
                     <DollarSign className="w-6 h-6" />
                     Business & Results Questions
@@ -1256,7 +1256,7 @@ const HubSpotExpertGuide = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-blue-900 mb-6">Setting Up for Success</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -1312,7 +1312,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-green-900 mb-6">
                     Common Partnership Challenges and Solutions
                   </h3>
@@ -1383,7 +1383,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-purple-900 mb-6">Building Long-term Value</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-white border border-purple-200 rounded-lg p-4">
@@ -1426,7 +1426,7 @@ const HubSpotExpertGuide = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
                       <TrendingUp className="w-8 h-8 text-blue-600" />
@@ -1483,7 +1483,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center">
                       <Users className="w-8 h-8 text-green-600" />
@@ -1544,7 +1544,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center">
                       <Target className="w-8 h-8 text-purple-600" />
@@ -1772,7 +1772,7 @@ const HubSpotExpertGuide = () => {
               </p>
 
               <div className="space-y-8">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-blue-900 mb-6">Decision Framework</h3>
                   <div className="grid md:grid-cols-4 gap-6">
                     <div className="text-center">
@@ -1810,7 +1810,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-green-900 mb-6">Final Evaluation Questions</h3>
                   <div className="space-y-4">
                     <div className="bg-white border border-green-200 rounded-lg p-4">
@@ -1844,7 +1844,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div className="bg-white border border-gray-200 rounded-lg p-8">
                   <h3 className="text-2xl font-semibold text-purple-900 mb-6">Red Flags vs. Green Flags</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -1975,7 +1975,7 @@ const HubSpotExpertGuide = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg p-8 text-center">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">
                   <h3 className="text-2xl font-semibold text-indigo-900 mb-4">
                     Ready to Transform Your HubSpot Experience?
                   </h3>
