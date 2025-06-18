@@ -30,12 +30,39 @@ export default function TermsOfService() {
                 />
               </Link>
               <nav className="hidden md:flex space-x-6">
-                <Link
-                  href="/services"
-                  className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center"
-                >
-                  Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
-                </Link>
+                <div className="relative group">
+                  <button className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
+                    Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
+                  </button>
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="py-2">
+                      <Link
+                        href="/services/analytics-bi"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        Analytics & BI
+                      </Link>
+                      <Link
+                        href="/services/dataops-implementation"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        DataOps Implementation
+                      </Link>
+                      <Link
+                        href="/services/team-training"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        Team Training
+                      </Link>
+                      <Link
+                        href="/services/marketing-operations-revops"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        Marketing Operations & RevOps
+                      </Link>
+                    </div>
+                  </div>
+                </div>
                 <Link href="#" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>

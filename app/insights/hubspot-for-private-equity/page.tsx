@@ -379,12 +379,39 @@ export default function HubSpotForPrivateEquityPage() {
                 />
               </Link>
               <nav className="hidden md:flex space-x-6">
-                <Link
-                  href="/services"
-                  className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center"
-                >
-                  Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
-                </Link>
+                <div className="relative group">
+                  <button className="text-sm body-copy text-gray-700 hover:text-blue-600 flex items-center">
+                    Services <ChevronDown className="ml-1 h-3 w-3" strokeWidth={1.5} />
+                  </button>
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="py-2">
+                      <Link
+                        href="/services/analytics-bi"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        Analytics & BI
+                      </Link>
+                      <Link
+                        href="/services/dataops-implementation"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        DataOps Implementation
+                      </Link>
+                      <Link
+                        href="/services/team-training"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        Team Training
+                      </Link>
+                      <Link
+                        href="/services/marketing-operations-revops"
+                        className="block px-4 py-2 text-sm body-copy text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        Marketing Operations & RevOps
+                      </Link>
+                    </div>
+                  </div>
+                </div>
                 <Link href="/about" className="text-sm body-copy text-gray-700 hover:text-blue-600">
                   About
                 </Link>
@@ -692,6 +719,10 @@ export default function HubSpotForPrivateEquityPage() {
               <p className="body-copy text-gray-700 mb-6 leading-relaxed">
                 HubSpot meets 100% of critical requirements and 95% of all checklist items. See our detailed platform
                 comparison to understand why PE firms choose HubSpot.
+              </p>
+              <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-none">
+                View Platform Comparison
+              </Button>
               </p>
               <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-none">
                 View Platform Comparison
@@ -1147,172 +1178,171 @@ export default function HubSpotForPrivateEquityPage() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-5 gap-8">
-            <div className="space-y-4">
-              <div className="mb-6">
-                <img
-                  src="/images/dataops-logo-white-footer.png"
-                  alt="DataOps Group - Expert HubSpot Implementation and Data Operations Consulting"
-                  className="w-[160px] h-[54px] object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <p className="body-copy text-sm text-gray-400 leading-relaxed">
-                Transforming portfolio operations into profit drivers through expert HubSpot implementation and data
-                operations consulting.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="subheadline text-xs text-gray-300 mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/services/analytics-bi" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Analytics & BI
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/dataops-implementation"
-                    className="body-copy text-sm text-gray-400 hover:text-white"
-                  >
-                    DataOps Implementation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/team-training" className="body-copy text-sm text-gray-400 hover:text-white">
-                    HubSpot Training
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/marketing-operations-revops"
-                    className="body-copy text-sm text-gray-400 hover:text-white"
-                  >
-                    Marketing Operations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    PE Value Creation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Custom Solutions
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="subheadline text-xs text-gray-300 mb-4">Resources</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Blog & Insights
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Case Studies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    PE Resources
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/insights/hubspot-for-private-equity"
-                    className="body-copy text-sm text-gray-400 hover:text-white"
-                  >
-                    HubSpot for Private Equity
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    ROI Calculator
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="subheadline text-xs text-gray-300 mb-4">Support</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Client Support Portal
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-gray-400 hover:text-white">
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Schedule a Call
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    FAQ
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Placeholder FAQ 1
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Placeholder FAQ 2
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Placeholder FAQ 3
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                    Placeholder FAQ 4
-                  </Link>
-                </li>
-              </ul>
-            </div>
+  \
+  ;<footer className="bg-gray-900 text-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="grid md:grid-cols-5 gap-8">
+        <div className="space-y-4">
+          <div className="mb-6">
+            <img
+              src="/images/dataops-logo-white-footer.png"
+              alt="DataOps Group - Expert HubSpot Implementation and Data Operations Consulting"
+              className="w-[160px] h-[54px] object-contain"
+              loading="lazy"
+            />
           </div>
+          <p className="body-copy text-sm text-gray-400 leading-relaxed">
+            Transforming portfolio operations into profit drivers through expert HubSpot implementation and data
+            operations consulting.
+          </p>
+        </div>
 
-          <div className="border-t border-gray-700 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-              <div className="body-copy text-sm text-gray-400">
-                <p>© 2025 DataOps Group. All rights reserved.</p>
-              </div>
-              <div className="flex space-x-4 mt-4 md:mt-0">
-                <Link href="/privacy" className="body-copy text-sm text-gray-400 hover:text-white">
-                  Privacy
-                </Link>
-                <Link href="/terms" className="body-copy text-sm text-gray-400 hover:text-white">
-                  Terms
-                </Link>
-              </div>
-            </div>
+        <div>
+          <h4 className="subheadline text-xs text-gray-300 mb-4">Services</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/services/analytics-bi" className="body-copy text-sm text-gray-400 hover:text-white">
+                Analytics & BI
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/dataops-implementation"
+                className="body-copy text-sm text-gray-400 hover:text-white"
+              >
+                DataOps Implementation
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/team-training" className="body-copy text-sm text-gray-400 hover:text-white">
+                HubSpot Training
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/marketing-operations-revops"
+                className="body-copy text-sm text-gray-400 hover:text-white"
+              >
+                Marketing Operations
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                PE Value Creation
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Custom Solutions
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="subheadline text-xs text-gray-300 mb-4">Resources</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Blog & Insights
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Case Studies
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                PE Resources
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/insights/hubspot-for-private-equity"
+                className="body-copy text-sm text-gray-400 hover:text-white"
+              >
+                HubSpot for Private Equity
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                ROI Calculator
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="subheadline text-xs text-gray-300 mb-4">Support</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Client Support Portal
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-gray-400 hover:text-white">
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Schedule a Call
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                FAQ
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Placeholder FAQ 1
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Placeholder FAQ 2
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Placeholder FAQ 3
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                Placeholder FAQ 4
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-gray-700 mt-12 pt-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div className="body-copy text-sm text-gray-400">
+            <p>© 2025 DataOps Group. All rights reserved.</p>
+          </div>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <Link href="/privacy" className="body-copy text-sm text-gray-400 hover:text-white">
+              Privacy
+            </Link>
+            <Link href="/terms" className="body-copy text-sm text-gray-400 hover:text-white">
+              Terms
+            </Link>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
+  </footer>
+  </div>
   )
 }
