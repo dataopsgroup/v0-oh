@@ -36,7 +36,11 @@ import { saasHealthcareAchievesRemarkableInsights } from "@/data/blog/saas-healt
 import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-home-improvement-goods-manufacturer"
 import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
 
-// Collect all working blog posts (30+ posts)
+// TESTING: Add back problematic posts one by one
+// Let's start with the first one - trying the exact export name from the file
+import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
+
+// Collect all working blog posts (33+ posts now)
 const blogPosts: BlogPost[] = [
   tipsForSmartWorkflows,
   createProLevelHubSpotLeadScoreModel,
@@ -71,6 +75,8 @@ const blogPosts: BlogPost[] = [
   saasHealthcareAchievesRemarkableInsights,
   upscaleHomeImprovementGoodsManufacturer,
   leadTiersCaseStudy,
+  // TESTING: First problematic post
+  marketingOperationsIsntIT,
 ]
 
 export function getAllPosts(): BlogPost[] {
