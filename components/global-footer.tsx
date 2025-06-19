@@ -90,11 +90,6 @@ export default function GlobalFooter() {
                   HubSpot Guides
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  ROI Calculator
-                </Link>
-              </li>
             </ul>
           </div>
 
