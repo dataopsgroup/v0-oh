@@ -28,7 +28,7 @@ import { demystifyingUtmParameters } from "@/data/blog/demystifying-utm-paramete
 import { forgottenArtCampaignDocumentation } from "@/data/blog/forgotten-art-campaign-documentation"
 import { hubspotBlogBestPractices } from "@/data/blog/hubspot-blog-best-practices"
 import { whatHubspotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
-import { howToHireAHubspotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
+import { howToHireAHubSpotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
 import { whatDoesAHubspotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
 import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
 import { salesTeamStallingDeals } from "@/data/blog/sales-team-stalling-deals"
@@ -71,7 +71,7 @@ const blogPosts: BlogPost[] = [
   forgottenArtCampaignDocumentation,
   hubspotBlogBestPractices,
   whatHubspotDoesForMarketing,
-  howToHireAHubspotConsultant,
+  howToHireAHubSpotConsultant,
   whatDoesAHubspotConsultantCost,
   hiringAndWorkingWithAHubSpotConsultant,
   salesTeamStallingDeals,
