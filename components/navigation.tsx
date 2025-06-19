@@ -122,6 +122,14 @@ export default function Navigation() {
               <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
                   <Link
+                    href="/insights"
+                    className={`block px-4 py-2 text-base body-copy hover:bg-gray-50 hover:text-blue-600 ${
+                      pathname === "/insights" ? "text-blue-600 bg-blue-50 font-medium" : "text-gray-700"
+                    }`}
+                  >
+                    All Insights
+                  </Link>
+                  <Link
                     href="/insights/hubspot-for-private-equity"
                     className={`block px-4 py-2 text-base body-copy hover:bg-gray-50 hover:text-blue-600 ${
                       pathname === "/insights/hubspot-for-private-equity"
