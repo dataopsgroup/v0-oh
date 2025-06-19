@@ -36,9 +36,6 @@ export default function InsightsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {posts.length > 0 ? (
             <>
-              <div className="text-center mb-8">
-                <p className="text-gray-600">Showing {posts.length} insights and resources</p>
-              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map((post) => (
                   <BlogCard key={post.id} post={post} />
