@@ -40,10 +40,11 @@ import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
 import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
 import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
 import { howToHireAHubSpotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
-// Testing post #4 - trying with HubSpot capitalization
 import { whatDoesAHubSpotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
+// Testing post #5 - trying with HubSpot capitalization
+import { whatHubSpotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
 
-// Collect all working blog posts (36+ posts now)
+// Collect all working blog posts (37+ posts now)
 const blogPosts: BlogPost[] = [
   tipsForSmartWorkflows,
   createProLevelHubSpotLeadScoreModel,
@@ -83,6 +84,7 @@ const blogPosts: BlogPost[] = [
   hiringAndWorkingWithAHubSpotConsultant,
   howToHireAHubSpotConsultant,
   whatDoesAHubSpotConsultantCost,
+  whatHubSpotDoesForMarketing,
 ]
 
 export function getAllPosts(): BlogPost[] {
