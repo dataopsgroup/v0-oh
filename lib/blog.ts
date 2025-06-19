@@ -43,7 +43,7 @@ import { howToHireAHubSpotConsultant } from "@/data/blog/how-to-hire-a-hubspot-c
 import { whatDoesAHubSpotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
 import { whatHubSpotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
 // Testing post #6 - trying without "percent" and different number handling
-import { whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
+// import { whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
 
 // Collect all working blog posts (38+ posts now)
 const blogPosts: BlogPost[] = [
@@ -86,7 +86,7 @@ const blogPosts: BlogPost[] = [
   howToHireAHubSpotConsultant,
   whatDoesAHubSpotConsultantCost,
   whatHubSpotDoesForMarketing,
-  whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation,
+  // whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation,
 ]
 
 export function getAllPosts(): BlogPost[] {
