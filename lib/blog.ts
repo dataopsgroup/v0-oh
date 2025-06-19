@@ -1,9 +1,9 @@
 import type { BlogPost } from "@/types/blog"
 
-// Import all blog posts
+// Import all blog posts with correct export names
 import { tipsForSmartWorkflows } from "@/data/blog/3-tips-for-smart-workflows"
 import { audioVisualEquipmentWholesaler } from "@/data/blog/audio-visual-equipment-wholesaler"
-import { createProLevelHubspotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
+import { createProLevelHubSpotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
 import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
 import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
 import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
@@ -44,7 +44,7 @@ import { why64PercentPePortfolioCompaniesFailHubspotImplementation } from "@/dat
 const blogPosts: BlogPost[] = [
   tipsForSmartWorkflows,
   audioVisualEquipmentWholesaler,
-  createProLevelHubspotLeadScoreModel,
+  createProLevelHubSpotLeadScoreModel,
   crmCleanupPlan,
   customerAcquisitionCost,
   customerChurnBlindspot,
