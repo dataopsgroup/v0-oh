@@ -78,7 +78,10 @@ export default function GlobalFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
+                <Link
+                  href="/insights/hubspot-for-private-equity"
+                  className="body-copy text-sm text-gray-400 hover:text-white"
+                >
                   PE Value Creation
                 </Link>
               </li>
