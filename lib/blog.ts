@@ -30,7 +30,7 @@ import { hubspotBlogBestPractices } from "@/data/blog/hubspot-blog-best-practice
 import { whatHubspotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
 import { howToHireAHubspotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
 import { whatDoesAHubspotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
-import { hiringAndWorkingWithAHubspotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
+import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
 import { salesTeamStallingDeals } from "@/data/blog/sales-team-stalling-deals"
 import { marketingLeadersDataQualityCrisis } from "@/data/blog/marketing-leaders-data-quality-crisis"
 import { customerSegmentationMistake } from "@/data/blog/customer-segmentation-mistake"
@@ -73,7 +73,7 @@ const blogPosts: BlogPost[] = [
   whatHubspotDoesForMarketing,
   howToHireAHubspotConsultant,
   whatDoesAHubspotConsultantCost,
-  hiringAndWorkingWithAHubspotConsultant,
+  hiringAndWorkingWithAHubSpotConsultant,
   salesTeamStallingDeals,
   marketingLeadersDataQualityCrisis,
   customerSegmentationMistake,
