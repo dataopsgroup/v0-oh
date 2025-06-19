@@ -229,13 +229,6 @@ export default function ClientHomePage() {
                   <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-base rounded-none">
                     <Link href="/data-operations-assessment">Get Your Free Assessment</Link>
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="body-copy border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-base flex items-center rounded-none"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" strokeWidth={1.5} />
-                  </Button>
                 </div>
               </div>
               {/* No image here - removed the placeholder image div completely */}
