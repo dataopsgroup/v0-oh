@@ -9,19 +9,19 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
   const readTime = calculateReadTime(post.content || "")
 
-  // Category color mapping
+  // Category color mapping with better variety and contrast
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
-      Analytics: "bg-blue-100 text-blue-800",
-      Operations: "bg-green-100 text-green-800",
-      "Tips & Tricks": "bg-purple-100 text-purple-800",
-      "Case Studies": "bg-orange-100 text-orange-800",
-      Guides: "bg-indigo-100 text-indigo-800",
-      Strategy: "bg-red-100 text-red-800",
-      "Private Equity": "bg-gray-100 text-gray-800",
-      HubSpot: "bg-yellow-100 text-yellow-800",
+      Analytics: "bg-blue-600 text-white",
+      Operations: "bg-green-600 text-white",
+      "Tips & Tricks": "bg-purple-600 text-white",
+      "Case Studies": "bg-orange-600 text-white",
+      Guides: "bg-indigo-600 text-white",
+      Strategy: "bg-red-600 text-white",
+      "Private Equity": "bg-gray-700 text-white",
+      HubSpot: "bg-yellow-600 text-white",
     }
-    return colors[category] || "bg-gray-100 text-gray-800"
+    return colors[category] || "bg-slate-600 text-white"
   }
 
   return (
