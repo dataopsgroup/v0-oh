@@ -42,8 +42,8 @@ import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-w
 import { howToHireAHubSpotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
 import { whatDoesAHubSpotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
 import { whatHubSpotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
-// Testing post #6 - the tricky one! Trying with different capitalization patterns
-import { whySixtyFourPercentPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
+// Testing post #6 - trying without "percent" and different number handling
+import { why64PercentPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
 
 // Collect all working blog posts (38+ posts now)
 const blogPosts: BlogPost[] = [
@@ -86,7 +86,7 @@ const blogPosts: BlogPost[] = [
   howToHireAHubSpotConsultant,
   whatDoesAHubSpotConsultantCost,
   whatHubSpotDoesForMarketing,
-  whySixtyFourPercentPEPortfolioCompaniesFailHubSpotImplementation,
+  why64PercentPEPortfolioCompaniesFailHubSpotImplementation,
 ]
 
 export function getAllPosts(): BlogPost[] {
