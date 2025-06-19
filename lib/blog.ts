@@ -7,7 +7,7 @@ import { createProLevelHubSpotLeadScoreModel } from "@/data/blog/create-pro-leve
 import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
 import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
 import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
-import { customerSegmentationMistakeIcp } from "@/data/blog/customer-segmentation-mistake-icp"
+import { customerSegmentationMistakeICP } from "@/data/blog/customer-segmentation-mistake-icp"
 import { customerSegmentationMistake } from "@/data/blog/customer-segmentation-mistake"
 import { dataEnrichmentStrategy } from "@/data/blog/data-enrichment-strategy"
 import { dataTruthGap } from "@/data/blog/data-truth-gap"
@@ -48,7 +48,7 @@ const blogPosts: BlogPost[] = [
   crmCleanupPlan,
   customerAcquisitionCost,
   customerChurnBlindspot,
-  customerSegmentationMistakeIcp,
+  customerSegmentationMistakeICP,
   customerSegmentationMistake,
   dataEnrichmentStrategy,
   dataTruthGap,
