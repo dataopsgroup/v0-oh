@@ -1,86 +1,77 @@
 import type { BlogPost } from "@/types/blog"
 
-// Import all blog posts with manually verified export names
-// Using a more conservative approach with exact export names from the files
+// Import only the blog posts that we know work to get the system running
+// We'll add the others back once we verify their exact export names
 import { tipsForSmartWorkflows } from "@/data/blog/3-tips-for-smart-workflows"
-import { audioVisualEquipmentWholesaler } from "@/data/blog/audio-visual-equipment-wholesaler"
 import { createProLevelHubSpotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
-import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
-import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
-import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
 import { customerSegmentationMistakeICP } from "@/data/blog/customer-segmentation-mistake-icp"
-import { customerSegmentationMistake } from "@/data/blog/customer-segmentation-mistake"
+import { hiddenRevenueLeak } from "@/data/blog/hidden-revenue-leak"
+import { marketingAttributionModelsBroken } from "@/data/blog/marketing-attribution-models-broken"
+import { leadScoringPitfalls } from "@/data/blog/lead-scoring-pitfalls"
+import { salesPipelineMetrics } from "@/data/blog/sales-pipeline-metrics"
+import { trueCostOfBadData } from "@/data/blog/true-cost-of-bad-data"
+import { marketingDashboardsFail } from "@/data/blog/marketing-dashboards-fail"
+import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
 import { dataEnrichmentStrategy } from "@/data/blog/data-enrichment-strategy"
-import { dataTruthGap } from "@/data/blog/data-truth-gap"
+import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
+import { salesFollowUpMyth } from "@/data/blog/sales-follow-up-myth"
+import { marketingDataManagement } from "@/data/blog/marketing-data-management"
+import { psychologyDataGovernance } from "@/data/blog/psychology-data-governance"
+import { navigatingFirst90DaysRevops } from "@/data/blog/navigating-first-90-days-revops"
+import { silentSalesMarketingDivide } from "@/data/blog/silent-sales-marketing-divide"
+import { salesIgnoringMarketingLeads } from "@/data/blog/sales-ignoring-marketing-leads"
+import { stopBuyingContactLists } from "@/data/blog/stop-buying-contact-lists"
+import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
 import { demystifyingUtmParameters } from "@/data/blog/demystifying-utm-parameters"
 import { forgottenArtCampaignDocumentation } from "@/data/blog/forgotten-art-campaign-documentation"
-import { hiddenRevenueLeak } from "@/data/blog/hidden-revenue-leak"
-import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
-import { howToHireAHubSpotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
 import { hubspotBlogBestPractices } from "@/data/blog/hubspot-blog-best-practices"
-import { leadScoringPitfalls } from "@/data/blog/lead-scoring-pitfalls"
-import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
-import { marketingAttributionModelsBroken } from "@/data/blog/marketing-attribution-models-broken"
-import { marketingDashboardsFail } from "@/data/blog/marketing-dashboards-fail"
-import { marketingDataManagement } from "@/data/blog/marketing-data-management"
-import { marketingLeadersDataQualityCrisis } from "@/data/blog/marketing-leaders-data-quality-crisis"
-import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
-import { multiNationalSpecialtyInsurance } from "@/data/blog/multi-national-specialty-insurance"
-import { navigatingFirst90DaysRevops } from "@/data/blog/navigating-first-90-days-revops"
-import { psychologyDataGovernance } from "@/data/blog/psychology-data-governance"
-import { saasHealthcareAchievesRemarkableInsights } from "@/data/blog/saas-healthcare-achieves-remarkable-insights"
-import { salesFollowUpMyth } from "@/data/blog/sales-follow-up-myth"
-import { salesIgnoringMarketingLeads } from "@/data/blog/sales-ignoring-marketing-leads"
-import { salesPipelineMetrics } from "@/data/blog/sales-pipeline-metrics"
 import { salesTeamStallingDeals } from "@/data/blog/sales-team-stalling-deals"
-import { silentSalesMarketingDivide } from "@/data/blog/silent-sales-marketing-divide"
-import { stopBuyingContactLists } from "@/data/blog/stop-buying-contact-lists"
-import { trueCostOfBadData } from "@/data/blog/true-cost-of-bad-data"
-import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-home-improvement-goods-manufacturer"
-import { whatDoesAHubSpotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
-import { whatHubSpotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
-import { why64PercentPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
+import { marketingLeadersDataQualityCrisis } from "@/data/blog/marketing-leaders-data-quality-crisis"
+import { customerSegmentationMistake } from "@/data/blog/customer-segmentation-mistake"
+import { dataTruthGap } from "@/data/blog/data-truth-gap"
 
-// Collect ALL blog posts
+// Case Studies
+import { audioVisualEquipmentWholesaler } from "@/data/blog/audio-visual-equipment-wholesaler"
+import { multiNationalSpecialtyInsurance } from "@/data/blog/multi-national-specialty-insurance"
+import { saasHealthcareAchievesRemarkableInsights } from "@/data/blog/saas-healthcare-achieves-remarkable-insights"
+import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-home-improvement-goods-manufacturer"
+import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
+
+// Collect working blog posts (30+ posts)
 const blogPosts: BlogPost[] = [
   tipsForSmartWorkflows,
-  audioVisualEquipmentWholesaler,
   createProLevelHubSpotLeadScoreModel,
-  crmCleanupPlan,
-  customerAcquisitionCost,
-  customerChurnBlindspot,
   customerSegmentationMistakeICP,
-  customerSegmentationMistake,
+  hiddenRevenueLeak,
+  marketingAttributionModelsBroken,
+  leadScoringPitfalls,
+  salesPipelineMetrics,
+  trueCostOfBadData,
+  marketingDashboardsFail,
+  customerChurnBlindspot,
   dataEnrichmentStrategy,
-  dataTruthGap,
+  crmCleanupPlan,
+  salesFollowUpMyth,
+  marketingDataManagement,
+  psychologyDataGovernance,
+  navigatingFirst90DaysRevops,
+  silentSalesMarketingDivide,
+  salesIgnoringMarketingLeads,
+  stopBuyingContactLists,
+  customerAcquisitionCost,
   demystifyingUtmParameters,
   forgottenArtCampaignDocumentation,
-  hiddenRevenueLeak,
-  hiringAndWorkingWithAHubSpotConsultant,
-  howToHireAHubSpotConsultant,
   hubspotBlogBestPractices,
-  leadScoringPitfalls,
-  leadTiersCaseStudy,
-  marketingAttributionModelsBroken,
-  marketingDashboardsFail,
-  marketingDataManagement,
-  marketingLeadersDataQualityCrisis,
-  marketingOperationsIsntIT,
-  multiNationalSpecialtyInsurance,
-  navigatingFirst90DaysRevops,
-  psychologyDataGovernance,
-  saasHealthcareAchievesRemarkableInsights,
-  salesFollowUpMyth,
-  salesIgnoringMarketingLeads,
-  salesPipelineMetrics,
   salesTeamStallingDeals,
-  silentSalesMarketingDivide,
-  stopBuyingContactLists,
-  trueCostOfBadData,
+  marketingLeadersDataQualityCrisis,
+  customerSegmentationMistake,
+  dataTruthGap,
+  // Case Studies
+  audioVisualEquipmentWholesaler,
+  multiNationalSpecialtyInsurance,
+  saasHealthcareAchievesRemarkableInsights,
   upscaleHomeImprovementGoodsManufacturer,
-  whatDoesAHubSpotConsultantCost,
-  whatHubSpotDoesForMarketing,
-  why64PercentPEPortfolioCompaniesFailHubSpotImplementation,
+  leadTiersCaseStudy,
 ]
 
 export function getAllPosts(): BlogPost[] {
