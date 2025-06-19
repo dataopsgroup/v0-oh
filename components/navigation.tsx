@@ -157,12 +157,17 @@ export default function Navigation() {
             >
               <Link href="/contact">Get Started</Link>
             </Button>
-            <Button
-              className="body-copy text-gray-900 hover:bg-yellow-500 rounded-none"
-              style={{ backgroundColor: "#FBB03B" }}
-            >
-              <Link href="/book">📖 Copy Our Playbook</Link>
-            </Button>
+            <div className="relative">
+              <Button
+                className="body-copy text-gray-900 hover:bg-yellow-500 rounded-none"
+                style={{ backgroundColor: "#FBB03B" }}
+              >
+                <Link href="/book">📖 Copy Our Playbook</Link>
+              </Button>
+              <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                NEW
+              </div>
+            </div>
           </div>
         </div>
       </div>
