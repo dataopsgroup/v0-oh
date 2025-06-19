@@ -39,13 +39,12 @@ import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
 
 // Add back the problematic posts with corrected export names
 import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
-import { howToHireAHubSpotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
-import { whatDoesAHubspotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
-import { whatHubspotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
-import { why64PercentPePortfolioCompaniesFailHubspotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
+import { whatDoesAHubSpotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
+import { whatHubSpotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
+import { why64PercentPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
 import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
 
-// Collect ALL blog posts (35+ posts now)
+// Collect ALL blog posts (34+ posts now)
 const blogPosts: BlogPost[] = [
   tipsForSmartWorkflows,
   createProLevelHubSpotLeadScoreModel,
@@ -82,10 +81,9 @@ const blogPosts: BlogPost[] = [
   leadTiersCaseStudy,
   // Previously problematic posts - now with corrected export names
   marketingOperationsIsntIT,
-  howToHireAHubSpotConsultant,
-  whatDoesAHubspotConsultantCost,
-  whatHubspotDoesForMarketing,
-  why64PercentPePortfolioCompaniesFailHubspotImplementation,
+  whatDoesAHubSpotConsultantCost,
+  whatHubSpotDoesForMarketing,
+  why64PercentPEPortfolioCompaniesFailHubSpotImplementation,
   hiringAndWorkingWithAHubSpotConsultant,
 ]
 
