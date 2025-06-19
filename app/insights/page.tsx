@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function InsightsPage() {
-  const posts = await getAllPosts()
+export default function InsightsPage() {
+  const posts = getAllPosts()
 
   return (
     <div className="min-h-screen bg-white">
@@ -31,18 +31,18 @@ export default async function InsightsPage() {
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
+      {/* Blog Posts Grid - 3 columns, newest first (top-left to bottom-right) */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {posts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-600 text-lg">Loading blog posts...</p>
+              <p className="text-gray-600 text-lg">No blog posts found.</p>
             </div>
           )}
         </div>

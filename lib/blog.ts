@@ -1,108 +1,95 @@
 import type { BlogPost } from "@/types/blog"
 
-// Cache for blog posts to avoid re-importing
-let cachedPosts: BlogPost[] | null = null
+// For now, let's create some sample posts to make sure the layout works
+// Then we can connect your real blog data once the layout is working
+const samplePosts: BlogPost[] = [
+  {
+    id: "sample-post-1",
+    title: "How to Transform Your HubSpot Setup Into a Revenue Machine",
+    excerpt:
+      "Learn the proven strategies that help companies increase their revenue by 40% through better HubSpot configuration and data management.",
+    content: "Sample content here...",
+    author: "DataOps Group",
+    date: "2024-01-15",
+    category: "HubSpot",
+    tags: ["hubspot", "revenue", "optimization"],
+    coverImage: "/placeholder.svg?height=200&width=400&text=HubSpot+Revenue",
+  },
+  {
+    id: "sample-post-2",
+    title: "The Hidden Revenue Leak in Your Sales Pipeline",
+    excerpt:
+      "Discover the common data quality issues that are costing your company thousands in lost revenue every month.",
+    content: "Sample content here...",
+    author: "DataOps Group",
+    date: "2024-01-10",
+    category: "Analytics",
+    tags: ["sales", "pipeline", "data-quality"],
+    coverImage: "/placeholder.svg?height=200&width=400&text=Revenue+Leak",
+  },
+  {
+    id: "sample-post-3",
+    title: "Private Equity Portfolio Company Success Story",
+    excerpt: "How one PE portfolio company increased valuation by 25% through strategic data operations improvements.",
+    content: "Sample content here...",
+    author: "DataOps Group",
+    date: "2024-01-05",
+    category: "Case Studies",
+    tags: ["private-equity", "case-study", "valuation"],
+    coverImage: "/placeholder.svg?height=200&width=400&text=PE+Success",
+  },
+  {
+    id: "sample-post-4",
+    title: "Marketing Attribution Models That Actually Work",
+    excerpt:
+      "Stop wasting budget on broken attribution. Here's how to build attribution models that drive real business decisions.",
+    content: "Sample content here...",
+    author: "DataOps Group",
+    date: "2023-12-28",
+    category: "Strategy",
+    tags: ["marketing", "attribution", "analytics"],
+    coverImage: "/placeholder.svg?height=200&width=400&text=Attribution+Models",
+  },
+  {
+    id: "sample-post-5",
+    title: "The Complete Guide to HubSpot Lead Scoring",
+    excerpt: "Build a lead scoring model that actually predicts revenue. Step-by-step guide with real examples.",
+    content: "Sample content here...",
+    author: "DataOps Group",
+    date: "2023-12-20",
+    category: "Guides",
+    tags: ["hubspot", "lead-scoring", "guide"],
+    coverImage: "/placeholder.svg?height=200&width=400&text=Lead+Scoring",
+  },
+  {
+    id: "sample-post-6",
+    title: "Why 64% of PE Portfolio Companies Fail HubSpot Implementation",
+    excerpt:
+      "The critical mistakes that doom HubSpot implementations and how to avoid them in your portfolio companies.",
+    content: "Sample content here...",
+    author: "DataOps Group",
+    date: "2023-12-15",
+    category: "Private Equity",
+    tags: ["private-equity", "hubspot", "implementation"],
+    coverImage: "/placeholder.svg?height=200&width=400&text=HubSpot+Failures",
+  },
+]
 
-export async function getAllPosts(): Promise<BlogPost[]> {
-  if (cachedPosts) {
-    return cachedPosts
-  }
-
-  const posts: BlogPost[] = []
-
-  // List of all blog post file names (without extension)
-  const blogFiles = [
-    "3-tips-for-smart-workflows",
-    "audio-visual-equipment-wholesaler",
-    "create-pro-level-hubspot-lead-score-model",
-    "crm-cleanup-plan",
-    "customer-acquisition-cost",
-    "customer-churn-blindspot",
-    "customer-segmentation-mistake-icp",
-    "customer-segmentation-mistake",
-    "data-enrichment-strategy",
-    "data-truth-gap",
-    "demystifying-utm-parameters",
-    "forgotten-art-campaign-documentation",
-    "hidden-revenue-leak",
-    "hiring-and-working-with-a-hubspot-consultant",
-    "how-to-hire-a-hubspot-consultant",
-    "hubspot-blog-best-practices",
-    "lead-scoring-pitfalls",
-    "lead-tiers-case-study",
-    "marketing-attribution-models-broken",
-    "marketing-dashboards-fail",
-    "marketing-data-management",
-    "marketing-leaders-data-quality-crisis",
-    "marketing-operations-isnt-it",
-    "multi-national-specialty-insurance",
-    "navigating-first-90-days-revops",
-    "psychology-data-governance",
-    "saas-healthcare-achieves-remarkable-insights",
-    "sales-follow-up-myth",
-    "sales-ignoring-marketing-leads",
-    "sales-pipeline-metrics",
-    "sales-team-stalling-deals",
-    "silent-sales-marketing-divide",
-    "stop-buying-contact-lists",
-    "true-cost-of-bad-data",
-    "upscale-home-improvement-goods-manufacturer",
-    "what-does-a-hubspot-consultant-cost",
-    "what-hubspot-does-for-marketing",
-    "why-64-percent-pe-portfolio-companies-fail-hubspot-implementation",
-  ]
-
-  // Dynamically import each blog post
-  for (const fileName of blogFiles) {
-    try {
-      const module = await import(`@/data/blog/${fileName}`)
-
-      // Try different export patterns
-      let post: BlogPost | null = null
-
-      // Try default export first
-      if (module.default && typeof module.default === "object") {
-        post = module.default
-      }
-      // Try named export (look for any export that looks like a blog post)
-      else {
-        const exportKeys = Object.keys(module)
-        for (const key of exportKeys) {
-          if (module[key] && typeof module[key] === "object" && module[key].id) {
-            post = module[key]
-            break
-          }
-        }
-      }
-
-      if (post && post.id) {
-        posts.push(post)
-      } else {
-        console.warn(`Could not find valid blog post export in ${fileName}`)
-      }
-    } catch (error) {
-      console.warn(`Failed to import blog post ${fileName}:`, error)
-    }
-  }
-
-  // Sort posts by date (newest first)
-  cachedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  return cachedPosts
+export function getAllPosts(): BlogPost[] {
+  // Sort by date - newest first (top-left to bottom-right in grid)
+  return samplePosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
-  const posts = await getAllPosts()
-  return posts.find((post) => post.id === slug)
+export function getPostBySlug(slug: string): BlogPost | undefined {
+  return samplePosts.find((post) => post.id === slug)
 }
 
-export async function getPostsByCategory(category: string): Promise<BlogPost[]> {
-  const posts = await getAllPosts()
-  return posts.filter((post) => post.category === category)
+export function getPostsByCategory(category: string): BlogPost[] {
+  return samplePosts.filter((post) => post.category === category)
 }
 
-export async function getRelatedPosts(currentPost: BlogPost, limit = 3): Promise<BlogPost[]> {
-  const posts = await getAllPosts()
-  return posts
+export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
+  return samplePosts
     .filter(
       (post) =>
         post.id !== currentPost.id &&
