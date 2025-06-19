@@ -1,71 +1,68 @@
+import type { Metadata } from "next"
 import { getAllPosts } from "@/lib/blog"
-import { BlogCard } from "@/components/blog/BlogCard"
-import { Suspense } from "react"
+import BlogCard from "@/components/blog/BlogCard"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-async function BlogPostsGrid() {
-  const posts = await getAllPosts()
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {posts.map((post) => (
-        <BlogCard key={post.id} post={post} />
-      ))}
-    </div>
-  )
-}
-
-function LoadingGrid() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="bg-gray-100 rounded-lg p-6 animate-pulse">
-          <div className="h-4 bg-gray-200 rounded mb-4"></div>
-          <div className="h-6 bg-gray-200 rounded mb-2"></div>
-          <div className="h-4 bg-gray-200 rounded mb-4"></div>
-          <div className="h-3 bg-gray-200 rounded"></div>
-        </div>
-      ))}
-    </div>
-  )
+export const metadata: Metadata = {
+  title: "Insights & Resources | DataOps Group",
+  description: "Expert advice on transforming your HubSpot setup into a revenue-generating machine.",
+  openGraph: {
+    title: "Insights & Resources | DataOps Group",
+    description: "Expert advice on transforming your HubSpot setup into a revenue-generating machine.",
+    type: "website",
+  },
 }
 
 export default function InsightsPage() {
+  const posts = getAllPosts()
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-gray-50 py-16">
+      {/* Compact Header */}
+      <section className="bg-white py-12 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Insights</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Expert insights on data operations, marketing technology, and business growth strategies.
+            <h1 className="text-3xl font-bold text-gray-900 mb-3">Insights & Resources</h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Expert advice on transforming your HubSpot setup into a revenue-generating machine.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Blog Posts Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Suspense fallback={<LoadingGrid />}>
-          <BlogPostsGrid />
-        </Suspense>
-      </div>
+      {/* Blog Posts Grid - 3 columns, newest first (top-left to bottom-right) */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {posts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posts.map((post) => (
+                <BlogCard key={post.id} post={post} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-gray-600 text-lg">No blog posts found.</p>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="bg-blue-600 py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Data Operations?</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Get expert guidance on implementing data-driven strategies that deliver measurable results.
+      <section className="bg-blue-600 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Portfolio Operations?</h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join 50+ companies that have already transformed their business operations with DataOps Group. Our proven
+            methodology helps PE portfolio companies increase valuation and drive growth through data.
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors duration-200"
-          >
-            Get Started Today
-          </a>
+          <Link href="/data-operations-assessment">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg">
+              Get Your Free Assessment
+            </Button>
+          </Link>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
