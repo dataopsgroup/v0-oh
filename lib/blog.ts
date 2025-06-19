@@ -1,107 +1,115 @@
 import type { BlogPost } from "@/types/blog"
 
-// Import only the blog posts that we know work to get the system running
-// We'll add the others back once we verify their exact export names
-import { tipsForSmartWorkflows } from "@/data/blog/3-tips-for-smart-workflows"
-import { createProLevelHubSpotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
-import { customerSegmentationMistakeICP } from "@/data/blog/customer-segmentation-mistake-icp"
-import { hiddenRevenueLeak } from "@/data/blog/hidden-revenue-leak"
-import { marketingAttributionModelsBroken } from "@/data/blog/marketing-attribution-models-broken"
-import { leadScoringPitfalls } from "@/data/blog/lead-scoring-pitfalls"
-import { salesPipelineMetrics } from "@/data/blog/sales-pipeline-metrics"
-import { trueCostOfBadData } from "@/data/blog/true-cost-of-bad-data"
-import { marketingDashboardsFail } from "@/data/blog/marketing-dashboards-fail"
-import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
-import { dataEnrichmentStrategy } from "@/data/blog/data-enrichment-strategy"
-import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
-import { salesFollowUpMyth } from "@/data/blog/sales-follow-up-myth"
-import { marketingDataManagement } from "@/data/blog/marketing-data-management"
-import { psychologyDataGovernance } from "@/data/blog/psychology-data-governance"
-import { navigatingFirst90DaysRevops } from "@/data/blog/navigating-first-90-days-revops"
-import { silentSalesMarketingDivide } from "@/data/blog/silent-sales-marketing-divide"
-import { salesIgnoringMarketingLeads } from "@/data/blog/sales-ignoring-marketing-leads"
-import { stopBuyingContactLists } from "@/data/blog/stop-buying-contact-lists"
-import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
-import { demystifyingUtmParameters } from "@/data/blog/demystifying-utm-parameters"
-import { forgottenArtCampaignDocumentation } from "@/data/blog/forgotten-art-campaign-documentation"
-import { hubspotBlogBestPractices } from "@/data/blog/hubspot-blog-best-practices"
-import { salesTeamStallingDeals } from "@/data/blog/sales-team-stalling-deals"
-import { marketingLeadersDataQualityCrisis } from "@/data/blog/marketing-leaders-data-quality-crisis"
-import { customerSegmentationMistake } from "@/data/blog/customer-segmentation-mistake"
-import { dataTruthGap } from "@/data/blog/data-truth-gap"
-
-// Case Studies
-import { audioVisualEquipmentWholesaler } from "@/data/blog/audio-visual-equipment-wholesaler"
-import { multiNationalSpecialtyInsurance } from "@/data/blog/multi-national-specialty-insurance"
-import { saasHealthcareAchievesRemarkableInsights } from "@/data/blog/saas-healthcare-achieves-remarkable-insights"
-import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-home-improvement-goods-manufacturer"
-import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
-
-// Add back the problematic posts with corrected export names
-import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
-import { whatDoesAHubSpotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
-import { whatHubSpotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
-import { why64PercentPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
-import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
-
-// Collect ALL blog posts (34+ posts now)
-const blogPosts: BlogPost[] = [
-  tipsForSmartWorkflows,
-  createProLevelHubSpotLeadScoreModel,
-  customerSegmentationMistakeICP,
-  hiddenRevenueLeak,
-  marketingAttributionModelsBroken,
-  leadScoringPitfalls,
-  salesPipelineMetrics,
-  trueCostOfBadData,
-  marketingDashboardsFail,
-  customerChurnBlindspot,
-  dataEnrichmentStrategy,
-  crmCleanupPlan,
-  salesFollowUpMyth,
-  marketingDataManagement,
-  psychologyDataGovernance,
-  navigatingFirst90DaysRevops,
-  silentSalesMarketingDivide,
-  salesIgnoringMarketingLeads,
-  stopBuyingContactLists,
-  customerAcquisitionCost,
-  demystifyingUtmParameters,
-  forgottenArtCampaignDocumentation,
-  hubspotBlogBestPractices,
-  salesTeamStallingDeals,
-  marketingLeadersDataQualityCrisis,
-  customerSegmentationMistake,
-  dataTruthGap,
-  // Case Studies
-  audioVisualEquipmentWholesaler,
-  multiNationalSpecialtyInsurance,
-  saasHealthcareAchievesRemarkableInsights,
-  upscaleHomeImprovementGoodsManufacturer,
-  leadTiersCaseStudy,
-  // Previously problematic posts - now with corrected export names
-  marketingOperationsIsntIT,
-  whatDoesAHubSpotConsultantCost,
-  whatHubSpotDoesForMarketing,
-  why64PercentPEPortfolioCompaniesFailHubSpotImplementation,
-  hiringAndWorkingWithAHubSpotConsultant,
+// Define all blog post file names (without extensions)
+const BLOG_POST_FILES = [
+  "3-tips-for-smart-workflows",
+  "audio-visual-equipment-wholesaler",
+  "create-pro-level-hubspot-lead-score-model",
+  "crm-cleanup-plan",
+  "customer-acquisition-cost",
+  "customer-churn-blindspot",
+  "customer-segmentation-mistake-icp",
+  "customer-segmentation-mistake",
+  "data-enrichment-strategy",
+  "data-truth-gap",
+  "demystifying-utm-parameters",
+  "forgotten-art-campaign-documentation",
+  "hidden-revenue-leak",
+  "hiring-and-working-with-a-hubspot-consultant",
+  "how-to-hire-a-hubspot-consultant",
+  "hubspot-blog-best-practices",
+  "lead-scoring-pitfalls",
+  "lead-tiers-case-study",
+  "marketing-attribution-models-broken",
+  "marketing-dashboards-fail",
+  "marketing-data-management",
+  "marketing-leaders-data-quality-crisis",
+  "marketing-operations-isnt-it",
+  "multi-national-specialty-insurance",
+  "navigating-first-90-days-revops",
+  "psychology-data-governance",
+  "saas-healthcare-achieves-remarkable-insights",
+  "sales-follow-up-myth",
+  "sales-ignoring-marketing-leads",
+  "sales-pipeline-metrics",
+  "sales-team-stalling-deals",
+  "silent-sales-marketing-divide",
+  "stop-buying-contact-lists",
+  "true-cost-of-bad-data",
+  "upscale-home-improvement-goods-manufacturer",
+  "what-does-a-hubspot-consultant-cost",
+  "what-hubspot-does-for-marketing",
+  "why-64-percent-pe-portfolio-companies-fail-hubspot-implementation",
 ]
 
-export function getAllPosts(): BlogPost[] {
+// Cache for loaded blog posts
+let blogPostsCache: BlogPost[] | null = null
+
+// Dynamic import function with error handling
+async function loadBlogPost(fileName: string): Promise<BlogPost | null> {
+  try {
+    const module = await import(`@/data/blog/${fileName}`)
+
+    // Try different export patterns
+    const possibleExports = [
+      module.default,
+      ...Object.values(module).filter(
+        (exp): exp is BlogPost => exp && typeof exp === "object" && "id" in exp && "title" in exp,
+      ),
+    ]
+
+    const blogPost = possibleExports.find(
+      (exp): exp is BlogPost => exp && typeof exp === "object" && "id" in exp && "title" in exp,
+    )
+
+    if (blogPost) {
+      return blogPost
+    } else {
+      console.warn(`No valid blog post export found in ${fileName}`)
+      return null
+    }
+  } catch (error) {
+    console.warn(`Failed to load blog post ${fileName}:`, error)
+    return null
+  }
+}
+
+// Load all blog posts with error handling
+async function loadAllBlogPosts(): Promise<BlogPost[]> {
+  if (blogPostsCache) {
+    return blogPostsCache
+  }
+
+  const loadPromises = BLOG_POST_FILES.map((fileName) => loadBlogPost(fileName))
+  const results = await Promise.all(loadPromises)
+
+  // Filter out failed imports and cache results
+  blogPostsCache = results.filter((post): post is BlogPost => post !== null)
+
+  console.log(`Successfully loaded ${blogPostsCache.length} out of ${BLOG_POST_FILES.length} blog posts`)
+
+  return blogPostsCache
+}
+
+export async function getAllPosts(): Promise<BlogPost[]> {
+  const posts = await loadAllBlogPosts()
   // Sort by date - newest first (top-left to bottom-right in grid)
-  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.id === slug)
+export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  const posts = await loadAllBlogPosts()
+  return posts.find((post) => post.id === slug)
 }
 
-export function getPostsByCategory(category: string): BlogPost[] {
-  return blogPosts.filter((post) => post.category === category)
+export async function getPostsByCategory(category: string): Promise<BlogPost[]> {
+  const posts = await loadAllBlogPosts()
+  return posts.filter((post) => post.category === category)
 }
 
-export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
-  return blogPosts
+export async function getRelatedPosts(currentPost: BlogPost, limit = 3): Promise<BlogPost[]> {
+  const posts = await loadAllBlogPosts()
+  return posts
     .filter(
       (post) =>
         post.id !== currentPost.id &&
@@ -133,4 +141,14 @@ export function calculateReadTime(content: string): number {
     .split(/\s+/)
     .filter((word) => word.length > 0).length
   return Math.max(1, Math.ceil(wordCount / wordsPerMinute))
+}
+
+// Synchronous versions for components that need immediate data
+// These will return cached data or empty arrays if not loaded yet
+export function getAllPostsSync(): BlogPost[] {
+  return blogPostsCache || []
+}
+
+export function getPostBySlugSync(slug: string): BlogPost | undefined {
+  return blogPostsCache?.find((post) => post.id === slug)
 }
