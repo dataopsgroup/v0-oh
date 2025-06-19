@@ -1,4 +1,4 @@
-# Recreate UI from screenshot
+# Site v2 Built on v0.dev
 
 *Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
