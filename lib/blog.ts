@@ -37,10 +37,11 @@ import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-hom
 import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
 
 // TESTING: Add back problematic posts one by one
-// Let's start with the first one - trying the exact export name from the file
 import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
+// Testing post #2 - trying with HubSpot capitalization
+import { hiringAndWorkingWithAHubSpotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
 
-// Collect all working blog posts (33+ posts now)
+// Collect all working blog posts (34+ posts now)
 const blogPosts: BlogPost[] = [
   tipsForSmartWorkflows,
   createProLevelHubSpotLeadScoreModel,
@@ -75,8 +76,9 @@ const blogPosts: BlogPost[] = [
   saasHealthcareAchievesRemarkableInsights,
   upscaleHomeImprovementGoodsManufacturer,
   leadTiersCaseStudy,
-  // TESTING: First problematic post
+  // TESTING: Problematic posts
   marketingOperationsIsntIT,
+  hiringAndWorkingWithAHubSpotConsultant,
 ]
 
 export function getAllPosts(): BlogPost[] {
