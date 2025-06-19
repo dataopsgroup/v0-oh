@@ -23,7 +23,7 @@ import { marketingAttributionModelsBroken } from "@/data/blog/marketing-attribut
 import { marketingDashboardsFail } from "@/data/blog/marketing-dashboards-fail"
 import { marketingDataManagement } from "@/data/blog/marketing-data-management"
 import { marketingLeadersDataQualityCrisis } from "@/data/blog/marketing-leaders-data-quality-crisis"
-import { marketingOperationsIsntIt } from "@/data/blog/marketing-operations-isnt-it"
+import { marketingOperationsIsntIT } from "@/data/blog/marketing-operations-isnt-it"
 import { multiNationalSpecialtyInsurance } from "@/data/blog/multi-national-specialty-insurance"
 import { navigatingFirst90DaysRevops } from "@/data/blog/navigating-first-90-days-revops"
 import { psychologyDataGovernance } from "@/data/blog/psychology-data-governance"
@@ -64,7 +64,7 @@ const blogPosts: BlogPost[] = [
   marketingDashboardsFail,
   marketingDataManagement,
   marketingLeadersDataQualityCrisis,
-  marketingOperationsIsntIt,
+  marketingOperationsIsntIT,
   multiNationalSpecialtyInsurance,
   navigatingFirst90DaysRevops,
   psychologyDataGovernance,
