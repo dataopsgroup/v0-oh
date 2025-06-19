@@ -1,4 +1,3 @@
-
 // Cache Utility Functions
 
 // Helper function to set cache headers in the response

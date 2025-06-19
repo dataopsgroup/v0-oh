@@ -1,4 +1,3 @@
-
 // Service Worker Event Handlers with Bot Detection
 
 // Install event - cache core assets by category
@@ -115,4 +114,3 @@ self.addEventListener('message', (event) => {
     );
   }
 });
-

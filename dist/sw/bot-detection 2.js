@@ -1,4 +1,3 @@
-
 // Bot Detection and Handling for Service Worker
 
 // List of known search engine bot user agents
@@ -136,4 +135,3 @@ const handleBotRequest = async (request) => {
     return new Response('Not Found', { status: 404 });
   }
 };
-

@@ -1,4 +1,3 @@
-
 // Service Worker Caching Strategies
 
 // Network-first strategy for HTML pages with offline fallback
