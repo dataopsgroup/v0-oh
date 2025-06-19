@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function InsightsPage() {
-  const posts = await getAllPosts()
+export default function InsightsPage() {
+  const posts = getAllPosts()
 
   return (
     <div className="min-h-screen bg-white">
@@ -47,7 +47,7 @@ export default async function InsightsPage() {
             </>
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-600 text-lg">Loading blog posts...</p>
+              <p className="text-gray-600 text-lg">No blog posts found.</p>
             </div>
           )}
         </div>
