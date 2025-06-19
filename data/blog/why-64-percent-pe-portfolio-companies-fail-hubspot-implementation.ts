@@ -1,9 +1,10 @@
-import { BlogPost } from '@/types/blog';
+import type { BlogPost } from "@/types/blog"
 
-export const why64PercentPEPortfolioCompaniesFailHubspotImplementation: BlogPost = {
+export const whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation: BlogPost = {
   id: "why-64-percent-pe-portfolio-companies-fail-hubspot-implementation",
   title: "Why 64% of PE Portfolio Companies Fail at HubSpot Implementation",
-  excerpt: "Private equity firms invest millions in portfolio companies, yet most HubSpot implementations fail to deliver ROI. Here's why and how to fix it.",
+  excerpt:
+    "Private equity firms invest millions in portfolio companies, yet most HubSpot implementations fail to deliver ROI. Here's why and how to fix it.",
   date: "2025-04-20",
   author: "Geoff Tucker",
   category: "Private Equity",
@@ -140,16 +141,20 @@ export const why64PercentPEPortfolioCompaniesFailHubspotImplementation: BlogPost
     
     <p>If you're a PE firm or portfolio company planning a HubSpot implementation, don't become part of the 64% failure statistic. Our specialized approach to PE portfolio company implementations has helped companies achieve measurable ROI within the critical 18-month window.</p>
     
-    <p>Learn more about our <a href="/services/hubspot-implementation">HubSpot implementation services</a> or explore our <a href="/case-studies">proven success stories</a> with similar companies.</p>
+    <p>Learn more about our <a href="/services/pe-value-creation">HubSpot implementation services</a> or explore our proven success stories with similar companies.</p>
     
     <p>Contact us to discuss how we can help your portfolio company achieve HubSpot implementation success that drives real business value.</p>
   `,
   seo: {
-    metaDescription: "64% of PE portfolio companies fail at HubSpot implementation. Learn why these failures happen and how to ensure success with proper planning, data quality, and specialized expertise.",
-    keywords: "private equity hubspot implementation, pe portfolio company hubspot, hubspot implementation failure, pe technology investment, portfolio company operations",
+    metaDescription:
+      "64% of PE portfolio companies fail at HubSpot implementation. Learn why these failures happen and how to ensure success with proper planning, data quality, and specialized expertise.",
+    keywords:
+      "private equity hubspot implementation, pe portfolio company hubspot, hubspot implementation failure, pe technology investment, portfolio company operations",
     ogTitle: "Why 64% of PE Portfolio Companies Fail HubSpot Implementation",
-    ogDescription: "Private equity portfolio companies face unique HubSpot implementation challenges. Learn the critical success factors and avoid the 64% failure rate.",
+    ogDescription:
+      "Private equity portfolio companies face unique HubSpot implementation challenges. Learn the critical success factors and avoid the 64% failure rate.",
     twitterTitle: "PE Portfolio Company HubSpot Implementation Failures",
-    twitterDescription: "64% of PE portfolio companies fail at HubSpot implementation. Here's why and how to ensure success in your technology investment."
-  }
-};
+    twitterDescription:
+      "64% of PE portfolio companies fail at HubSpot implementation. Here's why and how to ensure success in your technology investment.",
+  },
+}
