@@ -1,95 +1,106 @@
 import type { BlogPost } from "@/types/blog"
 
-// For now, let's create some sample posts to make sure the layout works
-// Then we can connect your real blog data once the layout is working
-const samplePosts: BlogPost[] = [
-  {
-    id: "sample-post-1",
-    title: "How to Transform Your HubSpot Setup Into a Revenue Machine",
-    excerpt:
-      "Learn the proven strategies that help companies increase their revenue by 40% through better HubSpot configuration and data management.",
-    content: "Sample content here...",
-    author: "DataOps Group",
-    date: "2024-01-15",
-    category: "HubSpot",
-    tags: ["hubspot", "revenue", "optimization"],
-    coverImage: "/placeholder.svg?height=200&width=400&text=HubSpot+Revenue",
-  },
-  {
-    id: "sample-post-2",
-    title: "The Hidden Revenue Leak in Your Sales Pipeline",
-    excerpt:
-      "Discover the common data quality issues that are costing your company thousands in lost revenue every month.",
-    content: "Sample content here...",
-    author: "DataOps Group",
-    date: "2024-01-10",
-    category: "Analytics",
-    tags: ["sales", "pipeline", "data-quality"],
-    coverImage: "/placeholder.svg?height=200&width=400&text=Revenue+Leak",
-  },
-  {
-    id: "sample-post-3",
-    title: "Private Equity Portfolio Company Success Story",
-    excerpt: "How one PE portfolio company increased valuation by 25% through strategic data operations improvements.",
-    content: "Sample content here...",
-    author: "DataOps Group",
-    date: "2024-01-05",
-    category: "Case Studies",
-    tags: ["private-equity", "case-study", "valuation"],
-    coverImage: "/placeholder.svg?height=200&width=400&text=PE+Success",
-  },
-  {
-    id: "sample-post-4",
-    title: "Marketing Attribution Models That Actually Work",
-    excerpt:
-      "Stop wasting budget on broken attribution. Here's how to build attribution models that drive real business decisions.",
-    content: "Sample content here...",
-    author: "DataOps Group",
-    date: "2023-12-28",
-    category: "Strategy",
-    tags: ["marketing", "attribution", "analytics"],
-    coverImage: "/placeholder.svg?height=200&width=400&text=Attribution+Models",
-  },
-  {
-    id: "sample-post-5",
-    title: "The Complete Guide to HubSpot Lead Scoring",
-    excerpt: "Build a lead scoring model that actually predicts revenue. Step-by-step guide with real examples.",
-    content: "Sample content here...",
-    author: "DataOps Group",
-    date: "2023-12-20",
-    category: "Guides",
-    tags: ["hubspot", "lead-scoring", "guide"],
-    coverImage: "/placeholder.svg?height=200&width=400&text=Lead+Scoring",
-  },
-  {
-    id: "sample-post-6",
-    title: "Why 64% of PE Portfolio Companies Fail HubSpot Implementation",
-    excerpt:
-      "The critical mistakes that doom HubSpot implementations and how to avoid them in your portfolio companies.",
-    content: "Sample content here...",
-    author: "DataOps Group",
-    date: "2023-12-15",
-    category: "Private Equity",
-    tags: ["private-equity", "hubspot", "implementation"],
-    coverImage: "/placeholder.svg?height=200&width=400&text=HubSpot+Failures",
-  },
+// Import all blog posts manually with correct export names
+// I'll import a few key ones first to get the system working, then we can add the rest
+import { tipsForSmartWorkflows } from "@/data/blog/3-tips-for-smart-workflows"
+import { createProLevelHubSpotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
+import { customerSegmentationMistakeICP } from "@/data/blog/customer-segmentation-mistake-icp"
+import { hiddenRevenueLeak } from "@/data/blog/hidden-revenue-leak"
+import { why64PercentPePortfolioCompaniesFailHubspotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
+import { marketingAttributionModelsBroken } from "@/data/blog/marketing-attribution-models-broken"
+import { leadScoringPitfalls } from "@/data/blog/lead-scoring-pitfalls"
+import { salesPipelineMetrics } from "@/data/blog/sales-pipeline-metrics"
+import { trueCostOfBadData } from "@/data/blog/true-cost-of-bad-data"
+import { marketingDashboardsFail } from "@/data/blog/marketing-dashboards-fail"
+import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
+import { dataEnrichmentStrategy } from "@/data/blog/data-enrichment-strategy"
+import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
+import { salesFollowUpMyth } from "@/data/blog/sales-follow-up-myth"
+import { marketingDataManagement } from "@/data/blog/marketing-data-management"
+import { psychologyDataGovernance } from "@/data/blog/psychology-data-governance"
+import { navigatingFirst90DaysRevops } from "@/data/blog/navigating-first-90-days-revops"
+import { marketingOperationsIsntIt } from "@/data/blog/marketing-operations-isnt-it"
+import { silentSalesMarketingDivide } from "@/data/blog/silent-sales-marketing-divide"
+import { salesIgnoringMarketingLeads } from "@/data/blog/sales-ignoring-marketing-leads"
+import { stopBuyingContactLists } from "@/data/blog/stop-buying-contact-lists"
+import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
+import { demystifyingUtmParameters } from "@/data/blog/demystifying-utm-parameters"
+import { forgottenArtCampaignDocumentation } from "@/data/blog/forgotten-art-campaign-documentation"
+import { hubspotBlogBestPractices } from "@/data/blog/hubspot-blog-best-practices"
+import { whatHubspotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
+import { howToHireAHubspotConsultant } from "@/data/blog/how-to-hire-a-hubspot-consultant"
+import { whatDoesAHubspotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
+import { hiringAndWorkingWithAHubspotConsultant } from "@/data/blog/hiring-and-working-with-a-hubspot-consultant"
+import { salesTeamStallingDeals } from "@/data/blog/sales-team-stalling-deals"
+import { marketingLeadersDataQualityCrisis } from "@/data/blog/marketing-leaders-data-quality-crisis"
+import { customerSegmentationMistake } from "@/data/blog/customer-segmentation-mistake"
+import { dataTruthGap } from "@/data/blog/data-truth-gap"
+
+// Case Studies
+import { audioVisualEquipmentWholesaler } from "@/data/blog/audio-visual-equipment-wholesaler"
+import { multiNationalSpecialtyInsurance } from "@/data/blog/multi-national-specialty-insurance"
+import { saasHealthcareAchievesRemarkableInsights } from "@/data/blog/saas-healthcare-achieves-remarkable-insights"
+import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-home-improvement-goods-manufacturer"
+import { leadTiersCaseStudy } from "@/data/blog/lead-tiers-case-study"
+
+// Collect ALL blog posts
+const blogPosts: BlogPost[] = [
+  tipsForSmartWorkflows,
+  createProLevelHubSpotLeadScoreModel,
+  customerSegmentationMistakeICP,
+  hiddenRevenueLeak,
+  why64PercentPePortfolioCompaniesFailHubspotImplementation,
+  marketingAttributionModelsBroken,
+  leadScoringPitfalls,
+  salesPipelineMetrics,
+  trueCostOfBadData,
+  marketingDashboardsFail,
+  customerChurnBlindspot,
+  dataEnrichmentStrategy,
+  crmCleanupPlan,
+  salesFollowUpMyth,
+  marketingDataManagement,
+  psychologyDataGovernance,
+  navigatingFirst90DaysRevops,
+  marketingOperationsIsntIt,
+  silentSalesMarketingDivide,
+  salesIgnoringMarketingLeads,
+  stopBuyingContactLists,
+  customerAcquisitionCost,
+  demystifyingUtmParameters,
+  forgottenArtCampaignDocumentation,
+  hubspotBlogBestPractices,
+  whatHubspotDoesForMarketing,
+  howToHireAHubspotConsultant,
+  whatDoesAHubspotConsultantCost,
+  hiringAndWorkingWithAHubspotConsultant,
+  salesTeamStallingDeals,
+  marketingLeadersDataQualityCrisis,
+  customerSegmentationMistake,
+  dataTruthGap,
+  // Case Studies
+  audioVisualEquipmentWholesaler,
+  multiNationalSpecialtyInsurance,
+  saasHealthcareAchievesRemarkableInsights,
+  upscaleHomeImprovementGoodsManufacturer,
+  leadTiersCaseStudy,
 ]
 
 export function getAllPosts(): BlogPost[] {
   // Sort by date - newest first (top-left to bottom-right in grid)
-  return samplePosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return samplePosts.find((post) => post.id === slug)
+  return blogPosts.find((post) => post.id === slug)
 }
 
 export function getPostsByCategory(category: string): BlogPost[] {
-  return samplePosts.filter((post) => post.category === category)
+  return blogPosts.filter((post) => post.category === category)
 }
 
 export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
-  return samplePosts
+  return blogPosts
     .filter(
       (post) =>
         post.id !== currentPost.id &&
