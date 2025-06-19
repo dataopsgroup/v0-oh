@@ -12,12 +12,12 @@
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
@@ -27,8 +27,26 @@
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-4: 43 74% 49%;
+    --chart-5: 275 53% 38%;
+    /* Sidebar colors */
+    --sidebar-background: 222.2 47.4% 11.2%; /* primary */
+    --sidebar-foreground: 210 40% 98%; /* primary-foreground */
+    --sidebar-primary: 210 40% 96.1%; /* secondary */
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%; /* secondary-foreground */
+    --sidebar-accent: 210 40% 96.1%; /* accent */
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%; /* accent-foreground */
+    --sidebar-border: 214.3 31.8% 91.4%; /* border */
+    --sidebar-ring: 222.2 84% 4.9%; /* ring */
+
+    /* Custom DataOps Brand Colors */
+    --dataops-blue-dark: 220 30% 16%; /* #14213D */
+    --dataops-saffron: 25 94% 58%; /* #FB803B */
+    --dataops-saffron-light: 25 94% 90%; /* Lightened saffron for card background */
+    --dataops-light-blue: 200 50% 72%; /* #8CC7E3 */
+    --dataops-black: 0 0% 0%; /* #000000 */
+    --dataops-gray: 0 0% 90%; /* #E6E6E6 */
+    --dataops-accent-blue: 221 76% 48%; /* rgb(29, 78, 216) */
   }
 
   .dark {
@@ -51,11 +69,30 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: 20 76% 51%;
+    --chart-2: 173 60% 40%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 49%;
+    --chart-5: 275 53% 38%;
+    /* Sidebar colors */
+    --sidebar-background: 210 40% 98%; /* primary */
+    --sidebar-foreground: 222.2 47.4% 11.2%; /* primary-foreground */
+    --sidebar-primary: 217.2 32.6% 17.5%; /* secondary */
+    --sidebar-primary-foreground: 210 40% 98%; /* secondary-foreground */
+    --sidebar-accent: 217.2 32.6% 17.5%; /* accent */
+    --sidebar-accent-foreground: 210 40% 98%; /* accent-foreground */
+    --sidebar-border: 217.2 32.6% 17.5%; /* border */
+    --sidebar-ring: 212.7 26.8% 83.9%; /* ring */
+
+    /* Custom DataOps Brand Colors for Dark Mode (if different) */
+    /* For now, keeping them the same as light mode for consistency unless specified */
+    --dataops-blue-dark: 220 30% 16%;
+    --dataops-saffron: 25 94% 58%;
+    --dataops-saffron-light: 25 94% 90%;
+    --dataops-light-blue: 200 50% 72%;
+    --dataops-black: 0 0% 0%;
+    --dataops-gray: 0 0% 90%;
+    --dataops-accent-blue: 221 76% 48%;
   }
 }
 
@@ -64,8 +101,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: "Lato", sans-serif;
+    @apply bg-background text-foreground font-sans; /* Ensure Lato is used */
   }
 
   /* Buttons should always use Lato */

@@ -1,22 +1,3 @@
-/*
- * ⚠️  CRITICAL: DO NOT MODIFY THIS HOMEPAGE WITHOUT EXPLICIT PERMISSION ⚠️
- *
- * This homepage has been carefully crafted and tested. It includes:
- * - Proper DataOps branding and navigation
- * - Hero section with wireframe background at 60% transparency
- * - Complete PE portfolio transformation content
- * - IBM-style grid layouts for all services
- * - Schema.org markup for SEO optimization
- * - All original sections and functionality
- *
- * ❌ DO NOT ALTER THIS FILE unless specifically instructed by the client
- * ❌ DO NOT change styling, content, or structure
- * ❌ DO NOT remove or modify the schema markup
- * ❌ DO NOT change the hero background or transparency settings
- *
- * This page is LOCKED for editing until further notice.
- * Last verified working: [Current Date]
- */
 "use client"
 
 import { Button } from "@/components/ui/button"
@@ -246,7 +227,7 @@ export default function ClientHomePage() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-base rounded-none">
-                    Get Your Free Assessment
+                    <Link href="/data-operations-assessment">Get Your Free Assessment</Link>
                   </Button>
                   <Button
                     variant="outline"
@@ -366,7 +347,7 @@ export default function ClientHomePage() {
                   5-minute assessment to identify operational gaps and prioritize improvements for maximum impact.
                 </p>
                 <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-none">
-                  Access PE Readiness
+                  <Link href="/data-operations-assessment">Access PE Readiness</Link>
                 </Button>
               </div>
 
@@ -595,7 +576,7 @@ export default function ClientHomePage() {
                   className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
                   style={{ backgroundColor: "#FBB03B" }}
                 >
-                  Get Your Free Assessment
+                  <Link href="/data-operations-assessment">Get Your Free Assessment</Link>
                 </Button>
               </div>
             </div>
