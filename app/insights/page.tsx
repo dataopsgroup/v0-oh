@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function InsightsPage() {
-  const posts = getAllPosts()
+export default async function InsightsPage() {
+  const posts = await getAllPosts()
 
   return (
     <div className="min-h-screen bg-white">
@@ -42,7 +42,7 @@ export default function InsightsPage() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-600 text-lg">Blog posts will appear here once you add your content files.</p>
+              <p className="text-gray-600 text-lg">Loading blog posts...</p>
             </div>
           )}
         </div>
