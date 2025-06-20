@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import PageLayout from "@/components/layout/PageLayout"
-import ContactForm from "@/components/contact/ContactForm"
+import "./contact-form.css"
 
 export const metadata: Metadata = {
   title: "Contact Us | DataOps Group",
@@ -24,11 +24,42 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contact Form Section */}
+        {/* Google Form Section */}
         <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px:4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto">
-              <ContactForm />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="google-form-container">
+              {/* Form Header */}
+              <div className="google-form-header">
+                <h2>Let's Start a Conversation</h2>
+                <p>Tell us about your project and how we can help transform your data operations.</p>
+              </div>
+
+              {/* Google Form */}
+              <div className="relative bg-white">
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/viewform?embedded=true"
+                  width="100%"
+                  height="821"
+                  frameBorder="0"
+                  marginHeight="0"
+                  marginWidth="0"
+                  className="google-form-iframe"
+                  title="DataOps Group Contact Form"
+                  loading="lazy"
+                >
+                  <div className="google-form-loading">Loading contact form...</div>
+                </iframe>
+              </div>
+            </div>
+
+            {/* Additional Info */}
+            <div className="mt-8 text-center">
+              <p className="text-gray-600">
+                Having trouble with the form? Email us directly at{" "}
+                <a href="mailto:admin@dataopsgroup.com" className="text-blue-600 hover:text-blue-800 font-medium">
+                  admin@dataopsgroup.com
+                </a>
+              </p>
             </div>
           </div>
         </section>

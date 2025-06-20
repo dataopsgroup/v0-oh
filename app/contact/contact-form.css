@@ -1,0 +1,63 @@
+/* Google Form Styling Overrides */
+.google-form-container {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.google-form-header {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.google-form-header h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.google-form-header p {
+  color: #dbeafe;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive iframe styling */
+.google-form-iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .google-form-container {
+    margin: 0 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .google-form-header {
+    padding: 1rem;
+  }
+
+  .google-form-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .google-form-header p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Loading state styling */
+.google-form-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
