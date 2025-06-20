@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, ArrowRight } from "lucide-react"
+import { Calendar } from "lucide-react"
 import type { BlogPost } from "@/types/blog"
 import { formatDate } from "@/lib/blog"
 
@@ -36,10 +36,6 @@ export function RelatedArticles({ posts }: RelatedArticlesProps) {
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="mb-4 line-clamp-3">{post.excerpt}</CardDescription>
-                    <div className="flex items-center font-semibold text-dataops-blue group-hover:text-dataops-blue-dark">
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                    </div>
                   </CardContent>
                 </Card>
               </Link>
