@@ -66,16 +66,160 @@
   }
 }
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* Ensure Lato is used */
+    /* Removed: font-family: Arial, Helvetica, sans-serif; */
+  }
+
+  /* Buttons should always use Lato */
+  button {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Form elements should use Lato */
+  input,
+  select,
+  textarea,
+  label {
+    font-family: "Lato", sans-serif;
+  }
+
+  /* Navigation should always use Lato */
+  nav,
+  nav a,
+  nav button {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Footer should always use Lato */
+  footer,
+  footer * {
+    font-family: "Lato", sans-serif !important;
   }
 }
 
+/* Custom Typography Classes */
 @layer components {
+  .headline {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+  }
+
+  /* Specific override for h1 elements with headline class */
+  h1.headline {
+    font-family: "Lato", sans-serif;
+    font-weight: 900 !important;
+  }
+
+  .subheadline {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Default body-copy uses Merriweather for paragraph content */
+  .body-copy {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+  }
+
+  /* Override body-copy to use Lato for short descriptive text (text-sm class indicates short labels/descriptions) */
+  .body-copy.text-sm {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Override body-copy to use Lato for any text that's clearly a label or short descriptor */
+  .body-copy.text-xs {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Button text should always be Lato */
+  button .body-copy {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Navigation items should always be Lato */
+  nav .body-copy {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* Footer items should always be Lato */
+  footer .body-copy {
+    font-family: "Lato", sans-serif !important;
+  }
+
+  /* IBM-Style Box Components */
+  .ibm-box-grid {
+    @apply grid gap-px bg-gray-200;
+  }
+
+  .ibm-box {
+    @apply bg-white hover:bg-gray-50 transition-colors;
+  }
+
+  .ibm-box-padding-sm {
+    @apply p-6;
+  }
+
+  .ibm-box-padding-md {
+    @apply p-8;
+  }
+
+  /* Button Overrides - All buttons squared */
+  .btn-squared {
+    @apply rounded-none;
+  }
+
+  /* 
+   * !IMPORTANT: DATAOPS LOGO SIZING - DO NOT CHANGE WITHOUT EXPLICIT REQUEST
+   * The DataOps Group logo in the main navigation MUST always be:
+   * - Width: 200px (w-[200px])
+   * - Height: 68px (h-[68px])
+   * - Object-fit: contain (object-contain)
+   * - Navigation bar height: 80px (h-20)
+   * 
+   * This sizing has been specifically tested and approved.
+   * DO NOT modify these dimensions unless explicitly requested by the client.
+   */
+}
+
+/* Custom Blog Post Styling */
+@layer components {
+  .blog-content {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .blog-content {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-content {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
   .blog-content h1 {
     font-size: 2.25rem !important; /* text-4xl */
     font-weight: 700 !important; /* font-bold */
@@ -109,6 +253,24 @@
     color: #1a202c !important; /* gray-900 */
     margin-bottom: 0.75rem !important; /* mb-3 */
     margin-top: 1.5rem !important; /* mt-6 */
+  }
+
+  .blog-content h5 {
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .blog-content h6 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.5rem !important;
+    margin-top: 1rem !important;
   }
 
   .blog-content p {
