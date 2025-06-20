@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import PageLayout from "@/components/layout/PageLayout"
+import GoogleFormEmbed from "@/components/contact/GoogleFormEmbed"
 import "./contact-form.css"
 
 export const metadata: Metadata = {
@@ -27,25 +28,7 @@ export default function ContactPage() {
         {/* Google Form Section */}
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              {/* Google Form */}
-              <div className="relative bg-white">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/viewform?embedded=true&usp=pp_url&entry.1234567890=&chromeless=1"
-                  width="100%"
-                  height="1000"
-                  frameBorder="0"
-                  marginHeight="0"
-                  marginWidth="0"
-                  className="google-form-iframe"
-                  title="DataOps Group Contact Form"
-                  loading="lazy"
-                  style={{ border: "none" }}
-                >
-                  <div className="google-form-loading">Loading contact form...</div>
-                </iframe>
-              </div>
-            </div>
+            <GoogleFormEmbed />
 
             {/* Additional Info */}
             <div className="mt-8 text-center">
