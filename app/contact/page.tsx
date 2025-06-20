@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import PageLayout from "@/components/layout/PageLayout"
-import NativeStyledForm from "@/components/contact/NativeStyledForm"
+import ContactForm from "@/components/contact/ContactForm"
 
 export const metadata: Metadata = {
   title: "Contact Us | DataOps Group",
@@ -27,7 +27,7 @@ export default function ContactPage() {
         {/* Contact Form Section */}
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <NativeStyledForm />
+            <ContactForm />
           </div>
         </section>
       </div>
