@@ -84,13 +84,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         />
       </main>
 
-      {/* First CTA: Dark background with white text and saffron button */}
-      <BlogCTA
-        title="Ready to Fix Your HubSpot Ordeal?"
-        description="Stop throwing money at new leads when your existing contacts could be paying customers. Schedule a consultation to see how we can convert your HubSpot portal into a revenue engine."
-        primaryButton={{ text: "Schedule a Consultation", href: "/contact" }}
-        sectionVariant="dark"
-      />
       {/* Second CTA: Light background with blue text and blue outline buttons */}
       <BlogCTA
         title="Ready to Transform Your Operations?"
