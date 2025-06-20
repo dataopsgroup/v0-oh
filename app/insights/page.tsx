@@ -17,9 +17,7 @@ import {
   FileText,
 } from "lucide-react"
 import Link from "next/link"
-
-// Import all blog data
-import { blogPosts } from "@/lib/blog"
+import { getAllPosts, formatDate } from "@/lib/blog"
 
 export const metadata: Metadata = {
   title: "Insights & Resources | DataOps Consulting",
@@ -30,6 +28,8 @@ export const metadata: Metadata = {
 }
 
 export default function InsightsPage() {
+  const blogPosts = getAllPosts()
+
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
@@ -108,8 +108,8 @@ export default function InsightsPage() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {blogPosts.map((post, index) => (
-                <Card key={post.slug} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
+              {blogPosts.map((post) => (
+                <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 border-0 shadow-md">
                   <div className="aspect-video bg-gradient-to-br from-dataops-blue-light to-dataops-blue rounded-t-lg relative overflow-hidden">
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                     <div className="absolute bottom-4 left-4">
@@ -120,7 +120,7 @@ export default function InsightsPage() {
                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
-                        {post.publishDate}
+                        {formatDate(post.date)}
                       </div>
                       <div className="flex items-center gap-1">
                         <User className="w-4 h-4" />
@@ -133,7 +133,7 @@ export default function InsightsPage() {
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="mb-4 line-clamp-3">{post.excerpt}</CardDescription>
-                    <Link href={`/insights/${post.slug}`}>
+                    <Link href={`/insights/${post.id}`}>
                       <Button
                         variant="ghost"
                         className="p-0 h-auto font-semibold text-dataops-blue hover:text-dataops-blue-dark group"
