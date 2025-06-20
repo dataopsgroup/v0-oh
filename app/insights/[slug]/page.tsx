@@ -4,7 +4,7 @@ import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
 import BlogPostHeader from "@/components/blog/BlogPostHeader"
 import BlogPostContent from "@/components/blog/BlogPostContent"
 import RelatedArticles from "@/components/blog/RelatedArticles"
-import BlogCTA from "@/components/blog/BlogCTA"
+import GlobalCTA from "@/components/global-cta"
 
 interface BlogPostPageProps {
   params: {
@@ -72,17 +72,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       <BlogPostContent content={post.content} />
 
-      <BlogCTA
+      <GlobalCTA
         title="Ready to Transform Your Operations?"
         description="Get expert guidance to implement the strategies discussed in this article."
-        primaryButton={{
-          text: "Take Free Assessment",
-          href: "/data-operations-assessment",
-        }}
-        secondaryButton={{
-          text: "Book Consultation",
-          href: "/contact",
-        }}
+        buttonText="Take Free Assessment"
+        buttonLink="/data-operations-assessment"
+        secondaryButtonText="Book Consultation"
+        secondaryButtonLink="/contact"
       />
 
       <RelatedArticles posts={relatedPosts} />

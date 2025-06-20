@@ -2,6 +2,8 @@ import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import Navigation from "@/components/navigation"
+import GlobalFooter from "@/components/global-footer"
 // Removed: import { HelmetProvider } from "react-helmet-async"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -16,7 +18,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* Removed: <HelmetProvider> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <Navigation />
+          <main className="min-h-screen">{children}</main>
+          <GlobalFooter />
         </ThemeProvider>
         {/* Removed: </HelmetProvider> */}
       </body>
@@ -25,5 +29,5 @@ export default function RootLayout({
 }
 
 export const metadata = {
-      generator: 'v0.dev'
-    };
+  generator: "v0.dev",
+}
