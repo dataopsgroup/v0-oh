@@ -103,14 +103,38 @@ export function getPostsByCategory(category: string): BlogPost[] {
 }
 
 export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
-  return blogPosts
-    .filter(
-      (post) =>
-        post.id !== currentPost.id &&
-        (post.category === currentPost.category ||
-          (post.tags && currentPost.tags && post.tags.some((tag) => currentPost.tags.includes(tag)))),
-    )
-    .slice(0, limit)
+  const related: BlogPost[] = []
+  const seenIds = new Set<string>([currentPost.id])
+
+  // 1. Try to find posts by matching category or tags
+  const categoryAndTagMatches = blogPosts.filter(
+    (post) =>
+      post.id !== currentPost.id &&
+      (post.category === currentPost.category ||
+        (post.tags && currentPost.tags && post.tags.some((tag) => currentPost.tags.includes(tag)))),
+  )
+
+  for (const post of categoryAndTagMatches) {
+    if (related.length < limit && !seenIds.has(post.id)) {
+      related.push(post)
+      seenIds.add(post.id)
+    }
+  }
+
+  // 2. If not enough, fill with the most recent posts
+  if (related.length < limit) {
+    const allOtherPosts = getAllPosts().filter((post) => !seenIds.has(post.id))
+    for (const post of allOtherPosts) {
+      if (related.length < limit) {
+        related.push(post)
+        seenIds.add(post.id)
+      } else {
+        break
+      }
+    }
+  }
+
+  return related.slice(0, limit) // Ensure we return exactly 'limit' posts
 }
 
 export function formatDate(dateString: string): string {
