@@ -26,16 +26,16 @@ export function BlogPostHeader({ post }: BlogPostHeaderProps) {
   }
 
   return (
-    <header className="bg-gradient-to-br from-gray-600 to-white py-20">
+    <header className="py-20" style={{ background: "linear-gradient(to bottom right, #14213D, #4A5F7A)" }}>
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center text-gray-800">
+        <div className="max-w-4xl mx-auto text-center text-white">
           <Badge className={`mb-6 ${getCategoryColor(post.category)}`}>{post.category}</Badge>
 
           <h1 className="headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{post.title}</h1>
 
-          <p className="body-copy text-xl md:text-2xl mb-8 text-gray-700">{post.excerpt}</p>
+          <p className="body-copy text-xl md:text-2xl mb-8 text-white/90">{post.excerpt}</p>
 
-          <div className="flex items-center justify-center gap-6 text-gray-600">
+          <div className="flex items-center justify-center gap-6 text-white/80">
             <div className="flex items-center gap-2">
               <User className="w-5 h-5" />
               <span>{post.author}</span>

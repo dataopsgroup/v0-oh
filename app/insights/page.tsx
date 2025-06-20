@@ -34,22 +34,21 @@ export default function InsightsPage() {
     <PageLayout>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-600 to-white py-20">
+        <section className="py-20" style={{ background: "linear-gradient(to bottom right, #14213D, #4A5F7A)" }}>
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-gray-800">
-              <Badge className="mb-6 bg-gray-700 text-white border-gray-600 hover:bg-gray-800">
+            <div className="max-w-4xl mx-auto text-center text-white">
+              <Badge className="mb-6 bg-white/20 text-white border-white/30 hover:bg-white/30">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Latest Insights
               </Badge>
-              <h1 className="headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="gradient-text">Insights</span> & Resources
-              </h1>
-              <p className="body-copy text-xl md:text-2xl mb-8 text-gray-700">
-                Expert advice on transforming your HubSpot ordeal into a revenue-generating machine
+              <h1 className="headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Data Operations Insights</h1>
+              <p className="body-copy text-xl md:text-2xl mb-8 text-white/90">
+                Expert guidance on transforming your data operations, optimizing HubSpot, and driving revenue growth
+                through strategic data management.
               </p>
 
               {/* Featured Article Callout */}
-              <div className="bg-gray-800/10 backdrop-blur-sm rounded-lg p-6 border border-gray-300/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                 <div className="flex items-center justify-center mb-4">
                   <FileText className="w-6 h-6 mr-2" />
                   <span className="font-semibold">Featured Article</span>
@@ -57,11 +56,11 @@ export default function InsightsPage() {
                 <h3 className="text-xl font-bold mb-2">
                   Why 64% of PE Portfolio Companies Fail HubSpot Implementation
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-white/80 mb-4">
                   Discover the critical mistakes that lead to failed implementations and how to avoid them.
                 </p>
                 <Link href="/insights/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation">
-                  <Button variant="outline" className="bg-gray-800 text-white hover:bg-gray-900 border-gray-700">
+                  <Button variant="outline" className="bg-white text-gray-900 hover:bg-white/90 border-white">
                     Read Article <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
