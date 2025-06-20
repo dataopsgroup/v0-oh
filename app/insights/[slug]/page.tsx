@@ -1,99 +1,73 @@
+import { allPosts } from "contentlayer/generated"
 import { notFound } from "next/navigation"
-import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
-import BlogPostHeader from "@/components/blog/BlogPostHeader"
-import BlogPostContent from "@/components/blog/BlogPostContent"
-import RelatedArticles from "@/components/blog/RelatedArticles"
-import BlogCTA from "@/components/blog/BlogCTA"
-import CalloutBox from "@/components/blog/CalloutBox" // New import
-import type { Metadata } from "next"
+import { useMDXComponent } from "next-contentlayer/hooks"
+import Balancer from "react-wrap-balancer"
 
-interface BlogPostPageProps {
+import { Mdx } from "@/components/mdx-components"
+import { SemanticLayout } from "@/components/semantic-layout"
+import { siteConfig } from "@/config/site"
+import { cn, formatDate } from "@/lib/utils"
+
+interface Props {
   params: {
     slug: string
   }
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getPostBySlug(params.slug)
+export async function generateStaticParams() {
+  return allPosts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: Props) {
+  const post = allPosts.find((post) => post.slug === params.slug)
 
   if (!post) {
-    return {
-      title: "Post Not Found | DataOps Group",
-    }
+    return
   }
 
   return {
-    title: `${post.title} | DataOps Group`,
-    description: post.seo?.metaDescription || post.excerpt,
-    keywords: post.seo?.keywords,
+    title: post.title,
+    description: post.description,
     openGraph: {
-      title: post.seo?.ogTitle || post.title,
-      description: post.seo?.ogDescription || post.excerpt,
-      type: "article",
-      publishedTime: post.date,
-      authors: [post.author],
-      images: post.coverImage
-        ? [
-            {
-              url: post.coverImage,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
-        : [],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.seo?.twitterTitle || post.title,
-      description: post.seo?.twitterDescription || post.excerpt,
-      images: post.coverImage ? [post.coverImage] : [],
+      title: post.title,
+      description: post.description,
+      url: siteConfig.url + "/" + post.slug,
+      images: [siteConfig.url + post.image],
     },
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getPostBySlug(params.slug)
+export default function PostPage({ params }: Props) {
+  const post = allPosts.find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
   }
 
-  const relatedPosts = getRelatedPosts(post)
+  const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <article className="min-h-screen bg-white">
-      <BlogPostHeader
-        title={post.title}
-        author={post.author}
-        date={post.date}
-        category={post.category}
-        content={post.content}
-      />
-
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <BlogPostContent content={post.content} />
-
-        {/* Example Callout Box - Placed here for demonstration. For content-specific callouts,
-            you would embed the HTML for the CalloutBox directly into your blog post's Markdown/HTML source. */}
-        <CalloutBox
-          title="PE Portfolio Application"
-          description="This strategy applies directly to portfolio companies looking to optimize their HubSpot investment and accelerate revenue growth through better data management and operational efficiency."
-          icon="target"
-          variant="saffron"
-        />
-      </main>
-
-      {/* Second CTA: Light background with blue text and blue outline buttons */}
-      <BlogCTA
-        title="Ready to Transform Your Operations?"
-        description="Get expert guidance to implement the strategies discussed in this article."
-        primaryButton={{ text: "Take Free Assessment", href: "/data-operations-assessment" }}
-        secondaryButton={{ text: "Book Consultation", href: "/contact" }}
-        sectionVariant="light"
-      />
-
-      <RelatedArticles posts={relatedPosts} />
-    </article>
+    <SemanticLayout>
+      <article className="container max-w-3xl py-12">
+        <div className="space-y-2">
+          <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight", "lg:text-5xl")}>
+            <Balancer>{post.title}</Balancer>
+          </h1>
+          {post.description && (
+            <p className="text-lg text-muted-foreground">
+              <Balancer>{post.description}</Balancer>
+            </p>
+          )}
+          <div className="text-sm text-muted-foreground">Published {formatDate(post.date)}</div>
+        </div>
+        <div className="mt-8">
+          <Mdx>
+            <MDXContent />
+          </Mdx>
+        </div>
+      </article>
+    </SemanticLayout>
   )
 }
