@@ -5,6 +5,7 @@ import BlogPostHeader from "@/components/blog/BlogPostHeader"
 import BlogPostContent from "@/components/blog/BlogPostContent"
 import RelatedArticles from "@/components/blog/RelatedArticles"
 import BlogCTA from "@/components/blog/BlogCTA"
+import GlobalFooter from "@/components/global-footer"
 
 interface BlogPostPageProps {
   params: {
@@ -58,7 +59,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const relatedPosts = getRelatedPosts(post)
+  const relatedPosts = getRelatedPosts(post).slice(0, 3) // Ensure exactly 3 articles
 
   return (
     <article className="min-h-screen bg-white">
@@ -71,6 +72,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       />
 
       <BlogPostContent content={post.content} />
+
+      <RelatedArticles posts={relatedPosts} />
 
       <BlogCTA
         title="Ready to Transform Your Operations?"
@@ -85,7 +88,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         }}
       />
 
-      <RelatedArticles posts={relatedPosts} />
+      <GlobalFooter />
     </article>
   )
 }

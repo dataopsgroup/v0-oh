@@ -21,16 +21,11 @@ export default function BlogCTA({ title, description, primaryButton, secondaryBu
         <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
         <p className="text-xl text-blue-100 mb-8">{description}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Button asChild size="lg" className="bg-yellow-500 text-black hover:bg-yellow-600 font-semibold">
             <Link href={primaryButton.href}>{primaryButton.text}</Link>
           </Button>
           {secondaryButton && (
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
+            <Button asChild size="lg" className="bg-green-600 text-white hover:bg-green-700 font-semibold">
               <Link href={secondaryButton.href}>{secondaryButton.text}</Link>
             </Button>
           )}
