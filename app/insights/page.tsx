@@ -53,29 +53,29 @@ const getCategoryColor = (category: string): string => {
 
     // Business & Industry
     "Private Equity": "bg-slate-600 text-white hover:bg-slate-700",
-    "Case Study": "bg-yellow-600 text-white hover:bg-yellow-700", // Changed to yellow for distinction
+    "Case Study": "bg-blue-700 text-white hover:bg-blue-800", // Changed to blue
     Implementation: "bg-rose-600 text-white hover:bg-rose-700",
     Consulting: "bg-sky-600 text-white hover:bg-sky-700",
 
     // Best Practices & Tips
     "Best Practices": "bg-lime-600 text-white hover:bg-lime-700",
     "Tips & Tricks": "bg-fuchsia-600 text-white hover:bg-fuchsia-700",
-    Insights: "bg-purple-700 text-white hover:bg-purple-800", // Kept purple for Insights
+    Insights: "bg-green-700 text-white hover:bg-green-800", // Changed to green
     "Thought Leadership": "bg-indigo-700 text-white hover:bg-indigo-800",
 
     // Specific Areas
     Segmentation: "bg-neutral-700 text-white hover:bg-neutral-800",
     "Lead Nurturing": "bg-orange-700 text-white hover:bg-orange-800",
-    "Pipeline Management": "bg-blue-700 text-white hover:bg-blue-800",
-    "Workflow Optimization": "bg-green-700 text-white hover:bg-green-800",
+    "Pipeline Management": "bg-blue-800 text-white hover:bg-blue-900",
+    "Workflow Optimization": "bg-green-800 text-white hover:bg-green-900",
 
     // Additional Categories
     "HubSpot Consultant": "bg-amber-700 text-white hover:bg-amber-800",
     "Marketing Dashboard": "bg-pink-700 text-white hover:bg-pink-800",
     "Sales Pipeline": "bg-red-700 text-white hover:bg-red-800",
     "Data Governance": "bg-gray-700 text-white hover:bg-gray-800",
-    "Business Intelligence": "bg-blue-800 text-white hover:bg-blue-900",
-    "Revenue Growth": "bg-green-800 text-white hover:bg-green-900",
+    "Business Intelligence": "bg-purple-700 text-white hover:bg-purple-800",
+    "Revenue Growth": "bg-emerald-800 text-white hover:bg-emerald-900",
   }
 
   return categoryColors[category] || "bg-gray-600 text-white hover:bg-gray-700"
