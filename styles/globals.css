@@ -12,15 +12,15 @@ body {
   }
 
   /* Custom list styling for unordered lists */
-  & ul {
+  ul {
     list-style: none; /* Remove default bullet */
     padding-left: 0;
   }
-  & ul li {
+  ul li {
     position: relative;
     padding-left: 1.5em; /* Space for custom bullet */
   }
-  & ul li::before {
+  ul li::before {
     content: "\27A4"; /* Unicode for a right-pointing triangle (golden arrow) */
     color: hsl(var(--dataops-saffron)); /* Golden color */
     position: absolute;
@@ -30,15 +30,15 @@ body {
   }
 
   /* Custom list styling for ordered lists */
-  & ol {
+  ol {
     counter-reset: list-counter;
     padding-left: 0;
   }
-  & ol li {
+  ol li {
     position: relative;
     padding-left: 2em; /* Space for custom number */
   }
-  & ol li::before {
+  ol li::before {
     counter-increment: list-counter;
     content: counter(list-counter) ".";
     color: hsl(var(--dataops-accent-blue)); /* Accent blue color */
