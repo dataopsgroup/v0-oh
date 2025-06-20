@@ -45,15 +45,14 @@ const config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom DataOps colors
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
         dataops: {
           blue: {
             dark: "hsl(var(--dataops-blue-dark))",
@@ -87,71 +86,76 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      typography: ({ theme }: { theme: any }) => ({
-        DEFAULT: {
-          css: {
-            // Custom H2 border
-            h2: {
-              borderBottom: `1px solid ${theme("colors.dataops.saffron.DEFAULT")}`,
-              paddingBottom: theme("spacing.2"),
-            },
-            // Custom UL styling (golden arrow)
-            ul: {
-              listStyle: "none",
-              paddingLeft: "0",
-              "& li": {
-                position: "relative",
-                paddingLeft: theme("spacing.6"), // Space for custom bullet
-              },
-              "& li::before": {
-                content: '"\\27A4"', // Unicode for a right-pointing triangle
-                color: theme("colors.dataops.saffron.DEFAULT"),
-                position: "absolute",
-                left: "0",
-                top: "0.25em",
-                fontSize: "0.8em",
-              },
-            },
-            // Custom OL styling (accent blue numbers)
-            ol: {
-              listStyle: "none",
-              paddingLeft: "0",
-              counterReset: "list-counter",
-              "& li": {
-                position: "relative",
-                paddingLeft: theme("spacing.8"), // Space for custom number
-              },
-              "& li::before": {
-                counterIncrement: "list-counter",
-                content: 'counter(list-counter) ". "',
-                color: theme("colors.dataops.blue.accent"),
-                fontWeight: theme("fontWeight.bold"),
-                position: "absolute",
-                left: "0",
-                top: "0",
-              },
-            },
-            // Custom Blockquote styling
-            blockquote: {
-              borderLeft: `4px solid ${theme("colors.dataops.blue.accent")}`,
-              backgroundColor: theme("colors.dataops.blue.light", "rgba(200, 220, 255, 0.2)"), // Fallback if variable not ready
-              padding: theme("spacing.4"),
-              margin: `${theme("spacing.6")} 0`,
-              fontStyle: "italic",
-              boxShadow: theme("boxShadow.sm"),
-            },
-            // Custom Image styling
-            img: {
-              borderRadius: theme("borderRadius.lg"),
-              boxShadow: theme("boxShadow.md"),
-              margin: `${theme("spacing.8")} 0`,
-            },
-          },
-        },
-      }),
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography")({
+      // Extend the default typography styles
+      DEFAULT: {
+        css: {
+          // Remove default list styles
+          ul: {
+            "list-style": "none",
+            "padding-left": "0",
+          },
+          ol: {
+            "list-style": "none",
+            "padding-left": "0",
+            "counter-reset": "list-counter",
+          },
+          // Custom unordered list bullets (golden arrow)
+          "ul > li": {
+            position: "relative",
+            "padding-left": "1.75em", // Increased padding for text
+            "&::before": {
+              content: '"\\27A4"', // Unicode for right-pointing triangle
+              color: "hsl(var(--dataops-saffron))",
+              position: "absolute",
+              left: "0",
+              top: "0.25em", // Adjust vertical alignment
+              "font-size": "0.8em",
+            },
+          },
+          // Custom ordered list numbering (accent blue)
+          "ol > li": {
+            position: "relative",
+            "padding-left": "2.25em", // Increased padding for text
+            "&::before": {
+              "counter-increment": "list-counter",
+              content: 'counter(list-counter) "."',
+              color: "hsl(var(--dataops-accent-blue))",
+              "font-weight": "bold",
+              position: "absolute",
+              left: "0",
+              top: "0",
+            },
+          },
+          // Blockquote styling
+          blockquote: {
+            "border-left-color": "hsl(var(--dataops-accent-blue))",
+            "background-color": "hsl(var(--dataops-light-blue) / 0.2)", // 20% opacity
+            padding: "1rem",
+            "margin-top": "1.5rem",
+            "margin-bottom": "1.5rem",
+            "font-style": "italic",
+            "box-shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)", // subtle shadow
+          },
+          // Image styling
+          img: {
+            "border-radius": "0.5rem", // rounded-lg
+            "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)", // shadow-lg
+            "margin-top": "2rem",
+            "margin-bottom": "2rem",
+          },
+          // H2 border color
+          h2: {
+            "border-bottom-color": "hsl(var(--dataops-saffron))",
+          },
+        },
+      },
+    }),
+  ],
 } satisfies Config
 
 export default config
