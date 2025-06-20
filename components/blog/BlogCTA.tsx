@@ -24,7 +24,7 @@ export default function BlogCTA({
 }: BlogCTAProps) {
   const sectionClasses =
     sectionVariant === "dark"
-      ? "bg-dataops-accent-blue text-white"
+      ? "bg-dataops-blue-dark text-white" // Using dataops-blue-dark for the dark CTA
       : "bg-white border border-gray-200 rounded-lg shadow-sm text-gray-900"
 
   const titleClasses = sectionVariant === "dark" ? "text-white" : "text-gray-900"
@@ -32,12 +32,12 @@ export default function BlogCTA({
 
   const primaryButtonClasses =
     sectionVariant === "dark"
-      ? "bg-white text-dataops-accent-blue hover:bg-gray-100"
+      ? "bg-white text-dataops-blue-dark hover:bg-gray-100" // Button text matches dark background
       : "bg-dataops-accent-blue text-white hover:bg-dataops-blue-dark"
 
   const secondaryButtonClasses =
     sectionVariant === "dark"
-      ? "border-white text-white hover:bg-white hover:text-dataops-accent-blue"
+      ? "border-white text-white hover:bg-white hover:text-dataops-blue-dark"
       : "border-dataops-accent-blue text-dataops-accent-blue hover:bg-dataops-light-blue/20 hover:text-dataops-accent-blue"
 
   return (

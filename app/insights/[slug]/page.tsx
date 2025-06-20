@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation"
-import { getPostBySlug, getRelatedPosts } from "@/lib/blog" // Corrected import: getPostBySlug
+import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
 import BlogPostHeader from "@/components/blog/BlogPostHeader"
 import BlogPostContent from "@/components/blog/BlogPostContent"
 import RelatedArticles from "@/components/blog/RelatedArticles"
 import BlogCTA from "@/components/blog/BlogCTA"
-import CalloutBox from "@/components/blog/CalloutBox"
+import CalloutBox from "@/components/blog/CalloutBox" // New import
 import type { Metadata } from "next"
 
 interface BlogPostPageProps {
@@ -71,15 +71,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         content={post.content}
       />
 
-      <BlogPostContent content={post.content} />
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <BlogPostContent content={post.content} />
 
-      {/* Example Callout Box - You would place these strategically in your content or page layout */}
-      <CalloutBox
-        title="PE Portfolio Application"
-        description="This strategy applies directly to portfolio companies looking to optimize their HubSpot investment and accelerate revenue growth through better data management and operational efficiency."
-        icon="target"
-        variant="saffron"
-      />
+        {/* Example Callout Box - Placed here for demonstration. For content-specific callouts,
+            you would embed the HTML for the CalloutBox directly into your blog post's Markdown/HTML source. */}
+        <CalloutBox
+          title="PE Portfolio Application"
+          description="This strategy applies directly to portfolio companies looking to optimize their HubSpot investment and accelerate revenue growth through better data management and operational efficiency."
+          icon="target"
+          variant="saffron"
+        />
+      </main>
 
       {/* First CTA: Dark background with white text and saffron button */}
       <BlogCTA

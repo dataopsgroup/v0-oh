@@ -94,14 +94,14 @@ const config = {
       // Extend the default typography styles
       DEFAULT: {
         css: {
-          // Remove default list styles
+          // Ensure default list styles are removed
           ul: {
-            "list-style": "none", // Explicitly remove default bullets
-            "padding-left": "0", // Remove default padding
+            "list-style": "none",
+            "padding-left": "0",
           },
           ol: {
-            "list-style": "none", // Explicitly remove default numbers
-            "padding-left": "0", // Remove default padding
+            "list-style": "none",
+            "padding-left": "0",
             "counter-reset": "list-counter",
           },
           // Custom unordered list bullets (golden arrow with line)
@@ -112,7 +112,7 @@ const config = {
               content: '"\\2192"', // Unicode for rightwards arrow (→)
               color: "hsl(var(--dataops-saffron))",
               position: "absolute",
-              left: "-0.5em", // Adjusted left position to align the arrow
+              left: "-0.75em", // Adjusted left position to align the arrow perfectly
               top: "0.25em", // Adjust vertical alignment
               "font-size": "1em", // Make arrow size consistent with text
               "font-weight": "bold", // Make it stand out
