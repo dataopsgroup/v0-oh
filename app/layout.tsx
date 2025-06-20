@@ -2,9 +2,6 @@ import type React from "react"
 import { Lato } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import Navigation from "@/components/navigation"
-import GlobalFooter from "@/components/global-footer"
-// Removed: import { HelmetProvider } from "react-helmet-async"
 
 const lato = Lato({
   subsets: ["latin"],
@@ -21,13 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={lato.className}>
-        {/* Removed: <HelmetProvider> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Navigation />
-          <main className="min-h-screen">{children}</main>
-          <GlobalFooter />
+          {children}
         </ThemeProvider>
-        {/* Removed: </HelmetProvider> */}
       </body>
     </html>
   )
