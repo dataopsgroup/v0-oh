@@ -19,11 +19,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 })
     }
 
-    // Send email using Resend with fallback for unverified domains
-    const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"
+    // Send email using Resend with your verified domain
+    const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@dataopsgroup.com"
 
     const { data, error } = await resend.emails.send({
-      from: `DataOps Group Contact Form <${fromEmail}>`,
+      from: `DataOps Group <${fromEmail}>`,
       to: ["admin@dataopsgroup.com"],
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
