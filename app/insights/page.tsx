@@ -53,14 +53,14 @@ const getCategoryColor = (category: string): string => {
 
     // Business & Industry
     "Private Equity": "bg-slate-600 text-white hover:bg-slate-700",
-    "Case Study": "bg-violet-600 text-white hover:bg-violet-700",
+    "Case Study": "bg-yellow-600 text-white hover:bg-yellow-700", // Changed to yellow for distinction
     Implementation: "bg-rose-600 text-white hover:bg-rose-700",
     Consulting: "bg-sky-600 text-white hover:bg-sky-700",
 
     // Best Practices & Tips
     "Best Practices": "bg-lime-600 text-white hover:bg-lime-700",
     "Tips & Tricks": "bg-fuchsia-600 text-white hover:bg-fuchsia-700",
-    Insights: "bg-purple-700 text-white hover:bg-purple-800",
+    Insights: "bg-purple-700 text-white hover:bg-purple-800", // Kept purple for Insights
     "Thought Leadership": "bg-indigo-700 text-white hover:bg-indigo-800",
 
     // Specific Areas
