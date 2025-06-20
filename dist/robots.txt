@@ -1,0 +1,87 @@
+# robots.txt for dataopsgroup.com
+# Cache refresh: 2025-05-30 17:45:00 UTC - Force complete cache invalidation
+
+User-agent: *
+Allow: /
+
+# Disallow admin, authentication, and thank you pages
+Disallow: /thank-you
+Disallow: /thank-you/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /auth/
+Disallow: /logout/
+Disallow: /login/
+Disallow: /signin/
+Disallow: /signup/
+
+# Disallow HubSpot technical resources that are returning 404s
+Disallow: /_hcms/forms/embed/v4/render-definition/ssr
+Disallow: /0OV0VHL4M36Z.js.gz
+
+# Explicitly allow all content pages
+Allow: /insights/
+Allow: /services/
+Allow: /case-studies/
+Allow: /assessment/
+Allow: /approach/
+Allow: /faqs/
+Allow: /about/
+Allow: /book/
+Allow: /en/blog/
+Allow: /blog/
+
+# Block search engines from scanning query parameters that create duplicate content
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+Disallow: /*&utm_source=
+Disallow: /*&utm_medium=
+Disallow: /*&utm_campaign=
+Disallow: /*&fbclid=
+Disallow: /*&gclid=
+
+# Sitemap
+Sitemap: https://dataopsgroup.com/sitemap.xml
+
+# Reduced crawl delay to prevent timeouts
+Crawl-delay: 2
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# Allow Google Mobile Crawler specifically
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
+
+# Allow Google and other search engine bots
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /lovable-uploads/
+
+User-agent: BingPreview
+Allow: /
