@@ -28,14 +28,14 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white mb-4 text-left">Services</h4>
-            <ul className="space-y-2 list-none before:content-none after:content-none">
-              <li className="before:content-none after:content-none">
+            <h4 className="text-sm font-bold text-white mb-4 text-left pl-0">Services</h4>
+            <ul className="space-y-2 list-none before:content-none after:content-none pl-0">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="/services/analytics-bi" className="body-copy text-sm text-gray-400 hover:text-white">
                   Analytics & BI
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link
                   href="/services/dataops-implementation"
                   className="body-copy text-sm text-gray-400 hover:text-white"
@@ -43,12 +43,12 @@ export default function GlobalFooter() {
                   DataOps Implementation
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="/services/team-training" className="body-copy text-sm text-gray-400 hover:text-white">
                   HubSpot Training
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link
                   href="/services/marketing-operations-revops"
                   className="body-copy text-sm text-gray-400 hover:text-white"
@@ -60,24 +60,24 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white mb-4 text-left">Resources</h4>
-            <ul className="space-y-2 list-none before:content-none after:content-none">
-              <li className="before:content-none after:content-none">
+            <h4 className="text-sm font-bold text-white mb-4 text-left pl-0">Resources</h4>
+            <ul className="space-y-2 list-none before:content-none after:content-none pl-0">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Insights
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="/guides/hubspot-expert" className="body-copy text-sm text-gray-400 hover:text-white">
                   How to Hire a HubSpot Expert
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Case Studies
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link
                   href="/insights/hubspot-for-private-equity"
                   className="body-copy text-sm text-gray-400 hover:text-white"
@@ -89,24 +89,24 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white mb-4 text-left">FAQs</h4>
-            <ul className="space-y-2 list-none before:content-none after:content-none">
-              <li className="before:content-none after:content-none">
+            <h4 className="text-sm font-bold text-white mb-4 text-left pl-0">FAQs</h4>
+            <ul className="space-y-2 list-none before:content-none after:content-none pl-0">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Placeholder FAQ 1
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Placeholder FAQ 2
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Placeholder FAQ 3
                 </Link>
               </li>
-              <li className="before:content-none after:content-none">
+              <li className="before:content-none after:content-none pl-0">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Placeholder FAQ 4
                 </Link>
