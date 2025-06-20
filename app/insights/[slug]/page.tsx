@@ -1,21 +1,68 @@
 import { notFound } from "next/navigation"
-import { getBlogPostBySlug } from "@/lib/blog" // Assuming this function exists
-import SemanticLayout from "@/components/layout/SemanticLayout"
+import { getPostBySlug, getRelatedPosts } from "@/lib/blog" // Corrected import: getPostBySlug
 import BlogPostHeader from "@/components/blog/BlogPostHeader"
 import BlogPostContent from "@/components/blog/BlogPostContent"
 import RelatedArticles from "@/components/blog/RelatedArticles"
-import BlogCTA from "@/components/blog/BlogCTA" // Updated import
-import CalloutBox from "@/components/blog/CalloutBox" // New import
+import BlogCTA from "@/components/blog/BlogCTA"
+import CalloutBox from "@/components/blog/CalloutBox"
+import type { Metadata } from "next"
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getBlogPostBySlug(params.slug)
+interface BlogPostPageProps {
+  params: {
+    slug: string
+  }
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const post = getPostBySlug(params.slug)
+
+  if (!post) {
+    return {
+      title: "Post Not Found | DataOps Group",
+    }
+  }
+
+  return {
+    title: `${post.title} | DataOps Group`,
+    description: post.seo?.metaDescription || post.excerpt,
+    keywords: post.seo?.keywords,
+    openGraph: {
+      title: post.seo?.ogTitle || post.title,
+      description: post.seo?.ogDescription || post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+      images: post.coverImage
+        ? [
+            {
+              url: post.coverImage,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seo?.twitterTitle || post.title,
+      description: post.seo?.twitterDescription || post.excerpt,
+      images: post.coverImage ? [post.coverImage] : [],
+    },
+  }
+}
+
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = getPostBySlug(params.slug)
 
   if (!post) {
     notFound()
   }
 
+  const relatedPosts = getRelatedPosts(post)
+
   return (
-    <SemanticLayout>
+    <article className="min-h-screen bg-white">
       <BlogPostHeader
         title={post.title}
         author={post.author}
@@ -23,19 +70,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         category={post.category}
         content={post.content}
       />
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <BlogPostContent content={post.content} />
 
-        {/* Example Callout Box - You would place these strategically in your content or page layout */}
-        <CalloutBox
-          title="PE Portfolio Application"
-          description="This strategy applies directly to portfolio companies looking to optimize their HubSpot investment and accelerate revenue growth through better data management and operational efficiency."
-          icon="target"
-          variant="saffron"
-        />
+      <BlogPostContent content={post.content} />
 
-        <RelatedArticles currentPostSlug={params.slug} />
-      </main>
+      {/* Example Callout Box - You would place these strategically in your content or page layout */}
+      <CalloutBox
+        title="PE Portfolio Application"
+        description="This strategy applies directly to portfolio companies looking to optimize their HubSpot investment and accelerate revenue growth through better data management and operational efficiency."
+        icon="target"
+        variant="saffron"
+      />
+
       {/* First CTA: Dark background with white text and saffron button */}
       <BlogCTA
         title="Ready to Fix Your HubSpot Ordeal?"
@@ -51,6 +96,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         secondaryButton={{ text: "Book Consultation", href: "/contact" }}
         sectionVariant="light"
       />
-    </SemanticLayout>
+
+      <RelatedArticles posts={relatedPosts} />
+    </article>
   )
 }
