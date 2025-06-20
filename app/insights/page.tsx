@@ -4,18 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import {
-  Search,
-  Calendar,
-  User,
-  ArrowRight,
-  TrendingUp,
-  Target,
-  BarChart3,
-  Users,
-  Lightbulb,
-  FileText,
-} from "lucide-react"
+import { Search, Calendar, ArrowRight, TrendingUp, Target, BarChart3, Users, Lightbulb, FileText } from "lucide-react"
 import Link from "next/link"
 import { getAllPosts, formatDate } from "@/lib/blog"
 
@@ -147,15 +136,9 @@ export default function InsightsPage() {
                         </Badge>
                       </div>
 
-                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {formatDate(post.date)}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <User className="w-4 h-4" />
-                          {post.author}
-                        </div>
+                      <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
+                        <Calendar className="w-4 h-4" />
+                        {formatDate(post.date)}
                       </div>
                       <CardTitle className="group-hover:text-dataops-blue transition-colors duration-300 leading-tight">
                         {post.title}
