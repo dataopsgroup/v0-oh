@@ -1,5 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,8 +19,49 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 })
     }
 
-    // Create email content
-    const emailContent = `
+    // Send email using Resend
+    const { data, error } = await resend.emails.send({
+      from: "DataOps Group <noreply@dataopsgroup.com>", // Use your verified domain
+      to: ["admin@dataopsgroup.com"],
+      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background: #1f2937; color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+            <h1 style="margin: 0; font-size: 24px;">New Contact Form Submission</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.8;">DataOps Group Website</p>
+          </div>
+          
+          <div style="background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb;">
+            <h2 style="color: #374151; margin-top: 0; font-size: 18px;">Contact Information</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #374151;">Name:</td>
+                <td style="padding: 8px 0; color: #6b7280;">${firstName} ${lastName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #374151;">Email:</td>
+                <td style="padding: 8px 0;"><a href="mailto:${workEmail}" style="color: #2563eb; text-decoration: none;">${workEmail}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; color: #374151;">Submitted:</td>
+                <td style="padding: 8px 0; color: #6b7280;">${new Date().toLocaleString()}</td>
+              </tr>
+            </table>
+          </div>
+          
+          <div style="background: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+            <h2 style="color: #374151; margin-top: 0; font-size: 18px;">Message</h2>
+            <div style="background: #f8fafc; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6;">
+              <p style="margin: 0; white-space: pre-wrap; line-height: 1.6; color: #374151;">${howCanWeHelp}</p>
+            </div>
+          </div>
+          
+          <div style="text-align: center; padding: 20px; color: #6b7280; font-size: 14px;">
+            <p style="margin: 0;">This email was sent from the DataOps Group contact form.</p>
+          </div>
+        </div>
+      `,
+      text: `
 New Contact Form Submission from DataOps Group Website
 
 Contact Information:
@@ -29,61 +72,29 @@ Message:
 ${howCanWeHelp}
 
 Submitted at: ${new Date().toLocaleString()}
-    `.trim()
-
-    // Configure email transporter
-    const transporter = nodemailer.createTransporter({
-      host: process.env.SMTP_HOST,
-      port: Number.parseInt(process.env.SMTP_PORT || "587"),
-      secure: process.env.SMTP_PORT === "465", // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
+      `.trim(),
+      replyTo: workEmail, // This allows you to reply directly to the person who submitted the form
     })
 
-    // Send email
-    await transporter.sendMail({
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: "admin@dataopsgroup.com",
-      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
-      text: emailContent,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1f2937;">New Contact Form Submission</h2>
-          <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #374151; margin-top: 0;">Contact Information:</h3>
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email:</strong> <a href="mailto:${workEmail}">${workEmail}</a></p>
-          </div>
-          <div style="background: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
-            <h3 style="color: #374151; margin-top: 0;">Message:</h3>
-            <p style="white-space: pre-wrap;">${howCanWeHelp}</p>
-          </div>
-          <p style="color: #6b7280; font-size: 14px; margin-top: 20px;">
-            Submitted at: ${new Date().toLocaleString()}
-          </p>
-        </div>
-      `,
-    })
+    if (error) {
+      console.error("Resend error:", error)
+      return NextResponse.json(
+        {
+          error: "Failed to send email. Please try again later.",
+        },
+        { status: 500 },
+      )
+    }
+
+    console.log("Email sent successfully:", data)
 
     return NextResponse.json({
       success: true,
       message: "Message sent successfully",
+      emailId: data?.id,
     })
   } catch (error) {
     console.error("Contact form error:", error)
-
-    // Return different error messages based on the error type
-    if (error instanceof Error && error.message.includes("SMTP")) {
-      return NextResponse.json(
-        {
-          error: "Email service temporarily unavailable. Please try again later.",
-        },
-        { status: 503 },
-      )
-    }
-
     return NextResponse.json(
       {
         error: "Internal server error",
