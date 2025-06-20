@@ -148,10 +148,6 @@ export default function InsightsPage() {
                       <CardDescription className="mb-4 line-clamp-3 text-gray-600 leading-relaxed">
                         {post.excerpt}
                       </CardDescription>
-                      <div className="flex items-center font-semibold text-dataops-blue group-hover:text-dataops-blue-dark transition-colors duration-200">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                      </div>
                     </CardContent>
                   </Card>
                 </Link>
