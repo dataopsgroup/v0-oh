@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import PageLayout from "@/components/layout/PageLayout"
-import GoogleFormEmbed from "@/components/contact/GoogleFormEmbed"
-import "./contact-form.css"
+import NativeStyledForm from "@/components/contact/NativeStyledForm"
 
 export const metadata: Metadata = {
   title: "Contact Us | DataOps Group",
@@ -25,10 +24,10 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Google Form Section */}
+        {/* Contact Form Section */}
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <GoogleFormEmbed />
+            <NativeStyledForm />
 
             {/* Additional Info */}
             <div className="mt-8 text-center">
