@@ -40,6 +40,9 @@ export default function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    // Add console logging for debugging
+    console.log("Form submission started:", formData)
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -49,7 +52,10 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       })
 
+      console.log("API response status:", response.status)
+
       const result = await response.json()
+      console.log("API response data:", result)
 
       if (response.ok) {
         setIsSubmitted(true)
@@ -61,6 +67,7 @@ export default function ContactForm() {
         throw new Error(result.error || "Something went wrong")
       }
     } catch (error) {
+      console.error("Form submission error:", error)
       toast({
         title: "Error sending message",
         description: error instanceof Error ? error.message : "Please try again later.",
