@@ -14,10 +14,7 @@ interface FormData {
   email: string
   firstName: string
   lastName: string
-  company: string
-  phone: string
   message: string
-  howDidYouHear: string
 }
 
 export default function NativeStyledForm() {
@@ -25,16 +22,13 @@ export default function NativeStyledForm() {
     email: "",
     firstName: "",
     lastName: "",
-    company: "",
-    phone: "",
     message: "",
-    howDidYouHear: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const { toast } = useToast()
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -44,22 +38,19 @@ export default function NativeStyledForm() {
     setIsSubmitting(true)
 
     try {
-      // Submit to Google Forms using the form action URL
+      // Submit to your Google Form
       const googleFormData = new FormData()
 
       // Map your form fields to Google Form entry IDs
-      // You'll need to inspect your Google Form to get these entry IDs
-      googleFormData.append("entry.1234567890", formData.email) // Replace with actual entry ID
-      googleFormData.append("entry.1234567891", formData.firstName) // Replace with actual entry ID
-      googleFormData.append("entry.1234567892", formData.lastName) // Replace with actual entry ID
-      googleFormData.append("entry.1234567893", formData.company) // Replace with actual entry ID
-      googleFormData.append("entry.1234567894", formData.phone) // Replace with actual entry ID
-      googleFormData.append("entry.1234567895", formData.message) // Replace with actual entry ID
-      googleFormData.append("entry.1234567896", formData.howDidYouHear) // Replace with actual entry ID
+      // You'll need to get these entry IDs by inspecting your live form
+      googleFormData.append("entry.191823818", formData.firstName) // First Name field ID
+      googleFormData.append("entry.772376846", formData.lastName) // Last Name field ID
+      googleFormData.append("entry.2119687618", formData.message) // How can we help field ID
+      googleFormData.append("emailAddress", formData.email) // Email field
 
       // Submit to Google Forms
       const response = await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/formResponse",
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/formResponse",
         {
           method: "POST",
           mode: "no-cors",
@@ -113,7 +104,7 @@ export default function NativeStyledForm() {
           {/* Email Field */}
           <div className="space-y-2">
             <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-              Email Address *
+              Email *
             </Label>
             <Input
               id="email"
@@ -161,64 +152,10 @@ export default function NativeStyledForm() {
             </div>
           </div>
 
-          {/* Company Field */}
-          <div className="space-y-2">
-            <Label htmlFor="company" className="text-sm font-medium text-gray-700">
-              Company
-            </Label>
-            <Input
-              id="company"
-              name="company"
-              type="text"
-              value={formData.company}
-              onChange={handleInputChange}
-              className="w-full"
-              placeholder="Your Company Name"
-            />
-          </div>
-
-          {/* Phone Field */}
-          <div className="space-y-2">
-            <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
-              Phone Number
-            </Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full"
-              placeholder="(555) 123-4567"
-            />
-          </div>
-
-          {/* How Did You Hear About Us */}
-          <div className="space-y-2">
-            <Label htmlFor="howDidYouHear" className="text-sm font-medium text-gray-700">
-              How did you hear about us?
-            </Label>
-            <select
-              id="howDidYouHear"
-              name="howDidYouHear"
-              value={formData.howDidYouHear}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="">Select an option</option>
-              <option value="Google Search">Google Search</option>
-              <option value="LinkedIn">LinkedIn</option>
-              <option value="Referral">Referral</option>
-              <option value="Industry Event">Industry Event</option>
-              <option value="Social Media">Social Media</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
           {/* Message Field */}
           <div className="space-y-2">
             <Label htmlFor="message" className="text-sm font-medium text-gray-700">
-              How can we help you? *
+              How can we help? *
             </Label>
             <Textarea
               id="message"
