@@ -26,6 +26,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: `${post.title} | DataOps Insights`,
     description: post.excerpt,
     keywords: post.tags?.join(", "),
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+    },
   }
 }
 
@@ -41,15 +48,36 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <PageLayout>
       <article className="min-h-screen bg-white">
+        {/* Blog Post Header */}
         <BlogPostHeader post={post} />
-        <BlogPostContent post={post} />
-        <RelatedArticles posts={relatedPosts} />
-        <GlobalCTA
-          primaryButtonText="Take Free Assessment"
-          primaryButtonHref="/data-operations-assessment"
-          secondaryButtonText="Book Consultation"
-          secondaryButtonHref="/contact"
-        />
+
+        {/* Main Content */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <BlogPostContent post={post} />
+          </div>
+        </div>
+
+        {/* Related Articles */}
+        {relatedPosts.length > 0 && (
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <RelatedArticles posts={relatedPosts} />
+            </div>
+          </section>
+        )}
+
+        {/* CTA Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <GlobalCTA
+              primaryButtonText="Take Free Assessment"
+              primaryButtonHref="/data-operations-assessment"
+              secondaryButtonText="Book Consultation"
+              secondaryButtonHref="/contact"
+            />
+          </div>
+        </section>
       </article>
     </PageLayout>
   )
