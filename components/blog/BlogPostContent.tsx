@@ -5,61 +5,29 @@ interface BlogPostContentProps {
 }
 
 export function BlogPostContent({ post }: BlogPostContentProps) {
-  // Process content to add numbered sections and proper formatting
-  const processContent = (content: string) => {
-    // Add numbered section styling
-    let processedContent = content.replace(
-      /^(\d+)\.\s+(.+)$/gm,
-      '<div class="numbered-section"><span class="section-number">$1</span><h2 class="section-title">$2</h2></div>',
-    )
-
-    // Ensure proper paragraph breaks
-    processedContent = processedContent.replace(/\n\n/g, "</p><p>")
-    processedContent = `<p>${processedContent}</p>`
-
-    return processedContent
-  }
-
   return (
-    <article className="blog-post-content max-w-4xl mx-auto">
-      {/* Main Content */}
+    <div className="blog-content">
+      {/* Add a colored accent bar at the top */}
+      <div className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 mb-8"></div>
+
       <div
-        className="prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{
-          __html: processContent(post.content || post.excerpt),
-        }}
+        id="blog-post-content"
+        className="blog-content-inner prose prose-lg max-w-none
+          [&_h1]:text-4xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mb-8 [&_h1]:mt-12
+          [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-gray-900 [&_h3]:mb-4 [&_h3]:mt-8
+          [&_h4]:text-xl [&_h4]:font-semibold [&_h4]:text-gray-900 [&_h4]:mb-3 [&_h4]:mt-6
+          [&_p]:text-lg [&_p]:text-gray-700 [&_p]:leading-relaxed [&_p]:mb-6
+          [&_li]:text-lg [&_li]:text-gray-700 [&_li]:leading-relaxed [&_li]:mb-2
+          [&_a]:text-blue-600 [&_a]:font-medium [&_a]:no-underline hover:[&_a]:underline
+          [&_strong]:text-gray-900 [&_strong]:font-semibold
+          [&_code]:bg-gray-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm
+          [&_pre]:bg-gray-900 [&_pre]:text-white [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:my-6
+          [&_hr]:border-gray-300 [&_hr]:my-8"
+        dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      {/* CTA Box Example */}
-      <div className="blog-cta-box">
-        <h3>Ready to Optimize Your Content Strategy?</h3>
-        <p>Get expert guidance to implement these best practices and maximize your content ROI.</p>
-        <div className="flex gap-4 justify-center">
-          <button className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Get Free Assessment
-          </button>
-          <button className="bg-orange-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-900 transition-colors">
-            Book Consultation
-          </button>
-        </div>
-      </div>
-
-      {/* Tags */}
-      {post.tags && post.tags.length > 0 && (
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <h3 className="text-lg font-semibold mb-4 text-gray-900">Related Topics</h3>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-    </article>
+      {/* Add a colored accent bar at the bottom */}
+      <div className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 mt-12"></div>
+    </div>
   )
 }
