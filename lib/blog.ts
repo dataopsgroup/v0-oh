@@ -2,7 +2,7 @@ import type { BlogPost } from "@/types/blog"
 
 // Import all blog posts with their correct export names
 import { audioVisualEquipmentWholesaler } from "@/data/blog/audio-visual-equipment-wholesaler"
-import { createProLevelHubspotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
+import { createProLevelHubSpotLeadScoreModel } from "@/data/blog/create-pro-level-hubspot-lead-score-model"
 import { crmCleanupPlan } from "@/data/blog/crm-cleanup-plan"
 import { customerAcquisitionCost } from "@/data/blog/customer-acquisition-cost"
 import { customerChurnBlindspot } from "@/data/blog/customer-churn-blindspot"
@@ -37,13 +37,13 @@ import { trueCostOfBadData } from "@/data/blog/true-cost-of-bad-data"
 import { upscaleHomeImprovementGoodsManufacturer } from "@/data/blog/upscale-home-improvement-goods-manufacturer"
 import { whatDoesAHubspotConsultantCost } from "@/data/blog/what-does-a-hubspot-consultant-cost"
 import { whatHubspotDoesForMarketing } from "@/data/blog/what-hubspot-does-for-marketing"
-import { why64PercentPePortfolioCompaniesFailHubspotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
-import { threeTipsForSmartWorkflows } from "@/data/blog/3-tips-for-smart-workflows"
+import { whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation } from "@/data/blog/why-64-percent-pe-portfolio-companies-fail-hubspot-implementation"
+import { tipsForSmartWorkflows } from "@/data/blog/3-tips-for-smart-workflows"
 
 // Create the blog posts array with all imported posts
 export const blogPosts: BlogPost[] = [
   audioVisualEquipmentWholesaler,
-  createProLevelHubspotLeadScoreModel,
+  createProLevelHubSpotLeadScoreModel,
   crmCleanupPlan,
   customerAcquisitionCost,
   customerChurnBlindspot,
@@ -78,8 +78,8 @@ export const blogPosts: BlogPost[] = [
   upscaleHomeImprovementGoodsManufacturer,
   whatDoesAHubspotConsultantCost,
   whatHubspotDoesForMarketing,
-  why64PercentPePortfolioCompaniesFailHubspotImplementation,
-  threeTipsForSmartWorkflows,
+  whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation,
+  tipsForSmartWorkflows,
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 // Helper function to get a blog post by slug
@@ -95,4 +95,14 @@ export function getRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
 // Helper function to get posts by category
 export function getPostsByCategory(category: string): BlogPost[] {
   return blogPosts.filter((post) => post.category === category)
+}
+
+// Helper function to get all posts (for compatibility)
+export function getAllPosts(): BlogPost[] {
+  return blogPosts
+}
+
+// Helper function to get post by slug (alternative name for compatibility)
+export function getPostBySlug(slug: string): BlogPost | undefined {
+  return getBlogPostBySlug(slug)
 }
