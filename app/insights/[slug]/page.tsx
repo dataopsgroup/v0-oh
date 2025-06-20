@@ -18,20 +18,26 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: "Post Not Found",
+      title: "Post Not Found | DataOps Insights",
+      description: "The requested blog post could not be found.",
     }
   }
 
   return {
     title: `${post.title} | DataOps Insights`,
     description: post.excerpt,
-    keywords: post.tags?.join(", "),
+    keywords: post.tags?.join(", ") || "",
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
     },
   }
 }
