@@ -27,19 +27,13 @@ export default function ContactPage() {
         {/* Google Form Section */}
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="google-form-container">
-              {/* Form Header */}
-              <div className="google-form-header">
-                <h2>Let's Start a Conversation</h2>
-                <p>Tell us about your project and how we can help transform your data operations.</p>
-              </div>
-
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               {/* Google Form */}
               <div className="relative bg-white">
                 <iframe
                   src="https://docs.google.com/forms/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/viewform?embedded=true"
                   width="100%"
-                  height="821"
+                  height="1200"
                   frameBorder="0"
                   marginHeight="0"
                   marginWidth="0"
