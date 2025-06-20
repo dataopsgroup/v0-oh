@@ -4,7 +4,6 @@ import PageLayout from "@/components/layout/PageLayout"
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader"
 import { BlogPostContent } from "@/components/blog/BlogPostContent"
 import { RelatedArticles } from "@/components/blog/RelatedArticles"
-import GlobalCTA from "@/components/global-cta"
 import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
 
 interface BlogPostPageProps {
@@ -72,18 +71,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </section>
         )}
-
-        {/* CTA Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <GlobalCTA
-              primaryButtonText="Take Free Assessment"
-              primaryButtonHref="/data-operations-assessment"
-              secondaryButtonText="Book Consultation"
-              secondaryButtonHref="/contact"
-            />
-          </div>
-        </section>
       </article>
     </PageLayout>
   )
