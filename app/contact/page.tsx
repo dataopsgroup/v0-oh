@@ -28,16 +28,6 @@ export default function ContactPage() {
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <NativeStyledForm />
-
-            {/* Additional Info */}
-            <div className="mt-8 text-center">
-              <p className="text-gray-600">
-                Having trouble with the form? Email us directly at{" "}
-                <a href="mailto:admin@dataopsgroup.com" className="text-blue-600 hover:text-blue-800 font-medium">
-                  admin@dataopsgroup.com
-                </a>
-              </p>
-            </div>
           </div>
         </section>
       </div>
