@@ -85,11 +85,6 @@ export default function GlobalFooter() {
                   PE Value Creation
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
-                  HubSpot Guides
-                </Link>
-              </li>
             </ul>
           </div>
 
