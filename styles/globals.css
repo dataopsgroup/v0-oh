@@ -10,6 +10,43 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Custom list styling for unordered lists */
+  & ul {
+    list-style: none; /* Remove default bullet */
+    padding-left: 0;
+  }
+  & ul li {
+    position: relative;
+    padding-left: 1.5em; /* Space for custom bullet */
+  }
+  & ul li::before {
+    content: "\27A4"; /* Unicode for a right-pointing triangle (golden arrow) */
+    color: hsl(var(--dataops-saffron)); /* Golden color */
+    position: absolute;
+    left: 0;
+    top: 0.25em; /* Adjust vertical alignment */
+    font-size: 0.8em; /* Adjust size */
+  }
+
+  /* Custom list styling for ordered lists */
+  & ol {
+    counter-reset: list-counter;
+    padding-left: 0;
+  }
+  & ol li {
+    position: relative;
+    padding-left: 2em; /* Space for custom number */
+  }
+  & ol li::before {
+    counter-increment: list-counter;
+    content: counter(list-counter) ".";
+    color: hsl(var(--dataops-accent-blue)); /* Accent blue color */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }
 
 @layer base {
@@ -47,6 +84,13 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --dataops-blue-dark: 210 100% 25%; /* A deep, rich blue */
+    --dataops-saffron: 39 100% 50%; /* A vibrant orange/gold */
+    --dataops-saffron-light: 39 100% 80%; /* A lighter shade of saffron */
+    --dataops-light-blue: 200 100% 90%; /* A very light, airy blue */
+    --dataops-black: 0 0% 0%;
+    --dataops-gray: 210 10% 50%;
+    --dataops-accent-blue: 210 90% 40%; /* A strong, clear blue accent */
   }
   .dark {
     --background: 0 0% 3.9%;
