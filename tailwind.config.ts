@@ -96,25 +96,25 @@ const config = {
         css: {
           // Remove default list styles
           ul: {
-            "list-style": "none",
+            "list-style": "none", // Explicitly remove default bullets
             "padding-left": "0",
           },
           ol: {
-            "list-style": "none",
+            "list-style": "none", // Explicitly remove default numbers
             "padding-left": "0",
             "counter-reset": "list-counter",
           },
-          // Custom unordered list bullets (golden arrow)
+          // Custom unordered list bullets (golden arrow with line)
           "ul > li": {
             position: "relative",
             "padding-left": "1.75em", // Increased padding for text
             "&::before": {
-              content: '"\\27A4"', // Unicode for right-pointing triangle
+              content: '"\\2192"', // Unicode for rightwards arrow (→)
               color: "hsl(var(--dataops-saffron))",
               position: "absolute",
-              left: "0",
+              left: "-0.25em", // Adjusted left position to align the arrow
               top: "0.25em", // Adjust vertical alignment
-              "font-size": "0.8em",
+              "font-size": "1em", // Make arrow size consistent with text
             },
           },
           // Custom ordered list numbering (accent blue)
