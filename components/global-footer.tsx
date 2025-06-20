@@ -29,7 +29,7 @@ export default function GlobalFooter() {
 
           <div>
             <h4 className="subheadline text-xs text-gray-300 mb-4">Services</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               <li>
                 <Link href="/services/analytics-bi" className="body-copy text-sm text-gray-400 hover:text-white">
                   Analytics & BI
@@ -61,7 +61,7 @@ export default function GlobalFooter() {
 
           <div>
             <h4 className="subheadline text-xs text-gray-300 mb-4">Resources</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               <li>
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Insights
@@ -90,7 +90,7 @@ export default function GlobalFooter() {
 
           <div>
             <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               <li>
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
                   Placeholder FAQ 1
