@@ -32,13 +32,13 @@ export default function BlogCTA({
 
   const primaryButtonClasses =
     sectionVariant === "dark"
-      ? "bg-dataops-saffron text-dataops-blue-dark hover:bg-dataops-saffron-light" // Changed to saffron button on dark background
-      : "bg-dataops-accent-blue text-white hover:bg-dataops-blue-dark"
+      ? "bg-dataops-saffron text-dataops-blue-dark hover:bg-dataops-saffron-light font-semibold"
+      : "bg-dataops-accent-blue text-white hover:bg-dataops-blue-dark font-semibold"
 
   const secondaryButtonClasses =
     sectionVariant === "dark"
-      ? "border-white text-white hover:bg-white hover:text-dataops-blue-dark"
-      : "border-dataops-accent-blue text-dataops-accent-blue hover:bg-dataops-light-blue/20 hover:text-dataops-accent-blue"
+      ? "bg-white text-dataops-blue-dark border-dataops-saffron hover:bg-dataops-saffron hover:text-dataops-blue-dark font-semibold"
+      : "bg-dataops-light-blue text-dataops-blue-dark border-dataops-accent-blue hover:bg-dataops-accent-blue hover:text-white font-semibold"
 
   return (
     <section className={`${sectionClasses} py-16 my-8`}>
