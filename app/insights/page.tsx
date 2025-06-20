@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/blog"
 import BlogCard from "@/components/blog/BlogCard"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Navigation from "@/components/navigation"
 
 export const metadata: Metadata = {
   title: "Insights & Resources | DataOps Group",
@@ -19,6 +20,7 @@ export default function InsightsPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navigation />
       {/* Compact Header */}
       <section className="bg-blue-900 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
