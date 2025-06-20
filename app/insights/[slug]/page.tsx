@@ -1,12 +1,15 @@
 import { allPosts } from "contentlayer/generated"
 import { notFound } from "next/navigation"
 import { useMDXComponent } from "next-contentlayer/hooks"
-import Balancer from "react-wrap-balancer"
 
 import { Mdx } from "@/components/mdx-components"
 import { SemanticLayout } from "@/components/semantic-layout"
 import { siteConfig } from "@/config/site"
-import { cn, formatDate } from "@/lib/utils"
+import { BlogPostHeader } from "@/components/blog/blog-post-header"
+import { BlogPostContent } from "@/components/blog/blog-post-content"
+import { CalloutBox } from "@/components/callout-box"
+import { BlogCTA } from "@/components/blog-cta"
+import { RelatedArticles } from "@/components/blog/related-articles"
 
 interface Props {
   params: {
@@ -51,22 +54,15 @@ export default function PostPage({ params }: Props) {
   return (
     <SemanticLayout>
       <article className="container max-w-3xl py-12">
-        <div className="space-y-2">
-          <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight", "lg:text-5xl")}>
-            <Balancer>{post.title}</Balancer>
-          </h1>
-          {post.description && (
-            <p className="text-lg text-muted-foreground">
-              <Balancer>{post.description}</Balancer>
-            </p>
-          )}
-          <div className="text-sm text-muted-foreground">Published {formatDate(post.date)}</div>
-        </div>
-        <div className="mt-8">
+        <BlogPostHeader title={post.title} description={post.description} date={post.date} />
+        <BlogPostContent>
           <Mdx>
             <MDXContent />
           </Mdx>
-        </div>
+        </BlogPostContent>
+        <CalloutBox title="Example Callout" content="This is an example of a callout box." />
+        <BlogCTA variant="light" />
+        <RelatedArticles currentPost={post} />
       </article>
     </SemanticLayout>
   )
