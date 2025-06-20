@@ -16,29 +16,66 @@ export const metadata: Metadata = {
     "data operations, hubspot consulting, marketing automation, revenue operations, business intelligence, data strategy",
 }
 
-// Color-coding system for topic tags
+// Enhanced color-coding system for topic tags with unique colors
 const getCategoryColor = (category: string): string => {
   const categoryColors: Record<string, string> = {
+    // Core Topics
     Analytics: "bg-blue-600 text-white hover:bg-blue-700",
     Strategy: "bg-purple-600 text-white hover:bg-purple-700",
     Operations: "bg-green-600 text-white hover:bg-green-700",
     HubSpot: "bg-orange-600 text-white hover:bg-orange-700",
     Marketing: "bg-pink-600 text-white hover:bg-pink-700",
     Sales: "bg-red-600 text-white hover:bg-red-700",
+
+    // Data & Management
     "Data Management": "bg-indigo-600 text-white hover:bg-indigo-700",
+    "Data Quality": "bg-stone-700 text-white hover:bg-stone-800",
+    "Data Operations": "bg-slate-700 text-white hover:bg-slate-800",
+    "Data Strategy": "bg-zinc-700 text-white hover:bg-zinc-800",
+
+    // Revenue & Operations
     "Revenue Operations": "bg-teal-600 text-white hover:bg-teal-700",
+    "Marketing Operations": "bg-cyan-700 text-white hover:bg-cyan-800",
+    "Sales Operations": "bg-emerald-700 text-white hover:bg-emerald-800",
+    RevOps: "bg-teal-700 text-white hover:bg-teal-800",
+
+    // Lead & Customer Management
     "Lead Generation": "bg-cyan-600 text-white hover:bg-cyan-700",
+    "Lead Scoring": "bg-sky-700 text-white hover:bg-sky-800",
+    "Customer Segmentation": "bg-violet-700 text-white hover:bg-violet-800",
+    "Customer Acquisition": "bg-fuchsia-700 text-white hover:bg-fuchsia-800",
+
+    // Tools & Technology
     CRM: "bg-amber-600 text-white hover:bg-amber-700",
     Automation: "bg-emerald-600 text-white hover:bg-emerald-700",
+    "Marketing Automation": "bg-lime-700 text-white hover:bg-lime-800",
+    Attribution: "bg-rose-700 text-white hover:bg-rose-800",
+
+    // Business & Industry
     "Private Equity": "bg-slate-600 text-white hover:bg-slate-700",
     "Case Study": "bg-violet-600 text-white hover:bg-violet-700",
     Implementation: "bg-rose-600 text-white hover:bg-rose-700",
+    Consulting: "bg-sky-600 text-white hover:bg-sky-700",
+
+    // Best Practices & Tips
     "Best Practices": "bg-lime-600 text-white hover:bg-lime-700",
     "Tips & Tricks": "bg-fuchsia-600 text-white hover:bg-fuchsia-700",
-    Consulting: "bg-sky-600 text-white hover:bg-sky-700",
-    "Data Quality": "bg-stone-600 text-white hover:bg-stone-700",
-    Attribution: "bg-zinc-600 text-white hover:bg-zinc-700",
-    Segmentation: "bg-neutral-600 text-white hover:bg-neutral-700",
+    Insights: "bg-purple-700 text-white hover:bg-purple-800",
+    "Thought Leadership": "bg-indigo-700 text-white hover:bg-indigo-800",
+
+    // Specific Areas
+    Segmentation: "bg-neutral-700 text-white hover:bg-neutral-800",
+    "Lead Nurturing": "bg-orange-700 text-white hover:bg-orange-800",
+    "Pipeline Management": "bg-blue-700 text-white hover:bg-blue-800",
+    "Workflow Optimization": "bg-green-700 text-white hover:bg-green-800",
+
+    // Additional Categories
+    "HubSpot Consultant": "bg-amber-700 text-white hover:bg-amber-800",
+    "Marketing Dashboard": "bg-pink-700 text-white hover:bg-pink-800",
+    "Sales Pipeline": "bg-red-700 text-white hover:bg-red-800",
+    "Data Governance": "bg-gray-700 text-white hover:bg-gray-800",
+    "Business Intelligence": "bg-blue-800 text-white hover:bg-blue-900",
+    "Revenue Growth": "bg-green-800 text-white hover:bg-green-900",
   }
 
   return categoryColors[category] || "bg-gray-600 text-white hover:bg-gray-700"
