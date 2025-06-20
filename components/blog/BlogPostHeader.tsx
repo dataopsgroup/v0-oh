@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge"
-import { Calendar, User, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar, Clock, ArrowLeft } from "lucide-react"
+import Link from "next/link"
 import type { BlogPost } from "@/types/blog"
 import { formatDate, calculateReadTime } from "@/lib/blog"
 
@@ -35,11 +37,7 @@ export function BlogPostHeader({ post }: BlogPostHeaderProps) {
 
           <p className="body-copy text-xl md:text-2xl mb-8 text-white/90">{post.excerpt}</p>
 
-          <div className="flex items-center justify-center gap-6 text-white/80">
-            <div className="flex items-center gap-2">
-              <User className="w-5 h-5" />
-              <span>{post.author}</span>
-            </div>
+          <div className="flex items-center justify-center gap-6 text-white/80 flex-wrap">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
               <span>{formatDate(post.date)}</span>
@@ -48,6 +46,16 @@ export function BlogPostHeader({ post }: BlogPostHeaderProps) {
               <Clock className="w-5 h-5" />
               <span>{readTime} min read</span>
             </div>
+            <Link href="/insights">
+              <Button
+                variant="outline"
+                className="bg-white hover:bg-gray-50 border-white hover:border-gray-200 transition-colors"
+                style={{ color: "#14213D" }}
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Insights
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
