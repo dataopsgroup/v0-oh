@@ -28,7 +28,7 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="subheadline text-xs text-gray-300 mb-4">Services</h4>
+            <h4 className="text-sm font-bold text-white mb-4">Services</h4>
             <ul className="space-y-2 list-none before:content-none after:content-none">
               <li className="before:content-none after:content-none">
                 <Link href="/services/analytics-bi" className="body-copy text-sm text-gray-400 hover:text-white">
@@ -60,7 +60,7 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="subheadline text-xs text-gray-300 mb-4">Resources</h4>
+            <h4 className="text-sm font-bold text-white mb-4">Resources</h4>
             <ul className="space-y-2 list-none before:content-none after:content-none">
               <li className="before:content-none after:content-none">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
@@ -89,7 +89,7 @@ export default function GlobalFooter() {
           </div>
 
           <div>
-            <h4 className="subheadline text-xs text-gray-300 mb-4">FAQs</h4>
+            <h4 className="text-sm font-bold text-white mb-4">FAQs</h4>
             <ul className="space-y-2 list-none before:content-none after:content-none">
               <li className="before:content-none after:content-none">
                 <Link href="#" className="body-copy text-sm text-gray-400 hover:text-white">
