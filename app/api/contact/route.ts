@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: `DataOps Group Contact Form <${fromEmail}>`,
-      to: ["admin@dataopsgroup.com"],
+      to: ["geoff@dataopsgroup.com"], // Changed from admin@dataopsgroup.com
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
