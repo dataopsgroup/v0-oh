@@ -25,6 +25,7 @@ export default function ContactForm() {
     howCanWeHelp: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const { toast } = useToast()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -51,17 +52,10 @@ export default function ContactForm() {
       const result = await response.json()
 
       if (response.ok) {
+        setIsSubmitted(true)
         toast({
           title: "Message sent successfully!",
           description: "We'll get back to you within 24 hours.",
-        })
-
-        // Reset form
-        setFormData({
-          firstName: "",
-          lastName: "",
-          workEmail: "",
-          howCanWeHelp: "",
         })
       } else {
         throw new Error(result.error || "Something went wrong")
@@ -80,86 +74,98 @@ export default function ContactForm() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">Let's Start a Conversation</CardTitle>
+        <CardTitle className="text-2xl font-bold text-center">
+          {isSubmitted ? "Thank You for Contacting Us" : "Let's Start a Conversation"}
+        </CardTitle>
         <CardDescription className="text-center">
-          Tell us about your project and how we can help transform your data operations.
+          {isSubmitted
+            ? "We will follow up within one business day."
+            : "Tell us about your project and how we can help transform your data operations."}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {isSubmitted ? (
+          <div className="text-center py-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You for Contacting Us</h2>
+            <h3 className="text-xl text-gray-600">We will follow up within one business day.</h3>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="firstName">First Name *</Label>
+                <Input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Enter your first name"
+                  className="w-full"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="lastName">Last Name *</Label>
+                <Input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Enter your last name"
+                  className="w-full"
+                />
+              </div>
+            </div>
+
+            {/* Email Field */}
             <div className="space-y-2">
-              <Label htmlFor="firstName">First Name *</Label>
+              <Label htmlFor="workEmail">Work Email *</Label>
               <Input
-                id="firstName"
-                name="firstName"
-                type="text"
-                value={formData.firstName}
+                id="workEmail"
+                name="workEmail"
+                type="email"
+                value={formData.workEmail}
                 onChange={handleInputChange}
                 required
-                placeholder="Enter your first name"
+                placeholder="Enter your work email"
                 className="w-full"
               />
             </div>
+
+            {/* Message Field */}
             <div className="space-y-2">
-              <Label htmlFor="lastName">Last Name *</Label>
-              <Input
-                id="lastName"
-                name="lastName"
-                type="text"
-                value={formData.lastName}
+              <Label htmlFor="howCanWeHelp">How Can We Help? *</Label>
+              <Textarea
+                id="howCanWeHelp"
+                name="howCanWeHelp"
+                value={formData.howCanWeHelp}
                 onChange={handleInputChange}
                 required
-                placeholder="Enter your last name"
-                className="w-full"
+                placeholder="Tell us about your project, challenges, or goals..."
+                className="w-full min-h-[120px] resize-vertical"
               />
             </div>
-          </div>
 
-          {/* Email Field */}
-          <div className="space-y-2">
-            <Label htmlFor="workEmail">Work Email *</Label>
-            <Input
-              id="workEmail"
-              name="workEmail"
-              type="email"
-              value={formData.workEmail}
-              onChange={handleInputChange}
-              required
-              placeholder="Enter your work email"
-              className="w-full"
-            />
-          </div>
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            >
+              {isSubmitting ? "Sending Message..." : "Send Message"}
+            </Button>
 
-          {/* Message Field */}
-          <div className="space-y-2">
-            <Label htmlFor="howCanWeHelp">How Can We Help? *</Label>
-            <Textarea
-              id="howCanWeHelp"
-              name="howCanWeHelp"
-              value={formData.howCanWeHelp}
-              onChange={handleInputChange}
-              required
-              placeholder="Tell us about your project, challenges, or goals..."
-              className="w-full min-h-[120px] resize-vertical"
-            />
-          </div>
-
-          {/* Submit Button */}
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-          >
-            {isSubmitting ? "Sending Message..." : "Send Message"}
-          </Button>
-
-          {/* Privacy Notice */}
-          <p className="text-sm text-gray-500 text-center">
-            By submitting this form, you agree to our privacy policy and consent to being contacted about our services.
-          </p>
-        </form>
+            {/* Privacy Notice */}
+            <p className="text-sm text-gray-500 text-center">
+              By submitting this form, you agree to our privacy policy and consent to being contacted about our
+              services.
+            </p>
+          </form>
+        )}
       </CardContent>
     </Card>
   )
