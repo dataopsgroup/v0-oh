@@ -1,12 +1,17 @@
 import type React from "react"
-import { Inter } from "next/font/google"
+import { Lato } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from "@/components/navigation"
 import GlobalFooter from "@/components/global-footer"
 // Removed: import { HelmetProvider } from "react-helmet-async"
 
-const inter = Inter({ subsets: ["latin"] })
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
+  preload: true,
+})
 
 export default function RootLayout({
   children,
@@ -15,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={lato.className}>
         {/* Removed: <HelmetProvider> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Navigation />

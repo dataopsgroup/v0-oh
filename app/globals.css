@@ -180,85 +180,60 @@
   }
   body {
     @apply bg-background text-foreground font-sans; /* Ensure Lato is used */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
   }
 
-  /* Buttons should always use Lato */
-  button {
-    font-family: "Lato", sans-serif !important;
+  /* All elements should use Lato */
+  * {
+    font-family: "Lato", Arial, Helvetica, sans-serif !important;
   }
 
-  /* Form elements should use Lato */
+  /* Ensure consistent Lato usage across all components */
+  button,
   input,
   select,
   textarea,
-  label {
-    font-family: "Lato", sans-serif;
-  }
-
-  /* Navigation should always use Lato */
+  label,
   nav,
   nav a,
-  nav button {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Footer should always use Lato */
+  nav button,
   footer,
-  footer * {
-    font-family: "Lato", sans-serif !important;
+  footer *,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    font-family: "Lato", Arial, Helvetica, sans-serif !important;
   }
 }
 
 /* Custom Typography Classes */
 @layer components {
   .headline {
-    font-family: "Lato", sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif !important;
     font-weight: 500;
   }
 
-  /* Specific override for h1 elements with headline class */
   h1.headline {
-    font-family: "Lato", sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif !important;
     font-weight: 900 !important;
   }
 
   .subheadline {
-    font-family: "Lato", sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif !important;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 
-  /* Default body-copy uses Merriweather for paragraph content */
   .body-copy {
-    font-family: "Merriweather", serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif !important;
     font-weight: 400;
-  }
-
-  /* Override body-copy to use Lato for short descriptive text (text-sm class indicates short labels/descriptions) */
-  .body-copy.text-sm {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Override body-copy to use Lato for any text that's clearly a label or short descriptor */
-  .body-copy.text-xs {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Button text should always be Lato */
-  button .body-copy {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Navigation items should always be Lato */
-  nav .body-copy {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Footer items should always be Lato */
-  footer .body-copy {
-    font-family: "Lato", sans-serif !important;
   }
 
   /* IBM-Style Box Components */
