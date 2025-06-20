@@ -103,14 +103,34 @@ export function getPostsByCategory(category: string): BlogPost[] {
 }
 
 export function getRelatedPosts(currentPost: BlogPost, limit = 3): BlogPost[] {
-  return blogPosts
-    .filter(
+  // First try to get posts from the same category
+  const sameCategoryPosts = blogPosts.filter(
+    (post) => post.id !== currentPost.id && post.category === currentPost.category,
+  )
+
+  // If we don't have enough from the same category, add posts with matching tags
+  let relatedPosts = [...sameCategoryPosts]
+
+  if (relatedPosts.length < limit && currentPost.tags) {
+    const tagMatchPosts = blogPosts.filter(
       (post) =>
         post.id !== currentPost.id &&
-        (post.category === currentPost.category ||
-          (post.tags && currentPost.tags && post.tags.some((tag) => currentPost.tags.includes(tag)))),
+        post.category !== currentPost.category &&
+        post.tags &&
+        post.tags.some((tag) => currentPost.tags!.includes(tag)),
     )
-    .slice(0, limit)
+    relatedPosts = [...relatedPosts, ...tagMatchPosts]
+  }
+
+  // If we still don't have enough, add any other posts
+  if (relatedPosts.length < limit) {
+    const otherPosts = blogPosts.filter(
+      (post) => post.id !== currentPost.id && !relatedPosts.some((rp) => rp.id === post.id),
+    )
+    relatedPosts = [...relatedPosts, ...otherPosts]
+  }
+
+  return relatedPosts.slice(0, limit)
 }
 
 export function formatDate(dateString: string): string {
