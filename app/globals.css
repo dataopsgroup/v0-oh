@@ -299,100 +299,192 @@
 /* Custom Blog Post Styling */
 @layer components {
   .blog-content {
-    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .blog-content {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-content {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
   .blog-content h1 {
-    @apply text-4xl font-bold text-gray-900 leading-tight mb-8 mt-12 !important;
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 2rem !important;
+    margin-top: 3rem !important;
   }
 
   .blog-content h2 {
-    @apply text-3xl font-bold text-gray-900 leading-tight mb-6 mt-10 border-b border-gray-200 pb-2 !important;
+    font-size: 1.875rem !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 2.5rem !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding-bottom: 0.5rem !important;
   }
 
   .blog-content h3 {
-    @apply text-2xl font-semibold text-gray-900 leading-tight mb-4 mt-8 !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1rem !important;
+    margin-top: 2rem !important;
   }
 
   .blog-content h4 {
-    @apply text-xl font-semibold text-gray-900 leading-tight mb-3 mt-6 !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.75rem !important;
+    margin-top: 1.5rem !important;
   }
 
   .blog-content h5 {
-    @apply text-lg font-semibold text-gray-900 leading-tight mb-2 mt-4 !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.5rem !important;
+    margin-top: 1rem !important;
   }
 
   .blog-content h6 {
-    @apply text-base font-semibold text-gray-900 leading-tight mb-2 mt-4 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.5rem !important;
+    margin-top: 1rem !important;
   }
 
   .blog-content p {
-    @apply text-lg text-gray-700 leading-relaxed mb-6 !important;
+    font-size: 1.125rem !important;
+    color: #374151 !important;
+    line-height: 1.75 !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .blog-content ul {
-    @apply mb-6 space-y-2 !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
   }
 
   .blog-content ol {
-    @apply mb-6 space-y-2 !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
   }
 
   .blog-content li {
-    @apply text-lg text-gray-700 leading-relaxed mb-2 !important;
+    font-size: 1.125rem !important;
+    color: #374151 !important;
+    line-height: 1.75 !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .blog-content ul li {
-    @apply ml-6 pl-2 !important;
+    margin-left: 1.5rem !important;
+    padding-left: 0.5rem !important;
     list-style-type: disc !important;
   }
 
   .blog-content ol li {
-    @apply ml-6 pl-2 !important;
+    margin-left: 1.5rem !important;
+    padding-left: 0.5rem !important;
     list-style-type: decimal !important;
   }
 
   .blog-content a {
-    @apply text-blue-600 font-medium no-underline hover:underline !important;
+    color: #2563eb !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+
+  .blog-content a:hover {
+    text-decoration: underline !important;
   }
 
   .blog-content strong {
-    @apply text-gray-900 font-semibold !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
   }
 
   .blog-content em {
-    @apply italic !important;
+    font-style: italic !important;
   }
 
   .blog-content blockquote {
-    @apply border-l-4 border-blue-500 bg-blue-50 p-4 my-6 italic !important;
+    border-left: 4px solid #3b82f6 !important;
+    background-color: #eff6ff !important;
+    padding: 1rem !important;
+    margin: 1.5rem 0 !important;
+    font-style: italic !important;
   }
 
   .blog-content code {
-    @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono !important;
+    background-color: #f3f4f6 !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 0.875rem !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
   }
 
   .blog-content pre {
-    @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto my-6 !important;
+    background-color: #111827 !important;
+    color: #ffffff !important;
+    padding: 1rem !important;
+    border-radius: 0.5rem !important;
+    overflow-x: auto !important;
+    margin: 1.5rem 0 !important;
   }
 
   .blog-content img {
-    @apply rounded-lg shadow-lg my-8 !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    margin: 2rem 0 !important;
   }
 
   .blog-content hr {
-    @apply border-gray-300 my-8 !important;
+    border-color: #d1d5db !important;
+    margin: 2rem 0 !important;
   }
 
   .blog-content table {
-    @apply border-collapse w-full my-6 !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
   }
 
   .blog-content th {
-    @apply border border-gray-300 bg-gray-50 p-3 text-left font-semibold !important;
+    border: 1px solid #d1d5db !important;
+    background-color: #f9fafb !important;
+    padding: 0.75rem !important;
+    text-align: left !important;
+    font-weight: 600 !important;
   }
 
   .blog-content td {
-    @apply border border-gray-300 p-3 !important;
+    border: 1px solid #d1d5db !important;
+    padding: 0.75rem !important;
   }
 }
