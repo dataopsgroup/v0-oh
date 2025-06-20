@@ -19,12 +19,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 })
     }
 
-    // Use Resend's verified testing domain (works immediately)
-    const fromEmail = "onboarding@resend.dev"
+    // Use your verified subdomain
+    const fromEmail = "noreply@email.dataopsgroup.com"
 
     const { data, error } = await resend.emails.send({
       from: `DataOps Group Contact Form <${fromEmail}>`,
-      to: ["geoff@dataopsgroup.com"], // Send to your verified email address
+      to: ["admin@dataopsgroup.com"], // Can send to any email now that domain is verified
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
