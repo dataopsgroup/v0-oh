@@ -404,12 +404,12 @@ export default function HubSpotForPrivateEquityPage() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base rounded-none flex items-center justify-center">
-                    <Link href="/#operations-assessment" className="flex items-center">
+                  <Link href="/data-operations-assessment" className="inline-block">
+                    <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base rounded-none flex items-center justify-center">
                       Assess Your PE Readiness
                       <ChevronRight className="h-5 w-5 ml-2" />
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                   <Button
                     variant="outline"
                     className="body-copy border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-base flex items-center justify-center rounded-none"
@@ -456,9 +456,11 @@ export default function HubSpotForPrivateEquityPage() {
                   Take our 5-minute assessment to identify which HubSpot features will deliver the highest impact for
                   your portfolio operations.
                 </p>
-                <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-none">
-                  <Link href="/#operations-assessment">Start PE Operations Assessment</Link>
-                </Button>
+                <Link href="/data-operations-assessment">
+                  <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-none">
+                    Start PE Operations Assessment
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -911,9 +913,11 @@ export default function HubSpotForPrivateEquityPage() {
                   implementation roadmap for your portfolio.
                 </p>
                 <div className="flex justify-center">
-                  <Button className="body-copy bg-white text-blue-600 px-8 py-3 rounded-none hover:bg-gray-100">
-                    <Link href="/#operations-assessment">Get Your PE Assessment</Link>
-                  </Button>
+                  <Link href="/data-operations-assessment">
+                    <Button className="body-copy bg-white text-blue-600 px-8 py-3 rounded-none hover:bg-gray-100">
+                      Get Your PE Assessment
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1054,12 +1058,14 @@ export default function HubSpotForPrivateEquityPage() {
 
                 <div className="mt-8 space-y-4">
                   <div className="flex justify-center">
-                    <Button
-                      className="body-copy px-8 py-3 rounded-none hover:bg-yellow-500"
-                      style={{ backgroundColor: "#FBB03B", color: "#000" }}
-                    >
-                      <Link href="/#operations-assessment">Get Your PE Assessment</Link>
-                    </Button>
+                    <Link href="/data-operations-assessment">
+                      <Button
+                        className="body-copy px-8 py-3 rounded-none hover:bg-yellow-500"
+                        style={{ backgroundColor: "#FBB03B", color: "#000" }}
+                      >
+                        Get Your PE Assessment
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
