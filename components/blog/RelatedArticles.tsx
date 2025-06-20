@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, User, ArrowRight } from "lucide-react"
+import { Calendar, ArrowRight } from "lucide-react"
 import type { BlogPost } from "@/types/blog"
 import { formatDate } from "@/lib/blog"
 
@@ -24,22 +24,11 @@ export function RelatedArticles({ posts }: RelatedArticlesProps) {
             {posts.map((post) => (
               <Link key={post.id} href={`/insights/${post.id}`} className="group">
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-                  <div className="aspect-video bg-gradient-to-br from-dataops-blue-light to-dataops-blue rounded-t-lg relative overflow-hidden">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
-                    <div className="absolute bottom-4 left-4">
-                      <Badge className="bg-white/20 text-white border-white/30">{post.category}</Badge>
-                    </div>
-                  </div>
                   <CardHeader>
-                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {formatDate(post.date)}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        {post.author}
-                      </div>
+                    <Badge className="w-fit mb-3 bg-blue-600 text-white hover:bg-blue-700">{post.category}</Badge>
+                    <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
+                      <Calendar className="w-4 h-4" />
+                      {formatDate(post.date)}
                     </div>
                     <CardTitle className="group-hover:text-dataops-blue transition-colors duration-300">
                       {post.title}
