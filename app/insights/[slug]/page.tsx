@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import PageLayout from "@/components/layout/PageLayout"
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader"
-import { BlogPostContent } from "@/components/blog/BlogPostContent"
+import BlogPostContent from "@/components/blog/BlogPostContent"
 import { RelatedArticles } from "@/components/blog/RelatedArticles"
 import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
 
