@@ -32,7 +32,7 @@ export default function BlogCTA({
 
   const primaryButtonClasses =
     sectionVariant === "dark"
-      ? "bg-white text-dataops-blue-dark hover:bg-gray-100" // Button text matches dark background
+      ? "bg-dataops-saffron text-dataops-blue-dark hover:bg-dataops-saffron-light" // Changed to saffron button on dark background
       : "bg-dataops-accent-blue text-white hover:bg-dataops-blue-dark"
 
   const secondaryButtonClasses =
