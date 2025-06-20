@@ -31,15 +31,16 @@ export default function ContactPage() {
               {/* Google Form */}
               <div className="relative bg-white">
                 <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/viewform?embedded=true"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSfD0uVl3lx1keZsrbZLmAmz880HiZpuw0ztHTCJOruQ6O1RbA/viewform?embedded=true&usp=pp_url&entry.1234567890=&chromeless=1"
                   width="100%"
-                  height="1200"
+                  height="1000"
                   frameBorder="0"
                   marginHeight="0"
                   marginWidth="0"
                   className="google-form-iframe"
                   title="DataOps Group Contact Form"
                   loading="lazy"
+                  style={{ border: "none" }}
                 >
                   <div className="google-form-loading">Loading contact form...</div>
                 </iframe>
