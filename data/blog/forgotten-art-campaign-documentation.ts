@@ -56,5 +56,14 @@ export const forgottenArtCampaignDocumentation: BlogPost = {
     <p>Campaign documentation isn't just an administrative task—it's a strategic advantage. Standardized and accessible documentation enhances efficiency, reduces errors, and improves collaboration across teams.</p>
     
     <p>Need help creating an effective campaign documentation system? <a href="/contact">Schedule a consultation</a></p>
-  `
+  `,
+  tags: ["campaign documentation", "marketing operations", "project management", "process efficiency", "marketing workflows"],
+  seo: {
+    metaDescription: "Learn how proper campaign documentation can improve marketing efficiency by 47% and reduce setup time by 35% with standardized templates and processes.",
+    keywords: "campaign documentation, marketing operations, marketing workflow, project management, documentation templates, campaign planning",
+    ogTitle: "The Forgotten Art of Campaign Documentation: Boosting Marketing Efficiency",
+    ogDescription: "Organizations lose 5.4 hours per week due to poor documentation. Learn how structured campaign documentation leads to 47% higher success rates.",
+    twitterTitle: "Campaign Documentation: The Forgotten Marketing Skill",
+    twitterDescription: "Improve marketing efficiency by 47% with proper campaign documentation. Learn the essential elements and avoid common pitfalls."
+  }
 };
