@@ -1,3 +1,5 @@
+import PageLayout from "@/components/layout/PageLayout"
+
 export default function AboutPage() {
   return (
     <PageLayout>
