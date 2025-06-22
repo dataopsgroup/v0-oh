@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: "Message sent successfully",
-      emailId: emailResult.data?.id,
+      emailId: emailResult?.data?.id,
     })
   } catch (error) {
     console.error("Contact form error:", error)
