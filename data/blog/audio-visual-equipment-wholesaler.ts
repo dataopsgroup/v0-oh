@@ -88,6 +88,6 @@ export const audioVisualEquipmentWholesaler: BlogPost = {
   seo: {
     title: "Audio Visual Equipment Wholesaler Case Study | DataOps Group",
     description: "Learn how a wholesale electronics distributor achieved pipeline growth through data-driven transformation strategies",
-    keywords: ["case study", "data transformation", "wholesale", "pipeline growth", "sales optimization"]
+    keywords: "case study, data transformation, wholesale, pipeline growth, sales optimization"
   }
 };
