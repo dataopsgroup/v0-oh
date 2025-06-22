@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
 
     // Log successful submission
     console.log("Contact form submitted successfully:", {
-      emailId: emailResult.data?.id,
+      emailId: emailResult?.data?.id,
       from: sanitizedData.workEmail,
       timestamp: new Date().toISOString(),
       processingTime: Date.now() - startTime,
