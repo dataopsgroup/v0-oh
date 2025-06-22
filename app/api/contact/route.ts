@@ -105,8 +105,9 @@ export async function POST(request: NextRequest) {
         await new Promise((resolve) => setTimeout(resolve, Math.pow(2, retryCount) * 1000))
       }
     }
-if (emailResult && emailResult.error)
-  console.error("Resend error:", emailResult.error)
+
+ if (emailResult && emailResult.error) {
+      console.error("Resend error:", emailResult.error)
 
       // Track error
       errorTracker.captureError(new Error(`Email send failed: ${emailResult.error}`), {
