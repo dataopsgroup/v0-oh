@@ -83,7 +83,7 @@ export const audioVisualEquipmentWholesaler: BlogPost = {
     <h2>Conclusion – A Testament to Partnership</h2>
     
     <p>This case study exemplifies the power of data-driven strategies and collaborative partnerships. By addressing key challenges and implementing strategic solutions, our client achieved substantial improvements in sales and marketing effectiveness. This partnership underscores our commitment to delivering exceptional results and supporting our clients' long-term growth.</p>
-  `
+  `,
    tags: ["case study", "data transformation", "wholesale", "sales optimization"],
   seo: {
     title: "Audio Visual Equipment Wholesaler Case Study | DataOps Group",
