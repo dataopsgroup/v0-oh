@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    if (emailResult?.error) {
+    if (emailResult.error) {
       console.error("Resend error:", emailResult.error)
 
       // Track error
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
 
     // Log successful submission
     console.log("Contact form submitted successfully:", {
-      emailId: emailResult.data?.id,
+      emailId: emailResult?.data?.id,
       from: sanitizedData.workEmail,
       timestamp: new Date().toISOString(),
       processingTime: Date.now() - startTime,
@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: "Message sent successfully",
-      emailId: emailResult.data?.id,
+      emailId: emailResult?.data?.id,
     })
   } catch (error) {
     console.error("Contact form error:", error)
