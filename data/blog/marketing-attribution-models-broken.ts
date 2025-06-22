@@ -46,5 +46,14 @@ export const marketingAttributionModelsBroken: BlogPost = {
     <p>Ready to modernize your attribution modeling? <a href="/contact">Schedule a consultation</a>.</p>
     
     <p>Related Reading: <a href="/insights/demystifying-utm-parameters">Demystifying UTM Parameters: A Practical Guide</a></p>
-  `
+  `,
+  tags: ["marketing attribution", "analytics", "multi-touch attribution", "marketing ROI", "measurement"],
+  seo: {
+    metaDescription: "71% of marketers lack confidence in their attribution modeling. Learn how AI-powered approaches and cross-channel tracking can fix broken attribution models.",
+    keywords: "marketing attribution models, multi-touch attribution, cross-channel tracking, marketing analytics, AI attribution, marketing ROI",
+    ogTitle: "Marketing Attribution Models Are Broken: Here's How to Fix Them",
+    ogDescription: "Companies using outdated attribution models misallocate 40% of their marketing budget. Learn how AI and holistic measurement can fix this.",
+    twitterTitle: "Fix Your Broken Marketing Attribution Model",
+    twitterDescription: "Advanced attribution models achieve 30% better campaign performance. Learn five ways to modernize your marketing measurement."
+  }
 };
