@@ -12,7 +12,6 @@ interface SemanticLayoutProps {
 const SemanticLayout: React.FC<SemanticLayoutProps> = ({
   children,
   hideHeader,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   hideFooter,
 }) => {
   return (
