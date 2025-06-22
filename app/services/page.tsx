@@ -1,4 +1,5 @@
-export default function ServicesPage() {
+import PageLayout from "@/components/layout/PageLayout"
+  export default function ServicesPage() {
   return (
     <PageLayout>
       <div className="min-h-screen p-8">
