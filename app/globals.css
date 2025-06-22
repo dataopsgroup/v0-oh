@@ -1,3 +1,8 @@
+# Backup current file (just in case)
+cp app/globals.css app/globals.css.backup
+
+# Completely overwrite with clean content
+cat > app/globals.css << 'EOF'
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,7 +16,6 @@ body {
     text-wrap: balance;
   }
 
-  /* Blog Post Typography - Matching Original Design */
   .blog-content {
     font-family: Lato, Arial, Helvetica, sans-serif;
     line-height: 1.7;
@@ -38,24 +42,6 @@ body {
     padding-bottom: 0.5rem;
   }
 
-  .blog-content h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.4;
-    margin-bottom: 1rem;
-    margin-top: 2.5rem;
-  }
-
-  .blog-content h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    line-height: 1.4;
-    margin-bottom: 0.75rem;
-    margin-top: 2rem;
-  }
-
   .blog-content p {
     font-size: 1.125rem;
     font-weight: 400;
@@ -64,7 +50,6 @@ body {
     color: #4a4a4a;
   }
 
-  /* Gold Arrow Bullet Points - Key Feature from Original */
   .blog-content ul {
     list-style: none;
     padding-left: 0;
@@ -90,177 +75,5 @@ body {
     top: 0;
     line-height: 1.7;
   }
-
-  /* Numbered Lists - Remove auto-numbering since content has manual numbers */
-  .blog-content ol {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .blog-content ol li {
-    position: relative;
-    padding-left: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #4a4a4a;
-  }
-
-  /* Remove the ::before pseudo-element that was adding duplicate numbers */
-  .blog-content ol li::before {
-    display: none;
-  }
-
-  /* Numbered Section Headers (Large Numbers) */
-  .blog-numbered-section {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-  }
-
-  .blog-numbered-section .section-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #f59e0b;
-    display: inline-block;
-    margin-right: 1rem;
-  }
-
-  .blog-numbered-section .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    display: inline;
-    line-height: 1.4;
-  }
-
-  /* Blockquotes */
-  .blog-content blockquote {
-    border-left: 4px solid #f59e0b;
-    background-color: #fef3c7;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    font-style: italic;
-    font-size: 1.125rem;
-    color: #92400e;
-    border-radius: 0.5rem;
-  }
-
-  /* CTA Boxes - Orange/Gold Styling */
-  .blog-cta-box {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    margin: 2rem 0;
-    color: white;
-    text-align: center;
-  }
-
-  .blog-cta-box h3 {
-    color: white !important;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  .blog-cta-box p {
-    color: white !important;
-    margin-bottom: 1.5rem;
-    font-size: 1.125rem;
-  }
-
-  /* Images */
-  .blog-content img {
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    margin: 2rem 0;
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Code blocks */
-  .blog-content pre {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    font-size: 0.875rem;
-  }
-
-  .blog-content code {
-    background-color: #f1f5f9;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.875rem;
-    color: #1e293b;
-  }
-
-  /* Responsive Typography */
-  @media (max-width: 768px) {
-    .blog-content h1 {
-      font-size: 2rem;
-    }
-
-    .blog-content h2 {
-      font-size: 1.5rem;
-    }
-
-    .blog-content h3 {
-      font-size: 1.25rem;
-    }
-
-    .blog-content p,
-    .blog-content ul li,
-    .blog-content ol li {
-      font-size: 1rem;
-    }
-
-    .blog-numbered-section .section-number {
-      font-size: 1.5rem;
-    }
-
-    .blog-numbered-section .section-title {
-      font-size: 1.25rem;
-    }
-  }
-
-  /* Custom list styling for unordered lists */
-  ul {
-    list-style: none; /* Remove default bullet */
-    padding-left: 0;
-  }
-  ul li {
-    position: relative;
-    padding-left: 1.5em; /* Space for custom bullet */
-  }
-  ul li::before {
-    content: "\27A4"; /* Unicode for a right-pointing triangle (golden arrow) */
-    color: hsl(var(--dataops-saffron)); /* Golden color */
-    position: absolute;
-    left: 0;
-    top: 0.25em; /* Adjust vertical alignment */
-    font-size: 0.8em; /* Adjust size */
-  }
-
-  /* Custom list styling for ordered lists */
-  ol {
-    counter-reset: list-counter;
-    padding-left: 0;
-  }
-  ol li {
-    position: relative;
-    padding-left: 2em; /* Space for custom number */
-  }
-  ol li::before {
-    counter-increment: list-counter;
-    content: counter(list-counter) ".";
-    color: hsl(var(--dataops-accent-blue)); /* Accent blue color */
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
 }
+EOF
