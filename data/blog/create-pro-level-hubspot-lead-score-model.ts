@@ -54,7 +54,6 @@ export const createProLevelHubSpotLeadScoreModel: BlogPost = {
     
     <p>In essence, HubSpot's lead scoring is your compass in the vast sea of potential customers. It guides you toward the leads that are most likely to convert, ensuring that your marketing and sales efforts are focused, efficient, and, above all, effective. As a beginner in HubSpot, embrace the power of lead scoring – it's your key to unlocking smart, data-driven marketing strategies. Start your journey today and witness the transformative impact on your business growth.</p>
   `,
-  // Add the missing required properties
   tags: ["hubspot", "lead scoring", "marketing automation", "sales"],
   seo: {
     metaDescription: "Learn how to create a professional HubSpot lead scoring model to prioritize your prospects and improve sales efficiency",
@@ -64,5 +63,4 @@ export const createProLevelHubSpotLeadScoreModel: BlogPost = {
     twitterTitle: "Create a Pro-Level HubSpot Lead Score Model | DataOps Group",
     twitterDescription: "Learn how to create a professional HubSpot lead scoring model to prioritize your prospects and improve sales efficiency"
   }
-};
 };
