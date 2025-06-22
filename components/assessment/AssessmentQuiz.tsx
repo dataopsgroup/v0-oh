@@ -146,14 +146,13 @@ const AssessmentQuiz = () => {
   }
 
   return (
-    <QuizResults
-      overallScore={overallScore}
-      scores={scores}
-      sectionTitles={sectionTitles}
-      priorities={priorities}
-      rescuePlan={rescuePlan}
-      onEmailResults={handleEmailResults}
-    />
+ <QuizResults
+  overallScore={overallScore}
+  scores={scores}
+  sectionTitles={sectionTitles}
+  priorities={priorities}
+  rescuePlan={rescuePlan}
+/>
   )
 }
 
