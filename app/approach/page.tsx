@@ -1,4 +1,5 @@
-export default function ApproachPage() {
+import PageLayout from "@/components/layout/PageLayout"
+  export default function ApproachPage() {
   return (
     <PageLayout>
       <div className="min-h-screen p-8">
