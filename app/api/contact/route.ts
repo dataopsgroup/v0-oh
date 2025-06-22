@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     if (!firstName || !lastName || !workEmail || !howCanWeHelp) {
       return NextResponse.json(
         { error: "Missing required fields: firstName, lastName, workEmail, howCanWeHelp" },
-        { status: 400 },
+        { status: 400 }
       )
     }
 
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
- if (emailResult && emailResult.error) {
+    if (emailResult && emailResult.error) {
       console.error("Resend error:", emailResult.error)
 
       // Track error
