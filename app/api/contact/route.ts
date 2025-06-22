@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
- if (emailResult && emailResult.error) {
+ if (emailResult && emailResult.error)
       console.error("Resend error:", emailResult.error)
 
       // Track error
