@@ -227,7 +227,7 @@ export default function AnalyticsBIPage() {
 
                   {/* Key Benefits */}
                   <div className="bg-blue-50 border border-blue-100 rounded-lg p-8">
-                    <h3 className="headline text-xl text-blue-900 mb-4">What You'll Achieve</h3>
+                    <h3 className="headline text-xl text-blue-900 mb-4">What You Will Achieve</h3>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <span className="text-blue-600 mr-3 mt-0.5">•</span>

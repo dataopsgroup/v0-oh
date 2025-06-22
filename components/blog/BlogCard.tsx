@@ -25,31 +25,31 @@ export default function BlogCard({ post }: BlogCardProps) {
   }
 
   return (
-    <article className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-200 h-full flex flex-col p-6">
-      <div className="mb-3">
-        <span
-          className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wide ${getCategoryColor(post.category)}`}
-        >
-          {post.category}
-        </span>
-      </div>
+    <Link href={`/insights/${post.id}`} className="group block h-full">
+      <article className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-200 h-full flex flex-col p-6 cursor-pointer">
+        <div className="mb-3">
+          <span
+            className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wide ${getCategoryColor(post.category)}`}
+          >
+            {post.category}
+          </span>
+        </div>
 
-      <Link href={`/insights/${post.id}`}>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
           {post.title}
         </h3>
-      </Link>
 
-      <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">{post.excerpt}</p>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">{post.excerpt}</p>
 
-      <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-gray-100 mt-auto">
-        <div className="flex items-center space-x-1">
-          <span>{post.author}</span>
-          <span>•</span>
-          <span>{formatDate(post.date)}</span>
+        <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-gray-100 mt-auto">
+          <div className="flex items-center space-x-1">
+            <span>{post.author}</span>
+            <span>•</span>
+            <span>{formatDate(post.date)}</span>
+          </div>
+          <span>{readTime} min read</span>
         </div>
-        <span>{readTime} min read</span>
-      </div>
-    </article>
+      </article>
+    </Link>
   )
 }

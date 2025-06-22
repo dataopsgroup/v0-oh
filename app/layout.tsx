@@ -1,10 +1,15 @@
 import type React from "react"
-import { Inter } from "next/font/google"
+import { Lato } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-// Removed: import { HelmetProvider } from "react-helmet-async"
 
-const inter = Inter({ subsets: ["latin"] })
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+})
 
 export default function RootLayout({
   children,
@@ -13,17 +18,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        {/* Removed: <HelmetProvider> */}
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1f2937" />
+      </head>
+      <body className={lato.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-        {/* Removed: </HelmetProvider> */}
       </body>
     </html>
   )
 }
 
 export const metadata = {
-      generator: 'v0.dev'
-    };
+  generator: "v0.dev",
+  robots: "index, follow",
+  authors: [{ name: "DataOps Group" }],
+  creator: "DataOps Group",
+  publisher: "DataOps Group",
+}

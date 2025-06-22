@@ -2,489 +2,274 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 49%;
-    --chart-5: 275 53% 38%;
-    /* Sidebar colors */
-    --sidebar-background: 222.2 47.4% 11.2%; /* primary */
-    --sidebar-foreground: 210 40% 98%; /* primary-foreground */
-    --sidebar-primary: 210 40% 96.1%; /* secondary */
-    --sidebar-primary-foreground: 222.2 47.4% 11.2%; /* secondary-foreground */
-    --sidebar-accent: 210 40% 96.1%; /* accent */
-    --sidebar-accent-foreground: 222.2 47.4% 11.2%; /* accent-foreground */
-    --sidebar-border: 214.3 31.8% 91.4%; /* border */
-    --sidebar-ring: 222.2 84% 4.9%; /* ring */
-
-    /* Custom DataOps Brand Colors */
-    --dataops-blue-dark: 220 30% 16%; /* #14213D */
-    --dataops-saffron: 25 94% 58%; /* #FB803B */
-    --dataops-saffron-light: 25 94% 90%; /* Lightened saffron for card background */
-    --dataops-light-blue: 200 50% 72%; /* #8CC7E3 */
-    --dataops-black: 0 0% 0%; /* #000000 */
-    --dataops-gray: 0 0% 90%; /* #E6E6E6 */
-    --dataops-accent-blue: 221 76% 48%; /* rgb(29, 78, 216) */
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 20 76% 51%;
-    --chart-2: 173 60% 40%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 49%;
-    --chart-5: 275 53% 38%;
-    /* Sidebar colors */
-    --sidebar-background: 210 40% 98%; /* primary */
-    --sidebar-foreground: 222.2 47.4% 11.2%; /* primary-foreground */
-    --sidebar-primary: 217.2 32.6% 17.5%; /* secondary */
-    --sidebar-primary-foreground: 210 40% 98%; /* secondary-foreground */
-    --sidebar-accent: 217.2 32.6% 17.5%; /* accent */
-    --sidebar-accent-foreground: 210 40% 98%; /* accent-foreground */
-    --sidebar-border: 217.2 32.6% 17.5%; /* border */
-    --sidebar-ring: 212.7 26.8% 83.9%; /* ring */
-
-    /* Custom DataOps Brand Colors for Dark Mode (if different) */
-    /* For now, keeping them the same as light mode for consistency unless specified */
-    --dataops-blue-dark: 220 30% 16%;
-    --dataops-saffron: 25 94% 58%;
-    --dataops-saffron-light: 25 94% 90%;
-    --dataops-light-blue: 200 50% 72%;
-    --dataops-black: 0 0% 0%;
-    --dataops-gray: 0 0% 90%;
-    --dataops-accent-blue: 221 76% 48%;
-  }
+body {
+  font-family: Lato, Arial, Helvetica, sans-serif !important;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground font-sans; /* Ensure Lato is used */
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  /* Buttons should always use Lato */
-  button {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Form elements should use Lato */
-  input,
-  select,
-  textarea,
-  label {
-    font-family: "Lato", sans-serif;
-  }
-
-  /* Navigation should always use Lato */
-  nav,
-  nav a,
-  nav button {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Footer should always use Lato */
-  footer,
-  footer * {
-    font-family: "Lato", sans-serif !important;
-  }
-}
-
-/* Custom Typography Classes */
-@layer components {
-  .headline {
-    font-family: "Lato", sans-serif;
-    font-weight: 500;
-  }
-
-  /* Specific override for h1 elements with headline class */
-  h1.headline {
-    font-family: "Lato", sans-serif;
-    font-weight: 900 !important;
-  }
-
-  .subheadline {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  /* Default body-copy uses Merriweather for paragraph content */
-  .body-copy {
-    font-family: "Merriweather", serif;
-    font-weight: 400;
-  }
-
-  /* Override body-copy to use Lato for short descriptive text (text-sm class indicates short labels/descriptions) */
-  .body-copy.text-sm {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Override body-copy to use Lato for any text that's clearly a label or short descriptor */
-  .body-copy.text-xs {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Button text should always be Lato */
-  button .body-copy {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Navigation items should always be Lato */
-  nav .body-copy {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* Footer items should always be Lato */
-  footer .body-copy {
-    font-family: "Lato", sans-serif !important;
-  }
-
-  /* IBM-Style Box Components */
-  .ibm-box-grid {
-    @apply grid gap-px bg-gray-200;
-  }
-
-  .ibm-box {
-    @apply bg-white hover:bg-gray-50 transition-colors;
-  }
-
-  .ibm-box-padding-sm {
-    @apply p-6;
-  }
-
-  .ibm-box-padding-md {
-    @apply p-8;
-  }
-
-  /* Button Overrides - All buttons squared */
-  .btn-squared {
-    @apply rounded-none;
-  }
-
-  /* 
-   * !IMPORTANT: DATAOPS LOGO SIZING - DO NOT CHANGE WITHOUT EXPLICIT REQUEST
-   * The DataOps Group logo in the main navigation MUST always be:
-   * - Width: 200px (w-[200px])
-   * - Height: 68px (h-[68px])
-   * - Object-fit: contain (object-contain)
-   * - Navigation bar height: 80px (h-20)
-   * 
-   * This sizing has been specifically tested and approved.
-   * DO NOT modify these dimensions unless explicitly requested by the client.
-   */
-}
-
-/* Custom Blog Post Styling */
-@layer components {
+  /* Blog Post Typography - Matching Original Design */
   .blog-content {
-    max-width: 64rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  @media (min-width: 640px) {
-    .blog-content {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .blog-content {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #4a4a4a;
   }
 
   .blog-content h1 {
-    font-size: 2.25rem !important;
-    font-weight: 700 !important;
-    color: #111827 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 2rem !important;
-    margin-top: 3rem !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
   }
 
   .blog-content h2 {
-    font-size: 1.875rem !important;
-    font-weight: 700 !important;
-    color: #111827 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 1.5rem !important;
-    margin-top: 2.5rem !important;
-    border-bottom: 1px solid #e5e7eb !important;
-    padding-bottom: 0.5rem !important;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+    margin-top: 3rem;
+    border-bottom: 2px solid #f59e0b;
+    padding-bottom: 0.5rem;
   }
 
   .blog-content h3 {
-    font-size: 1.5rem !important;
-    font-weight: 600 !important;
-    color: #111827 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 1rem !important;
-    margin-top: 2rem !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
   }
 
   .blog-content h4 {
-    font-size: 1.25rem !important;
-    font-weight: 600 !important;
-    color: #111827 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.75rem !important;
-    margin-top: 1.5rem !important;
-  }
-
-  .blog-content h5 {
-    font-size: 1.125rem !important;
-    font-weight: 600 !important;
-    color: #111827 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.5rem !important;
-    margin-top: 1rem !important;
-  }
-
-  .blog-content h6 {
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    color: #111827 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.5rem !important;
-    margin-top: 1rem !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
   }
 
   .blog-content p {
-    font-size: 1.125rem !important;
-    color: #374151 !important;
-    line-height: 1.75 !important;
-    margin-bottom: 1.5rem !important;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #4a4a4a;
   }
 
+  /* Gold Arrow Bullet Points - Key Feature from Original */
   .blog-content ul {
-    margin-bottom: 1.5rem !important;
-    margin-top: 0.5rem !important;
-  }
-
-  .blog-content ol {
-    margin-bottom: 1.5rem !important;
-    margin-top: 0.5rem !important;
-  }
-
-  .blog-content li {
-    font-size: 1.125rem !important;
-    color: #374151 !important;
-    line-height: 1.75 !important;
-    margin-bottom: 0.5rem !important;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
   }
 
   .blog-content ul li {
-    margin-left: 1.5rem !important;
-    padding-left: 0.5rem !important;
-    list-style-type: disc !important;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+  }
+
+  .blog-content ul li::before {
+    content: "→";
+    color: #f59e0b;
+    font-weight: 700;
+    font-size: 1.25rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.7;
+  }
+
+  /* Numbered Lists - Remove auto-numbering since content has manual numbers */
+  .blog-content ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
   }
 
   .blog-content ol li {
-    margin-left: 1.5rem !important;
-    padding-left: 0.5rem !important;
-    list-style-type: decimal !important;
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #4a4a4a;
   }
 
-  .blog-content a {
-    color: #2563eb !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
+  /* Remove the ::before pseudo-element that was adding duplicate numbers */
+  .blog-content ol li::before {
+    display: none;
   }
 
-  .blog-content a:hover {
-    text-decoration: underline !important;
+  /* Numbered Section Headers (Large Numbers) */
+  .blog-numbered-section {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 
-  .blog-content strong {
-    color: #111827 !important;
-    font-weight: 600 !important;
+  .blog-numbered-section .section-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f59e0b;
+    display: inline-block;
+    margin-right: 1rem;
   }
 
-  .blog-content em {
-    font-style: italic !important;
+  .blog-numbered-section .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: inline;
+    line-height: 1.4;
   }
 
+  /* Blockquotes */
   .blog-content blockquote {
-    border-left: 4px solid #3b82f6 !important;
-    background-color: #eff6ff !important;
-    padding: 1rem !important;
-    margin: 1.5rem 0 !important;
-    font-style: italic !important;
+    border-left: 4px solid #f59e0b;
+    background-color: #fef3c7;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.125rem;
+    color: #92400e;
+    border-radius: 0.5rem;
+  }
+
+  /* CTA Boxes - Orange/Gold Styling */
+  .blog-cta-box {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin: 2rem 0;
+    color: white;
+    text-align: center;
+  }
+
+  .blog-cta-box h3 {
+    color: white !important;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .blog-cta-box p {
+    color: white !important;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  /* Images */
+  .blog-content img {
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Code blocks */
+  .blog-content pre {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
   }
 
   .blog-content code {
-    background-color: #f3f4f6 !important;
-    padding: 0.25rem 0.5rem !important;
-    border-radius: 0.25rem !important;
-    font-size: 0.875rem !important;
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
+    background-color: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: #1e293b;
   }
 
-  .blog-content pre {
-    background-color: #111827 !important;
-    color: #ffffff !important;
-    padding: 1rem !important;
-    border-radius: 0.5rem !important;
-    overflow-x: auto !important;
-    margin: 1.5rem 0 !important;
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .blog-content h1 {
+      font-size: 2rem;
+    }
+
+    .blog-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .blog-content h3 {
+      font-size: 1.25rem;
+    }
+
+    .blog-content p,
+    .blog-content ul li,
+    .blog-content ol li {
+      font-size: 1rem;
+    }
+
+    .blog-numbered-section .section-number {
+      font-size: 1.5rem;
+    }
+
+    .blog-numbered-section .section-title {
+      font-size: 1.25rem;
+    }
   }
 
-  .blog-content img {
-    border-radius: 0.5rem !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
-    margin: 2rem 0 !important;
+  /* Custom list styling for unordered lists */
+  ul {
+    list-style: none; /* Remove default bullet */
+    padding-left: 0;
+  }
+  ul li {
+    position: relative;
+    padding-left: 1.5em; /* Space for custom bullet */
+  }
+  ul li::before {
+    content: "\27A4"; /* Unicode for a right-pointing triangle (golden arrow) */
+    color: hsl(var(--dataops-saffron)); /* Golden color */
+    position: absolute;
+    left: 0;
+    top: 0.25em; /* Adjust vertical alignment */
+    font-size: 0.8em; /* Adjust size */
   }
 
-  .blog-content hr {
-    border-color: #d1d5db !important;
-    margin: 2rem 0 !important;
+  /* Custom list styling for ordered lists */
+  ol {
+    counter-reset: list-counter;
+    padding-left: 0;
+  }
+  ol li {
+    position: relative;
+    padding-left: 2em; /* Space for custom number */
+  }
+  ol li::before {
+    counter-increment: list-counter;
+    content: counter(list-counter) ".";
+    color: hsl(var(--dataops-accent-blue)); /* Accent blue color */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
-  .blog-content table {
-    border-collapse: collapse !important;
-    width: 100% !important;
-    margin: 1.5rem 0 !important;
+  /* Prose Styling Update */
+  .blog-content [&_ol]:mb-6 [&_ol]:list-none [&_ol]:pl-0 {
+    /* Additional styles for ordered lists */
   }
 
-  .blog-content th {
-    border: 1px solid #d1d5db !important;
-    background-color: #f9fafb !important;
-    padding: 0.75rem !important;
-    text-align: left !important;
-    font-weight: 600 !important;
-  }
-
-  .blog-content td {
-    border: 1px solid #d1d5db !important;
-    padding: 0.75rem !important;
+  .blog-content [&_ol_li]:mb-2 [&_ol_li]:pl-0 {
+    /* Additional styles for ordered list items */
   }
 }

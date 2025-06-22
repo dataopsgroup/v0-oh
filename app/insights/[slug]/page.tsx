@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
-import BlogPostHeader from "@/components/blog/BlogPostHeader"
+import type { Metadata } from "next"
+import PageLayout from "@/components/layout/PageLayout"
+import { BlogPostHeader } from "@/components/blog/BlogPostHeader"
 import BlogPostContent from "@/components/blog/BlogPostContent"
-import RelatedArticles from "@/components/blog/RelatedArticles"
-import BlogCTA from "@/components/blog/BlogCTA"
+import { RelatedArticles } from "@/components/blog/RelatedArticles"
+import { getPostBySlug, getRelatedPosts } from "@/lib/blog"
 
 interface BlogPostPageProps {
   params: {
@@ -17,36 +17,26 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: "Post Not Found | DataOps Group",
+      title: "Post Not Found | DataOps Insights",
+      description: "The requested blog post could not be found.",
     }
   }
 
   return {
-    title: `${post.title} | DataOps Group`,
-    description: post.seo?.metaDescription || post.excerpt,
-    keywords: post.seo?.keywords,
+    title: `${post.title} | DataOps Insights`,
+    description: post.excerpt,
+    keywords: post.tags?.join(", ") || "",
     openGraph: {
-      title: post.seo?.ogTitle || post.title,
-      description: post.seo?.ogDescription || post.excerpt,
+      title: post.title,
+      description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
-      images: post.coverImage
-        ? [
-            {
-              url: post.coverImage,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
-        : [],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.seo?.twitterTitle || post.title,
-      description: post.seo?.twitterDescription || post.excerpt,
-      images: post.coverImage ? [post.coverImage] : [],
+      title: post.title,
+      description: post.excerpt,
     },
   }
 }
@@ -58,34 +48,30 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const relatedPosts = getRelatedPosts(post)
+  const relatedPosts = getRelatedPosts(post, 3)
 
   return (
-    <article className="min-h-screen bg-white">
-      <BlogPostHeader
-        title={post.title}
-        author={post.author}
-        date={post.date}
-        category={post.category}
-        content={post.content}
-      />
+    <PageLayout>
+      <article className="min-h-screen bg-white">
+        {/* Blog Post Header */}
+        <BlogPostHeader post={post} />
 
-      <BlogPostContent content={post.content} />
+        {/* Main Content */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto">
+            <BlogPostContent post={post} />
+          </div>
+        </div>
 
-      <BlogCTA
-        title="Ready to Transform Your Operations?"
-        description="Get expert guidance to implement the strategies discussed in this article."
-        primaryButton={{
-          text: "Take Free Assessment",
-          href: "/data-operations-assessment",
-        }}
-        secondaryButton={{
-          text: "Book Consultation",
-          href: "/contact",
-        }}
-      />
-
-      <RelatedArticles posts={relatedPosts} />
-    </article>
+        {/* Related Articles */}
+        {relatedPosts.length > 0 && (
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <RelatedArticles posts={relatedPosts} />
+            </div>
+          </section>
+        )}
+      </article>
+    </PageLayout>
   )
 }

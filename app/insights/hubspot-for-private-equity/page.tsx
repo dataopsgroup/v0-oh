@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -19,8 +18,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
-import GlobalFooter from "@/components/global-footer"
-import Navigation from "@/components/navigation"
+import PageLayout from "@/components/layout/PageLayout"
 
 export default function HubSpotForPrivateEquityPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0)
@@ -367,11 +365,8 @@ export default function HubSpotForPrivateEquityPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <Navigation />
-
-      <main>
+    <PageLayout>
+      <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="pt-20 pb-16 px-4 bg-gradient-to-br from-white to-gray-50">
           <div className="max-w-7xl mx-auto">
@@ -389,7 +384,7 @@ export default function HubSpotForPrivateEquityPage() {
                   firms.
                 </p>
 
-                {/* Key Benefits - Updated to match home page style */}
+                {/* Key Benefits */}
                 <div className="grid md:grid-cols-3 gap-px bg-gray-200 my-8">
                   <div className="bg-white p-6 hover:bg-gray-50 transition-colors text-center">
                     <h3 className="headline text-lg text-gray-900 font-semibold mb-2">19% Higher Valuations</h3>
@@ -409,12 +404,12 @@ export default function HubSpotForPrivateEquityPage() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base rounded-none flex items-center justify-center">
-                    <Link href="/#operations-assessment" className="flex items-center">
+                  <Link href="/data-operations-assessment" className="inline-block">
+                    <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-base rounded-none flex items-center justify-center">
                       Assess Your PE Readiness
                       <ChevronRight className="h-5 w-5 ml-2" />
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                   <Button
                     variant="outline"
                     className="body-copy border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-base flex items-center justify-center rounded-none"
@@ -427,7 +422,7 @@ export default function HubSpotForPrivateEquityPage() {
           </div>
         </section>
 
-        {/* Why HubSpot Features - Updated to match home page style */}
+        {/* Why HubSpot Features */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -440,7 +435,6 @@ export default function HubSpotForPrivateEquityPage() {
               </p>
             </div>
 
-            {/* Updated to match home page grid style */}
             <div className="grid md:grid-cols-3 gap-px bg-gray-200 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="bg-white p-8 hover:bg-gray-50 transition-colors flex flex-col h-full">
@@ -455,7 +449,6 @@ export default function HubSpotForPrivateEquityPage() {
               ))}
             </div>
 
-            {/* Bottom CTA */}
             <div className="text-center">
               <div className="bg-blue-50 border border-blue-100 rounded-lg p-8 max-w-3xl mx-auto">
                 <h3 className="headline text-xl text-blue-900 mb-4">Ready to See HubSpot's PE Advantages in Action?</h3>
@@ -463,16 +456,18 @@ export default function HubSpotForPrivateEquityPage() {
                   Take our 5-minute assessment to identify which HubSpot features will deliver the highest impact for
                   your portfolio operations.
                 </p>
-                <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-none">
-                  <Link href="/#operations-assessment">Start PE Operations Assessment</Link>
-                </Button>
+                <Link href="/data-operations-assessment">
+                  <Button className="body-copy bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-none">
+                    Start PE Operations Assessment
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* Standardization Comparison */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">
@@ -487,7 +482,6 @@ export default function HubSpotForPrivateEquityPage() {
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="grid md:grid-cols-4 gap-0">
-                {/* Header */}
                 <div className="bg-gray-900 text-white p-4 font-semibold">Operations Area</div>
                 <div className="bg-red-600 text-white p-4 font-semibold flex items-center">
                   <X className="h-5 w-5 mr-2" />
@@ -502,7 +496,6 @@ export default function HubSpotForPrivateEquityPage() {
                   Value Impact
                 </div>
 
-                {/* Data Rows */}
                 {comparisonData.map((row, index) => (
                   <React.Fragment key={index}>
                     <div className={`p-4 font-medium ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}>
@@ -524,7 +517,6 @@ export default function HubSpotForPrivateEquityPage() {
               </div>
             </div>
 
-            {/* Bottom Stats */}
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="text-center bg-white border border-gray-200 rounded-lg p-6">
                 <div className="headline text-3xl text-red-600 mb-2">$2.4M</div>
@@ -549,7 +541,7 @@ export default function HubSpotForPrivateEquityPage() {
         </section>
 
         {/* CRM Selection Checklist */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">PE CRM Selection Checklist</h2>
@@ -558,7 +550,6 @@ export default function HubSpotForPrivateEquityPage() {
                 with red indicators - these are non-negotiable for PE operations.
               </p>
 
-              {/* Progress Indicators */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
                   <div className="headline text-2xl text-blue-600">
@@ -631,7 +622,6 @@ export default function HubSpotForPrivateEquityPage() {
               ))}
             </div>
 
-            {/* HubSpot CTA */}
             <div className="mt-12 bg-blue-50 border border-blue-100 rounded-lg p-8 text-center">
               <h3 className="headline text-xl text-blue-900 mb-4">How Does HubSpot Score?</h3>
               <p className="body-copy text-gray-700 mb-6 leading-relaxed">
@@ -646,7 +636,7 @@ export default function HubSpotForPrivateEquityPage() {
         </section>
 
         {/* Platform Comparison Table */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">Platform Comparison: PE Requirements</h2>
@@ -656,7 +646,6 @@ export default function HubSpotForPrivateEquityPage() {
               </p>
             </div>
 
-            {/* PE Scores Overview */}
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               {platforms.map((platform, index) => (
                 <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 text-center">
@@ -680,7 +669,6 @@ export default function HubSpotForPrivateEquityPage() {
               ))}
             </div>
 
-            {/* Detailed Comparison Table */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -742,7 +730,6 @@ export default function HubSpotForPrivateEquityPage() {
               </div>
             </div>
 
-            {/* Winner Callout */}
             <div className="mt-12 bg-blue-50 border border-blue-100 rounded-lg p-8 text-center">
               <h3 className="headline text-2xl text-blue-900 mb-4">Why HubSpot Leads for PE Operations</h3>
               <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -772,7 +759,7 @@ export default function HubSpotForPrivateEquityPage() {
         </section>
 
         {/* ROI Calculator Widget */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">HubSpot PE ROI Calculator</h2>
@@ -783,8 +770,7 @@ export default function HubSpotForPrivateEquityPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Input Section */}
-              <div className="bg-gray-50 rounded-lg p-8">
+              <div className="bg-white rounded-lg p-8 border border-gray-200">
                 <div className="flex items-center mb-6">
                   <Calculator className="h-6 w-6 text-blue-600 mr-3" />
                   <h3 className="headline text-xl text-gray-900">Portfolio Parameters</h3>
@@ -871,8 +857,7 @@ export default function HubSpotForPrivateEquityPage() {
                 </div>
               </div>
 
-              {/* Results Section */}
-              <div className="bg-blue-50 rounded-lg p-8">
+              <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
                 <div className="flex items-center mb-6">
                   <TrendingUp className="h-6 w-6 text-blue-600 mr-3" />
                   <h3 className="headline text-xl text-gray-900">ROI Projection</h3>
@@ -920,7 +905,6 @@ export default function HubSpotForPrivateEquityPage() {
               </div>
             </div>
 
-            {/* Bottom CTA */}
             <div className="mt-12 text-center">
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-8 text-white">
                 <h3 className="headline text-2xl mb-4">Ready to Realize These Returns?</h3>
@@ -929,9 +913,11 @@ export default function HubSpotForPrivateEquityPage() {
                   implementation roadmap for your portfolio.
                 </p>
                 <div className="flex justify-center">
-                  <Button className="body-copy bg-white text-blue-600 px-8 py-3 rounded-none hover:bg-gray-100">
-                    <Link href="/#operations-assessment">Get Your PE Assessment</Link>
-                  </Button>
+                  <Link href="/data-operations-assessment">
+                    <Button className="body-copy bg-white text-blue-600 px-8 py-3 rounded-none hover:bg-gray-100">
+                      Get Your PE Assessment
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -939,7 +925,7 @@ export default function HubSpotForPrivateEquityPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="headline text-3xl md:text-4xl text-gray-900 mb-6">Frequently Asked Questions</h2>
@@ -973,7 +959,6 @@ export default function HubSpotForPrivateEquityPage() {
               ))}
             </div>
 
-            {/* Additional Help */}
             <div className="mt-12 text-center">
               <div className="bg-blue-50 border border-blue-100 rounded-lg p-8">
                 <h3 className="headline text-xl text-blue-900 mb-4">Still Have Questions?</h3>
@@ -1001,7 +986,6 @@ export default function HubSpotForPrivateEquityPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Benefits */}
               <div className="space-y-8">
                 <h3 className="headline text-2xl mb-6">What You Get:</h3>
 
@@ -1048,7 +1032,6 @@ export default function HubSpotForPrivateEquityPage() {
                 </div>
               </div>
 
-              {/* Right Side - CTA Form */}
               <div className="bg-white text-gray-900 rounded-lg p-8">
                 <h3 className="headline text-2xl mb-6 text-center">Start Your PE Operations Assessment</h3>
                 <p className="body-copy text-gray-700 mb-6 text-center leading-relaxed">
@@ -1075,12 +1058,14 @@ export default function HubSpotForPrivateEquityPage() {
 
                 <div className="mt-8 space-y-4">
                   <div className="flex justify-center">
-                    <Button
-                      className="body-copy px-8 py-3 rounded-none hover:bg-yellow-500"
-                      style={{ backgroundColor: "#FBB03B", color: "#000" }}
-                    >
-                      <Link href="/#operations-assessment">Get Your PE Assessment</Link>
-                    </Button>
+                    <Link href="/data-operations-assessment">
+                      <Button
+                        className="body-copy px-8 py-3 rounded-none hover:bg-yellow-500"
+                        style={{ backgroundColor: "#FBB03B", color: "#000" }}
+                      >
+                        Get Your PE Assessment
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -1091,8 +1076,7 @@ export default function HubSpotForPrivateEquityPage() {
             </div>
           </div>
         </section>
-      </main>
-      <GlobalFooter />
-    </div>
+      </div>
+    </PageLayout>
   )
 }

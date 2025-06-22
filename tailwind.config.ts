@@ -1,26 +1,30 @@
 import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -41,47 +45,26 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
-        // Custom DataOps Brand Colors - now referencing CSS variables
-        "dataops-blue-dark": {
-          DEFAULT: "hsl(var(--dataops-blue-dark))",
-        },
-        "dataops-saffron": {
-          DEFAULT: "hsl(var(--dataops-saffron))",
-        },
-        "dataops-saffron-light": {
-          DEFAULT: "hsl(var(--dataops-saffron-light))",
-        },
-        "dataops-light-blue": {
-          DEFAULT: "hsl(var(--dataops-light-blue))",
-        },
-        "dataops-black": {
-          DEFAULT: "hsl(var(--dataops-black))",
-        },
-        "dataops-gray": {
-          DEFAULT: "hsl(var(--dataops-gray))",
-        },
-        "dataops-accent-blue": {
-          DEFAULT: "hsl(var(--dataops-accent-blue))",
+        dataops: {
+          blue: {
+            dark: "hsl(var(--dataops-blue-dark))",
+            light: "hsl(var(--dataops-light-blue))",
+            accent: "hsl(var(--dataops-accent-blue))",
+          },
+          saffron: {
+            DEFAULT: "hsl(var(--dataops-saffron))",
+            light: "hsl(var(--dataops-saffron-light))",
+          },
+          black: "hsl(var(--dataops-black))",
+          gray: "hsl(var(--dataops-gray))",
         },
       },
       borderRadius: {
@@ -91,28 +74,100 @@ const config: Config = {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        sans: ["Lato", "Arial", "Helvetica", "sans-serif"],
+        body: ["Lato", "Arial", "Helvetica", "sans-serif"],
+        heading: ["Lato", "Arial", "Helvetica", "sans-serif"],
+      },
+      fontWeight: {
+        light: "300",
+        normal: "400",
+        bold: "700",
+        black: "900",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography")({
+      // Extend the default typography styles
+      DEFAULT: {
+        css: {
+          // Ensure default list styles are removed
+          ul: {
+            "list-style": "none",
+            "padding-left": "0",
+          },
+          ol: {
+            "list-style": "none",
+            "padding-left": "0",
+            "counter-reset": "list-counter",
+          },
+          // Custom unordered list bullets (golden arrow with line)
+          "ul > li": {
+            position: "relative",
+            "padding-left": "1.75em", // Space for the arrow and some text padding
+            "&::before": {
+              content: '"\\2192"', // Unicode for rightwards arrow (→)
+              color: "hsl(var(--dataops-saffron))",
+              position: "absolute",
+              left: "-0.75em", // Adjusted left position to align the arrow perfectly
+              top: "0.25em", // Adjust vertical alignment
+              "font-size": "1em", // Make arrow size consistent with text
+              "font-weight": "bold", // Make it stand out
+            },
+          },
+          // Custom ordered list numbering (accent blue)
+          "ol > li": {
+            position: "relative",
+            "padding-left": "2.25em", // Increased padding for text
+            "&::before": {
+              "counter-increment": "list-counter",
+              content: 'counter(list-counter) "."',
+              color: "hsl(var(--dataops-accent-blue))",
+              "font-weight": "bold",
+              position: "absolute",
+              left: "0",
+              top: "0",
+            },
+          },
+          // Blockquote styling
+          blockquote: {
+            "border-left-color": "hsl(var(--dataops-accent-blue))",
+            "background-color": "hsl(var(--dataops-light-blue) / 0.2)", // 20% opacity
+            padding: "1rem",
+            "margin-top": "1.5rem",
+            "margin-bottom": "1.5rem",
+            "font-style": "italic",
+            "box-shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)", // subtle shadow
+          },
+          // Image styling
+          img: {
+            "border-radius": "0.5rem", // rounded-lg
+            "box-shadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)", // shadow-lg
+            "margin-top": "2rem",
+            "margin-bottom": "2rem",
+          },
+          // H2 border color
+          h2: {
+            "border-bottom-color": "hsl(var(--dataops-saffron))",
+          },
+        },
+      },
+    }),
+  ],
+} satisfies Config
+
 export default config

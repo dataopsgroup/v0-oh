@@ -12,7 +12,8 @@ interface QuizResultsProps {
   sectionTitles: string[]
   priorities: string[]
   rescuePlan: string[]
-  onEmailResults: () => void
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _onEmailResults: () => void
 }
 
 const QuizResults: React.FC<QuizResultsProps> = ({
@@ -21,7 +22,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({
   sectionTitles,
   priorities,
   rescuePlan,
-  onEmailResults,
+  _onEmailResults,
 }) => {
   const getScoreLabel = (score: number) => {
     if (score >= 80) return "Excellent"
@@ -40,7 +41,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({
         <h1 className="text-4xl md:text-5xl font-extrabold text-center text-dataops-blue-dark mb-4">
           Your Assessment Results
         </h1>
-        <p className="text-xl text-center text-gray-700 mb-12">Here's how your HubSpot implementation measures up</p>
+        <p className="text-xl text-center text-gray-700 mb-12">{`  Here is how your HubSpot implementation measures up`}</p>
 
         {/* Overall Score Section */}
         <Card className="bg-dataops-saffron-light rounded-2xl shadow-xl p-8 mb-12 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 border border-dataops-saffron-light">
@@ -81,14 +82,14 @@ const QuizResults: React.FC<QuizResultsProps> = ({
         {/* Ready for Action? Section */}
         <div className="bg-dataops-accent-blue/10 rounded-xl p-6 text-center mb-12">
           <p className="text-xl font-semibold text-dataops-blue-dark">Ready for Action?</p>
-          <p className="text-lg text-gray-700">Your personalized improvement plan is ready below. Let's get started!</p>
+          <p className="text-lg text-gray-700">
+            Your personalized improvement plan is ready below. Let us get started!
+          </p>
         </div>
 
         {/* Section Performance */}
         <h2 className="text-3xl font-bold text-center text-dataops-blue-dark mb-8">Section Performance</h2>
-        <p className="text-lg text-center text-gray-700 mb-12">
-          Detailed breakdown of your HubSpot implementation across key areas
-        </p>
+        <p className="text-lg text-center text-gray-700 mb-12">{`  Here is how your HubSpot implementation measures up`}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {sectionTitles.map((title, index) => {
@@ -181,11 +182,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({
           <h2 className="text-3xl font-bold text-dataops-blue-dark mb-4">
             Get Your Personalized HubSpot Recovery Strategy
           </h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-            This assessment provides valuable insights, but a comprehensive HubSpot audit can uncover deeper
-            inefficiencies and missed opportunities. Our specialists have rescued dozens of underperforming
-            implementations, turning them into competitive advantages that drive measurable growth.
-          </p>
+          <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">{`  Here is how your HubSpot implementation measures up`}</p>
           <a
             href="/contact"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium
@@ -196,7 +193,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({
             Book Your Recovery Consultation
           </a>
           <div className="border-t border-gray-300 my-8 w-full max-w-md mx-auto" />
-          <p className="text-base text-gray-700 mb-4">See how we've transformed similar implementations:</p>
+          <p className="text-base text-gray-700 mb-4">See how we have transformed similar implementations:</p>
           <a href="#" className="inline-flex items-center text-dataops-accent-blue font-semibold text-base group">
             View Transformation Stories
             <ArrowRightIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

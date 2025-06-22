@@ -3,8 +3,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Database, BookOpen, Megaphone, Users, Target, BarChart3 } from "lucide-react"
 import Link from "next/link"
-import Navigation from "@/components/navigation"
-import GlobalFooter from "@/components/global-footer"
 
 export default function ClientHomePage() {
   const organizationSchema = {
@@ -96,9 +94,6 @@ export default function ClientHomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
 
       <div className="min-h-screen bg-white">
-        {/* Use Global Navigation Component */}
-        <Navigation />
-
         {/* Hero Section */}
         <section
           className="bg-gray-50 relative overflow-hidden"
@@ -401,7 +396,7 @@ export default function ClientHomePage() {
                 <Link href="#" className="text-blue-600 hover:underline">
                   comprehensive methodology
                 </Link>{" "}
-                and see how we've helped other{" "}
+                and see how we have helped other{" "}
                 <Link href="#" className="text-blue-600 hover:underline">
                   portfolio companies achieve success
                 </Link>
@@ -476,8 +471,6 @@ export default function ClientHomePage() {
             </div>
           </div>
         </section>
-
-        <GlobalFooter />
       </div>
     </>
   )

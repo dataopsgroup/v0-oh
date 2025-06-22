@@ -1,45 +1,64 @@
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Calendar, Clock, ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import type { BlogPost } from "@/types/blog"
 import { formatDate, calculateReadTime } from "@/lib/blog"
 
 interface BlogPostHeaderProps {
-  title: string
-  author: string
-  date: string
-  category: string
-  content: string
+  post: BlogPost
 }
 
-export default function BlogPostHeader({ title, author, date, category, content }: BlogPostHeaderProps) {
-  const readTime = calculateReadTime(content)
+export function BlogPostHeader({ post }: BlogPostHeaderProps) {
+  const readTime = calculateReadTime(post.content || "")
+
+  // Category color mapping
+  const getCategoryColor = (category: string) => {
+    const colors: Record<string, string> = {
+      Analytics: "bg-blue-600 text-white",
+      Operations: "bg-green-600 text-white",
+      "Tips & Tricks": "bg-purple-600 text-white",
+      "Case Studies": "bg-orange-600 text-white",
+      Guides: "bg-indigo-600 text-white",
+      Strategy: "bg-red-600 text-white",
+      "Private Equity": "bg-gray-700 text-white",
+      HubSpot: "bg-yellow-600 text-white",
+    }
+    return colors[category] || "bg-slate-600 text-white"
+  }
 
   return (
-    <div className="bg-white border-b border-gray-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Link
-          href="/insights"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 text-sm font-medium"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Insights
-        </Link>
+    <header className="py-20" style={{ background: "linear-gradient(to bottom right, #14213D, #4A5F7A)" }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center text-white">
+          <Badge className={`mb-6 ${getCategoryColor(post.category)}`}>{post.category}</Badge>
 
-        <div className="mb-4">
-          <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded uppercase tracking-wide">
-            {category}
-          </span>
-        </div>
+          <h1 className="headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{post.title}</h1>
 
-        <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">{title}</h1>
+          <p className="body-copy text-xl md:text-2xl mb-8 text-white/90">{post.excerpt}</p>
 
-        <div className="flex items-center text-sm text-gray-600 space-x-4">
-          <span>{author}</span>
-          <span>•</span>
-          <span>{formatDate(date)}</span>
-          <span>•</span>
-          <span>{readTime} min read</span>
+          <div className="flex items-center justify-center gap-6 text-white/80 flex-wrap">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-5 h-5" />
+              <span>{formatDate(post.date)}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-5 h-5" />
+              <span>{readTime} min read</span>
+            </div>
+            <Link href="/insights">
+              <Button
+                variant="outline"
+                className="bg-white hover:bg-gray-50 border-white hover:border-gray-200 transition-colors"
+                style={{ color: "#14213D" }}
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Insights
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }

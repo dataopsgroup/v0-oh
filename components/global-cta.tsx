@@ -9,6 +9,8 @@ interface GlobalCTAProps {
   description: string
   buttonText: string
   buttonLink: string
+  secondaryButtonText?: string
+  secondaryButtonLink?: string
 }
 
 export default function GlobalCTA({
@@ -17,6 +19,8 @@ export default function GlobalCTA({
   description,
   buttonText,
   buttonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
 }: GlobalCTAProps) {
   return (
     <section className="py-20 bg-blue-600 text-white">
@@ -27,13 +31,18 @@ export default function GlobalCTA({
             <h2 className="headline text-3xl text-white">{title}</h2>
           </div>
           <p className="body-copy text-lg text-blue-100 max-w-3xl mx-auto leading-relaxed">{description}</p>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-4 flex-wrap">
             <Button
-              className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none"
-              style={{ backgroundColor: "#FBB03B" }}
+              className="body-copy text-gray-900 hover:bg-yellow-500 px-8 py-3 text-base rounded-none font-medium"
+              style={{ backgroundColor: "#F4A460" }}
             >
               <Link href={buttonLink}>{buttonText}</Link>
             </Button>
+            {secondaryButtonText && secondaryButtonLink && (
+              <Button className="body-copy text-white hover:bg-green-600 px-8 py-3 text-base rounded-none bg-green-500 font-medium">
+                <Link href={secondaryButtonLink}>{secondaryButtonText}</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>

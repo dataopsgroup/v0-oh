@@ -27,7 +27,7 @@ const AssessmentIntro: React.FC<AssessmentIntroProps> = ({ startQuiz }) => {
             Free Assessment Tool
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 headline">
-            HubSpot Implementation Assessment
+            {`  HubSpot Implementation Assessment`}
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto body-copy">
             Evaluate your current HubSpot implementation and identify key improvement opportunities with this
@@ -39,7 +39,7 @@ const AssessmentIntro: React.FC<AssessmentIntroProps> = ({ startQuiz }) => {
           {/* What You'll Receive Section */}
           <Card className="lg:col-span-2 bg-white rounded-xl shadow-lg p-6 md:p-8">
             <CardContent className="p-0">
-              <h2 className="text-2xl font-bold text-dataops-blue-dark mb-6">What You'll Receive</h2>
+              <h2 className="text-2xl font-bold text-dataops-blue-dark mb-6">What You will Receive</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-dataops-gray/30 p-5 rounded-lg border border-dataops-gray">
                   <h3 className="text-lg font-semibold text-dataops-blue-dark mb-2 flex items-center">

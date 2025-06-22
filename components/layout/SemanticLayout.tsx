@@ -1,17 +1,25 @@
-"use client" // This component wraps client-side content
-
 import type React from "react"
+import type { ReactNode } from "react"
+import { Header } from "./Header"
+import { Footer } from "./Footer"
 
 interface SemanticLayoutProps {
-  children: React.ReactNode
+  children: ReactNode
+  hideHeader?: boolean
   hideFooter?: boolean
 }
 
-const SemanticLayout = ({ children, hideFooter }: SemanticLayoutProps) => {
+const SemanticLayout: React.FC<SemanticLayoutProps> = ({
+  children,
+  hideHeader,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  hideFooter,
+}) => {
   return (
     <>
-      {/* Navbar, Footer, ScrollToTop, and SEO monitors removed as per instructions */}
-      <main className="min-h-screen">{children}</main>
+      {!hideHeader && <Header />}
+      <main>{children}</main>
+      {!hideFooter && <Footer />}
     </>
   )
 }
