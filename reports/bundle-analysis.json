@@ -1,0 +1,65 @@
+{
+  "javascript": [
+    {
+      "name": "fd9d1056-b6bd4111191f2b98.js",
+      "sizeKB": 169
+    },
+    {
+      "name": "framework-f66176bb897dc684.js",
+      "sizeKB": 137
+    },
+    {
+      "name": "117-e02458b1292e61b6.js",
+      "sizeKB": 121
+    },
+    {
+      "name": "main-92d135e4e4d19f4b.js",
+      "sizeKB": 114
+    },
+    {
+      "name": "polyfills-42372ed130431b0a.js",
+      "sizeKB": 110
+    },
+    {
+      "name": "972-715c166385fd8eb9.js",
+      "sizeKB": 25
+    },
+    {
+      "name": "569-9d19407f7198d443.js",
+      "sizeKB": 22
+    },
+    {
+      "name": "324-88e05c4f6fadd981.js",
+      "sizeKB": 18
+    },
+    {
+      "name": "31-ac32886667521e52.js",
+      "sizeKB": 12
+    },
+    {
+      "name": "webpack-7f48eea57865c67a.js",
+      "sizeKB": 4
+    },
+    {
+      "name": "main-app-0eb73879011c7551.js",
+      "sizeKB": 0
+    }
+  ],
+  "css": [
+    {
+      "name": "da812d61fe7e4d04.css",
+      "sizeKB": 84
+    },
+    {
+      "name": "275ed64cc4367444.css",
+      "sizeKB": 2
+    }
+  ],
+  "totalJsSizeKB": 732,
+  "totalCssSizeKB": 86,
+  "totalSizeKB": 818,
+  "recommendations": [
+    "Consider optimizing or code-splitting for JS bundle: fd9d1056-b6bd4111191f2b98.js (169KB)",
+    "Consider optimizing CSS file: da812d61fe7e4d04.css (84KB)"
+  ]
+}
