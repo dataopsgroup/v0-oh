@@ -86,8 +86,11 @@ export const audioVisualEquipmentWholesaler: BlogPost = {
   `,
   tags: ["case study", "data transformation", "wholesale", "sales optimization"],
   seo: {
-    title: "Audio Visual Equipment Wholesaler Case Study | DataOps Group",
-    description: "Learn how a wholesale electronics distributor achieved pipeline growth through data-driven transformation strategies",
-    keywords: "case study, data transformation, wholesale, pipeline growth, sales optimization"
+    metaDescription: "Learn how a wholesale electronics distributor achieved pipeline growth through data-driven transformation strategies",
+    keywords: "case study, data transformation, wholesale, pipeline growth, sales optimization",
+    ogTitle: "Audio Visual Equipment Wholesaler Case Study | DataOps Group",
+    ogDescription: "Learn how a wholesale electronics distributor achieved pipeline growth through data-driven transformation strategies",
+    twitterTitle: "Audio Visual Equipment Wholesaler Case Study | DataOps Group",
+    twitterDescription: "Learn how a wholesale electronics distributor achieved pipeline growth through data-driven transformation strategies"
   }
 };
