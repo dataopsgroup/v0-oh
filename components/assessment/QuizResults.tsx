@@ -14,13 +14,12 @@ interface QuizResultsProps {
   rescuePlan: string[];
   // _onEmailResults removed entirely
 }
-const QuizResults: React.FC<QuizResultsProps> = ({
+const QuizResults = ({
   overallScore,
   scores,
   sectionTitles,
   priorities,
   rescuePlan,
-  _onEmailResults,
 }) => {
   const getScoreLabel = (score: number) => {
     if (score >= 80) return "Excellent"
