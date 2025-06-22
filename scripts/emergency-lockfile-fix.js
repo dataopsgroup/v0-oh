@@ -33,6 +33,48 @@ class EmergencyLockfileFix {
     return { packageJsonExists, lockfileExists, nodeModulesExists }
   }
 
+  validateDependencies() {
+    console.log("\n🔍 Validating dependencies...")
+
+    try {
+      const packageJson = JSON.parse(fs.readFileSync(this.packageJsonPath, "utf8"))
+      const invalidDeps = []
+
+      // Check for known problematic dependencies
+      const problematicDeps = ["some-chrome-extension-library", "chrome-extension-library", "browser-extension-lib"]
+
+      const allDeps = {
+        ...packageJson.dependencies,
+        ...packageJson.devDependencies,
+      }
+
+      for (const [name, version] of Object.entries(allDeps)) {
+        if (problematicDeps.includes(name)) {
+          invalidDeps.push(name)
+        }
+      }
+
+      if (invalidDeps.length > 0) {
+        console.log(`   ⚠️ Found invalid dependencies: ${invalidDeps.join(", ")}`)
+        console.log("   🧹 Removing invalid dependencies...")
+
+        // Remove invalid dependencies
+        invalidDeps.forEach((dep) => {
+          delete packageJson.dependencies?.[dep]
+          delete packageJson.devDependencies?.[dep]
+        })
+
+        // Write cleaned package.json
+        fs.writeFileSync(this.packageJsonPath, JSON.stringify(packageJson, null, 2))
+        console.log("   ✅ Invalid dependencies removed")
+      } else {
+        console.log("   ✅ All dependencies are valid")
+      }
+    } catch (error) {
+      console.log(`   ⚠️ Validation warning: ${error.message}`)
+    }
+  }
+
   cleanInstall() {
     console.log("\n2️⃣ Performing clean installation...")
 
@@ -138,6 +180,7 @@ class EmergencyLockfileFix {
       console.log("Starting emergency lockfile fix...\n")
 
       this.checkFiles()
+      this.validateDependencies() // Add this line
       this.cleanInstall()
       this.generateLockfile()
       this.validateInstallation()
