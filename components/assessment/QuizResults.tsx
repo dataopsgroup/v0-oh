@@ -12,15 +12,15 @@ interface QuizResultsProps {
   sectionTitles: string[];
   priorities: string[];
   rescuePlan: string[];
-  // _onEmailResults removed entirely
 }
+
 const QuizResults = ({
   overallScore,
   scores,
   sectionTitles,
   priorities,
   rescuePlan,
-}) => {
+}: QuizResultsProps) => {
   const getScoreLabel = (score: number) => {
     if (score >= 80) return "Excellent"
     if (score >= 60) return "Good"
