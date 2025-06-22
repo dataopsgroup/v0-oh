@@ -263,13 +263,3 @@ body {
     left: 0;
     top: 0;
   }
-
-  /* Prose Styling Update */
-  .blog-content [&_ol]:mb-6 [&_ol]:list-none [&_ol]:pl-0 {
-    /* Additional styles for ordered lists */
-  }
-
-  .blog-content [&_ol_li]:mb-2 [&_ol_li]:pl-0 {
-    /* Additional styles for ordered list items */
-  }
-}
