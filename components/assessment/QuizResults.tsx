@@ -7,15 +7,13 @@ import CircularProgress from "@/components/ui/circular-progress" // Ensure Circu
 import { CheckIcon, ArrowRightIcon } from "lucide-react"
 
 interface QuizResultsProps {
-  overallScore: number
-  scores: Record<string, number>
-  sectionTitles: string[]
-  priorities: string[]
-  rescuePlan: string[]
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _onEmailResults: () => void
+  overallScore: number;
+  scores: Record<string, number>;
+  sectionTitles: string[];
+  priorities: string[];
+  rescuePlan: string[];
+  // _onEmailResults removed entirely
 }
-
 const QuizResults: React.FC<QuizResultsProps> = ({
   overallScore,
   scores,
