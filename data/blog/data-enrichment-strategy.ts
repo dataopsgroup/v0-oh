@@ -48,14 +48,5 @@ export const dataEnrichmentStrategy: BlogPost = {
     <p>Schedule a consultation: <a href="https://meetings.hubspot.com/dataopsgroup/gtclient">Book a meeting</a></p>
     
     <p>Related Reading: <a href="/insights/true-cost-of-bad-data">The True Cost of Bad Data</a></p>
-  `,
-  tags: ["data enrichment", "data quality", "marketing data", "lead quality", "data validation"],
-  seo: {
-    metaDescription: "Discover why data enrichment strategies fail and learn how to fix them with validation rules, maintenance protocols, and quality checks.",
-    keywords: "data enrichment strategy, data validation, marketing data quality, lead enrichment, data maintenance, data decay",
-    ogTitle: "Why Your Data Enrichment Strategy Isn't Working",
-    ogDescription: "Data enrichment failures waste 23% of marketing budgets. Learn how to implement effective validation, maintenance, and quality checks.",
-    twitterTitle: "Fix Your Failed Data Enrichment Strategy",
-    twitterDescription: "Only 24% of organizations have successful data enrichment programs. Learn the five fixes to boost lead quality by 67%."
-  }
+  `
 };

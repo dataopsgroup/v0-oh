@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
 import PageLayout from "@/components/layout/PageLayout"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Linkedin, Mail, Phone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact Us | DataOps Group",
@@ -10,41 +13,74 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageLayout>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="py-20 lg:py-32">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Let's Connect</h1>
-            <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
-              Ready to transform your data operations? We'd love to discuss how we can help drive your business forward.
-            </p>
-
-            {/* LinkedIn CTA */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border border-gray-100">
-              <div className="flex items-center justify-center mb-6">
-                <svg className="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </div>
-
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact us via LinkedIn</h2>
-
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                We would appreciate connecting with you, and look forwarding to responding to your message.
+        <section className="bg-white py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">Get in Touch</h1>
+              <p className="mt-6 text-xl text-gray-600">
+                Ready to transform your data operations? Let's discuss how we can help drive your business forward.
               </p>
-
-              <a
-                href="https://www.linkedin.com/company/dataopsgroup/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-                Visit Our LinkedIn Page
-              </a>
             </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Card className="w-full max-w-2xl mx-auto">
+              <CardContent className="p-12 text-center">
+                <div className="mb-8">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Linkedin className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Let's Connect on LinkedIn</h2>
+                  <p className="text-xl text-gray-600 mb-8">
+                    The best way to reach us is through LinkedIn. We'll respond quickly to discuss your data operations
+                    needs.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-8 rounded-md transition-colors"
+                  >
+                    <a
+                      href="https://www.linkedin.com/company/dataops-group"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                      Connect with DataOps Group
+                    </a>
+                  </Button>
+
+                  <div className="pt-8 border-t border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Other Ways to Reach Us</h3>
+                    <div className="space-y-3 text-gray-600">
+                      <div className="flex items-center justify-center gap-3">
+                        <Mail className="w-4 h-4" />
+                        <span>admin@dataopsgroup.com</span>
+                      </div>
+                      <div className="flex items-center justify-center gap-3">
+                        <Phone className="w-4 h-4" />
+                        <span>Available upon LinkedIn connection</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-gray-200">
+                  <p className="text-sm text-gray-500">
+                    We typically respond to LinkedIn messages within 24 hours during business days.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </div>

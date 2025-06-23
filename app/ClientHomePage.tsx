@@ -396,7 +396,7 @@ export default function ClientHomePage() {
                 <Link href="#" className="text-blue-600 hover:underline">
                   comprehensive methodology
                 </Link>{" "}
-                and see how we have helped other{" "}
+                and see how we've helped other{" "}
                 <Link href="#" className="text-blue-600 hover:underline">
                   portfolio companies achieve success
                 </Link>

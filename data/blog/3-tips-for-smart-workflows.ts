@@ -1,92 +1,45 @@
-import type { BlogPost } from "@/types/blog"
-
-export const meta = {
-  title: "3 Essential Tips for Building Smart Marketing Workflows",
-  excerpt:
-    "Discover how to create efficient, automated marketing workflows that save time and improve results with these proven strategies.",
-  author: "DataOps Group",
-  publishDate: "2024-01-15",
-  readTime: "6 min read",
-  category: "Marketing Operations",
-  featured: false,
-}
-
-export const hero = {
-  title: "3 Essential Tips for Building Smart Marketing Workflows",
-  subtitle: "Transform your marketing operations with automated workflows that actually work",
-  backgroundImage: "/placeholder.svg?height=400&width=800&text=Marketing+Workflows",
-}
-
-const content = `
-# 3 Essential Tips for Building Smart Marketing Workflows
-
-Marketing workflows are the backbone of efficient operations, but many teams struggle to build workflows that actually deliver results. Here are three essential tips to create smart, effective marketing workflows.
-
-## 1. Start with Clear Trigger Events
-
-Every effective workflow begins with a well-defined trigger. Instead of creating workflows that activate on vague conditions, establish specific, measurable trigger events.
-
-**Examples of Strong Triggers:**
-- Form submission with specific field values
-- Email engagement above certain thresholds  
-- Lead score reaching defined milestones
-- Website behavior patterns
-
-**Avoid Weak Triggers:**
-- Generic "new contact" events
-- Time-based triggers without context
-- Overly broad behavioral triggers
-
-## 2. Design for Exception Handling
-
-Smart workflows anticipate what can go wrong and have built-in exception handling. This prevents workflows from breaking when unexpected data or scenarios occur.
-
-**Key Exception Scenarios:**
-- Missing or invalid data fields
-- External system downtime
-- Duplicate records
-- Permission or access issues
-
-**Best Practices:**
-- Include data validation steps
-- Set up error notifications
-- Create fallback paths
-- Log workflow failures for analysis
-
-## 3. Implement Progressive Enhancement
-
-Rather than trying to automate everything at once, build workflows that progressively enhance the customer experience based on available data and engagement levels.
-
-**Progressive Enhancement Strategy:**
-- **Level 1**: Basic automation with minimal data
-- **Level 2**: Enhanced personalization with behavioral data
-- **Level 3**: Advanced automation with predictive insights
-
-This approach ensures workflows remain functional even when data is incomplete while providing richer experiences as more information becomes available.
-
-## Conclusion
-
-Smart marketing workflows are built on solid foundations: clear triggers, robust exception handling, and progressive enhancement. By following these three essential tips, you'll create workflows that not only function reliably but also adapt and improve over time.
-
-Remember: the best workflow is one that works consistently, handles edge cases gracefully, and grows with your business needs.
-`
+import { BlogPost } from '@/types/blog';
 
 export const tipsForSmartWorkflows: BlogPost = {
-  ...meta,
-  content,
-  tags: ["marketing", "automation", "workflows", "operations", "strategy"],
+  id: "3-tips-for-smart-workflows",
+  title: "3 Tips for Smart Workflows",
+  excerpt: "Three helpful HubSpot workflows that keep your data cleaned and your contacts organized.",
+  date: "2022-09-05",
+  author: "Geoff Tucker",
+  category: "Tips & Tricks",
+  coverImage: "/lovable-uploads/66cb018a-41fa-4046-a81f-5c632b199583.png",
+  content: `
+    <h2>3 Tips for Smart Workflows</h2>
+    
+    <p>When using workflows, there are three common ones I always set up in the HubSpot instance I'm using. These three simple but powerful workflows make managing the instance much easier over time. Give them a try in your instance.</p>
+    
+    <p>These workflows are particularly valuable as part of a comprehensive <a href="/insights/crm-cleanup-plan">CRM cleanup strategy</a>, helping maintain data quality and organization as your database grows.</p>
+    
+    <ul>
+      <li><strong>Organized by State.</strong> For every US state where your business targets new customers, create a list that gathers all people in each state in a list. In your criteria, use all the variations on how a state can be listed. For example, the full state name or two letter abbreviation. It's also a good idea to run an export on all your state/region field values, and sort them alphabetically. This gives you a chance to fix misspellings and blank entries. Name the list by the state's name. Use the list as a trigger for a workflow that then standardizes each state/region name in HubSpot according to how you want this field value recorded. You can use a simple if/then branch to create the 'set property' step for each state you have. Now your state names are consistent!</li>
+      
+      <li><strong>Organized by ZIP or Postal Code.</strong> Like the example above, use this field as your organizing element for your database. Your sales team may be organized by ZIP or postal codes instead, so simply replace the state/region setting from the first example with ZIP or postal code in this version. You can then add a 'set property value' to designate the contact owner according to the contact's ZIP code. It's a good idea to run an export on your postal code field values and scan the list for any oddball entries or blanks. Make it a priority to fix them for each error. This type of automation is crucial for proper <a href="/insights/customer-segmentation-mistake">customer segmentation</a> and territory management.</li>
+      
+      <li><strong>Fill Those Blanks.</strong> What are the top 10 fields that matter most for your database? Make a list. Now create a workflow that says if "field X is unknown" then add to "Maintenance List". This automates your ability to continually audit your database and fix missing or erroneous data as it occurs. Remember that B2B databases erode at a very high rate annually so preserving every lead you've earned is very important. This workflow helps address the <a href="/insights/data-truth-gap">data quality challenges</a> that many marketing teams face.</li>
+    </ul>
+    
+    <p>Those are three of my favorites that have helped me repeatedly over the years.</p>
+    
+    <p>These workflows become even more powerful when combined with proper <a href="/insights/data-enrichment-strategy">data enrichment strategies</a> and integrated into a comprehensive <a href="/services/hubspot-implementation">HubSpot implementation</a> that includes advanced automation and reporting capabilities.</p>
+    
+    <p>For companies looking to implement more sophisticated workflow strategies, our <a href="/services/marketing-operations">marketing operations services</a> can help you build automated systems that scale with your business growth. We've helped companies like those featured in our <a href="/case-studies">success stories</a> achieve significant efficiency gains through smart workflow design.</p>
+    
+    <p>Want to take your HubSpot workflows to the next level? Consider starting with our <a href="/data-operation-assessment">free DataOps assessment</a> to identify opportunities for automation and process improvement, or explore our full range of <a href="/services">consulting services</a> to get expert guidance on workflow optimization.</p>
+    
+    <p>What are your three favorite go-to workflows? Add a comment below. I'd love to see what you've built.</p>
+  `,
+  tags: ["workflows", "hubspot", "database management", "automation"],
   seo: {
-    metaDescription:
-      "Learn 3 essential tips for building smart marketing workflows that save time and improve results. Expert strategies for marketing automation success.",
-    keywords:
-      "marketing workflows, marketing automation, workflow optimization, marketing operations, automation strategy",
-    ogTitle: "3 Essential Tips for Building Smart Marketing Workflows",
-    ogDescription:
-      "Transform your marketing operations with automated workflows that actually work. Expert tips and strategies.",
-    twitterTitle: "3 Essential Tips for Building Smart Marketing Workflows",
-    twitterDescription:
-      "Discover proven strategies for creating efficient, automated marketing workflows that deliver results.",
-  },
-}
-
-export default tipsForSmartWorkflows
+    metaDescription: "Learn 3 essential HubSpot workflows for data organization: state standardization, ZIP code routing, and automated field maintenance. Keep your database clean and organized.",
+    keywords: "hubspot workflows, data organization, database management, hubspot automation, contact management, data standardization",
+    ogTitle: "3 Smart HubSpot Workflows for Data Organization",
+    ogDescription: "Essential HubSpot workflows that keep your data clean and contacts organized. State standardization, ZIP routing, and automated maintenance.",
+    twitterTitle: "3 Essential HubSpot Workflows for Clean Data",
+    twitterDescription: "Simple but powerful HubSpot workflows for state organization, ZIP routing, and automated database maintenance. Keep your data clean."
+  }
+};

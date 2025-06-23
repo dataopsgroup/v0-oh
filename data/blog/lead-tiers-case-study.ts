@@ -1,10 +1,9 @@
-import type { BlogPost } from "@/types/blog"
+import { BlogPost } from '@/types/blog';
 
 export const leadTiersCaseStudy: BlogPost = {
   id: "lead-tiers-case-study",
   title: "Stop Pretending All Leads Are Equal: The Case for Lead Tiers",
-  excerpt:
-    "Learn why treating all leads the same is costing you money and how implementing a tiered approach can transform your sales efficiency and boost revenue.",
+  excerpt: "Learn why treating all leads the same is costing you money and how implementing a tiered approach can transform your sales efficiency and boost revenue.",
   date: "March 5, 2025",
   author: "Geoff Tucker",
   category: "Lead Management",
@@ -102,17 +101,8 @@ export const leadTiersCaseStudy: BlogPost = {
     </div>
   </article>
   `,
-  tags: ["lead management", "lead scoring", "sales enablement", "marketing operations", "hubspot"],
-  seo: {
-    metaDescription:
-      "Learn why treating all leads equally costs money and how lead tiering can boost sales efficiency by 27% and increase close rates by 35%.",
-    keywords:
-      "lead tiering, lead management, lead scoring, sales efficiency, lead qualification, hubspot lead management, sales productivity",
-    ogTitle: "Stop Pretending All Leads Are Equal: The Case for Lead Tiers",
-    ogDescription:
-      "Companies using lead tiering see 27% higher sales productivity and 35% better close rates. Learn how to implement effective lead tiering systems.",
-    twitterTitle: "Lead Tiering: Stop Treating All Leads Equally",
-    twitterDescription:
-      "Lead tiering boosts sales productivity by 27% and close rates by 35%. Learn how to implement this game-changing strategy.",
-  },
-}
+  tags: ["Lead Management", "Lead Scoring", "Sales Enablement", "Marketing Operations", "HubSpot"],
+  wordCount: 780,
+  readingTime: 4,
+  modifiedDate: "March 5, 2025"
+};
