@@ -1,10 +1,9 @@
-import type { BlogPost } from "@/types/blog"
+import { BlogPost } from '@/types/blog';
 
 export const leadScoringPitfalls: BlogPost = {
   id: "lead-scoring-pitfalls",
   title: "Lead Scoring Pitfalls to Avoid",
-  excerpt:
-    "Learn four quick tips for how to build a lead score model that succeeds in your business. And join our free course to learn all about lead score models.",
+  excerpt: "Learn four quick tips for how to build a lead score model that succeeds in your business. And join our free course to learn all about lead score models.",
   date: "2025-05-07",
   author: "Geoff Tucker",
   category: "Tips & Tricks",
@@ -42,17 +41,5 @@ export const leadScoringPitfalls: BlogPost = {
     
     <p>Have you used lead scoring in your business? What have you learned by using lead scoring? Please leave a comment below!</p>
   `,
-  tags: ["lead scoring", "marketing automation", "hubspot", "sales alignment", "lead qualification"],
-  seo: {
-    metaDescription:
-      "Avoid common lead scoring pitfalls with these 4 essential tips. Learn how to build effective lead scoring models that improve sales and marketing alignment.",
-    keywords:
-      "lead scoring pitfalls, lead scoring best practices, marketing automation, hubspot lead scoring, lead qualification, sales alignment",
-    ogTitle: "Lead Scoring Pitfalls to Avoid - 4 Essential Tips",
-    ogDescription:
-      "Learn 4 critical tips to avoid lead scoring pitfalls and build models that actually improve sales results and marketing ROI.",
-    twitterTitle: "4 Lead Scoring Pitfalls to Avoid",
-    twitterDescription:
-      "Don't let these lead scoring mistakes hurt your conversion rates. Learn 4 essential tips for building effective lead scoring models.",
-  },
-}
+  tags: ["lead scoring", "marketing automation", "hubspot", "sales alignment"]
+};

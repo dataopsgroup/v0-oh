@@ -50,14 +50,5 @@ export const demystifyingUtmParameters: BlogPost = {
     <p>Need help setting up a foolproof UTM tracking system? <a href="/contact">Schedule a consultation</a>.</p>
     
     <p>Related Reading: <a href="/insights/true-cost-of-bad-data">The True Cost of Bad Data: Beyond the 1-10-100 Rule</a></p>
-  `,
-  tags: ["utm parameters", "campaign tracking", "digital marketing", "analytics", "attribution"],
-  seo: {
-    metaDescription: "Learn how to effectively implement UTM parameters to track marketing campaigns and improve attribution accuracy with this practical guide.",
-    keywords: "utm parameters, campaign tracking, marketing attribution, utm best practices, utm naming conventions, campaign analytics",
-    ogTitle: "Demystifying UTM Parameters: A Practical Guide for Marketers",
-    ogDescription: "Campaigns using well-defined UTM parameters see a 41% boost in attribution accuracy. Learn how to implement them correctly.",
-    twitterTitle: "UTM Parameters Explained: A Practical Guide",
-    twitterDescription: "Learn how to use UTM parameters correctly to improve campaign tracking and get 53% better ROI visibility."
-  }
+  `
 };
