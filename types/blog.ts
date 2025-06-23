@@ -2,13 +2,14 @@ export interface BlogPost {
   id: string
   title: string
   excerpt: string
+  content: string
   date: string
   author: string
   category: string
-  coverImage: string
-  content: string
+  coverImage?: string
   tags: string[]
-  seo: {
+  featured?: boolean
+  seo?: {
     metaDescription: string
     keywords: string
     ogTitle: string
@@ -18,8 +19,12 @@ export interface BlogPost {
   }
 }
 
-export interface BlogCategory {
-  name: string
-  slug: string
-  description?: string
+export interface BlogMeta {
+  title: string
+  excerpt: string
+  date: string
+  author: string
+  category: string
+  coverImage?: string
+  featured?: boolean
 }

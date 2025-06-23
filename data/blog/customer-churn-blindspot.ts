@@ -40,5 +40,14 @@ export const customerChurnBlindspot: BlogPost = {
     <h2>Want to uncover your true retention picture? Let's analyze your customer data across all five dimensions and build an early warning system that prevents unexpected churn.</h2>
     
     <h2>Let's Talk Retention →</h2>
-  `
+  `,
+  tags: ["customer retention", "customer churn", "revenue churn", "customer success", "business growth"],
+  seo: {
+    metaDescription: "Discover why tracking only logo churn creates a major blindspot in your retention strategy. Learn the five dimensions that reveal your true customer health picture.",
+    keywords: "customer churn, revenue retention, logo churn, customer health metrics, retention strategy, customer success metrics",
+    ogTitle: "The Customer Churn Blindspot 83% of Companies Miss",
+    ogDescription: "Most companies only track logo churn, missing the 38% higher revenue churn impact. Learn the five dimensions that reveal your true retention picture.",
+    twitterTitle: "The Customer Churn Blindspot Most Companies Miss",
+    twitterDescription: "Revenue churn is 38% higher than logo churn. Learn the five dimensions that reveal your true customer health picture."
+  }
 };

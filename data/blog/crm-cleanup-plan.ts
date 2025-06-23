@@ -1,76 +1,175 @@
-import { BlogPost } from '@/types/blog';
+import type { BlogPost } from "@/types/blog"
 
 export const crmCleanupPlan: BlogPost = {
   id: "crm-cleanup-plan",
-  title: "Your CRM Is a Mess: Here's Your 90-Day Cleanup Plan",
-  excerpt: "90-day CRM cleanup plan to boost accuracy, reduce costs, and enhance productivity. Learn how to audit, implement, and optimize for a data-driven approach.",
-  date: "2025-04-05",
+  title: "The Ultimate CRM Cleanup Plan: Transform Your Data in 30 Days",
+  excerpt:
+    "A step-by-step guide to cleaning up your CRM data, eliminating duplicates, and creating a system that actually helps your sales team close more deals.",
+  date: "2024-11-28",
   author: "Geoff Tucker",
-  category: "Insights",
+  category: "Data Management",
   coverImage: "/lovable-uploads/5128a660-4319-43f7-8be9-8dae9c2576e1.png",
   content: `
     <h2>Why CRM Cleanup Matters</h2>
+    <p>A messy CRM is like a cluttered desk – it slows everything down and makes it impossible to find what you need when you need it. Poor data quality costs B2B companies an average of $3.1 million annually, according to recent studies.</p>
     
-    <p>A cluttered CRM is more than just annoying—it's a liability. Inaccurate or outdated records lead to poor customer experiences, missed opportunities, and wasted resources.</p>
+    <h2>The 30-Day CRM Cleanup Plan</h2>
     
-    <p>Salesforce's CRM Report reveals that 88% of CRMs contain critical data issues. Here's how to fix it—fast.</p>
-    
-    <p>Poor CRM data quality impacts everything from <a href="/insights/customer-segmentation-mistake">customer segmentation accuracy</a> to <a href="/insights/customer-churn-blindspot">churn prediction capabilities</a>. Without clean data, you're making business decisions based on incomplete or incorrect information.</p>
-    
-    <h3>Days 1–30: Assessment & Planning</h3>
-    
-    <p>Start by laying the foundation for success. Use this time to understand the current state of your CRM and set goals.</p>
-    
+    <h3>Week 1: Assessment and Planning</h3>
+    <h4>Days 1-2: Data Audit</h4>
     <ul>
-      <li><strong>Audit Data Quality</strong> – Identify duplicates, incomplete fields, and outdated records.</li>
-      <li><strong>Document Current State</strong> – Take a snapshot of your CRM's structure, fields, and segmentation.</li>
-      <li><strong>Set Cleanup Goals</strong> – Define what success looks like (e.g., 90% accuracy, no duplicates).</li>
-      <li><strong>Create Governance Rules</strong> – Establish rules for data entry, maintenance, and permissions.</li>
-      <li><strong>Assign Responsibilities</strong> – Ensure accountability by assigning cleanup owners.</li>
+      <li>Export all contact and company data</li>
+      <li>Identify duplicate records</li>
+      <li>Assess data completeness (missing fields)</li>
+      <li>Review data accuracy (outdated information)</li>
     </ul>
     
-    <p>HubSpot's Database Management Study reports that structured cleanup improves data accuracy by 65%.</p>
-    
-    <h3>Days 31–60: Implementation</h3>
-    
-    <p>Once your plan is set, it's time to get your hands dirty.</p>
-    
+    <h4>Days 3-4: Define Standards</h4>
     <ul>
-      <li><strong>Remove Duplicates</strong> – Use tools or CRM filters to merge or delete redundant records.</li>
-      <li><strong>Standardize Fields</strong> – Normalize naming conventions, dropdowns, and formatting.</li>
-      <li><strong>Enrich Critical Data</strong> – Add missing company info, contacts, or engagement history.</li>
-      <li><strong>Update Processes</strong> – Refine how leads are entered, updated, and categorized.</li>
-      <li><strong>Train Team Members</strong> – Ensure everyone follows the new structure and policies.</li>
+      <li>Create data entry guidelines</li>
+      <li>Establish naming conventions</li>
+      <li>Define required vs. optional fields</li>
+      <li>Set up data validation rules</li>
     </ul>
     
-    <p>This is also the perfect time to improve your <a href="/insights/data-enrichment-strategy">data enrichment strategy</a> and ensure new data entering your system meets quality standards.</p>
-    
-    <p>Gartner's CRM Research finds that systematic cleanup reduces operational costs by 30%.</p>
-    
-    <h3>Days 61–90: Optimization</h3>
-    
-    <p>With a cleaner system, your goal now is to maintain and optimize.</p>
-    
+    <h4>Days 5-7: Tool Setup</h4>
     <ul>
-      <li><strong>Monitor Compliance</strong> – Regularly check adherence to governance rules.</li>
-      <li><strong>Refine Processes</strong> – Identify gaps or inefficiencies and adjust workflows.</li>
-      <li><strong>Document Procedures</strong> – Create a CRM playbook for onboarding and consistency.</li>
-      <li><strong>Train New Users</strong> – Incorporate CRM training into your new-hire process.</li>
-      <li><strong>Implement Automation</strong> – Use automation for deduplication, lead routing, and alerts.</li>
+      <li>Configure duplicate detection rules</li>
+      <li>Set up data validation workflows</li>
+      <li>Install necessary cleanup tools</li>
+      <li>Create backup procedures</li>
     </ul>
     
-    <p>Clean CRM data is essential for accurate <a href="/insights/customer-acquisition-cost">customer acquisition cost calculations</a> and effective customer lifecycle tracking.</p>
+    <h3>Week 2: Contact Cleanup</h3>
+    <h4>Days 8-10: Duplicate Removal</h4>
+    <ul>
+      <li>Use automated tools to identify duplicates</li>
+      <li>Manually review flagged records</li>
+      <li>Merge duplicate contacts carefully</li>
+      <li>Document merge decisions</li>
+    </ul>
     
-    <p>Forrester's CRM Management Report shows that clean CRMs improve team productivity by 42%. Additionally, SiriusDecisions' Sales Operations Study indicates that proper CRM maintenance reduces data decay by 55%.</p>
+    <h4>Days 11-14: Data Standardization</h4>
+    <ul>
+      <li>Standardize company names</li>
+      <li>Clean up job titles</li>
+      <li>Normalize phone number formats</li>
+      <li>Validate email addresses</li>
+    </ul>
     
-    <p>For companies implementing comprehensive <a href="/insights/marketing-operations-isnt-it">marketing operations</a> strategies, clean CRM data serves as the foundation for all downstream processes and reporting.</p>
+    <h3>Week 3: Company and Deal Cleanup</h3>
+    <h4>Days 15-17: Company Records</h4>
+    <ul>
+      <li>Merge duplicate companies</li>
+      <li>Update company information</li>
+      <li>Standardize industry classifications</li>
+      <li>Verify company websites</li>
+    </ul>
     
-    <h3>Final Thoughts</h3>
+    <h4>Days 18-21: Deal Pipeline Review</h4>
+    <ul>
+      <li>Review stale deals</li>
+      <li>Update deal stages</li>
+      <li>Clean up deal names</li>
+      <li>Verify deal amounts and dates</li>
+    </ul>
     
-    <p>A 90-day CRM cleanup isn't just a one-time project—it's the start of a culture of data excellence. A clean, accurate CRM gives your sales and marketing teams the power to make confident, data-driven decisions.</p>
+    <h3>Week 4: Optimization and Maintenance</h3>
+    <h4>Days 22-24: Workflow Optimization</h4>
+    <ul>
+      <li>Set up automated data enrichment</li>
+      <li>Create lead scoring rules</li>
+      <li>Implement data validation workflows</li>
+      <li>Configure regular cleanup reminders</li>
+    </ul>
     
-    <h4>Need help implementing your CRM cleanup?</h4>
+    <h4>Days 25-28: Team Training</h4>
+    <ul>
+      <li>Train team on new data standards</li>
+      <li>Create data entry checklists</li>
+      <li>Set up regular review processes</li>
+      <li>Establish accountability measures</li>
+    </ul>
     
-    <p><a href="/contact">Schedule a consultation</a></p>
-  `
-};
+    <h4>Days 29-30: Final Review and Documentation</h4>
+    <ul>
+      <li>Conduct final data quality assessment</li>
+      <li>Document all changes made</li>
+      <li>Create ongoing maintenance schedule</li>
+      <li>Celebrate the transformation!</li>
+    </ul>
+    
+    <h2>Essential Tools for CRM Cleanup</h2>
+    
+    <h3>Built-in CRM Tools</h3>
+    <ul>
+      <li>Duplicate detection features</li>
+      <li>Data validation rules</li>
+      <li>Bulk edit capabilities</li>
+      <li>Import/export functions</li>
+    </ul>
+    
+    <h3>Third-Party Solutions</h3>
+    <ul>
+      <li>Data enrichment services (ZoomInfo, Clearbit)</li>
+      <li>Duplicate detection tools (Insycle, Dedupely)</li>
+      <li>Data validation services</li>
+      <li>Email verification tools</li>
+    </ul>
+    
+    <h2>Maintaining Clean Data</h2>
+    
+    <h3>Prevention Strategies</h3>
+    <ul>
+      <li>Implement data entry standards</li>
+      <li>Use form validation</li>
+      <li>Set up automated workflows</li>
+      <li>Regular team training</li>
+    </ul>
+    
+    <h3>Ongoing Maintenance</h3>
+    <ul>
+      <li>Weekly data quality checks</li>
+      <li>Monthly duplicate scans</li>
+      <li>Quarterly comprehensive reviews</li>
+      <li>Annual data strategy assessment</li>
+    </ul>
+    
+    <h2>Measuring Success</h2>
+    <p>Track these metrics to measure your cleanup success:</p>
+    <ul>
+      <li>Data completeness percentage</li>
+      <li>Duplicate record count</li>
+      <li>Data accuracy scores</li>
+      <li>Sales team satisfaction</li>
+      <li>Time saved on data entry</li>
+    </ul>
+    
+    <h2>Common Pitfalls to Avoid</h2>
+    <ul>
+      <li>Rushing the process without proper planning</li>
+      <li>Not backing up data before making changes</li>
+      <li>Ignoring team input and feedback</li>
+      <li>Failing to establish ongoing maintenance</li>
+      <li>Not measuring the impact of cleanup efforts</li>
+    </ul>
+    
+    <h2>Conclusion</h2>
+    <p>A clean CRM is the foundation of effective sales and marketing operations. While the 30-day cleanup plan requires significant effort upfront, the long-term benefits – improved sales efficiency, better customer relationships, and more accurate reporting – make it one of the best investments you can make in your business.</p>
+    
+    <p>Remember, CRM cleanup isn't a one-time project – it's an ongoing commitment to data quality that pays dividends for years to come.</p>
+  `,
+  tags: ["crm cleanup", "data management", "sales operations", "data quality", "hubspot"],
+  seo: {
+    metaDescription:
+      "Transform your CRM in 30 days with this comprehensive cleanup plan. Eliminate duplicates, standardize data, and boost sales team efficiency.",
+    keywords:
+      "crm cleanup, data management, crm data quality, sales operations, hubspot cleanup, duplicate removal, data standardization",
+    ogTitle: "The Ultimate CRM Cleanup Plan: Transform Your Data in 30 Days",
+    ogDescription:
+      "Step-by-step guide to cleaning up your CRM data, eliminating duplicates, and creating a system that helps your sales team close more deals.",
+    twitterTitle: "30-Day CRM Cleanup Plan That Actually Works",
+    twitterDescription:
+      "Transform your messy CRM into a sales-driving machine with this comprehensive 30-day cleanup plan and maintenance strategy.",
+  },
+}

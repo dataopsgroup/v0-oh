@@ -45,6 +45,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getPostBySlug(params.slug)
 
   if (!post) {
+    console.error(`Blog post not found for slug: ${params.slug}`)
+    notFound()
+  }
+
+  // Validate post data
+  if (!post.title || !post.content) {
+    console.error(`Blog post data incomplete for slug: ${params.slug}`, post)
     notFound()
   }
 

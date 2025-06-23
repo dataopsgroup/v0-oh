@@ -82,16 +82,40 @@ const blogPosts: BlogPost[] = [
   whyTwoThirdsPEPortfolioCompaniesFailHubSpotImplementation,
 ]
 
+// Add validation for blog post data
+export function validateBlogPost(post: BlogPost): boolean {
+  const requiredFields = ["id", "title", "excerpt", "content", "date", "author", "category"]
+
+  for (const field of requiredFields) {
+    if (!post[field as keyof BlogPost]) {
+      console.error(`Blog post missing required field: ${field}`, post)
+      return false
+    }
+  }
+
+  return true
+}
+
+// Filter out invalid blog posts
+const validBlogPosts = blogPosts.filter(validateBlogPost)
+
 // Sort posts by date (newest first)
-blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+// blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 // Export functions
 export function getAllPosts(): BlogPost[] {
-  return blogPosts
+  return validBlogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.id === slug || post.slug === slug)
+  const post = blogPosts.find((post) => post.id === slug || post.slug === slug)
+
+  if (!post) {
+    console.warn(`Blog post not found for slug: ${slug}`)
+    return undefined
+  }
+
+  return post
 }
 
 export function getPostsByCategory(category: string): BlogPost[] {
