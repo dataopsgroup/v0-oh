@@ -48,5 +48,14 @@ export const marketingDashboardsFail: BlogPost = {
     <h4>Need help building effective marketing dashboards?</h4>
     
     <p><a href="/contact">Schedule a consultation</a></p>
-  `
+  `,
+  tags: ["dashboards", "marketing analytics", "data visualization", "KPIs", "reporting"],
+  seo: {
+    metaDescription: "60% of marketing dashboards fail to drive decisions. Learn how to create effective dashboards that improve campaign performance and accelerate decision-making.",
+    keywords: "marketing dashboards, marketing analytics, data visualization, KPI reporting, dashboard design, marketing metrics",
+    ogTitle: "Why Most Marketing Dashboards Fail (And How to Fix Them)",
+    ogDescription: "60% of marketing dashboards fail to drive decisions. Learn five key principles for creating effective dashboards that improve performance by 42%.",
+    twitterTitle: "The Marketing Dashboard Problem: Why They Fail",
+    twitterDescription: "Focused dashboards improve decision speed by 64%. Learn how to transform your marketing reports from data dumps to decision engines."
+  }
 };

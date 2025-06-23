@@ -1,55 +1,64 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
+  // Build optimization
+  reactStrictMode: true,
+  swcMinify: true,
+  
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  
+  // Image optimization
   images: {
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: true,
+    domains: ['blob.v0.dev', 'dataopsgroup.com'],
+    formats: ['image/webp', 'image/avif'],
   },
-  headers: async () => {
+  
+  // Security headers
+  async headers() {
     return [
       {
-        source: '/:path*',
+        source: '/(.*)',
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'no-store, must-revalidate',
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
           {
-            key: 'Pragma',
-            value: 'no-cache',
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
           },
           {
-            key: 'Expires',
-            value: '0',
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
         ],
       },
-      {
-        source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-store, must-revalidate',
-          },
-          {
-            key: 'Pragma',
-            value: 'no-cache',
-          },
-          {
-            key: 'Expires',
-            value: '0',
-          },
-        ],
-      },
-    ];
+    ]
   },
-};
+  
+  // Build configuration
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  
+  // Output configuration for deployment
+  output: 'standalone',
+  
+  // Experimental features
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
+}
 
-export default nextConfig;
+export default nextConfig

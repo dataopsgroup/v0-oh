@@ -44,5 +44,14 @@ export const marketingOperationsIsntIT: BlogPost = {
     <p>Need help defining Marketing Operations boundaries in your organization? Schedule a consultation to develop a clear organizational structure.</p>
     
     <p>Related Reading: <a href="/insights/true-cost-of-bad-data">The True Cost of Bad Data: Beyond the 1-10-100 Rule</a></p>
-  `
+  `,
+  tags: ["marketing operations", "MarTech", "organizational structure", "IT department", "marketing technology"],
+  seo: {
+    metaDescription: "Marketing Operations is not IT. Learn the key differences in focus, metrics, tools, and skills to establish clear organizational boundaries and responsibilities.",
+    keywords: "marketing operations, martech, IT department, marketing technology, organizational boundaries, marketing tech stack",
+    ogTitle: "Marketing Operations Isn't IT: Defining Clear Boundaries",
+    ogDescription: "Organizations with clearly defined Marketing Operations roles see 15-25% improvement in marketing effectiveness. Learn how to establish proper boundaries.",
+    twitterTitle: "Why Marketing Operations Should Not Report to IT",
+    twitterDescription: "Marketing Ops focuses on revenue; IT on infrastructure. Learn the key differences and how to define clear organizational boundaries."
+  }
 };

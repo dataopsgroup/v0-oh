@@ -1,9 +1,10 @@
-import { BlogPost } from '@/types/blog';
+import type { BlogPost } from "@/types/blog"
 
 export const dataTruthGap: BlogPost = {
   id: "data-truth-gap",
   title: "The Data Truth Gap: Why Most Marketing Teams Aren't Truly Data-Driven",
-  excerpt: "Discover why most marketing teams only achieve local optimization despite claiming to be data-driven, and learn how to unlock global maximum results.",
+  excerpt:
+    "Discover why most marketing teams only achieve local optimization despite claiming to be data-driven, and learn how to unlock global maximum results.",
   date: "2025-04-14",
   author: "Geoff Tucker",
   category: "Insights",
@@ -121,5 +122,24 @@ export const dataTruthGap: BlogPost = {
     <p>Data-driven marketing isn't a destination; it's a continuous journey of expanding what you measure, deepening how you analyze, and improving how you decide. The organizations that embrace this journey will find not just local improvements but entirely new peaks of marketing performance that their competitors never even knew existed.</p>
     
     <p>What areas of your marketing data ecosystem need the most attention? I'd love to hear your thoughts in the comments.</p>
-  `
-};
+  `,
+  tags: [
+    "data-driven marketing",
+    "marketing analytics",
+    "data analysis",
+    "marketing strategy",
+    "performance optimization",
+  ],
+  seo: {
+    metaDescription:
+      "Most marketing teams claim to be data-driven but only achieve local optimization. Learn the three dimensions of true data-driven marketing for global maximum results.",
+    keywords:
+      "data-driven marketing, marketing analytics, data analysis depth, marketing decision making, marketing performance optimization",
+    ogTitle: "The Data Truth Gap: Why Most Marketing Teams Aren't Truly Data-Driven",
+    ogDescription:
+      "Discover why most marketing teams only achieve local optimization despite claiming to be data-driven, and learn how to unlock global maximum results.",
+    twitterTitle: "The Data Truth Gap in Marketing",
+    twitterDescription:
+      "Most marketing teams aren't truly data-driven. Learn the three dimensions that separate real data-driven marketing from surface-level analytics.",
+  },
+}

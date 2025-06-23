@@ -220,6 +220,7 @@ export default function ClientPage() {
                     </Link>
                     .
                   </div>
+                  {` Our sales team is now 3x more efficient with the new processes and automation.`}
                 </div>
               </div>
             </div>
@@ -395,7 +396,7 @@ export default function ClientPage() {
                   <Link href="#" className="text-blue-600 hover:underline">
                     comprehensive methodology
                   </Link>{" "}
-                  and see how we've helped other{" "}
+                  and see how we have helped other{" "}
                   <Link href="#" className="text-blue-600 hover:underline">
                     portfolio companies achieve success
                   </Link>
