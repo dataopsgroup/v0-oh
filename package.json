@@ -2,25 +2,12 @@
   "name": "dataops-website",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "build": "next build",
-    "clean": "rm -rf .next node_modules pnpm-lock.yaml && pnpm install",
-    "clean:deps": "node scripts/dependency-cleanup.js",
-    "deploy:check": "node scripts/deployment-readiness.js",
-    "deps:audit": "pnpm audit",
-    "deps:check": "pnpm outdated",
-    "deps:update": "pnpm update --latest",
-    "dev": "next dev",
-    "emergency:clean": "rm -rf node_modules pnpm-lock.yaml .next && pnpm install",
-    "emergency:deploy": "npm run clean:deps && npm run build && npm run deploy:check",
-    "emergency:fix": "node scripts/emergency-lockfile-fix.js",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "lockfile:update": "pnpm install --lockfile-only",
-    "pre-deploy": "npm run lint && npm run type-check && npm run build",
-    "start": "next start",
-    "type-check": "tsc --noEmit"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build", 
+  "start": "next start",
+  "lint": "next lint"
+}
   "dependencies": {
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "latest",
