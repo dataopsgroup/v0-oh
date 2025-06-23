@@ -229,20 +229,22 @@ body {
 
   /* Custom list styling for unordered lists */
   ul {
-    list-style: none; /* Remove default bullet */
+    list-style: none;
     padding-left: 0;
   }
+
   ul li {
     position: relative;
-    padding-left: 1.5em; /* Space for custom bullet */
+    padding-left: 1.5em;
   }
+
   ul li::before {
-    content: "\27A4"; /* Unicode for a right-pointing triangle (golden arrow) */
-    color: hsl(var(--dataops-saffron)); /* Golden color */
+    content: "\27A4";
+    color: hsl(var(--dataops-saffron));
     position: absolute;
     left: 0;
-    top: 0.25em; /* Adjust vertical alignment */
-    font-size: 0.8em; /* Adjust size */
+    top: 0.25em;
+    font-size: 0.8em;
   }
 
   /* Custom list styling for ordered lists */
@@ -250,26 +252,19 @@ body {
     counter-reset: list-counter;
     padding-left: 0;
   }
+
   ol li {
     position: relative;
-    padding-left: 2em; /* Space for custom number */
+    padding-left: 2em;
   }
+
   ol li::before {
     counter-increment: list-counter;
     content: counter(list-counter) ".";
-    color: hsl(var(--dataops-accent-blue)); /* Accent blue color */
+    color: hsl(var(--dataops-accent-blue));
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 0;
-  }
-
-  /* Prose Styling Update */
-  .blog-content [&_ol]:mb-6 [&_ol]:list-none [&_ol]:pl-0 {
-    /* Additional styles for ordered lists */
-  }
-
-  .blog-content [&_ol_li]:mb-2 [&_ol_li]:pl-0 {
-    /* Additional styles for ordered list items */
   }
 }
