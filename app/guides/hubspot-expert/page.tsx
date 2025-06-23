@@ -6,15 +6,14 @@ import Navigation from "@/components/navigation"
 import GlobalFooter from "@/components/global-footer"
 import GlobalCTA from "@/components/global-cta"
 
+interface Section {
+  id: string
+  title: string
+}
+
 export default function HubSpotExpertGuide() {
   const [activeSection, setActiveSection] = useState("")
   const [tocOpen, setTocOpen] = useState(false)
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface Section {
-    id: string
-    title: string
-  }
 
   const sections = useMemo(
     () => [
@@ -566,7 +565,7 @@ export default function HubSpotExpertGuide() {
               </h3>
               <p className="body-copy text-gray-700">
                 Independent experts often provide better value for money due to lower overhead costs, direct billing,
-                and focused expertise. You are paying for results, not corporate infrastructure.
+                and focused expertise. You're paying for results, not corporate infrastructure.
               </p>
             </div>
           </section>
@@ -597,7 +596,7 @@ export default function HubSpotExpertGuide() {
                   <ul className="body-copy text-gray-700 space-y-1 pl-4">
                     <li className="relative">
                       <span className="absolute -left-4">•</span>
-                      {`  What's your hourly rate and implementation time?`}
+                      What's your hourly rate and implementation time?
                     </li>
                     <li className="relative">
                       <span className="absolute -left-4">•</span>
@@ -800,7 +799,7 @@ export default function HubSpotExpertGuide() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
-                      What is your typical implementation process from start to finish?
+                      What's your typical implementation process from start to finish?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -812,7 +811,7 @@ export default function HubSpotExpertGuide() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
-                      What is your approach to knowledge transfer and training?
+                      What's your approach to knowledge transfer and training?
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -850,7 +849,7 @@ export default function HubSpotExpertGuide() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "var(--primary-navy)" }} />
                     <span className="body-copy text-gray-700">
-                      What is the experience level of each person who will touch our project?
+                      What's the experience level of each person who will touch our project?
                     </span>
                   </div>
                 </div>
@@ -1041,7 +1040,7 @@ export default function HubSpotExpertGuide() {
                     </p>
                     <div className="p-4 rounded" style={{ backgroundColor: "#E6E6E6" }}>
                       <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
-                        <strong>Reality Check:</strong> Ask specifically whether the people you are meeting with during
+                        <strong>Reality Check:</strong> Ask specifically whether the people you're meeting with during
                         the sales process will be directly involved in your implementation.
                       </p>
                     </div>
@@ -1099,7 +1098,7 @@ export default function HubSpotExpertGuide() {
               Making Your Final Decision
             </h2>
             <p className="body-copy text-lg text-gray-700 mb-8">
-              Hiring the right HubSpot expert is one of the most important technology decisions you will make for your
+              Hiring the right HubSpot expert is one of the most important technology decisions you'll make for your
               business. The difference between a mediocre implementation and an exceptional one often comes down to the
               expertise, business acumen, and commitment of the person or team you choose to work with.
             </p>
@@ -1116,8 +1115,8 @@ export default function HubSpotExpertGuide() {
                 </p>
                 <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
                   <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
-                    Make sure you are evaluating the right people and that they will be directly involved throughout
-                    your project.
+                    Make sure you're evaluating the right people and that they'll be directly involved throughout your
+                    project.
                   </p>
                 </div>
               </div>
@@ -1148,7 +1147,7 @@ export default function HubSpotExpertGuide() {
                 </p>
                 <div className="p-4 rounded" style={{ backgroundColor: "var(--primary-blue)" }}>
                   <p className="body-copy text-base" style={{ color: "var(--primary-navy)" }}>
-                    Technical competence without business understanding often leads to elegant solutions that do not
+                    Technical competence without business understanding often leads to elegant solutions that don't
                     solve real problems.
                   </p>
                 </div>
@@ -1176,7 +1175,7 @@ export default function HubSpotExpertGuide() {
                 Final Thought
               </h3>
               <p className="body-copy text-gray-700">
-                With the right expert partnership, you will not only get a well-configured system but also gain valuable
+                With the right expert partnership, you'll not only get a well-configured system but also gain valuable
                 insights into how to leverage technology more effectively across your entire business. The systematic
                 approach in this guide will help you make an informed decision that serves your business for years to
                 come. Take the time to do it right, and your HubSpot implementation will become a competitive advantage

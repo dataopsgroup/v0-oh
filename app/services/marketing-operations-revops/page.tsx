@@ -20,7 +20,102 @@ import GlobalFooter from "@/components/global-footer"
 
 export default function MarketingOperationsRevOps() {
   const serviceSchema = {
-    // Define your schema here
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Marketing Operations & RevOps",
+    description:
+      "Optimize Portfolio Revenue Operations with Systematic Marketing Processes - Transform revenue operations with advanced analytics and data-driven strategies",
+    provider: {
+      "@type": "Organization",
+      name: "DataOps Group",
+    },
+    serviceType: "Revenue Operations",
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "RevOps Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Revenue Growth Optimization",
+            description:
+              "Optimize revenue operations to drive consistent, predictable growth across all portfolio companies.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Marketing Attribution",
+            description:
+              "Track and measure marketing impact across all touchpoints to optimize campaign performance and ROI.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Advanced Analytics",
+            description: "Implement sophisticated analytics frameworks to gain deep insights into revenue performance.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Team Alignment",
+            description: "Align marketing, sales, and customer success teams around shared revenue goals and metrics.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Process Automation",
+            description: "Automate repetitive tasks and workflows to improve efficiency and reduce manual errors.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Performance Optimization",
+            description:
+              "Continuously optimize marketing and sales performance through data-driven insights and testing.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Predictable Forecasting",
+            description: "Implement accurate forecasting models to predict revenue and plan strategic initiatives.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Data Integration",
+            description: "Integrate disparate data sources to create a single source of truth for revenue operations.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Scalable Operations",
+            description:
+              "Build scalable revenue operations that grow with your portfolio companies and market expansion.",
+          },
+        },
+      ],
+    },
   }
 
   return (
@@ -95,7 +190,7 @@ export default function MarketingOperationsRevOps() {
                   Why Marketing Operations & RevOps Matter for Portfolio Growth
                 </h2>
                 <p className="body-copy text-lg text-gray-700 leading-relaxed">
-                  In the current competitive landscape, portfolio companies need more than just great products—they need
+                  In today's competitive landscape, portfolio companies need more than just great products—they need
                   systematic revenue operations that align marketing, sales, and customer success teams around
                   data-driven growth strategies.
                 </p>
