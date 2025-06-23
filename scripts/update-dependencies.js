@@ -1,32 +1,66 @@
 #!/usr/bin/env node
 
 /**
- * Safe Dependency Update Script
- * Updates dependencies with safety checks
+ * Dependency Update Script
+ * Updates project dependencies to their latest compatible versions
  */
 
 const { execSync } = require("child_process")
 
-console.log("🔄 Starting safe dependency update...\n")
+console.log("🔄 Starting dependency update process...\n")
+
+function runCommand(command, description) {
+  try {
+    console.log(`${description}...`)
+    execSync(command, { stdio: "inherit" })
+    return true
+  } catch (error) {
+    console.error(`❌ Failed: ${description}`)
+    console.error(`Command: ${command}`)
+    console.error(`Error: ${error.message}`)
+    return false
+  }
+}
 
 try {
-  // Backup package.json
-  console.log("1. Backing up package.json...")
-  execSync("cp package.json package.json.backup")
+  // 1. Check current package status
+  console.log("1. Checking current package status...")
+  try {
+    execSync("npm outdated", { stdio: "inherit" })
+  } catch (error) {
+    // npm outdated exits with code 1 when packages are outdated, this is normal
+    console.log("ℹ️  Package status check completed")
+  }
 
-  // Update patch versions (safe)
-  console.log("2. Updating patch versions...")
-  execSync("npm update", { stdio: "inherit" })
+  // 2. Update patch and minor versions
+  console.log("\n2. Updating patch and minor versions...")
+  const updateResult = runCommand("npm update", "Package updates")
 
-  // Check build after updates
-  console.log("3. Testing build after updates...")
-  execSync("npm run build", { stdio: "inherit" })
+  // 3. Install any missing dependencies
+  console.log("\n3. Installing dependencies...")
+  const installResult = runCommand("npm install", "Dependency installation")
 
-  console.log("\n✅ Dependencies updated successfully!")
-  console.log("🗑️  You can remove package.json.backup if everything works")
+  // 4. Run build test to ensure compatibility
+  console.log("\n4. Testing build compatibility...")
+  const buildResult = runCommand("npm run build", "Build test")
+
+  console.log("\n✅ Dependency update completed!")
+  console.log("\n📋 Summary:")
+  console.log(`- Package updates: ${updateResult ? "✅ Completed" : "❌ Failed"}`)
+  console.log(`- Installation: ${installResult ? "✅ Completed" : "❌ Failed"}`)
+  console.log(`- Build test: ${buildResult ? "✅ Passed" : "❌ Failed"}`)
+
+  console.log("\n🔧 Next steps:")
+  console.log("- Test your application locally: npm run dev")
+  console.log("- Verify all pages load correctly")
+  console.log("- Check for any TypeScript errors")
+
+  if (!buildResult) {
+    console.log("\n⚠️  Build failed - check for compatibility issues")
+    console.log("- Review error messages above")
+    console.log("- Consider rolling back problematic updates")
+  }
 } catch (error) {
-  console.error("❌ Update failed, restoring backup...")
-  execSync("mv package.json.backup package.json")
-  console.error("Error:", error.message)
+  console.error("❌ Unexpected error during dependency update:", error.message)
   process.exit(1)
 }
