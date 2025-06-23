@@ -22,7 +22,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@hookform/resolvers": "latest",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "latest",
     "@radix-ui/react-aspect-ratio": "latest",
@@ -74,13 +73,11 @@
     "react-resizable-panels": "latest",
     "recharts": "latest",
     "resend": "latest",
-    "some-chrome-extension-library": "latest",
     "sonner": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "url": "latest",
-    "vaul": "latest",
-    "zod": "latest"
+    "vaul": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
