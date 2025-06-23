@@ -23,42 +23,26 @@ export const hero = {
   imageAlt: "Workflow automation on a computer screen",
 }
 
-const SmartWorkflows = () => {
-  return (
-    <>
-      <p>
-        In today's fast-paced business environment, efficiency is key. Smart workflows can significantly boost
-        productivity and streamline your marketing operations. Here are three essential tips to help you create
-        effective workflows:
-      </p>
+export const content = `
+In today's fast-paced business environment, efficiency is key. Smart workflows can significantly boost productivity and streamline your marketing operations. Here are three essential tips to help you create effective workflows:
 
-      <h2>1. Define Clear Objectives</h2>
-      <p>
-        Before you start building a workflow, clearly define its objectives. What specific tasks or processes do you
-        want to automate? What are the desired outcomes? Having a clear understanding of your goals will help you design
-        a workflow that is focused and effective.
-      </p>
+## 1. Define Clear Objectives
 
-      <h2>2. Choose the Right Tools</h2>
-      <p>
-        Selecting the right tools is crucial for successful workflow automation. Consider using platforms like HubSpot,
-        Zapier, or IFTTT to automate tasks and integrate different applications. Choose tools that align with your
-        business needs and offer the features you require.
-      </p>
+Before you start building a workflow, clearly define its objectives. What specific tasks or processes do you want to automate? What are the desired outcomes? Having a clear understanding of your goals will help you design a workflow that is focused and effective.
 
-      <h2>3. Monitor and Optimize</h2>
-      <p>
-        Once your workflow is up and running, it's important to monitor its performance and make adjustments as needed.
-        Track key metrics, identify bottlenecks, and optimize the workflow to improve efficiency. Regularly review and
-        update your workflows to ensure they continue to meet your evolving business needs.
-      </p>
+## 2. Choose the Right Tools
 
-      <p>
-        By following these three tips, you can create smart workflows that boost productivity, streamline your marketing
-        operations, and drive better results.
-      </p>
-    </>
-  )
+Selecting the right tools is crucial for successful workflow automation. Consider using platforms like HubSpot, Zapier, or IFTTT to automate tasks and integrate different applications. Choose tools that align with your business needs and offer the features you require.
+
+## 3. Monitor and Optimize
+
+Once your workflow is up and running, it's important to monitor its performance and make adjustments as needed. Track key metrics, identify bottlenecks, and optimize the workflow to improve efficiency. Regularly review and update your workflows to ensure they continue to meet your evolving business needs.
+
+By following these three tips, you can create smart workflows that boost productivity, streamline your marketing operations, and drive better results.
+`
+
+export const tipsForSmartWorkflows = {
+  meta,
+  hero,
+  content,
 }
-
-export default SmartWorkflows
