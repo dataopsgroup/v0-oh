@@ -1,10 +1,9 @@
-import type { BlogPost } from "@/types/blog"
+import { BlogPost } from '@/types/blog';
 
 export const customerSegmentationMistakeICP: BlogPost = {
   id: "customer-segmentation-mistake-icp",
-  title: 'The "Ideal Customer Profile" Myth That\'s Killing Your Growth',
-  excerpt:
-    "Your ICP is likely not who you think it is. Luckily, there is a systematic way to find out who it really is.",
+  title: "The \"Ideal Customer Profile\" Myth That's Killing Your Growth",
+  excerpt: "Your ICP is likely not who you think it is. Luckily, there is a systematic way to find out who it really is.",
   date: "2025-04-07",
   author: "Geoff Tucker",
   category: "Insights",
@@ -50,18 +49,5 @@ export const customerSegmentationMistakeICP: BlogPost = {
     <h2>What's the last time you validated your ideal customer profile against actual revenue data? If it's been more than 6 months, we should talk.</h2>
     
     <h2>Book a Call</h2>
-  `,
-  tags: ["customer segmentation", "ideal customer profile", "data analysis", "crm optimization", "b2b marketing"],
-  seo: {
-    metaDescription:
-      "Most ideal customer profiles are based on assumptions, not data. Learn how to use CRM analysis to discover your true ideal customer and boost revenue.",
-    keywords:
-      "ideal customer profile, customer segmentation, crm data analysis, b2b customer profiling, customer analytics",
-    ogTitle: "The Ideal Customer Profile Myth That's Killing Your Growth",
-    ogDescription:
-      "Discover why most ICPs are wrong and how data-driven customer profiling can reveal your true ideal customers for better targeting and higher revenue.",
-    twitterTitle: "Your Ideal Customer Profile is Probably Wrong",
-    twitterDescription:
-      "Stop guessing who your ideal customer is. Use CRM data to discover your true ideal customer profile and boost revenue.",
-  },
-}
+  `
+};

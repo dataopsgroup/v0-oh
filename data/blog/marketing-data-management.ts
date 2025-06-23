@@ -42,14 +42,5 @@ export const marketingDataManagement: BlogPost = {
     
     <h3>Ready to Transform Your Marketing Automation System?</h3>
     <p>Let's start with a free, no-obligation 30-minute HubSpot consultation. We'll listen to your marketing automation challenges, share initial insights, and help determine if we're a good fit to work together.</p>
-  `,
-  tags: ["marketing data", "data management", "marketing analytics", "data quality", "marketing operations"],
-  seo: {
-    metaDescription: "Transform chaotic marketing data into structured, actionable insights. Learn how to improve data quality and reduce reporting time by 75%.",
-    keywords: "marketing data management, marketing analytics, data quality, marketing attribution, marketing reporting, data-driven marketing",
-    ogTitle: "Marketing Data Management: From Chaos to Clarity",
-    ogDescription: "67% of marketers struggle with data quality. Learn how to transform chaotic marketing data into structured insights that drive better decisions.",
-    twitterTitle: "Fix Your Marketing Data Management",
-    twitterDescription: "Poor data quality costs businesses 10-25% of revenue. Learn how to transform marketing data chaos into actionable insights."
-  }
+  `
 };

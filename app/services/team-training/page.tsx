@@ -241,7 +241,7 @@ export default function TeamTrainingPage() {
                         transforms your team into HubSpot power users.
                       </p>
                       <p>
-                        Whether you are onboarding new team members, rolling out new features, or looking to optimize
+                        Whether you're onboarding new team members, rolling out new features, or looking to optimize
                         existing processes, our expert trainers provide the knowledge and support your team needs to
                         achieve measurable success with HubSpot.
                       </p>
@@ -250,7 +250,7 @@ export default function TeamTrainingPage() {
 
                   {/* Key Benefits */}
                   <div className="bg-blue-50 border border-blue-100 rounded-lg p-8">
-                    <h3 className="headline text-xl text-blue-900 mb-4">Training Outcomes You Will Achieve</h3>
+                    <h3 className="headline text-xl text-blue-900 mb-4">Training Outcomes You'll Achieve</h3>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <span className="text-blue-600 mr-3 mt-0.5">•</span>
@@ -395,7 +395,7 @@ export default function TeamTrainingPage() {
                   Common Training Challenges We Solve
                 </h2>
                 <p className="body-copy text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                  Every organization faces unique training obstacles. Here is how we transform common HubSpot adoption
+                  Every organization faces unique training obstacles. Here's how we transform common HubSpot adoption
                   challenges into competitive advantages through targeted training.
                 </p>
               </div>

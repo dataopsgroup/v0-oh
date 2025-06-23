@@ -52,14 +52,5 @@ export const marketingLeadersDataQualityCrisis: BlogPost = {
     <p>Need help assessing your marketing data quality? Schedule a consultation to discover how we can help support your marketing leadership position.</p>
     
     <p>Related Reading: The True Cost of Bad Data: Beyond the 1-10-100 Rule</p>
-  `,
-  tags: ["data quality", "marketing leadership", "CMO", "marketing ROI", "data governance"],
-  seo: {
-    metaDescription: "Poor data quality costs organizations $12.9M annually and threatens marketing leadership roles. Learn how to identify and fix data quality issues.",
-    keywords: "marketing data quality, CMO tenure, data governance, marketing ROI, data audits, marketing leadership risk",
-    ogTitle: "Marketing Leaders at Risk: The Hidden Data Quality Crisis",
-    ogDescription: "CMO tenure has dropped to 40 months, partly due to data quality issues. Learn how to protect your leadership position with better data practices.",
-    twitterTitle: "Is Data Quality Putting Your Marketing Leadership at Risk?",
-    twitterDescription: "Poor data quality costs $12.9M annually and threatens marketing careers. Learn five ways to protect your leadership position."
-  }
+  `
 };

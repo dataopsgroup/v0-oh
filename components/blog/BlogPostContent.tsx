@@ -5,24 +5,7 @@ interface BlogPostContentProps {
   post: BlogPost
 }
 
-// Add better error handling and content validation
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
-  if (!post) {
-    return (
-      <div className="text-center py-8">
-        <p className="text-gray-500">Blog post content not available.</p>
-      </div>
-    )
-  }
-
-  if (!post.content && !post.excerpt) {
-    return (
-      <div className="text-center py-8">
-        <p className="text-gray-500">No content available for this post.</p>
-      </div>
-    )
-  }
-
   return (
     <div className="blog-content">
       {/* Add a colored accent bar at the top */}
@@ -48,7 +31,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           [&_table]:w-full [&_table]:border-collapse [&_table]:my-6
           [&_th]:border [&_th]:border-gray-300 [&_th]:bg-gray-100 [&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold
           [&_td]:border [&_td]:border-gray-300 [&_td]:px-4 [&_td]:py-2
-          [&_img]:rounded-lg [&_img]:shadow-md [&_img]:my-6 [&_img]:max-w-full [&_img]:h-auto"
+          [&_img]:rounded-lg [&_img]:shadow-md [&_img]:my-6"
         dangerouslySetInnerHTML={{ __html: post.content || post.excerpt }}
       />
 

@@ -1,10 +1,9 @@
-import type { BlogPost } from "@/types/blog"
+import { BlogPost } from '@/types/blog';
 
 export const hubspotBlogBestPractices: BlogPost = {
   id: "hubspot-blog-best-practices",
   title: "7 HubSpot Blog Best Practices to Maximize Your Content ROI",
-  excerpt:
-    "Learn how to optimize your HubSpot blog strategy with these seven proven best practices that will help you increase traffic, engagement, and conversions.",
+  excerpt: "Learn how to optimize your HubSpot blog strategy with these seven proven best practices that will help you increase traffic, engagement, and conversions.",
   date: "May 14, 2025",
   author: "Geoff Tucker",
   category: "HubSpot",
@@ -89,17 +88,8 @@ export const hubspotBlogBestPractices: BlogPost = {
     <p>If you're struggling to maximize your HubSpot blog performance, our team of certified consultants can help assess your current content operations and implement a more strategic approach. <a href="/contact">Contact us</a> to learn how we've helped companies like yours transform their content marketing results.</p>
   </article>
   `,
-  tags: ["HubSpot", "content marketing", "blogging", "SEO", "marketing operations"],
-  seo: {
-    metaDescription:
-      "Learn 7 proven HubSpot blog best practices to maximize your content ROI. Increase traffic, engagement, and conversions with strategic content optimization.",
-    keywords:
-      "hubspot blog best practices, content marketing, hubspot seo, blog optimization, content strategy, hubspot content",
-    ogTitle: "7 HubSpot Blog Best Practices to Maximize Your Content ROI",
-    ogDescription:
-      "Master HubSpot blogging with these 7 proven best practices. Increase traffic, engagement, and conversions through strategic content optimization.",
-    twitterTitle: "7 HubSpot Blog Best Practices for Better ROI",
-    twitterDescription:
-      "Transform your HubSpot blog performance with these 7 proven best practices for higher traffic, engagement, and conversions.",
-  },
-}
+  tags: ["HubSpot", "Content Marketing", "Blogging", "SEO", "Marketing Operations"],
+  wordCount: 758,
+  readingTime: 4,
+  modifiedDate: "May 14, 2025"
+};
