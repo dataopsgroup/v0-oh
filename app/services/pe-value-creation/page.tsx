@@ -315,7 +315,7 @@ export default function PEValueCreationPage() {
                   <div className="body-copy text-gray-600">Additional ARR in 6 months</div>
                 </div>
                 <p className="body-copy text-gray-700 text-center">
-                  "The transformation was incredible. We went from fragmented operations to a unified growth engine."
+                  {`  The blog post you are looking for does not exist or has been moved.`}
                 </p>
                 <div className="text-center mt-4">
                   <div className="body-copy text-sm text-gray-500">SaaS Portfolio Company</div>
@@ -327,7 +327,7 @@ export default function PEValueCreationPage() {
                   <div className="body-copy text-gray-600">Reduction in sales cycle</div>
                 </div>
                 <p className="body-copy text-gray-700 text-center">
-                  "Our sales team is now 3x more efficient with the new processes and automation."
+                  {`  The blog post you are looking for does not exist or has been moved.`}
                 </p>
                 <div className="text-center mt-4">
                   <div className="body-copy text-sm text-gray-500">Manufacturing Company</div>
@@ -339,7 +339,7 @@ export default function PEValueCreationPage() {
                   <div className="body-copy text-gray-600">Increase in qualified leads</div>
                 </div>
                 <p className="body-copy text-gray-700 text-center">
-                  "The marketing automation and lead scoring completely transformed our pipeline."
+                  {`  The blog post you are looking for does not exist or has been moved.`}
                 </p>
                 <div className="text-center mt-4">
                   <div className="body-copy text-sm text-gray-500">Professional Services</div>
@@ -410,7 +410,7 @@ export default function PEValueCreationPage() {
                 </h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
                   We specialize in integrating HubSpot with existing systems. Our approach includes data migration,
-                  system integration, and ensuring all your current tools work seamlessly together. We don't force you
+                  system integration, and ensuring all your current tools work seamlessly together. We do not force you
                   to abandon working systems.
                 </p>
               </div>
@@ -426,7 +426,7 @@ export default function PEValueCreationPage() {
                 <h3 className="headline text-xl text-gray-900 mb-3">How do you guarantee results?</h3>
                 <p className="body-copy text-gray-700 leading-relaxed">
                   We establish clear, measurable KPIs at the beginning of the program based on your specific goals. If
-                  you don't achieve the agreed-upon results within 6 months of program completion, we'll continue
+                  you do not achieve the agreed-upon results within 6 months of program completion, we will continue
                   working with you at no additional cost until you do.
                 </p>
               </div>

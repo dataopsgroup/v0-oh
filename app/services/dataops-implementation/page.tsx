@@ -208,7 +208,7 @@ export default function DataOpsImplementationPage() {
                       variant="outline"
                       className="body-copy border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-base flex items-center justify-center rounded-none"
                     >
-                      View Implementation Case Studies
+                      {`  The blog post you are looking for does not exist or has been moved.`}
                     </Button>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ export default function DataOpsImplementationPage() {
                       </p>
                       <p>
                         Our DataOps Implementation services provide end-to-end solutions that connect your disparate
-                        systems, automate critical processes, and establish robust data pipelines. Whether you're
+                        systems, automate critical processes, and establish robust data pipelines. Whether you are
                         standardizing operations across portfolio companies or optimizing a single organization's data
                         flow, we create scalable solutions that grow with your business.
                       </p>

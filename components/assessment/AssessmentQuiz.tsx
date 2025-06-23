@@ -16,7 +16,7 @@ const AssessmentQuiz = () => {
   const [scores, setScores] = useState<Record<string, number>>({})
   const [unansweredQuestionIds, setUnansweredQuestionIds] = useState<string[]>([]) // New state for validation
 
-  const { overallScore, scoreLabel, priorities, rescuePlan } = useAssessmentResults(scores)
+  const { overallScore, priorities, rescuePlan } = useAssessmentResults(scores)
 
   const startQuiz = useCallback(() => {
     setCurrentStep("quiz")
@@ -146,14 +146,13 @@ const AssessmentQuiz = () => {
   }
 
   return (
-    <QuizResults
-      overallScore={overallScore}
-      scores={scores}
-      sectionTitles={sectionTitles}
-      priorities={priorities}
-      rescuePlan={rescuePlan}
-      onEmailResults={handleEmailResults}
-    />
+ <QuizResults
+  overallScore={overallScore}
+  scores={scores}
+  sectionTitles={sectionTitles}
+  priorities={priorities}
+  rescuePlan={rescuePlan}
+/>
   )
 }
 
