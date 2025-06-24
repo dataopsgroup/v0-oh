@@ -1,159 +1,91 @@
 "use client"
 
-import { useState, useCallback, useMemo } from "react"
-import AssessmentIntro from "./AssessmentIntro"
-import QuizResults from "./QuizResults"
-import QuizSection from "./QuizSection"
-import QuizNavigation from "./QuizNavigation"
-import AssessmentProgress from "./AssessmentProgress"
-import { useAssessmentResults } from "@/hooks/useAssessmentResults"
-import { quizSections } from "@/data/assessment/quizData"
+import type React from "react"
+import { useState, useEffect } from "react"
+import { Box, Button, Typography, Radio, RadioGroup, FormControlLabel, FormControl } from "@mui/material"
 
-const AssessmentQuiz = () => {
-  const [currentStep, setCurrentStep] = useState("intro")
-  const [currentSection, setCurrentSection] = useState(1)
-  const [answers, setAnswers] = useState<Record<string, number>>({})
-  const [scores, setScores] = useState<Record<string, number>>({})
-  const [unansweredQuestionIds, setUnansweredQuestionIds] = useState<string[]>([]) // New state for validation
+interface Question {
+  id: number
+  text: string
+  options: string[]
+  correctAnswer: string
+}
 
-  const { overallScore, scoreLabel, priorities, rescuePlan } = useAssessmentResults(scores)
+interface AssessmentQuizProps {
+  questions: Question[]
+  onComplete: (score: number) => void
+}
 
-  const startQuiz = useCallback(() => {
-    setCurrentStep("quiz")
-    setCurrentSection(1)
-    setUnansweredQuestionIds([]) // Clear any previous validation errors
-  }, [])
+const AssessmentQuiz: React.FC<AssessmentQuizProps> = ({ questions, onComplete }) => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
+  const [score, setScore] = useState(0)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleAnswer = useCallback((questionId: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [questionId]: value,
-    }))
-    // Remove the question from unanswered list if it's now answered
-    setUnansweredQuestionIds((prev) => prev.filter((id) => id !== questionId))
-  }, [])
+  const currentQuestion = questions[currentQuestionIndex]
 
-  // Memoize section score calculation
-  const calculateSectionScore = useCallback(
-    (sectionId: number) => {
-      const section = quizSections.find((s) => s.id === sectionId)
-      if (!section) return 0
+  useEffect(() => {
+    setSelectedAnswer(null)
+    setIsSubmitted(false)
+  }, [currentQuestionIndex])
 
-      let totalScore = 0
-      let questionCount = 0
-
-      for (const question of section.questions) {
-        const answer = answers[question.id]
-        if (answer !== undefined) {
-          totalScore += answer
-          questionCount++
-        }
-      }
-
-      return questionCount > 0 ? totalScore : 0
-    },
-    [answers],
-  )
-
-  const scrollToTop = useCallback(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 100)
-  }, [])
-
-  const nextSection = useCallback(() => {
-    const currentQuizSection = quizSections.find((s) => s.id === currentSection)
-
-    if (!currentQuizSection) {
-      return // Should not happen
-    }
-
-    // Validate if all questions in the current section are answered
-    const missingAnswers = currentQuizSection.questions.filter((question) => answers[question.id] === undefined)
-
-    if (missingAnswers.length > 0) {
-      setUnansweredQuestionIds(missingAnswers.map((q) => q.id))
-      scrollToTop() // Scroll to top to show errors
-      return // Prevent navigation
-    }
-
-    // If all questions are answered, clear errors and proceed
-    setUnansweredQuestionIds([])
-
-    if (currentSection < quizSections.length) {
-      setCurrentSection((prev) => prev + 1)
-      scrollToTop()
-    } else {
-      // Calculate final scores for all sections efficiently
-      const finalScores: Record<string, number> = {}
-
-      for (const section of quizSections) {
-        const sectionKey = `section${section.id}`
-        finalScores[sectionKey] = calculateSectionScore(section.id)
-      }
-
-      setScores(finalScores)
-      setCurrentStep("results")
-      scrollToTop()
-    }
-  }, [currentSection, answers, calculateSectionScore, scrollToTop])
-
-  const prevSection = useCallback(() => {
-    if (currentSection > 1) {
-      setCurrentSection((prev) => prev - 1)
-      setUnansweredQuestionIds([]) // Clear errors when going back
-      scrollToTop()
-    }
-  }, [currentSection, scrollToTop])
-
-  const handleEmailResults = useCallback(() => {
-    console.log("Email results requested")
-  }, [])
-
-  // Memoize section titles to prevent recreation
-  const sectionTitles = useMemo(() => quizSections.map((section) => section.title), [])
-
-  if (currentStep === "intro") {
-    return <AssessmentIntro startQuiz={startQuiz} />
+  const handleAnswerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedAnswer(event.target.value)
   }
 
-  if (currentStep === "quiz") {
-    const currentQuizSection = quizSections.find((s) => s.id === currentSection)
+  const handleSubmit = () => {
+    if (selectedAnswer === null) return
 
-    if (!currentQuizSection) {
-      return <div>Section not found</div>
+    setIsSubmitted(true)
+
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+      setScore(score + 1)
     }
+  }
 
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-        <div className="max-w-4xl mx-auto py-8">
-          <AssessmentProgress currentSection={currentSection} totalSections={quizSections.length} />
-
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <QuizSection
-              title={currentQuizSection.title}
-              questions={currentQuizSection.questions}
-              answers={answers}
-              onAnswer={handleAnswer}
-              unansweredQuestionIds={unansweredQuestionIds} // Pass validation state
-            />
-
-            <QuizNavigation currentSection={currentSection} prevSection={prevSection} nextSection={nextSection} />
-          </div>
-        </div>
-      </div>
-    )
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1)
+    } else {
+      onComplete(score)
+    }
   }
 
   return (
-    <QuizResults
-      overallScore={overallScore}
-      scores={scores}
-      sectionTitles={sectionTitles}
-      priorities={priorities}
-      rescuePlan={rescuePlan}
-      onEmailResults={handleEmailResults}
-    />
+    <Box>
+      <Typography variant="h6">
+        Question {currentQuestionIndex + 1}/{questions.length}
+      </Typography>
+      <Typography variant="subtitle1">{currentQuestion.text}</Typography>
+
+      <FormControl component="fieldset">
+        <RadioGroup name={`question-${currentQuestion.id}`} value={selectedAnswer} onChange={handleAnswerChange}>
+          {currentQuestion.options.map((option) => (
+            <FormControlLabel key={option} value={option} control={<Radio />} label={option} disabled={isSubmitted} />
+          ))}
+        </RadioGroup>
+      </FormControl>
+
+      <Box mt={2}>
+        {!isSubmitted ? (
+          <Button variant="contained" color="primary" onClick={handleSubmit} disabled={selectedAnswer === null}>
+            Submit
+          </Button>
+        ) : (
+          <Button variant="contained" color="primary" onClick={handleNextQuestion}>
+            {currentQuestionIndex === questions.length - 1 ? "Finish" : "Next Question"}
+          </Button>
+        )}
+      </Box>
+
+      {isSubmitted && (
+        <Typography variant="body2" mt={2}>
+          {selectedAnswer === currentQuestion.correctAnswer
+            ? "Correct!"
+            : `Incorrect. The correct answer is ${currentQuestion.correctAnswer}`}
+        </Typography>
+      )}
+    </Box>
   )
 }
 
